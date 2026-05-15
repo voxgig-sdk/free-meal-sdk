@@ -1,0 +1,602 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Free Meal API",
+    "description": "Provides access to a free recipe API with features like searching meals by name, listing meals by first letter, looking up meal details by ID, and more. Supports JSON format data retrieval.",
+    "version": "1.0.0",
+    "contact": {
+      "email": "thedatadb@gmail.com"
+    },
+    "termsOfService": "https://www.themealdb.com/api.php"
+  },
+  "servers": [
+    {
+      "url": "https://www.themealdb.com/api/json/v1/1",
+      "description": "Production server (test API key: 1)"
+    }
+  ],
+  "paths": {
+    "/search.php": {
+      "get": {
+        "summary": "Search meals",
+        "description": "Search meal by name or list all meals by first letter",
+        "operationId": "searchMeals",
+        "parameters": [
+          {
+            "name": "s",
+            "in": "query",
+            "description": "Search meals by name",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "Arrabiata"
+            }
+          },
+          {
+            "name": "f",
+            "in": "query",
+            "description": "List all meals by first letter",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1,
+              "example": "a"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "meals": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Meal"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/lookup.php": {
+      "get": {
+        "summary": "Lookup full meal details by ID",
+        "description": "Retrieve complete details for a specific meal using its ID",
+        "operationId": "lookupMealById",
+        "parameters": [
+          {
+            "name": "i",
+            "in": "query",
+            "description": "Meal ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "52772"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "meals": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Meal"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/random.php": {
+      "get": {
+        "summary": "Lookup a single random meal",
+        "description": "Retrieve a randomly selected meal with full details",
+        "operationId": "getRandomMeal",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "meals": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Meal"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/randomselection.php": {
+      "get": {
+        "summary": "Lookup a selection of 10 random meals",
+        "description": "Retrieve 10 randomly selected meals. Premium API only.",
+        "operationId": "getRandomSelection",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "meals": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Meal"
+                      },
+                      "maxItems": 10
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - Premium API key required"
+          }
+        }
+      }
+    },
+    "/categories.php": {
+      "get": {
+        "summary": "List all meal categories",
+        "description": "Retrieve a list of all available meal categories",
+        "operationId": "listCategories",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "categories": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Category"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/latest.php": {
+      "get": {
+        "summary": "Get latest meals",
+        "description": "Retrieve the latest added meals. Premium API only.",
+        "operationId": "getLatestMeals",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "meals": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Meal"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - Premium API key required"
+          }
+        }
+      }
+    },
+    "/list.php": {
+      "get": {
+        "summary": "List categories, areas, or ingredients",
+        "description": "List all available categories, areas, or ingredients",
+        "operationId": "listAttributes",
+        "parameters": [
+          {
+            "name": "c",
+            "in": "query",
+            "description": "List all categories",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "list"
+              ]
+            }
+          },
+          {
+            "name": "a",
+            "in": "query",
+            "description": "List all areas",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "list"
+              ]
+            }
+          },
+          {
+            "name": "i",
+            "in": "query",
+            "description": "List all ingredients",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "list"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "meals": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "strCategory": {
+                            "type": "string"
+                          },
+                          "strArea": {
+                            "type": "string"
+                          },
+                          "strIngredient": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/filter.php": {
+      "get": {
+        "summary": "Filter meals",
+        "description": "Filter meals by ingredient, category, or area. Multi-ingredient filtering requires Premium API.",
+        "operationId": "filterMeals",
+        "parameters": [
+          {
+            "name": "i",
+            "in": "query",
+            "description": "Filter by ingredient (comma-separated for multi-ingredient with Premium API)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "chicken_breast"
+            }
+          },
+          {
+            "name": "c",
+            "in": "query",
+            "description": "Filter by category",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "Seafood"
+            }
+          },
+          {
+            "name": "a",
+            "in": "query",
+            "description": "Filter by area",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "Canadian"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "meals": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/MealSummary"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Meal": {
+        "type": "object",
+        "properties": {
+          "idMeal": {
+            "type": "string",
+            "description": "Unique meal identifier"
+          },
+          "strMeal": {
+            "type": "string",
+            "description": "Meal name"
+          },
+          "strDrinkAlternate": {
+            "type": "string",
+            "nullable": true
+          },
+          "strCategory": {
+            "type": "string",
+            "description": "Meal category"
+          },
+          "strArea": {
+            "type": "string",
+            "description": "Meal area/region"
+          },
+          "strInstructions": {
+            "type": "string",
+            "description": "Cooking instructions"
+          },
+          "strMealThumb": {
+            "type": "string",
+            "description": "URL to meal thumbnail image"
+          },
+          "strTags": {
+            "type": "string",
+            "nullable": true,
+            "description": "Comma-separated tags"
+          },
+          "strYoutube": {
+            "type": "string",
+            "description": "YouTube video URL"
+          },
+          "strIngredient1": {
+            "type": "string"
+          },
+          "strIngredient2": {
+            "type": "string"
+          },
+          "strIngredient3": {
+            "type": "string"
+          },
+          "strIngredient4": {
+            "type": "string"
+          },
+          "strIngredient5": {
+            "type": "string"
+          },
+          "strIngredient6": {
+            "type": "string"
+          },
+          "strIngredient7": {
+            "type": "string"
+          },
+          "strIngredient8": {
+            "type": "string"
+          },
+          "strIngredient9": {
+            "type": "string"
+          },
+          "strIngredient10": {
+            "type": "string"
+          },
+          "strIngredient11": {
+            "type": "string"
+          },
+          "strIngredient12": {
+            "type": "string"
+          },
+          "strIngredient13": {
+            "type": "string"
+          },
+          "strIngredient14": {
+            "type": "string"
+          },
+          "strIngredient15": {
+            "type": "string"
+          },
+          "strIngredient16": {
+            "type": "string"
+          },
+          "strIngredient17": {
+            "type": "string"
+          },
+          "strIngredient18": {
+            "type": "string"
+          },
+          "strIngredient19": {
+            "type": "string"
+          },
+          "strIngredient20": {
+            "type": "string"
+          },
+          "strMeasure1": {
+            "type": "string"
+          },
+          "strMeasure2": {
+            "type": "string"
+          },
+          "strMeasure3": {
+            "type": "string"
+          },
+          "strMeasure4": {
+            "type": "string"
+          },
+          "strMeasure5": {
+            "type": "string"
+          },
+          "strMeasure6": {
+            "type": "string"
+          },
+          "strMeasure7": {
+            "type": "string"
+          },
+          "strMeasure8": {
+            "type": "string"
+          },
+          "strMeasure9": {
+            "type": "string"
+          },
+          "strMeasure10": {
+            "type": "string"
+          },
+          "strMeasure11": {
+            "type": "string"
+          },
+          "strMeasure12": {
+            "type": "string"
+          },
+          "strMeasure13": {
+            "type": "string"
+          },
+          "strMeasure14": {
+            "type": "string"
+          },
+          "strMeasure15": {
+            "type": "string"
+          },
+          "strMeasure16": {
+            "type": "string"
+          },
+          "strMeasure17": {
+            "type": "string"
+          },
+          "strMeasure18": {
+            "type": "string"
+          },
+          "strMeasure19": {
+            "type": "string"
+          },
+          "strMeasure20": {
+            "type": "string"
+          },
+          "strSource": {
+            "type": "string",
+            "nullable": true
+          },
+          "strImageSource": {
+            "type": "string",
+            "nullable": true
+          },
+          "strCreativeCommonsConfirmed": {
+            "type": "string",
+            "nullable": true
+          },
+          "dateModified": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "MealSummary": {
+        "type": "object",
+        "properties": {
+          "strMeal": {
+            "type": "string",
+            "description": "Meal name"
+          },
+          "strMealThumb": {
+            "type": "string",
+            "description": "URL to meal thumbnail image"
+          },
+          "idMeal": {
+            "type": "string",
+            "description": "Unique meal identifier"
+          }
+        }
+      },
+      "Category": {
+        "type": "object",
+        "properties": {
+          "idCategory": {
+            "type": "string",
+            "description": "Unique category identifier"
+          },
+          "strCategory": {
+            "type": "string",
+            "description": "Category name"
+          },
+          "strCategoryThumb": {
+            "type": "string",
+            "description": "URL to category thumbnail image"
+          },
+          "strCategoryDescription": {
+            "type": "string",
+            "description": "Category description"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "path",
+        "name": "api_key",
+        "description": "API key embedded in the URL path. Use '1' for testing, or get a premium key for production."
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Full API Documentation",
+    "url": "https://www.themealdb.com/api.php"
+  }
+}

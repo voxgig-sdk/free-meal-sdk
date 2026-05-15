@@ -1,0 +1,22 @@
+# BasicRandomselectionFlow
+
+main: kit: flow: BasicRandomselectionFlow:
+{
+  entity: "randomselection",
+  kind: "basic",
+  name: "BasicRandomselectionFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "randomselection_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicRandomselectionFlow"
+}

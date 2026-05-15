@@ -1,0 +1,34 @@
+{
+  "existing": {
+    "category": {
+      "CATEGORY00": {
+        "id_category": "s28",
+        "str_category": "s29",
+        "str_category_description": "s2a",
+        "str_category_thumb": "s2b"
+      },
+      "CATEGORY01": {
+        "id_category": "s50",
+        "str_category": "s51",
+        "str_category_description": "s52",
+        "str_category_thumb": "s53"
+      },
+      "CATEGORY02": {
+        "id_category": "s78",
+        "str_category": "s79",
+        "str_category_description": "s7a",
+        "str_category_thumb": "s7b"
+      }
+    }
+  },
+  "new": {
+    "category": {
+      "category_ref01": {
+        "id_category": "sa0",
+        "str_category": "sa1",
+        "str_category_description": "sa2",
+        "str_category_thumb": "sa3"
+      }
+    }
+  }
+}

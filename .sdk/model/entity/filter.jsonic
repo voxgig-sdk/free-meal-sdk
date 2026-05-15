@@ -1,0 +1,82 @@
+# Entity: filter
+
+main: kit: entity: filter: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "id_meal"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "str_meal"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "str_meal_thumb"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "filter"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                example: "Canadian"
+                kind: "query"
+                name: "a"
+                orig: "a"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: "Seafood"
+                kind: "query"
+                name: "c"
+                orig: "c"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: "chicken_breast"
+                kind: "query"
+                name: "i"
+                orig: "i"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/filter.php"
+          parts: [
+            "filter.php"
+          ]
+          select: {
+            exist: [
+              "a"
+              "c"
+              "i"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

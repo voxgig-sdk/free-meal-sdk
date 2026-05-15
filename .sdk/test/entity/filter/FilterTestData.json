@@ -1,0 +1,30 @@
+{
+  "existing": {
+    "filter": {
+      "FILTER00": {
+        "id_meal": "s1e",
+        "str_meal": "s1f",
+        "str_meal_thumb": "s20"
+      },
+      "FILTER01": {
+        "id_meal": "s3c",
+        "str_meal": "s3d",
+        "str_meal_thumb": "s3e"
+      },
+      "FILTER02": {
+        "id_meal": "s5a",
+        "str_meal": "s5b",
+        "str_meal_thumb": "s5c"
+      }
+    }
+  },
+  "new": {
+    "filter": {
+      "filter_ref01": {
+        "id_meal": "s78",
+        "str_meal": "s79",
+        "str_meal_thumb": "s7a"
+      }
+    }
+  }
+}

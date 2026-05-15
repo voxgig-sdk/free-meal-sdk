@@ -1,0 +1,24 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        email: "thedatadb@gmail.com"
+      }
+      description: "Provides access to a free recipe API with features like searching meals by name, listing meals by first letter, looking up meal details by ID, and more. Supports JSON format data retrieval."
+      servers: [
+        {
+          description: "Production server (test API key: 1)"
+          url: "https://www.themealdb.com/api/json/v1/1"
+        }
+      ]
+      termsOfService: "https://www.themealdb.com/api.php"
+      title: "Free Meal API"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

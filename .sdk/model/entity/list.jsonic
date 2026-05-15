@@ -1,0 +1,79 @@
+# Entity: list
+
+main: kit: entity: list: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "str_area"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "str_category"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "str_ingredient"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "list"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "a"
+                orig: "a"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "c"
+                orig: "c"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "i"
+                orig: "i"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/list.php"
+          parts: [
+            "list.php"
+          ]
+          select: {
+            exist: [
+              "a"
+              "c"
+              "i"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

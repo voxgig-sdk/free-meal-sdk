@@ -1,0 +1,10 @@
+# Flows
+
+@"BasicCategoryFlow.jsonic"
+@"BasicFilterFlow.jsonic"
+@"BasicLatestFlow.jsonic"
+@"BasicListFlow.jsonic"
+@"BasicLookupFlow.jsonic"
+@"BasicRandomFlow.jsonic"
+@"BasicRandomselectionFlow.jsonic"
+@"BasicSearchFlow.jsonic"
