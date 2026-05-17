@@ -1,10 +1,10 @@
 package voxgigfreemealsdk
 
 import (
-	"github.com/voxgig-sdk/free-meal-sdk/core"
-	"github.com/voxgig-sdk/free-meal-sdk/entity"
-	"github.com/voxgig-sdk/free-meal-sdk/feature"
-	_ "github.com/voxgig-sdk/free-meal-sdk/utility"
+	"github.com/voxgig-sdk/free-meal-sdk/go/core"
+	"github.com/voxgig-sdk/free-meal-sdk/go/entity"
+	"github.com/voxgig-sdk/free-meal-sdk/go/feature"
+	_ "github.com/voxgig-sdk/free-meal-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

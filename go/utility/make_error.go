@@ -1,6 +1,6 @@
 package utility
 
-import "github.com/voxgig-sdk/free-meal-sdk/core"
+import "github.com/voxgig-sdk/free-meal-sdk/go/core"
 
 func makeErrorUtil(ctx *core.Context, err error) (any, error) {
 	if ctx == nil {
