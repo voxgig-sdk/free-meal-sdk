@@ -38,10 +38,6 @@ class Config {
   options = {
     base: 'https://www.themealdb.com/api/json/v1/1',
 
-    auth: {
-      prefix: 'Bearer',
-    },
-
     headers: {
       "content-type": "application/json"
     },

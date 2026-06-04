@@ -17,7 +17,24 @@
         ],
         "termsOfService": "https://www.themealdb.com/api.php",
         "title": "Free Meal API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "tagline": "Search, browse, and look up meal recipes with ingredients, instructions, and images from TheMealDB",
+        "homepage": "https://www.themealdb.com/",
+        "docs_url": "https://www.themealdb.com/api.php",
+        "license_short": "Free at point of access with developer test key '1'; commercial / production use requires a paid supporter key.",
+        "license_md": "- TheMealDB states the API and site will always remain free at point of access.\n- The test/developer key `1` is intended for development and educational use.\n- Production or commercial usage requires upgrading to a paid supporter key (via PayPal).\n- No explicit attribution clause is published on the docs page; check `https://www.themealdb.com/api.php` for current terms.",
+        "about_md": "[TheMealDB](https://www.themealdb.com/) is a crowd-sourced, open recipe database that exposes its catalogue through a simple JSON HTTP API. This SDK targets the v1 endpoints, which are reachable using the public developer test key `1` at `https://www.themealdb.com/api/json/v1/1`.\n\nWhat you get from the API:\n\n- Search meals by name or by first letter (`/search.php?s=`, `/search.php?f=`)\n- Look up a full meal record by id (`/lookup.php?i=`)\n- Fetch a random meal (`/random.php`)\n- Browse categories with images and descriptions (`/categories.php`)\n- Filter meals by main ingredient, category, or area (`/filter.php?i=`, `?c=`, `?a=`)\n- List the available categories, areas, and ingredients (`/list.php?c=list`, `?a=list`, `?i=list`)\n- Meal records include title, category, area/cuisine, instructions, ingredient + measure pairs, image URL, tags, and optional YouTube / source links.\n\nOperational notes: CORS is enabled, responses are JSON, and no auth header is needed for the test key (the key is part of the URL path). Some v2-only features advertised on the docs page — latest meals, a 10-random selection, and multi-ingredient filtering — are gated behind a supporter key and may return empty or unauthorised responses on the test key.",
+        "entity_desc": {
+          "category": "Meal categories (e.g. Beef, Dessert) with thumbnail and description, served by `/categories.php` and usable as a filter via `/filter.php?c=`.",
+          "filter": "Filtered meal listings by main ingredient, category, or area: `/filter.php?i=`, `/filter.php?c=`, `/filter.php?a=`.",
+          "latest": "Most recently added meals — a v2/supporter-key endpoint that typically requires a paid key rather than the test key `1`.",
+          "list": "Enumerations of the available categories, areas, and ingredients via `/list.php?c=list`, `?a=list`, `?i=list`.",
+          "lookup": "Full meal detail records fetched by id at `/lookup.php?i=`, including instructions and ingredient/measure pairs.",
+          "random": "A single randomly chosen meal from the database via `/random.php`.",
+          "randomselection": "A batch of multiple random meals — a v2/supporter-key feature (commonly 10 meals) not available on the free test key.",
+          "search": "Meal search by name (`/search.php?s=`) or by first letter (`/search.php?f=`)."
+        },
+        "auth": false
       },
       "config": {
         "auth": {
@@ -25,7 +42,15 @@
         },
         "headers": {
           "content-type": "application/json"
-        }
+        },
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ]
       },
       "entity": {
         "category": {

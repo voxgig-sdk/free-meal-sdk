@@ -113,7 +113,6 @@ function basicSetup(extra?: any) {
     'FREE_MEAL_TEST_CATEGORY_ENTID': idmap,
     'FREE_MEAL_TEST_LIVE': 'FALSE',
     'FREE_MEAL_TEST_EXPLAIN': 'FALSE',
-    'FREE_MEAL_APIKEY': 'NONE',
   })
 
   idmap = env['FREE_MEAL_TEST_CATEGORY_ENTID']
@@ -123,7 +122,6 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new FreeMealSDK(merge([
       {
-        apikey: env.FREE_MEAL_APIKEY,
       },
       extra
     ]))

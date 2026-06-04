@@ -62,14 +62,12 @@ def randomselection_direct_setup(mockres)
   env = Runner.env_override({
     "FREEMEAL_TEST_RANDOMSELECTION_ENTID" => {},
     "FREEMEAL_TEST_LIVE" => "FALSE",
-    "FREEMEAL_APIKEY" => "NONE",
   })
 
   live = env["FREEMEAL_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {
-      "apikey" => env["FREEMEAL_APIKEY"],
     }
     client = FreeMealSDK.new(merged_opts)
     return {
