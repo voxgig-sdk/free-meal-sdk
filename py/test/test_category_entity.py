@@ -92,6 +92,7 @@ def _category_basic_setup(extra):
         "FREEMEAL_TEST_CATEGORY_ENTID": idmap,
         "FREEMEAL_TEST_LIVE": "FALSE",
         "FREEMEAL_TEST_EXPLAIN": "FALSE",
+        "FREEMEAL_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,6 +103,7 @@ def _category_basic_setup(extra):
     if env.get("FREEMEAL_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
+                "apikey": env.get("FREEMEAL_APIKEY"),
             },
             extra or {},
         ])

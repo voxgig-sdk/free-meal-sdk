@@ -63,12 +63,14 @@ function search_direct_setup(mockres)
   local env = runner.env_override({
     ["FREEMEAL_TEST_SEARCH_ENTID"] = {},
     ["FREEMEAL_TEST_LIVE"] = "FALSE",
+    ["FREEMEAL_APIKEY"] = "NONE",
   })
 
   local live = env["FREEMEAL_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
+      apikey = env["FREEMEAL_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

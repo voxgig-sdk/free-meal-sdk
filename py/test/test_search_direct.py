@@ -61,12 +61,14 @@ def _search_direct_setup(mockres):
     env = runner.env_override({
         "FREEMEAL_TEST_SEARCH_ENTID": {},
         "FREEMEAL_TEST_LIVE": "FALSE",
+        "FREEMEAL_APIKEY": "NONE",
     })
 
     live = env.get("FREEMEAL_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
+            "apikey": env.get("FREEMEAL_APIKEY"),
         }
         client = FreeMealSDK(merged_opts)
         return {

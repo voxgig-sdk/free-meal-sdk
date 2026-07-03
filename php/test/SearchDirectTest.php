@@ -68,12 +68,14 @@ function search_direct_setup($mockres)
     $env = Runner::env_override([
         "FREEMEAL_TEST_SEARCH_ENTID" => [],
         "FREEMEAL_TEST_LIVE" => "FALSE",
+        "FREEMEAL_APIKEY" => "NONE",
     ]);
 
     $live = $env["FREEMEAL_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
+            "apikey" => $env["FREEMEAL_APIKEY"],
         ];
         $client = new FreeMealSDK($merged_opts);
         return [

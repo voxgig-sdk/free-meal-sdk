@@ -93,12 +93,14 @@ func categoryDirectSetup(mockres any) *categoryDirectSetupResult {
 	env := envOverride(map[string]any{
 		"FREEMEAL_TEST_CATEGORY_ENTID": map[string]any{},
 		"FREEMEAL_TEST_LIVE":    "FALSE",
+		"FREEMEAL_APIKEY":       "NONE",
 	})
 
 	live := env["FREEMEAL_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["FREEMEAL_APIKEY"],
 		}
 		client := sdk.NewFreeMealSDK(mergedOpts)
 

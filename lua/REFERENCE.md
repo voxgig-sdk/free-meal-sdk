@@ -30,12 +30,12 @@ Create a new SDK client instance.
 
 ### Static Methods
 
-#### `sdk.test(testopts, sdkopts)`
+#### `sdk.test(testopts?, sdkopts?)`
 
-Create a test client with mock features active. Both arguments may be `nil`.
+Create a test client with mock features active. Both arguments are optional.
 
 ```lua
-local client = sdk.test(nil, nil)
+local client = sdk.test()
 ```
 
 
@@ -131,7 +131,7 @@ local category = client:Category(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Category(nil):list(nil, nil)
+local results, err = client:Category():list()
 ```
 
 ### Common Methods
@@ -185,7 +185,7 @@ local filter = client:Filter(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Filter(nil):list(nil, nil)
+local results, err = client:Filter():list()
 ```
 
 ### Common Methods
@@ -289,7 +289,7 @@ local latest = client:Latest(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Latest(nil):list(nil, nil)
+local results, err = client:Latest():list()
 ```
 
 ### Common Methods
@@ -343,7 +343,7 @@ local list = client:List(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:List(nil):list(nil, nil)
+local results, err = client:List():list()
 ```
 
 ### Common Methods
@@ -447,7 +447,7 @@ local lookup = client:Lookup(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Lookup(nil):list(nil, nil)
+local results, err = client:Lookup():list()
 ```
 
 ### Common Methods
@@ -551,7 +551,7 @@ local random = client:Random(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Random(nil):list(nil, nil)
+local results, err = client:Random():list()
 ```
 
 ### Common Methods
@@ -655,7 +655,7 @@ local randomselection = client:Randomselection(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Randomselection(nil):list(nil, nil)
+local results, err = client:Randomselection():list()
 ```
 
 ### Common Methods
@@ -759,7 +759,7 @@ local search = client:Search(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Search(nil):list(nil, nil)
+local results, err = client:Search():list()
 ```
 
 ### Common Methods

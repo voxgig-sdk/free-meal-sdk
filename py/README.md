@@ -1,6 +1,11 @@
 # FreeMeal Python SDK
 
-The Python SDK for the FreeMeal API. Provides an entity-oriented interface following Pythonic conventions.
+
+
+The Python SDK for the FreeMeal API — an entity-oriented client following Pythonic conventions.
+
+> Other languages, the CLI, and MCP server live alongside this one — see
+> the [top-level README](../README.md).
 
 
 ## Install
@@ -23,15 +28,18 @@ loading a specific record.
 ### 1. Create a client
 
 ```python
+import os
 from freemeal_sdk import FreeMealSDK
 
-client = FreeMealSDK({})
+client = FreeMealSDK({
+    "apikey": os.environ.get("FREE-MEAL_APIKEY"),
+})
 ```
 
 ### 2. List categorys
 
 ```python
-result, err = client.Category(None).list(None, None)
+result, err = client.Category().list()
 if err:
     raise Exception(err)
 
@@ -83,11 +91,9 @@ print(fetchdef["headers"])
 Create a mock client for unit testing — no server required:
 
 ```python
-client = FreeMealSDK.test(None, None)
+client = FreeMealSDK.test()
 
-result, err = client.FreeMeal(None).load(
-    {"id": "test01"}, None
-)
+result, err = client.FreeMeal().load({"id": "test01"})
 # result contains mock response data
 ```
 
@@ -118,6 +124,7 @@ Create a `.env.local` file at the project root:
 
 ```
 FREE-MEAL_TEST_LIVE=TRUE
+FREE-MEAL_APIKEY=<your-key>
 ```
 
 Then run:
@@ -141,6 +148,7 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
+| `apikey` | `str` | API key for authentication. |
 | `base` | `str` | Base URL of the API server. |
 | `prefix` | `str` | URL path prefix prepended to all requests. |
 | `suffix` | `str` | URL path suffix appended to all requests. |

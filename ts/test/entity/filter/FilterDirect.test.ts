@@ -79,12 +79,14 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'FREEMEAL_TEST_FILTER_ENTID': {},
     'FREEMEAL_TEST_LIVE': 'FALSE',
+    'FREEMEAL_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.FREEMEAL_TEST_LIVE
 
   if (live) {
     const client = new FreeMealSDK({
+      apikey: env.FREEMEAL_APIKEY,
     })
 
     let idmap: any = env['FREEMEAL_TEST_FILTER_ENTID']

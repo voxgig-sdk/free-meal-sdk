@@ -83,6 +83,7 @@ def search_basic_setup(extra)
     "FREEMEAL_TEST_SEARCH_ENTID" => idmap,
     "FREEMEAL_TEST_LIVE" => "FALSE",
     "FREEMEAL_TEST_EXPLAIN" => "FALSE",
+    "FREEMEAL_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -94,6 +95,7 @@ def search_basic_setup(extra)
   if env["FREEMEAL_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
+        "apikey" => env["FREEMEAL_APIKEY"],
       },
       extra || {},
     ])

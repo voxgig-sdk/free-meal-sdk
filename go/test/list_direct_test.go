@@ -93,12 +93,14 @@ func listDirectSetup(mockres any) *listDirectSetupResult {
 	env := envOverride(map[string]any{
 		"FREEMEAL_TEST_LIST_ENTID": map[string]any{},
 		"FREEMEAL_TEST_LIVE":    "FALSE",
+		"FREEMEAL_APIKEY":       "NONE",
 	})
 
 	live := env["FREEMEAL_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["FREEMEAL_APIKEY"],
 		}
 		client := sdk.NewFreeMealSDK(mergedOpts)
 
