@@ -10,7 +10,7 @@ The TypeScript SDK for the FreeMeal API — a type-safe, entity-oriented client 
 
 ## Install
 ```bash
-npm install free-meal
+npm install @voxgig-sdk/free-meal
 ```
 ## Tutorial: your first API call
 

@@ -10,7 +10,7 @@ The PHP SDK for the FreeMeal API — an entity-oriented client using PHP convent
 
 ## Install
 ```bash
-composer require voxgig/free-meal-sdk
+composer require voxgig-sdk/free-meal
 ```
 
 

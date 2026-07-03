@@ -10,13 +10,13 @@ The Ruby SDK for the FreeMeal API — an entity-oriented client using idiomatic 
 
 ## Install
 ```bash
-gem install free-meal-sdk
+gem install voxgig-sdk-free-meal
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "free-meal-sdk"
+gem "voxgig-sdk-free-meal"
 ```
 
 Then run:

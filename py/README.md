@@ -10,7 +10,7 @@ The Python SDK for the FreeMeal API — an entity-oriented client following Pyth
 
 ## Install
 ```bash
-pip install free-meal-sdk
+pip install voxgig-sdk-free-meal
 ```
 
 Or install from source:
