@@ -50,8 +50,7 @@ class TestRandomselectionEntity:
         randomselection_ref01_ent = client.Randomselection(None)
         randomselection_ref01_match = {}
 
-        randomselection_ref01_list_result, err = randomselection_ref01_ent.list(randomselection_ref01_match, None)
-        assert err is None
+        randomselection_ref01_list_result = randomselection_ref01_ent.list(randomselection_ref01_match, None)
         assert isinstance(randomselection_ref01_list_result, list)
 
 

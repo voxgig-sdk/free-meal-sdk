@@ -103,7 +103,7 @@ class FreeMealSDK
         return $this->_rootctx;
     }
 
-    public function prepare(array $fetchargs = []): array
+    public function prepare(array $fetchargs = []): mixed
     {
         $utility = $this->_utility;
         $fetchargs = $fetchargs ?? [];
@@ -149,19 +149,27 @@ class FreeMealSDK
 
         [$_, $err] = ($utility->prepare_auth)($ctx);
         if ($err) {
-            return [null, $err];
+            return ($utility->make_error)($ctx, $err);
         }
 
-        return ($utility->make_fetch_def)($ctx);
+        [$fetchdef, $fd_err] = ($utility->make_fetch_def)($ctx);
+        if ($fd_err) {
+            return ($utility->make_error)($ctx, $fd_err);
+        }
+        return $fetchdef;
     }
 
-    public function direct(array $fetchargs = []): array
+    public function direct(array $fetchargs = []): mixed
     {
         $utility = $this->_utility;
 
-        [$fetchdef, $err] = $this->prepare($fetchargs);
-        if ($err) {
-            return [["ok" => false, "err" => $err], null];
+        // direct() is the raw-HTTP escape hatch: it never throws, it returns
+        // an {ok, err, ...} dict. prepare() now raises on error, so catch it
+        // and surface the failure through the dict instead.
+        try {
+            $fetchdef = $this->prepare($fetchargs);
+        } catch (\Throwable $err) {
+            return ["ok" => false, "err" => $err];
         }
 
         $fetchargs = $fetchargs ?? [];
@@ -176,14 +184,14 @@ class FreeMealSDK
         [$fetched, $fetch_err] = ($utility->fetcher)($ctx, $url, $fetchdef);
 
         if ($fetch_err) {
-            return [["ok" => false, "err" => $fetch_err], null];
+            return ["ok" => false, "err" => $fetch_err];
         }
 
         if ($fetched === null) {
-            return [[
+            return [
                 "ok" => false,
                 "err" => $ctx->make_error("direct_no_response", "response: undefined"),
-            ], null];
+            ];
         }
 
         if (is_array($fetched)) {
@@ -208,73 +216,161 @@ class FreeMealSDK
                 }
             }
 
-            return [[
+            return [
                 "ok" => $status >= 200 && $status < 300,
                 "status" => $status,
                 "headers" => Struct::getprop($fetched, "headers"),
                 "data" => $json_data,
-            ], null];
+            ];
         }
 
-        return [[
+        return [
             "ok" => false,
             "err" => $ctx->make_error("direct_invalid", "invalid response type"),
-        ], null];
+        ];
     }
 
 
-    public function Category($data = null)
+    private $_category = null;
+
+    // Idiomatic facade: $client->category()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Category() (PHP method
+    // names are case-insensitive).
+    public function category($data = null)
     {
         require_once __DIR__ . '/entity/category_entity.php';
+        if ($data === null) {
+            if ($this->_category === null) {
+                $this->_category = new CategoryEntity($this, null);
+            }
+            return $this->_category;
+        }
         return new CategoryEntity($this, $data);
     }
 
 
-    public function Filter($data = null)
+    private $_filter = null;
+
+    // Idiomatic facade: $client->filter()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Filter() (PHP method
+    // names are case-insensitive).
+    public function filter($data = null)
     {
         require_once __DIR__ . '/entity/filter_entity.php';
+        if ($data === null) {
+            if ($this->_filter === null) {
+                $this->_filter = new FilterEntity($this, null);
+            }
+            return $this->_filter;
+        }
         return new FilterEntity($this, $data);
     }
 
 
-    public function Latest($data = null)
+    private $_latest = null;
+
+    // Idiomatic facade: $client->latest()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Latest() (PHP method
+    // names are case-insensitive).
+    public function latest($data = null)
     {
         require_once __DIR__ . '/entity/latest_entity.php';
+        if ($data === null) {
+            if ($this->_latest === null) {
+                $this->_latest = new LatestEntity($this, null);
+            }
+            return $this->_latest;
+        }
         return new LatestEntity($this, $data);
     }
 
 
-    public function List($data = null)
+    private $_list = null;
+
+    // Idiomatic facade: $client->list()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias List() (PHP method
+    // names are case-insensitive).
+    public function list($data = null)
     {
         require_once __DIR__ . '/entity/list_entity.php';
+        if ($data === null) {
+            if ($this->_list === null) {
+                $this->_list = new ListEntity($this, null);
+            }
+            return $this->_list;
+        }
         return new ListEntity($this, $data);
     }
 
 
-    public function Lookup($data = null)
+    private $_lookup = null;
+
+    // Idiomatic facade: $client->lookup()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Lookup() (PHP method
+    // names are case-insensitive).
+    public function lookup($data = null)
     {
         require_once __DIR__ . '/entity/lookup_entity.php';
+        if ($data === null) {
+            if ($this->_lookup === null) {
+                $this->_lookup = new LookupEntity($this, null);
+            }
+            return $this->_lookup;
+        }
         return new LookupEntity($this, $data);
     }
 
 
-    public function Random($data = null)
+    private $_random = null;
+
+    // Idiomatic facade: $client->random()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Random() (PHP method
+    // names are case-insensitive).
+    public function random($data = null)
     {
         require_once __DIR__ . '/entity/random_entity.php';
+        if ($data === null) {
+            if ($this->_random === null) {
+                $this->_random = new RandomEntity($this, null);
+            }
+            return $this->_random;
+        }
         return new RandomEntity($this, $data);
     }
 
 
-    public function Randomselection($data = null)
+    private $_randomselection = null;
+
+    // Idiomatic facade: $client->randomselection()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Randomselection() (PHP method
+    // names are case-insensitive).
+    public function randomselection($data = null)
     {
         require_once __DIR__ . '/entity/randomselection_entity.php';
+        if ($data === null) {
+            if ($this->_randomselection === null) {
+                $this->_randomselection = new RandomselectionEntity($this, null);
+            }
+            return $this->_randomselection;
+        }
         return new RandomselectionEntity($this, $data);
     }
 
 
-    public function Search($data = null)
+    private $_search = null;
+
+    // Idiomatic facade: $client->search()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Search() (PHP method
+    // names are case-insensitive).
+    public function search($data = null)
     {
         require_once __DIR__ . '/entity/search_entity.php';
+        if ($data === null) {
+            if ($this->_search === null) {
+                $this->_search = new SearchEntity($this, null);
+            }
+            return $this->_search;
+        }
         return new SearchEntity($this, $data);
     }
 

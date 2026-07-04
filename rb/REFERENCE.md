@@ -82,9 +82,11 @@ Return a deep copy of the current SDK options.
 
 Return a copy of the SDK utility object.
 
-#### `direct(fetchargs = {}) -> Hash, err`
+#### `direct(fetchargs = {}) -> Hash`
 
-Make a direct HTTP request to any API endpoint.
+Make a direct HTTP request to any API endpoint. Returns a result hash
+(`{ "ok" => ..., "status" => ..., "data" => ..., "err" => ... }`); it
+does not raise — inspect `result["ok"]`.
 
 **Parameters:**
 
@@ -98,14 +100,14 @@ Make a direct HTTP request to any API endpoint.
 | `fetchargs["body"]` | `any` | Request body (hashes are JSON-serialized). |
 | `fetchargs["ctrl"]` | `Hash` | Control options (e.g. `{ "explain" => true }`). |
 
-**Returns:** `Hash, err`
+**Returns:** `Hash`
 
-#### `prepare(fetchargs = {}) -> Hash, err`
+#### `prepare(fetchargs = {}) -> Hash`
 
 Prepare a fetch definition without sending the request. Accepts the
-same parameters as `direct()`.
+same parameters as `direct()`. Raises on error.
 
-**Returns:** `Hash, err`
+**Returns:** `Hash` (the fetch definition; raises on error)
 
 
 ---
@@ -113,7 +115,7 @@ same parameters as `direct()`.
 ## CategoryEntity
 
 ```ruby
-category = client.Category
+category = client.category
 ```
 
 ### Fields
@@ -127,12 +129,12 @@ category = client.Category
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> result, err`
+#### `list(reqmatch, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array.
+List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results, err = client.Category.list(nil)
+results = client.category.list(nil)
 ```
 
 ### Common Methods
@@ -168,7 +170,7 @@ Return the entity name.
 ## FilterEntity
 
 ```ruby
-filter = client.Filter
+filter = client.filter
 ```
 
 ### Fields
@@ -181,12 +183,12 @@ filter = client.Filter
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> result, err`
+#### `list(reqmatch, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array.
+List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results, err = client.Filter.list(nil)
+results = client.filter.list(nil)
 ```
 
 ### Common Methods
@@ -222,7 +224,7 @@ Return the entity name.
 ## LatestEntity
 
 ```ruby
-latest = client.Latest
+latest = client.latest
 ```
 
 ### Fields
@@ -285,12 +287,12 @@ latest = client.Latest
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> result, err`
+#### `list(reqmatch, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array.
+List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results, err = client.Latest.list(nil)
+results = client.latest.list(nil)
 ```
 
 ### Common Methods
@@ -326,7 +328,7 @@ Return the entity name.
 ## ListEntity
 
 ```ruby
-list = client.List
+list = client.list
 ```
 
 ### Fields
@@ -339,12 +341,12 @@ list = client.List
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> result, err`
+#### `list(reqmatch, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array.
+List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results, err = client.List.list(nil)
+results = client.list.list(nil)
 ```
 
 ### Common Methods
@@ -380,7 +382,7 @@ Return the entity name.
 ## LookupEntity
 
 ```ruby
-lookup = client.Lookup
+lookup = client.lookup
 ```
 
 ### Fields
@@ -443,12 +445,12 @@ lookup = client.Lookup
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> result, err`
+#### `list(reqmatch, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array.
+List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results, err = client.Lookup.list(nil)
+results = client.lookup.list(nil)
 ```
 
 ### Common Methods
@@ -484,7 +486,7 @@ Return the entity name.
 ## RandomEntity
 
 ```ruby
-random = client.Random
+random = client.random
 ```
 
 ### Fields
@@ -547,12 +549,12 @@ random = client.Random
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> result, err`
+#### `list(reqmatch, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array.
+List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results, err = client.Random.list(nil)
+results = client.random.list(nil)
 ```
 
 ### Common Methods
@@ -588,7 +590,7 @@ Return the entity name.
 ## RandomselectionEntity
 
 ```ruby
-randomselection = client.Randomselection
+randomselection = client.randomselection
 ```
 
 ### Fields
@@ -651,12 +653,12 @@ randomselection = client.Randomselection
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> result, err`
+#### `list(reqmatch, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array.
+List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results, err = client.Randomselection.list(nil)
+results = client.randomselection.list(nil)
 ```
 
 ### Common Methods
@@ -692,7 +694,7 @@ Return the entity name.
 ## SearchEntity
 
 ```ruby
-search = client.Search
+search = client.search
 ```
 
 ### Fields
@@ -755,12 +757,12 @@ search = client.Search
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> result, err`
+#### `list(reqmatch, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array.
+List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results, err = client.Search.list(nil)
+results = client.search.list(nil)
 ```
 
 ### Common Methods

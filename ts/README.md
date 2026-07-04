@@ -9,9 +9,12 @@ The TypeScript SDK for the FreeMeal API — a type-safe, entity-oriented client 
 
 
 ## Install
-```bash
-npm install @voxgig-sdk/free-meal
-```
+This package is not yet published to npm. Install it from the GitHub
+release tag (`ts/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/free-meal-sdk/releases](https://github.com/voxgig-sdk/free-meal-sdk/releases)
+
+
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
@@ -20,17 +23,17 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { FreeMealSDK } from 'free-meal'
+import { FreeMealSDK } from '@voxgig-sdk/free-meal'
 
 const client = new FreeMealSDK({
-  apikey: process.env.FREE-MEAL_APIKEY,
+  apikey: process.env.FREE_MEAL_APIKEY,
 })
 ```
 
 ### 2. List categorys
 
 ```ts
-const result = await client.Category().list()
+const result = await client.category.list()
 
 if (result.ok) {
   for (const item of result.data) {
@@ -81,7 +84,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = FreeMealSDK.test()
 
-const result = await client.Planet().load({ id: 'test01' })
+const result = await client.category.load({ id: 'test01' })
 // result.ok === true
 // result.data contains mock response data
 ```
@@ -98,7 +101,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Planet()
+const entity = client.category
 
 // First call sets internal match
 await entity.load({ id: 'example' })
@@ -135,8 +138,8 @@ const client = new FreeMealSDK({
 Create a `.env.local` file at the project root:
 
 ```
-FREE-MEAL_TEST_LIVE=TRUE
-FREE-MEAL_APIKEY=<your-key>
+FREE_MEAL_TEST_LIVE=TRUE
+FREE_MEAL_APIKEY=<your-key>
 ```
 
 Then run:
@@ -612,7 +615,7 @@ API path: `/search.php`
 
 ### Category
 
-Create an instance: `const category = client.Category()`
+Create an instance: `const category = client.category`
 
 #### Operations
 
@@ -632,13 +635,13 @@ Create an instance: `const category = client.Category()`
 #### Example: List
 
 ```ts
-const categorys = await client.Category().list()
+const categorys = await client.category.list()
 ```
 
 
 ### Filter
 
-Create an instance: `const filter = client.Filter()`
+Create an instance: `const filter = client.filter`
 
 #### Operations
 
@@ -657,13 +660,13 @@ Create an instance: `const filter = client.Filter()`
 #### Example: List
 
 ```ts
-const filters = await client.Filter().list()
+const filters = await client.filter.list()
 ```
 
 
 ### Latest
 
-Create an instance: `const latest = client.Latest()`
+Create an instance: `const latest = client.latest`
 
 #### Operations
 
@@ -732,13 +735,13 @@ Create an instance: `const latest = client.Latest()`
 #### Example: List
 
 ```ts
-const latests = await client.Latest().list()
+const latests = await client.latest.list()
 ```
 
 
 ### List
 
-Create an instance: `const list = client.List()`
+Create an instance: `const list = client.list`
 
 #### Operations
 
@@ -757,13 +760,13 @@ Create an instance: `const list = client.List()`
 #### Example: List
 
 ```ts
-const lists = await client.List().list()
+const lists = await client.list.list()
 ```
 
 
 ### Lookup
 
-Create an instance: `const lookup = client.Lookup()`
+Create an instance: `const lookup = client.lookup`
 
 #### Operations
 
@@ -832,13 +835,13 @@ Create an instance: `const lookup = client.Lookup()`
 #### Example: List
 
 ```ts
-const lookups = await client.Lookup().list()
+const lookups = await client.lookup.list()
 ```
 
 
 ### Random
 
-Create an instance: `const random = client.Random()`
+Create an instance: `const random = client.random`
 
 #### Operations
 
@@ -907,13 +910,13 @@ Create an instance: `const random = client.Random()`
 #### Example: List
 
 ```ts
-const randoms = await client.Random().list()
+const randoms = await client.random.list()
 ```
 
 
 ### Randomselection
 
-Create an instance: `const randomselection = client.Randomselection()`
+Create an instance: `const randomselection = client.randomselection`
 
 #### Operations
 
@@ -982,13 +985,13 @@ Create an instance: `const randomselection = client.Randomselection()`
 #### Example: List
 
 ```ts
-const randomselections = await client.Randomselection().list()
+const randomselections = await client.randomselection.list()
 ```
 
 
 ### Search
 
-Create an instance: `const search = client.Search()`
+Create an instance: `const search = client.search`
 
 #### Operations
 
@@ -1057,7 +1060,7 @@ Create an instance: `const search = client.Search()`
 #### Example: List
 
 ```ts
-const searchs = await client.Search().list()
+const searchs = await client.search.list()
 ```
 
 
@@ -1118,7 +1121,7 @@ free-meal/
 Import the SDK from the package root:
 
 ```ts
-import { FreeMealSDK } from 'free-meal'
+import { FreeMealSDK } from '@voxgig-sdk/free-meal'
 ```
 
 ### Entity state
@@ -1128,11 +1131,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const moon = client.Moon()
-await moon.load({ planet_id: 'earth', id: 'luna' })
+const category = client.category
+await category.load({ id: "example_id" })
 
-// moon.data() now returns the loaded moon data
-// moon.match() returns { planet_id: 'earth', id: 'luna' }
+// category.data() now returns the loaded category data
+// category.match() returns { id: "example_id" }
 ```
 
 Call `make()` to create a fresh instance with the same configuration

@@ -50,8 +50,7 @@ class TestLatestEntity:
         latest_ref01_ent = client.Latest(None)
         latest_ref01_match = {}
 
-        latest_ref01_list_result, err = latest_ref01_ent.list(latest_ref01_match, None)
-        assert err is None
+        latest_ref01_list_result = latest_ref01_ent.list(latest_ref01_match, None)
         assert isinstance(latest_ref01_list_result, list)
 
 

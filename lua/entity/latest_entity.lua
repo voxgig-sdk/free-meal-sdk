@@ -81,6 +81,10 @@ end
 
 
 
+---@param reqmatch LatestListMatch
+---@param ctrl? table
+---@return Latest[]
+---@return string? err
 function LatestEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

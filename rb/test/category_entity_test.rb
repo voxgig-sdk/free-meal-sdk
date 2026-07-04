@@ -43,8 +43,7 @@ class CategoryEntityTest < Minitest::Test
     category_ref01_ent = client.Category(nil)
     category_ref01_match = {}
 
-    category_ref01_list_result, err = category_ref01_ent.list(category_ref01_match, nil)
-    assert_nil err
+    category_ref01_list_result = category_ref01_ent.list(category_ref01_match, nil)
     assert category_ref01_list_result.is_a?(Array)
 
   end

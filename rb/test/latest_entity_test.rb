@@ -43,8 +43,7 @@ class LatestEntityTest < Minitest::Test
     latest_ref01_ent = client.Latest(nil)
     latest_ref01_match = {}
 
-    latest_ref01_list_result, err = latest_ref01_ent.list(latest_ref01_match, nil)
-    assert_nil err
+    latest_ref01_list_result = latest_ref01_ent.list(latest_ref01_match, nil)
     assert latest_ref01_list_result.is_a?(Array)
 
   end

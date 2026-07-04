@@ -45,6 +45,7 @@ class LatestEntity
     end
   end
 
+  # @return [Latest, Hash] the current Latest data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,6 +58,7 @@ class LatestEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of Latest fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
@@ -65,6 +67,11 @@ class LatestEntity
   
 
   
+  # List Latest items matching the given filter.
+  #
+  # @param reqmatch [LatestListMatch, Hash, nil] match filter (any subset of Latest fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Array<Latest>, Array] the matching Latest items; raises FreeMealError on failure
   def list(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

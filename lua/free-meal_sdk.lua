@@ -244,48 +244,152 @@ end
 
 
 
+-- Idiomatic facade: client:category():list() / client:category():load({ id = ... })
+function FreeMealSDK:category(data)
+  local EntityMod = require("entity.category_entity")
+  if data == nil then
+    if self._category == nil then
+      self._category = EntityMod.new(self, nil)
+    end
+    return self._category
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:category() instead.
 function FreeMealSDK:Category(data)
   local EntityMod = require("entity.category_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:filter():list() / client:filter():load({ id = ... })
+function FreeMealSDK:filter(data)
+  local EntityMod = require("entity.filter_entity")
+  if data == nil then
+    if self._filter == nil then
+      self._filter = EntityMod.new(self, nil)
+    end
+    return self._filter
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:filter() instead.
 function FreeMealSDK:Filter(data)
   local EntityMod = require("entity.filter_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:latest():list() / client:latest():load({ id = ... })
+function FreeMealSDK:latest(data)
+  local EntityMod = require("entity.latest_entity")
+  if data == nil then
+    if self._latest == nil then
+      self._latest = EntityMod.new(self, nil)
+    end
+    return self._latest
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:latest() instead.
 function FreeMealSDK:Latest(data)
   local EntityMod = require("entity.latest_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:list():list() / client:list():load({ id = ... })
+function FreeMealSDK:list(data)
+  local EntityMod = require("entity.list_entity")
+  if data == nil then
+    if self._list == nil then
+      self._list = EntityMod.new(self, nil)
+    end
+    return self._list
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:list() instead.
 function FreeMealSDK:List(data)
   local EntityMod = require("entity.list_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:lookup():list() / client:lookup():load({ id = ... })
+function FreeMealSDK:lookup(data)
+  local EntityMod = require("entity.lookup_entity")
+  if data == nil then
+    if self._lookup == nil then
+      self._lookup = EntityMod.new(self, nil)
+    end
+    return self._lookup
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:lookup() instead.
 function FreeMealSDK:Lookup(data)
   local EntityMod = require("entity.lookup_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:random():list() / client:random():load({ id = ... })
+function FreeMealSDK:random(data)
+  local EntityMod = require("entity.random_entity")
+  if data == nil then
+    if self._random == nil then
+      self._random = EntityMod.new(self, nil)
+    end
+    return self._random
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:random() instead.
 function FreeMealSDK:Random(data)
   local EntityMod = require("entity.random_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:randomselection():list() / client:randomselection():load({ id = ... })
+function FreeMealSDK:randomselection(data)
+  local EntityMod = require("entity.randomselection_entity")
+  if data == nil then
+    if self._randomselection == nil then
+      self._randomselection = EntityMod.new(self, nil)
+    end
+    return self._randomselection
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:randomselection() instead.
 function FreeMealSDK:Randomselection(data)
   local EntityMod = require("entity.randomselection_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:search():list() / client:search():load({ id = ... })
+function FreeMealSDK:search(data)
+  local EntityMod = require("entity.search_entity")
+  if data == nil then
+    if self._search == nil then
+      self._search = EntityMod.new(self, nil)
+    end
+    return self._search
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:search() instead.
 function FreeMealSDK:Search(data)
   local EntityMod = require("entity.search_entity")
   return EntityMod.new(self, data)

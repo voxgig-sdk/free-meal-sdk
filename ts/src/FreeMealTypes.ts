@@ -1,0 +1,322 @@
+// Typed models for the FreeMeal SDK.
+//
+// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
+// params (op.<name>.points[].args.params[]). Field/param types come from the
+// canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
+// @voxgig/apidef VALID_CANON). Do not edit by hand.
+
+export interface Category {
+  id_category?: string
+  str_category?: string
+  str_category_description?: string
+  str_category_thumb?: string
+}
+
+export type CategoryListMatch = Partial<Category>
+
+export interface Filter {
+  id_meal?: string
+  str_meal?: string
+  str_meal_thumb?: string
+}
+
+export type FilterListMatch = Partial<Filter>
+
+export interface Latest {
+  date_modified?: string
+  id_meal?: string
+  str_area?: string
+  str_category?: string
+  str_creative_commons_confirmed?: string
+  str_drink_alternate?: string
+  str_image_source?: string
+  str_ingredient1?: string
+  str_ingredient10?: string
+  str_ingredient11?: string
+  str_ingredient12?: string
+  str_ingredient13?: string
+  str_ingredient14?: string
+  str_ingredient15?: string
+  str_ingredient16?: string
+  str_ingredient17?: string
+  str_ingredient18?: string
+  str_ingredient19?: string
+  str_ingredient2?: string
+  str_ingredient20?: string
+  str_ingredient3?: string
+  str_ingredient4?: string
+  str_ingredient5?: string
+  str_ingredient6?: string
+  str_ingredient7?: string
+  str_ingredient8?: string
+  str_ingredient9?: string
+  str_instruction?: string
+  str_meal?: string
+  str_meal_thumb?: string
+  str_measure1?: string
+  str_measure10?: string
+  str_measure11?: string
+  str_measure12?: string
+  str_measure13?: string
+  str_measure14?: string
+  str_measure15?: string
+  str_measure16?: string
+  str_measure17?: string
+  str_measure18?: string
+  str_measure19?: string
+  str_measure2?: string
+  str_measure20?: string
+  str_measure3?: string
+  str_measure4?: string
+  str_measure5?: string
+  str_measure6?: string
+  str_measure7?: string
+  str_measure8?: string
+  str_measure9?: string
+  str_source?: string
+  str_tag?: string
+  str_youtube?: string
+}
+
+export type LatestListMatch = Partial<Latest>
+
+export interface List {
+  str_area?: string
+  str_category?: string
+  str_ingredient?: string
+}
+
+export type ListListMatch = Partial<List>
+
+export interface Lookup {
+  date_modified?: string
+  id_meal?: string
+  str_area?: string
+  str_category?: string
+  str_creative_commons_confirmed?: string
+  str_drink_alternate?: string
+  str_image_source?: string
+  str_ingredient1?: string
+  str_ingredient10?: string
+  str_ingredient11?: string
+  str_ingredient12?: string
+  str_ingredient13?: string
+  str_ingredient14?: string
+  str_ingredient15?: string
+  str_ingredient16?: string
+  str_ingredient17?: string
+  str_ingredient18?: string
+  str_ingredient19?: string
+  str_ingredient2?: string
+  str_ingredient20?: string
+  str_ingredient3?: string
+  str_ingredient4?: string
+  str_ingredient5?: string
+  str_ingredient6?: string
+  str_ingredient7?: string
+  str_ingredient8?: string
+  str_ingredient9?: string
+  str_instruction?: string
+  str_meal?: string
+  str_meal_thumb?: string
+  str_measure1?: string
+  str_measure10?: string
+  str_measure11?: string
+  str_measure12?: string
+  str_measure13?: string
+  str_measure14?: string
+  str_measure15?: string
+  str_measure16?: string
+  str_measure17?: string
+  str_measure18?: string
+  str_measure19?: string
+  str_measure2?: string
+  str_measure20?: string
+  str_measure3?: string
+  str_measure4?: string
+  str_measure5?: string
+  str_measure6?: string
+  str_measure7?: string
+  str_measure8?: string
+  str_measure9?: string
+  str_source?: string
+  str_tag?: string
+  str_youtube?: string
+}
+
+export type LookupListMatch = Partial<Lookup>
+
+export interface Random {
+  date_modified?: string
+  id_meal?: string
+  str_area?: string
+  str_category?: string
+  str_creative_commons_confirmed?: string
+  str_drink_alternate?: string
+  str_image_source?: string
+  str_ingredient1?: string
+  str_ingredient10?: string
+  str_ingredient11?: string
+  str_ingredient12?: string
+  str_ingredient13?: string
+  str_ingredient14?: string
+  str_ingredient15?: string
+  str_ingredient16?: string
+  str_ingredient17?: string
+  str_ingredient18?: string
+  str_ingredient19?: string
+  str_ingredient2?: string
+  str_ingredient20?: string
+  str_ingredient3?: string
+  str_ingredient4?: string
+  str_ingredient5?: string
+  str_ingredient6?: string
+  str_ingredient7?: string
+  str_ingredient8?: string
+  str_ingredient9?: string
+  str_instruction?: string
+  str_meal?: string
+  str_meal_thumb?: string
+  str_measure1?: string
+  str_measure10?: string
+  str_measure11?: string
+  str_measure12?: string
+  str_measure13?: string
+  str_measure14?: string
+  str_measure15?: string
+  str_measure16?: string
+  str_measure17?: string
+  str_measure18?: string
+  str_measure19?: string
+  str_measure2?: string
+  str_measure20?: string
+  str_measure3?: string
+  str_measure4?: string
+  str_measure5?: string
+  str_measure6?: string
+  str_measure7?: string
+  str_measure8?: string
+  str_measure9?: string
+  str_source?: string
+  str_tag?: string
+  str_youtube?: string
+}
+
+export type RandomListMatch = Partial<Random>
+
+export interface Randomselection {
+  date_modified?: string
+  id_meal?: string
+  str_area?: string
+  str_category?: string
+  str_creative_commons_confirmed?: string
+  str_drink_alternate?: string
+  str_image_source?: string
+  str_ingredient1?: string
+  str_ingredient10?: string
+  str_ingredient11?: string
+  str_ingredient12?: string
+  str_ingredient13?: string
+  str_ingredient14?: string
+  str_ingredient15?: string
+  str_ingredient16?: string
+  str_ingredient17?: string
+  str_ingredient18?: string
+  str_ingredient19?: string
+  str_ingredient2?: string
+  str_ingredient20?: string
+  str_ingredient3?: string
+  str_ingredient4?: string
+  str_ingredient5?: string
+  str_ingredient6?: string
+  str_ingredient7?: string
+  str_ingredient8?: string
+  str_ingredient9?: string
+  str_instruction?: string
+  str_meal?: string
+  str_meal_thumb?: string
+  str_measure1?: string
+  str_measure10?: string
+  str_measure11?: string
+  str_measure12?: string
+  str_measure13?: string
+  str_measure14?: string
+  str_measure15?: string
+  str_measure16?: string
+  str_measure17?: string
+  str_measure18?: string
+  str_measure19?: string
+  str_measure2?: string
+  str_measure20?: string
+  str_measure3?: string
+  str_measure4?: string
+  str_measure5?: string
+  str_measure6?: string
+  str_measure7?: string
+  str_measure8?: string
+  str_measure9?: string
+  str_source?: string
+  str_tag?: string
+  str_youtube?: string
+}
+
+export type RandomselectionListMatch = Partial<Randomselection>
+
+export interface Search {
+  date_modified?: string
+  id_meal?: string
+  str_area?: string
+  str_category?: string
+  str_creative_commons_confirmed?: string
+  str_drink_alternate?: string
+  str_image_source?: string
+  str_ingredient1?: string
+  str_ingredient10?: string
+  str_ingredient11?: string
+  str_ingredient12?: string
+  str_ingredient13?: string
+  str_ingredient14?: string
+  str_ingredient15?: string
+  str_ingredient16?: string
+  str_ingredient17?: string
+  str_ingredient18?: string
+  str_ingredient19?: string
+  str_ingredient2?: string
+  str_ingredient20?: string
+  str_ingredient3?: string
+  str_ingredient4?: string
+  str_ingredient5?: string
+  str_ingredient6?: string
+  str_ingredient7?: string
+  str_ingredient8?: string
+  str_ingredient9?: string
+  str_instruction?: string
+  str_meal?: string
+  str_meal_thumb?: string
+  str_measure1?: string
+  str_measure10?: string
+  str_measure11?: string
+  str_measure12?: string
+  str_measure13?: string
+  str_measure14?: string
+  str_measure15?: string
+  str_measure16?: string
+  str_measure17?: string
+  str_measure18?: string
+  str_measure19?: string
+  str_measure2?: string
+  str_measure20?: string
+  str_measure3?: string
+  str_measure4?: string
+  str_measure5?: string
+  str_measure6?: string
+  str_measure7?: string
+  str_measure8?: string
+  str_measure9?: string
+  str_source?: string
+  str_tag?: string
+  str_youtube?: string
+}
+
+export type SearchListMatch = Partial<Search>
+

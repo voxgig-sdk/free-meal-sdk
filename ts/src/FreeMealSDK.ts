@@ -9,6 +9,8 @@ import { RandomEntity } from './entity/RandomEntity'
 import { RandomselectionEntity } from './entity/RandomselectionEntity'
 import { SearchEntity } from './entity/SearchEntity'
 
+export type * from './FreeMealTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -209,48 +211,112 @@ class FreeMealSDK {
 
 
 
+  _category?: CategoryEntity
+
+  // Idiomatic facade: `client.category.list()` / `client.category.load({ id })`.
+  get category(): CategoryEntity {
+    return (this._category ??= new CategoryEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.category` instead. */
   Category(data?: any) {
     const self = this
     return new CategoryEntity(self,data)
   }
 
 
+  _filter?: FilterEntity
+
+  // Idiomatic facade: `client.filter.list()` / `client.filter.load({ id })`.
+  get filter(): FilterEntity {
+    return (this._filter ??= new FilterEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.filter` instead. */
   Filter(data?: any) {
     const self = this
     return new FilterEntity(self,data)
   }
 
 
+  _latest?: LatestEntity
+
+  // Idiomatic facade: `client.latest.list()` / `client.latest.load({ id })`.
+  get latest(): LatestEntity {
+    return (this._latest ??= new LatestEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.latest` instead. */
   Latest(data?: any) {
     const self = this
     return new LatestEntity(self,data)
   }
 
 
+  _list?: ListEntity
+
+  // Idiomatic facade: `client.list.list()` / `client.list.load({ id })`.
+  get list(): ListEntity {
+    return (this._list ??= new ListEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.list` instead. */
   List(data?: any) {
     const self = this
     return new ListEntity(self,data)
   }
 
 
+  _lookup?: LookupEntity
+
+  // Idiomatic facade: `client.lookup.list()` / `client.lookup.load({ id })`.
+  get lookup(): LookupEntity {
+    return (this._lookup ??= new LookupEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.lookup` instead. */
   Lookup(data?: any) {
     const self = this
     return new LookupEntity(self,data)
   }
 
 
+  _random?: RandomEntity
+
+  // Idiomatic facade: `client.random.list()` / `client.random.load({ id })`.
+  get random(): RandomEntity {
+    return (this._random ??= new RandomEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.random` instead. */
   Random(data?: any) {
     const self = this
     return new RandomEntity(self,data)
   }
 
 
+  _randomselection?: RandomselectionEntity
+
+  // Idiomatic facade: `client.randomselection.list()` / `client.randomselection.load({ id })`.
+  get randomselection(): RandomselectionEntity {
+    return (this._randomselection ??= new RandomselectionEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.randomselection` instead. */
   Randomselection(data?: any) {
     const self = this
     return new RandomselectionEntity(self,data)
   }
 
 
+  _search?: SearchEntity
+
+  // Idiomatic facade: `client.search.list()` / `client.search.load({ id })`.
+  get search(): SearchEntity {
+    return (this._search ??= new SearchEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.search` instead. */
   Search(data?: any) {
     const self = this
     return new SearchEntity(self,data)

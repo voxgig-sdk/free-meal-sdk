@@ -245,41 +245,65 @@ func (sdk *FreeMealSDK) Direct(fetchargs map[string]any) (map[string]any, error)
 }
 
 
+// Category returns a Category entity bound to this client.
+// Idiomatic usage: client.Category(nil).List(nil, nil) or
+// client.Category(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *FreeMealSDK) Category(data map[string]any) FreeMealEntity {
 	return NewCategoryEntityFunc(sdk, data)
 }
 
 
+// Filter returns a Filter entity bound to this client.
+// Idiomatic usage: client.Filter(nil).List(nil, nil) or
+// client.Filter(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *FreeMealSDK) Filter(data map[string]any) FreeMealEntity {
 	return NewFilterEntityFunc(sdk, data)
 }
 
 
+// Latest returns a Latest entity bound to this client.
+// Idiomatic usage: client.Latest(nil).List(nil, nil) or
+// client.Latest(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *FreeMealSDK) Latest(data map[string]any) FreeMealEntity {
 	return NewLatestEntityFunc(sdk, data)
 }
 
 
+// List returns a List entity bound to this client.
+// Idiomatic usage: client.List(nil).List(nil, nil) or
+// client.List(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *FreeMealSDK) List(data map[string]any) FreeMealEntity {
 	return NewListEntityFunc(sdk, data)
 }
 
 
+// Lookup returns a Lookup entity bound to this client.
+// Idiomatic usage: client.Lookup(nil).List(nil, nil) or
+// client.Lookup(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *FreeMealSDK) Lookup(data map[string]any) FreeMealEntity {
 	return NewLookupEntityFunc(sdk, data)
 }
 
 
+// Random returns a Random entity bound to this client.
+// Idiomatic usage: client.Random(nil).List(nil, nil) or
+// client.Random(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *FreeMealSDK) Random(data map[string]any) FreeMealEntity {
 	return NewRandomEntityFunc(sdk, data)
 }
 
 
+// Randomselection returns a Randomselection entity bound to this client.
+// Idiomatic usage: client.Randomselection(nil).List(nil, nil) or
+// client.Randomselection(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *FreeMealSDK) Randomselection(data map[string]any) FreeMealEntity {
 	return NewRandomselectionEntityFunc(sdk, data)
 }
 
 
+// Search returns a Search entity bound to this client.
+// Idiomatic usage: client.Search(nil).List(nil, nil) or
+// client.Search(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *FreeMealSDK) Search(data map[string]any) FreeMealEntity {
 	return NewSearchEntityFunc(sdk, data)
 }

@@ -45,6 +45,7 @@ class RandomselectionEntity
     end
   end
 
+  # @return [Randomselection, Hash] the current Randomselection data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,6 +58,7 @@ class RandomselectionEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of Randomselection fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
@@ -65,6 +67,11 @@ class RandomselectionEntity
   
 
   
+  # List Randomselection items matching the given filter.
+  #
+  # @param reqmatch [RandomselectionListMatch, Hash, nil] match filter (any subset of Randomselection fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Array<Randomselection>, Array] the matching Randomselection items; raises FreeMealError on failure
   def list(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

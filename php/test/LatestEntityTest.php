@@ -50,8 +50,7 @@ class LatestEntityTest extends TestCase
         $latest_ref01_ent = $client->Latest(null);
         $latest_ref01_match = [];
 
-        [$latest_ref01_list_result, $err] = $latest_ref01_ent->list($latest_ref01_match, null);
-        $this->assertNull($err);
+        $latest_ref01_list_result = $latest_ref01_ent->list($latest_ref01_match, null);
         $this->assertIsArray($latest_ref01_list_result);
 
     }

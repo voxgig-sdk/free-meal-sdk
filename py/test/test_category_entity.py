@@ -50,8 +50,7 @@ class TestCategoryEntity:
         category_ref01_ent = client.Category(None)
         category_ref01_match = {}
 
-        category_ref01_list_result, err = category_ref01_ent.list(category_ref01_match, None)
-        assert err is None
+        category_ref01_list_result = category_ref01_ent.list(category_ref01_match, None)
         assert isinstance(category_ref01_list_result, list)
 
 

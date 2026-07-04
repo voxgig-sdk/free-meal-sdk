@@ -50,8 +50,7 @@ class RandomselectionEntityTest extends TestCase
         $randomselection_ref01_ent = $client->Randomselection(null);
         $randomselection_ref01_match = [];
 
-        [$randomselection_ref01_list_result, $err] = $randomselection_ref01_ent->list($randomselection_ref01_match, null);
-        $this->assertNull($err);
+        $randomselection_ref01_list_result = $randomselection_ref01_ent->list($randomselection_ref01_match, null);
         $this->assertIsArray($randomselection_ref01_list_result);
 
     }
