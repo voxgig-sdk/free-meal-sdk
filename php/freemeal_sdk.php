@@ -233,10 +233,10 @@ class FreeMealSDK
 
     private $_category = null;
 
-    // Idiomatic facade: $client->category()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Category() (PHP method
-    // names are case-insensitive).
-    public function category($data = null)
+    // Canonical facade: $client->Category()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->category()
+    // resolves here too.
+    public function Category($data = null)
     {
         require_once __DIR__ . '/entity/category_entity.php';
         if ($data === null) {
@@ -251,10 +251,10 @@ class FreeMealSDK
 
     private $_filter = null;
 
-    // Idiomatic facade: $client->filter()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Filter() (PHP method
-    // names are case-insensitive).
-    public function filter($data = null)
+    // Canonical facade: $client->Filter()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->filter()
+    // resolves here too.
+    public function Filter($data = null)
     {
         require_once __DIR__ . '/entity/filter_entity.php';
         if ($data === null) {
@@ -269,10 +269,10 @@ class FreeMealSDK
 
     private $_latest = null;
 
-    // Idiomatic facade: $client->latest()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Latest() (PHP method
-    // names are case-insensitive).
-    public function latest($data = null)
+    // Canonical facade: $client->Latest()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->latest()
+    // resolves here too.
+    public function Latest($data = null)
     {
         require_once __DIR__ . '/entity/latest_entity.php';
         if ($data === null) {
@@ -287,10 +287,10 @@ class FreeMealSDK
 
     private $_list = null;
 
-    // Idiomatic facade: $client->list()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias List() (PHP method
-    // names are case-insensitive).
-    public function list($data = null)
+    // Canonical facade: $client->List()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->list()
+    // resolves here too.
+    public function List($data = null)
     {
         require_once __DIR__ . '/entity/list_entity.php';
         if ($data === null) {
@@ -305,10 +305,10 @@ class FreeMealSDK
 
     private $_lookup = null;
 
-    // Idiomatic facade: $client->lookup()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Lookup() (PHP method
-    // names are case-insensitive).
-    public function lookup($data = null)
+    // Canonical facade: $client->Lookup()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->lookup()
+    // resolves here too.
+    public function Lookup($data = null)
     {
         require_once __DIR__ . '/entity/lookup_entity.php';
         if ($data === null) {
@@ -323,10 +323,10 @@ class FreeMealSDK
 
     private $_random = null;
 
-    // Idiomatic facade: $client->random()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Random() (PHP method
-    // names are case-insensitive).
-    public function random($data = null)
+    // Canonical facade: $client->Random()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->random()
+    // resolves here too.
+    public function Random($data = null)
     {
         require_once __DIR__ . '/entity/random_entity.php';
         if ($data === null) {
@@ -341,10 +341,10 @@ class FreeMealSDK
 
     private $_randomselection = null;
 
-    // Idiomatic facade: $client->randomselection()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Randomselection() (PHP method
-    // names are case-insensitive).
-    public function randomselection($data = null)
+    // Canonical facade: $client->Randomselection()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->randomselection()
+    // resolves here too.
+    public function Randomselection($data = null)
     {
         require_once __DIR__ . '/entity/randomselection_entity.php';
         if ($data === null) {
@@ -359,10 +359,10 @@ class FreeMealSDK
 
     private $_search = null;
 
-    // Idiomatic facade: $client->search()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Search() (PHP method
-    // names are case-insensitive).
-    public function search($data = null)
+    // Canonical facade: $client->Search()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->search()
+    // resolves here too.
+    public function Search($data = null)
     {
         require_once __DIR__ . '/entity/search_entity.php';
         if ($data === null) {

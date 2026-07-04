@@ -194,7 +194,7 @@ Alias for `FreeMealSDK.test()`.
 ## CategoryEntity
 
 ```ts
-const category = client.category
+const category = client.Category()
 ```
 
 ### Fields
@@ -213,7 +213,7 @@ const category = client.category
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.category.list()
+const results = await client.Category().list()
 ```
 
 ### Common Methods
@@ -247,7 +247,7 @@ Return a copy of the entity options.
 ## FilterEntity
 
 ```ts
-const filter = client.filter
+const filter = client.Filter()
 ```
 
 ### Fields
@@ -265,7 +265,7 @@ const filter = client.filter
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.filter.list()
+const results = await client.Filter().list()
 ```
 
 ### Common Methods
@@ -299,7 +299,7 @@ Return a copy of the entity options.
 ## LatestEntity
 
 ```ts
-const latest = client.latest
+const latest = client.Latest()
 ```
 
 ### Fields
@@ -367,7 +367,7 @@ const latest = client.latest
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.latest.list()
+const results = await client.Latest().list()
 ```
 
 ### Common Methods
@@ -401,7 +401,7 @@ Return a copy of the entity options.
 ## ListEntity
 
 ```ts
-const list = client.list
+const list = client.List()
 ```
 
 ### Fields
@@ -419,7 +419,7 @@ const list = client.list
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.list.list()
+const results = await client.List().list()
 ```
 
 ### Common Methods
@@ -453,7 +453,7 @@ Return a copy of the entity options.
 ## LookupEntity
 
 ```ts
-const lookup = client.lookup
+const lookup = client.Lookup()
 ```
 
 ### Fields
@@ -521,7 +521,7 @@ const lookup = client.lookup
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.lookup.list()
+const results = await client.Lookup().list()
 ```
 
 ### Common Methods
@@ -555,7 +555,7 @@ Return a copy of the entity options.
 ## RandomEntity
 
 ```ts
-const random = client.random
+const random = client.Random()
 ```
 
 ### Fields
@@ -623,7 +623,7 @@ const random = client.random
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.random.list()
+const results = await client.Random().list()
 ```
 
 ### Common Methods
@@ -657,7 +657,7 @@ Return a copy of the entity options.
 ## RandomselectionEntity
 
 ```ts
-const randomselection = client.randomselection
+const randomselection = client.Randomselection()
 ```
 
 ### Fields
@@ -725,7 +725,7 @@ const randomselection = client.randomselection
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.randomselection.list()
+const results = await client.Randomselection().list()
 ```
 
 ### Common Methods
@@ -759,7 +759,7 @@ Return a copy of the entity options.
 ## SearchEntity
 
 ```ts
-const search = client.search
+const search = client.Search()
 ```
 
 ### Fields
@@ -827,7 +827,7 @@ const search = client.search
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.search.list()
+const results = await client.Search().list()
 ```
 
 ### Common Methods

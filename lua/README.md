@@ -33,17 +33,17 @@ local client = sdk.new({
 })
 ```
 
-### 2. List categorys
+### 2. List category records
+
+Entity operations return `(value, err)`. For `list`, `value` is the
+array of records itself — iterate it directly (there is no wrapper).
 
 ```lua
-local result, err = client:category():list()
+local categorys, err = client:Category():list()
 if err then error(err) end
 
-if type(result) == "table" then
-  for _, item in ipairs(result) do
-    local d = item:data_get()
-    print(d["id"], d["name"])
-  end
+for _, item in ipairs(categorys) do
+  print(item["id"], item["name"])
 end
 ```
 
@@ -90,8 +90,8 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:category():load({ id = "test01" })
--- result contains mock response data
+local result, err = client:Category():load({ id = "test01" })
+-- result is the loaded data; err is set on failure
 ```
 
 ### Use a custom fetch function
@@ -200,17 +200,22 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return `(any, err)`. The first value is a
-`table` with these keys:
+Entity operations return `(value, err)`. The `value` is the operation's
+data **directly** — there is no wrapper:
 
-| Key | Type | Description |
-| --- | --- | --- |
-| `ok` | `boolean` | `true` if the HTTP status is 2xx. |
-| `status` | `number` | HTTP status code. |
-| `headers` | `table` | Response headers. |
-| `data` | `any` | Parsed JSON response body. |
+| Operation | `value` |
+| --- | --- |
+| `load` / `create` / `update` / `remove` | the entity record (a `table`) |
+| `list` | an array (`table`) of entity records |
 
-On error, `ok` is `false` and `err` contains the error value.
+Check `err` first (it is non-`nil` on failure), then use `value`:
+
+    local category, err = client:Category():load({ id = "example_id" })
+    if err then error(err) end
+    -- category is the loaded record
+
+Only `direct()` returns a response envelope — a `table` with `ok`,
+`status`, `headers`, and `data` keys.
 
 ### Entities
 
@@ -568,7 +573,7 @@ API path: `/search.php`
 
 ### Category
 
-Create an instance: `const category = client.category`
+Create an instance: `local category = client:Category(nil)`
 
 #### Operations
 
@@ -587,14 +592,14 @@ Create an instance: `const category = client.category`
 
 #### Example: List
 
-```ts
-const categorys = await client.category.list()
+```lua
+local categorys, err = client:Category():list()
 ```
 
 
 ### Filter
 
-Create an instance: `const filter = client.filter`
+Create an instance: `local filter = client:Filter(nil)`
 
 #### Operations
 
@@ -612,14 +617,14 @@ Create an instance: `const filter = client.filter`
 
 #### Example: List
 
-```ts
-const filters = await client.filter.list()
+```lua
+local filters, err = client:Filter():list()
 ```
 
 
 ### Latest
 
-Create an instance: `const latest = client.latest`
+Create an instance: `local latest = client:Latest(nil)`
 
 #### Operations
 
@@ -687,14 +692,14 @@ Create an instance: `const latest = client.latest`
 
 #### Example: List
 
-```ts
-const latests = await client.latest.list()
+```lua
+local latests, err = client:Latest():list()
 ```
 
 
 ### List
 
-Create an instance: `const list = client.list`
+Create an instance: `local list = client:List(nil)`
 
 #### Operations
 
@@ -712,14 +717,14 @@ Create an instance: `const list = client.list`
 
 #### Example: List
 
-```ts
-const lists = await client.list.list()
+```lua
+local lists, err = client:List():list()
 ```
 
 
 ### Lookup
 
-Create an instance: `const lookup = client.lookup`
+Create an instance: `local lookup = client:Lookup(nil)`
 
 #### Operations
 
@@ -787,14 +792,14 @@ Create an instance: `const lookup = client.lookup`
 
 #### Example: List
 
-```ts
-const lookups = await client.lookup.list()
+```lua
+local lookups, err = client:Lookup():list()
 ```
 
 
 ### Random
 
-Create an instance: `const random = client.random`
+Create an instance: `local random = client:Random(nil)`
 
 #### Operations
 
@@ -862,14 +867,14 @@ Create an instance: `const random = client.random`
 
 #### Example: List
 
-```ts
-const randoms = await client.random.list()
+```lua
+local randoms, err = client:Random():list()
 ```
 
 
 ### Randomselection
 
-Create an instance: `const randomselection = client.randomselection`
+Create an instance: `local randomselection = client:Randomselection(nil)`
 
 #### Operations
 
@@ -937,14 +942,14 @@ Create an instance: `const randomselection = client.randomselection`
 
 #### Example: List
 
-```ts
-const randomselections = await client.randomselection.list()
+```lua
+local randomselections, err = client:Randomselection():list()
 ```
 
 
 ### Search
 
-Create an instance: `const search = client.search`
+Create an instance: `local search = client:Search(nil)`
 
 #### Operations
 
@@ -1012,8 +1017,8 @@ Create an instance: `const search = client.search`
 
 #### Example: List
 
-```ts
-const searchs = await client.search.list()
+```lua
+local searchs, err = client:Search():list()
 ```
 
 
@@ -1088,7 +1093,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local category = client:category()
+local category = client:Category()
 category:load({ id = "example_id" })
 
 -- category:data_get() now returns the loaded category data

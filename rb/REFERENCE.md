@@ -115,7 +115,7 @@ same parameters as `direct()`. Raises on error.
 ## CategoryEntity
 
 ```ruby
-category = client.category
+category = client.Category
 ```
 
 ### Fields
@@ -134,7 +134,7 @@ category = client.category
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.category.list(nil)
+results = client.Category.list(nil)
 ```
 
 ### Common Methods
@@ -170,7 +170,7 @@ Return the entity name.
 ## FilterEntity
 
 ```ruby
-filter = client.filter
+filter = client.Filter
 ```
 
 ### Fields
@@ -188,7 +188,7 @@ filter = client.filter
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.filter.list(nil)
+results = client.Filter.list(nil)
 ```
 
 ### Common Methods
@@ -224,7 +224,7 @@ Return the entity name.
 ## LatestEntity
 
 ```ruby
-latest = client.latest
+latest = client.Latest
 ```
 
 ### Fields
@@ -292,7 +292,7 @@ latest = client.latest
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.latest.list(nil)
+results = client.Latest.list(nil)
 ```
 
 ### Common Methods
@@ -328,7 +328,7 @@ Return the entity name.
 ## ListEntity
 
 ```ruby
-list = client.list
+list = client.List
 ```
 
 ### Fields
@@ -346,7 +346,7 @@ list = client.list
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.list.list(nil)
+results = client.List.list(nil)
 ```
 
 ### Common Methods
@@ -382,7 +382,7 @@ Return the entity name.
 ## LookupEntity
 
 ```ruby
-lookup = client.lookup
+lookup = client.Lookup
 ```
 
 ### Fields
@@ -450,7 +450,7 @@ lookup = client.lookup
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.lookup.list(nil)
+results = client.Lookup.list(nil)
 ```
 
 ### Common Methods
@@ -486,7 +486,7 @@ Return the entity name.
 ## RandomEntity
 
 ```ruby
-random = client.random
+random = client.Random
 ```
 
 ### Fields
@@ -554,7 +554,7 @@ random = client.random
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.random.list(nil)
+results = client.Random.list(nil)
 ```
 
 ### Common Methods
@@ -590,7 +590,7 @@ Return the entity name.
 ## RandomselectionEntity
 
 ```ruby
-randomselection = client.randomselection
+randomselection = client.Randomselection
 ```
 
 ### Fields
@@ -658,7 +658,7 @@ randomselection = client.randomselection
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.randomselection.list(nil)
+results = client.Randomselection.list(nil)
 ```
 
 ### Common Methods
@@ -694,7 +694,7 @@ Return the entity name.
 ## SearchEntity
 
 ```ruby
-search = client.search
+search = client.Search
 ```
 
 ### Fields
@@ -762,7 +762,7 @@ search = client.search
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.search.list(nil)
+results = client.Search.list(nil)
 ```
 
 ### Common Methods

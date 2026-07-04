@@ -31,18 +31,16 @@ $client = new FreeMealSDK([
 ]);
 ```
 
-### 2. List categorys
+### 2. List category records
 
 ```php
 try {
-    $result = $client->category()->list();
-    if (is_array($result)) {
-        foreach ($result as $item) {
-            $d = $item->data_get();
-            echo $d["id"] . " " . $d["name"] . "\n";
-        }
+    // list() returns an array of Category records — iterate directly.
+    $categorys = $client->Category()->list();
+    foreach ($categorys as $item) {
+        echo $item["id"] . " " . $item["name"] . "\n";
     }
-} catch (\Exception $err) {
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -88,13 +86,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = FreeMealSDK::test();
+$client = FreeMealSDK::test([
+    "entity" => ["category" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->category()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$category = $client->Category()->load(["id" => "test01"]);
+print_r($category);
 ```
 
 ### Use a custom fetch function
@@ -576,7 +578,7 @@ API path: `/search.php`
 
 ### Category
 
-Create an instance: `const category = client.category`
+Create an instance: `$category = $client->Category();`
 
 #### Operations
 
@@ -595,14 +597,15 @@ Create an instance: `const category = client.category`
 
 #### Example: List
 
-```ts
-const categorys = await client.category.list()
+```php
+// list() returns an array of Category records (throws on error).
+$categorys = $client->Category()->list();
 ```
 
 
 ### Filter
 
-Create an instance: `const filter = client.filter`
+Create an instance: `$filter = $client->Filter();`
 
 #### Operations
 
@@ -620,14 +623,15 @@ Create an instance: `const filter = client.filter`
 
 #### Example: List
 
-```ts
-const filters = await client.filter.list()
+```php
+// list() returns an array of Filter records (throws on error).
+$filters = $client->Filter()->list();
 ```
 
 
 ### Latest
 
-Create an instance: `const latest = client.latest`
+Create an instance: `$latest = $client->Latest();`
 
 #### Operations
 
@@ -695,14 +699,15 @@ Create an instance: `const latest = client.latest`
 
 #### Example: List
 
-```ts
-const latests = await client.latest.list()
+```php
+// list() returns an array of Latest records (throws on error).
+$latests = $client->Latest()->list();
 ```
 
 
 ### List
 
-Create an instance: `const list = client.list`
+Create an instance: `$list = $client->List();`
 
 #### Operations
 
@@ -720,14 +725,15 @@ Create an instance: `const list = client.list`
 
 #### Example: List
 
-```ts
-const lists = await client.list.list()
+```php
+// list() returns an array of List records (throws on error).
+$lists = $client->List()->list();
 ```
 
 
 ### Lookup
 
-Create an instance: `const lookup = client.lookup`
+Create an instance: `$lookup = $client->Lookup();`
 
 #### Operations
 
@@ -795,14 +801,15 @@ Create an instance: `const lookup = client.lookup`
 
 #### Example: List
 
-```ts
-const lookups = await client.lookup.list()
+```php
+// list() returns an array of Lookup records (throws on error).
+$lookups = $client->Lookup()->list();
 ```
 
 
 ### Random
 
-Create an instance: `const random = client.random`
+Create an instance: `$random = $client->Random();`
 
 #### Operations
 
@@ -870,14 +877,15 @@ Create an instance: `const random = client.random`
 
 #### Example: List
 
-```ts
-const randoms = await client.random.list()
+```php
+// list() returns an array of Random records (throws on error).
+$randoms = $client->Random()->list();
 ```
 
 
 ### Randomselection
 
-Create an instance: `const randomselection = client.randomselection`
+Create an instance: `$randomselection = $client->Randomselection();`
 
 #### Operations
 
@@ -945,14 +953,15 @@ Create an instance: `const randomselection = client.randomselection`
 
 #### Example: List
 
-```ts
-const randomselections = await client.randomselection.list()
+```php
+// list() returns an array of Randomselection records (throws on error).
+$randomselections = $client->Randomselection()->list();
 ```
 
 
 ### Search
 
-Create an instance: `const search = client.search`
+Create an instance: `$search = $client->Search();`
 
 #### Operations
 
@@ -1020,8 +1029,9 @@ Create an instance: `const search = client.search`
 
 #### Example: List
 
-```ts
-const searchs = await client.search.list()
+```php
+// list() returns an array of Search records (throws on error).
+$searchs = $client->Search()->list();
 ```
 
 
@@ -1096,7 +1106,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$category = $client->category();
+$category = $client->Category();
 $category->load(["id" => "example_id"]);
 
 // $category->dataGet() now returns the loaded category data

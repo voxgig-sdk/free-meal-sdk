@@ -220,137 +220,57 @@ class FreeMealSDK:
         }
 
 
-    @property
-    def category(self):
-        """Idiomatic facade: client.category.list() / client.category.load({"id": ...})."""
-        from entity.category_entity import CategoryEntity
-        cached = getattr(self, "_category", None)
-        if cached is None:
-            cached = CategoryEntity(self, None)
-            self._category = cached
-        return cached
-
-    def Category(self, data=None):
-        # Deprecated: use client.category instead.
+    def Category(self, data=None) -> "CategoryEntity":
+        """Entity factory: client.Category().list({}) / client.Category().load({"id": ...})."""
         from entity.category_entity import CategoryEntity
         return CategoryEntity(self, data)
 
 
-    @property
-    def filter(self):
-        """Idiomatic facade: client.filter.list() / client.filter.load({"id": ...})."""
-        from entity.filter_entity import FilterEntity
-        cached = getattr(self, "_filter", None)
-        if cached is None:
-            cached = FilterEntity(self, None)
-            self._filter = cached
-        return cached
-
-    def Filter(self, data=None):
-        # Deprecated: use client.filter instead.
+    def Filter(self, data=None) -> "FilterEntity":
+        """Entity factory: client.Filter().list({}) / client.Filter().load({"id": ...})."""
         from entity.filter_entity import FilterEntity
         return FilterEntity(self, data)
 
 
-    @property
-    def latest(self):
-        """Idiomatic facade: client.latest.list() / client.latest.load({"id": ...})."""
-        from entity.latest_entity import LatestEntity
-        cached = getattr(self, "_latest", None)
-        if cached is None:
-            cached = LatestEntity(self, None)
-            self._latest = cached
-        return cached
-
-    def Latest(self, data=None):
-        # Deprecated: use client.latest instead.
+    def Latest(self, data=None) -> "LatestEntity":
+        """Entity factory: client.Latest().list({}) / client.Latest().load({"id": ...})."""
         from entity.latest_entity import LatestEntity
         return LatestEntity(self, data)
 
 
-    @property
-    def list(self):
-        """Idiomatic facade: client.list.list() / client.list.load({"id": ...})."""
-        from entity.list_entity import ListEntity
-        cached = getattr(self, "_list", None)
-        if cached is None:
-            cached = ListEntity(self, None)
-            self._list = cached
-        return cached
-
-    def List(self, data=None):
-        # Deprecated: use client.list instead.
+    def List(self, data=None) -> "ListEntity":
+        """Entity factory: client.List().list({}) / client.List().load({"id": ...})."""
         from entity.list_entity import ListEntity
         return ListEntity(self, data)
 
 
-    @property
-    def lookup(self):
-        """Idiomatic facade: client.lookup.list() / client.lookup.load({"id": ...})."""
-        from entity.lookup_entity import LookupEntity
-        cached = getattr(self, "_lookup", None)
-        if cached is None:
-            cached = LookupEntity(self, None)
-            self._lookup = cached
-        return cached
-
-    def Lookup(self, data=None):
-        # Deprecated: use client.lookup instead.
+    def Lookup(self, data=None) -> "LookupEntity":
+        """Entity factory: client.Lookup().list({}) / client.Lookup().load({"id": ...})."""
         from entity.lookup_entity import LookupEntity
         return LookupEntity(self, data)
 
 
-    @property
-    def random(self):
-        """Idiomatic facade: client.random.list() / client.random.load({"id": ...})."""
-        from entity.random_entity import RandomEntity
-        cached = getattr(self, "_random", None)
-        if cached is None:
-            cached = RandomEntity(self, None)
-            self._random = cached
-        return cached
-
-    def Random(self, data=None):
-        # Deprecated: use client.random instead.
+    def Random(self, data=None) -> "RandomEntity":
+        """Entity factory: client.Random().list({}) / client.Random().load({"id": ...})."""
         from entity.random_entity import RandomEntity
         return RandomEntity(self, data)
 
 
-    @property
-    def randomselection(self):
-        """Idiomatic facade: client.randomselection.list() / client.randomselection.load({"id": ...})."""
-        from entity.randomselection_entity import RandomselectionEntity
-        cached = getattr(self, "_randomselection", None)
-        if cached is None:
-            cached = RandomselectionEntity(self, None)
-            self._randomselection = cached
-        return cached
-
-    def Randomselection(self, data=None):
-        # Deprecated: use client.randomselection instead.
+    def Randomselection(self, data=None) -> "RandomselectionEntity":
+        """Entity factory: client.Randomselection().list({}) / client.Randomselection().load({"id": ...})."""
         from entity.randomselection_entity import RandomselectionEntity
         return RandomselectionEntity(self, data)
 
 
-    @property
-    def search(self):
-        """Idiomatic facade: client.search.list() / client.search.load({"id": ...})."""
-        from entity.search_entity import SearchEntity
-        cached = getattr(self, "_search", None)
-        if cached is None:
-            cached = SearchEntity(self, None)
-            self._search = cached
-        return cached
-
-    def Search(self, data=None):
-        # Deprecated: use client.search instead.
+    def Search(self, data=None) -> "SearchEntity":
+        """Entity factory: client.Search().list({}) / client.Search().load({"id": ...})."""
         from entity.search_entity import SearchEntity
         return SearchEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "FreeMealSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -370,3 +290,16 @@ class FreeMealSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.category_entity import CategoryEntity
+    from entity.filter_entity import FilterEntity
+    from entity.latest_entity import LatestEntity
+    from entity.list_entity import ListEntity
+    from entity.lookup_entity import LookupEntity
+    from entity.random_entity import RandomEntity
+    from entity.randomselection_entity import RandomselectionEntity
+    from entity.search_entity import SearchEntity

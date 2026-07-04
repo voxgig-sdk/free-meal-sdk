@@ -208,104 +208,56 @@ class FreeMealSDK
   end
 
 
-  # Idiomatic facade: client.category.list / client.category.load({ "id" => ... })
-  def category
-    require_relative 'entity/category_entity'
-    @category ||= CategoryEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.category instead.
+  # Canonical facade: client.Category.list / client.Category.load({ "id" => ... })
   def Category(data = nil)
     require_relative 'entity/category_entity'
     CategoryEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.filter.list / client.filter.load({ "id" => ... })
-  def filter
-    require_relative 'entity/filter_entity'
-    @filter ||= FilterEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.filter instead.
+  # Canonical facade: client.Filter.list / client.Filter.load({ "id" => ... })
   def Filter(data = nil)
     require_relative 'entity/filter_entity'
     FilterEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.latest.list / client.latest.load({ "id" => ... })
-  def latest
-    require_relative 'entity/latest_entity'
-    @latest ||= LatestEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.latest instead.
+  # Canonical facade: client.Latest.list / client.Latest.load({ "id" => ... })
   def Latest(data = nil)
     require_relative 'entity/latest_entity'
     LatestEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.list.list / client.list.load({ "id" => ... })
-  def list
-    require_relative 'entity/list_entity'
-    @list ||= ListEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.list instead.
+  # Canonical facade: client.List.list / client.List.load({ "id" => ... })
   def List(data = nil)
     require_relative 'entity/list_entity'
     ListEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.lookup.list / client.lookup.load({ "id" => ... })
-  def lookup
-    require_relative 'entity/lookup_entity'
-    @lookup ||= LookupEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.lookup instead.
+  # Canonical facade: client.Lookup.list / client.Lookup.load({ "id" => ... })
   def Lookup(data = nil)
     require_relative 'entity/lookup_entity'
     LookupEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.random.list / client.random.load({ "id" => ... })
-  def random
-    require_relative 'entity/random_entity'
-    @random ||= RandomEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.random instead.
+  # Canonical facade: client.Random.list / client.Random.load({ "id" => ... })
   def Random(data = nil)
     require_relative 'entity/random_entity'
     RandomEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.randomselection.list / client.randomselection.load({ "id" => ... })
-  def randomselection
-    require_relative 'entity/randomselection_entity'
-    @randomselection ||= RandomselectionEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.randomselection instead.
+  # Canonical facade: client.Randomselection.list / client.Randomselection.load({ "id" => ... })
   def Randomselection(data = nil)
     require_relative 'entity/randomselection_entity'
     RandomselectionEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.search.list / client.search.load({ "id" => ... })
-  def search
-    require_relative 'entity/search_entity'
-    @search ||= SearchEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.search instead.
+  # Canonical facade: client.Search.list / client.Search.load({ "id" => ... })
   def Search(data = nil)
     require_relative 'entity/search_entity'
     SearchEntity.new(self, data)

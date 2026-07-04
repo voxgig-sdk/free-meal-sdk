@@ -30,7 +30,12 @@ go mod edit -replace github.com/voxgig-sdk/free-meal-sdk/go=../free-meal-sdk/go
 This tutorial walks through creating a client, listing entities, and
 loading a specific record.
 
-### 1. Create a client
+### Quickstart
+
+A complete program: create a client, then call the entity operations.
+Each operation returns `(value, error)` — the value is the data itself
+(there is no `{ok, data}` wrapper), so check `err` and use the value
+directly.
 
 ```go
 package main
@@ -38,32 +43,23 @@ package main
 import (
     "fmt"
     "os"
-
     sdk "github.com/voxgig-sdk/free-meal-sdk/go"
-    "github.com/voxgig-sdk/free-meal-sdk/go/core"
 )
 
 func main() {
     client := sdk.NewFreeMealSDK(map[string]any{
         "apikey": os.Getenv("FREE_MEAL_APIKEY"),
     })
-```
 
-### 2. List categorys
-
-```go
-    result, err := client.Category(nil).List(nil, nil)
+    // List category records — the value is the array of records itself.
+    categorys, err := client.Category(nil).List(nil, nil)
     if err != nil {
         panic(err)
     }
-
-    rm := core.ToMapAny(result)
-    if rm["ok"] == true {
-        for _, item := range rm["data"].([]any) {
-            p := core.ToMapAny(item)
-            fmt.Println(p["id"], p["name"])
-        }
+    for _, item := range categorys.([]any) {
+        fmt.Println(item)
     }
+}
 ```
 
 
@@ -113,10 +109,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-result, err := client.Category(nil).Load(
+category, err := client.Category(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
-// result contains mock response data
+if err != nil {
+    panic(err)
+}
+fmt.Println(category) // the loaded mock data
 ```
 
 ### Use a custom fetch function
@@ -222,17 +221,24 @@ All entities implement the `FreeMealEntity` interface.
 
 ### Result shape
 
-Entity operations return `(any, error)`. The `any` value is a
-`map[string]any` with these keys:
+Entity operations return `(value, error)`. The `value` is the
+operation's data **directly** — there is no wrapper:
 
-| Key | Type | Description |
-| --- | --- | --- |
-| `"ok"` | `bool` | `true` if the HTTP status is 2xx. |
-| `"status"` | `int` | HTTP status code. |
-| `"headers"` | `map[string]any` | Response headers. |
-| `"data"` | `any` | Parsed JSON response body. |
+| Operation | `value` |
+| --- | --- |
+| `Load` / `Create` / `Update` / `Remove` | the entity record (`map[string]any`) |
+| `List` | a `[]any` of entity records |
 
-On error, `"ok"` is `false` and `"err"` contains the error value.
+Check `err` first, then use the value directly (or the typed
+`...Typed` variants, which return the entity's model struct and a typed
+slice):
+
+    category, err := client.Category(nil).Load(map[string]any{"id": "example_id"}, nil)
+    if err != nil { /* handle */ }
+    // category is the loaded record
+
+Only `Direct()` returns a response envelope — a `map[string]any` with
+`"ok"`, `"status"`, `"headers"`, and `"data"` keys.
 
 ### Entities
 
@@ -610,7 +616,11 @@ Create an instance: `category := client.Category(nil)`
 #### Example: List
 
 ```go
-results, err := client.Category(nil).List(nil, nil)
+categorys, err := client.Category(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(categorys) // the array of records
 ```
 
 
@@ -635,7 +645,11 @@ Create an instance: `filter := client.Filter(nil)`
 #### Example: List
 
 ```go
-results, err := client.Filter(nil).List(nil, nil)
+filters, err := client.Filter(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(filters) // the array of records
 ```
 
 
@@ -710,7 +724,11 @@ Create an instance: `latest := client.Latest(nil)`
 #### Example: List
 
 ```go
-results, err := client.Latest(nil).List(nil, nil)
+latests, err := client.Latest(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(latests) // the array of records
 ```
 
 
@@ -735,7 +753,11 @@ Create an instance: `list := client.List(nil)`
 #### Example: List
 
 ```go
-results, err := client.List(nil).List(nil, nil)
+lists, err := client.List(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(lists) // the array of records
 ```
 
 
@@ -810,7 +832,11 @@ Create an instance: `lookup := client.Lookup(nil)`
 #### Example: List
 
 ```go
-results, err := client.Lookup(nil).List(nil, nil)
+lookups, err := client.Lookup(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(lookups) // the array of records
 ```
 
 
@@ -885,7 +911,11 @@ Create an instance: `random := client.Random(nil)`
 #### Example: List
 
 ```go
-results, err := client.Random(nil).List(nil, nil)
+randoms, err := client.Random(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(randoms) // the array of records
 ```
 
 
@@ -960,7 +990,11 @@ Create an instance: `randomselection := client.Randomselection(nil)`
 #### Example: List
 
 ```go
-results, err := client.Randomselection(nil).List(nil, nil)
+randomselections, err := client.Randomselection(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(randomselections) // the array of records
 ```
 
 
@@ -1035,7 +1069,11 @@ Create an instance: `search := client.Search(nil)`
 #### Example: List
 
 ```go
-results, err := client.Search(nil).List(nil, nil)
+searchs, err := client.Search(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(searchs) // the array of records
 ```
 
 

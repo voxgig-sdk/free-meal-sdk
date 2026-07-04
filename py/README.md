@@ -34,14 +34,16 @@ client = FreeMealSDK({
 })
 ```
 
-### 2. List categorys
+### 2. List category records
+
+`list()` returns a `list` of records (each a `dict`) and raises on
+error — iterate it directly.
 
 ```python
 try:
-    result = client.category.list()
-    for item in result:
-        d = item.data_get()
-        print(d["id"], d["name"])
+    categorys = client.Category().list({})
+    for category in categorys:
+        print(category)
 except Exception as err:
     print(f"list failed: {err}")
 ```
@@ -89,8 +91,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = FreeMealSDK.test()
 
-result = client.category.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+category = client.Category().load({"id": "test01"})
+# category contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -569,7 +572,7 @@ API path: `/search.php`
 
 ### Category
 
-Create an instance: `const category = client.category`
+Create an instance: `category = client.Category()`
 
 #### Operations
 
@@ -588,14 +591,14 @@ Create an instance: `const category = client.category`
 
 #### Example: List
 
-```ts
-const categorys = await client.category.list()
+```python
+categorys = client.Category().list({})
 ```
 
 
 ### Filter
 
-Create an instance: `const filter = client.filter`
+Create an instance: `filter = client.Filter()`
 
 #### Operations
 
@@ -613,14 +616,14 @@ Create an instance: `const filter = client.filter`
 
 #### Example: List
 
-```ts
-const filters = await client.filter.list()
+```python
+filters = client.Filter().list({})
 ```
 
 
 ### Latest
 
-Create an instance: `const latest = client.latest`
+Create an instance: `latest = client.Latest()`
 
 #### Operations
 
@@ -688,14 +691,14 @@ Create an instance: `const latest = client.latest`
 
 #### Example: List
 
-```ts
-const latests = await client.latest.list()
+```python
+latests = client.Latest().list({})
 ```
 
 
 ### List
 
-Create an instance: `const list = client.list`
+Create an instance: `list = client.List()`
 
 #### Operations
 
@@ -713,14 +716,14 @@ Create an instance: `const list = client.list`
 
 #### Example: List
 
-```ts
-const lists = await client.list.list()
+```python
+lists = client.List().list({})
 ```
 
 
 ### Lookup
 
-Create an instance: `const lookup = client.lookup`
+Create an instance: `lookup = client.Lookup()`
 
 #### Operations
 
@@ -788,14 +791,14 @@ Create an instance: `const lookup = client.lookup`
 
 #### Example: List
 
-```ts
-const lookups = await client.lookup.list()
+```python
+lookups = client.Lookup().list({})
 ```
 
 
 ### Random
 
-Create an instance: `const random = client.random`
+Create an instance: `random = client.Random()`
 
 #### Operations
 
@@ -863,14 +866,14 @@ Create an instance: `const random = client.random`
 
 #### Example: List
 
-```ts
-const randoms = await client.random.list()
+```python
+randoms = client.Random().list({})
 ```
 
 
 ### Randomselection
 
-Create an instance: `const randomselection = client.randomselection`
+Create an instance: `randomselection = client.Randomselection()`
 
 #### Operations
 
@@ -938,14 +941,14 @@ Create an instance: `const randomselection = client.randomselection`
 
 #### Example: List
 
-```ts
-const randomselections = await client.randomselection.list()
+```python
+randomselections = client.Randomselection().list({})
 ```
 
 
 ### Search
 
-Create an instance: `const search = client.search`
+Create an instance: `search = client.Search()`
 
 #### Operations
 
@@ -1013,8 +1016,8 @@ Create an instance: `const search = client.search`
 
 #### Example: List
 
-```ts
-const searchs = await client.search.list()
+```python
+searchs = client.Search().list({})
 ```
 
 
@@ -1088,7 +1091,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-category = client.category
+category = client.Category()
 category.load({"id": "example_id"})
 
 # category.data_get() now returns the loaded category data

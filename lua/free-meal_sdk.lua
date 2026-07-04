@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:category():list() / client:category():load({ id = ... })
-function FreeMealSDK:category(data)
+-- Idiomatic facade: client:Category():list() / client:Category():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function FreeMealSDK:Category(data)
   local EntityMod = require("entity.category_entity")
   if data == nil then
     if self._category == nil then
@@ -256,15 +257,10 @@ function FreeMealSDK:category(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:category() instead.
-function FreeMealSDK:Category(data)
-  local EntityMod = require("entity.category_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:filter():list() / client:filter():load({ id = ... })
-function FreeMealSDK:filter(data)
+-- Idiomatic facade: client:Filter():list() / client:Filter():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function FreeMealSDK:Filter(data)
   local EntityMod = require("entity.filter_entity")
   if data == nil then
     if self._filter == nil then
@@ -275,15 +271,10 @@ function FreeMealSDK:filter(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:filter() instead.
-function FreeMealSDK:Filter(data)
-  local EntityMod = require("entity.filter_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:latest():list() / client:latest():load({ id = ... })
-function FreeMealSDK:latest(data)
+-- Idiomatic facade: client:Latest():list() / client:Latest():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function FreeMealSDK:Latest(data)
   local EntityMod = require("entity.latest_entity")
   if data == nil then
     if self._latest == nil then
@@ -294,15 +285,10 @@ function FreeMealSDK:latest(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:latest() instead.
-function FreeMealSDK:Latest(data)
-  local EntityMod = require("entity.latest_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:list():list() / client:list():load({ id = ... })
-function FreeMealSDK:list(data)
+-- Idiomatic facade: client:List():list() / client:List():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function FreeMealSDK:List(data)
   local EntityMod = require("entity.list_entity")
   if data == nil then
     if self._list == nil then
@@ -313,15 +299,10 @@ function FreeMealSDK:list(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:list() instead.
-function FreeMealSDK:List(data)
-  local EntityMod = require("entity.list_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:lookup():list() / client:lookup():load({ id = ... })
-function FreeMealSDK:lookup(data)
+-- Idiomatic facade: client:Lookup():list() / client:Lookup():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function FreeMealSDK:Lookup(data)
   local EntityMod = require("entity.lookup_entity")
   if data == nil then
     if self._lookup == nil then
@@ -332,15 +313,10 @@ function FreeMealSDK:lookup(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:lookup() instead.
-function FreeMealSDK:Lookup(data)
-  local EntityMod = require("entity.lookup_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:random():list() / client:random():load({ id = ... })
-function FreeMealSDK:random(data)
+-- Idiomatic facade: client:Random():list() / client:Random():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function FreeMealSDK:Random(data)
   local EntityMod = require("entity.random_entity")
   if data == nil then
     if self._random == nil then
@@ -351,15 +327,10 @@ function FreeMealSDK:random(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:random() instead.
-function FreeMealSDK:Random(data)
-  local EntityMod = require("entity.random_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:randomselection():list() / client:randomselection():load({ id = ... })
-function FreeMealSDK:randomselection(data)
+-- Idiomatic facade: client:Randomselection():list() / client:Randomselection():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function FreeMealSDK:Randomselection(data)
   local EntityMod = require("entity.randomselection_entity")
   if data == nil then
     if self._randomselection == nil then
@@ -370,15 +341,10 @@ function FreeMealSDK:randomselection(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:randomselection() instead.
-function FreeMealSDK:Randomselection(data)
-  local EntityMod = require("entity.randomselection_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:search():list() / client:search():load({ id = ... })
-function FreeMealSDK:search(data)
+-- Idiomatic facade: client:Search():list() / client:Search():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function FreeMealSDK:Search(data)
   local EntityMod = require("entity.search_entity")
   if data == nil then
     if self._search == nil then
@@ -386,12 +352,6 @@ function FreeMealSDK:search(data)
     end
     return self._search
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:search() instead.
-function FreeMealSDK:Search(data)
-  local EntityMod = require("entity.search_entity")
   return EntityMod.new(self, data)
 end
 

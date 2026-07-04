@@ -4,623 +4,611 @@
 # params (op.<name>.points[].args.params[]). Field/param types come from the
 # canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 # @voxgig/apidef VALID_CANON). Do not edit by hand.
+#
+# These are TypedDicts, not dataclasses: the SDK ops return/accept plain dicts
+# at runtime, and a TypedDict IS a dict shape, so the types match the runtime.
+# Optional (req:false) keys are modelled as TypedDict key-optionality
+# (total=False), split into a required base + total=False subclass when a type
+# has both required and optional keys.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Optional, Any
+from typing import TypedDict, Any
 
 
-@dataclass
-class Category:
-    id_category: Optional[str] = None
-    str_category: Optional[str] = None
-    str_category_description: Optional[str] = None
-    str_category_thumb: Optional[str] = None
+class Category(TypedDict, total=False):
+    id_category: str
+    str_category: str
+    str_category_description: str
+    str_category_thumb: str
 
 
-@dataclass
-class CategoryListMatch:
-    id_category: Optional[str] = None
-    str_category: Optional[str] = None
-    str_category_description: Optional[str] = None
-    str_category_thumb: Optional[str] = None
+class CategoryListMatch(TypedDict, total=False):
+    id_category: str
+    str_category: str
+    str_category_description: str
+    str_category_thumb: str
 
 
-@dataclass
-class Filter:
-    id_meal: Optional[str] = None
-    str_meal: Optional[str] = None
-    str_meal_thumb: Optional[str] = None
+class Filter(TypedDict, total=False):
+    id_meal: str
+    str_meal: str
+    str_meal_thumb: str
 
 
-@dataclass
-class FilterListMatch:
-    id_meal: Optional[str] = None
-    str_meal: Optional[str] = None
-    str_meal_thumb: Optional[str] = None
+class FilterListMatch(TypedDict, total=False):
+    id_meal: str
+    str_meal: str
+    str_meal_thumb: str
 
 
-@dataclass
-class Latest:
-    date_modified: Optional[str] = None
-    id_meal: Optional[str] = None
-    str_area: Optional[str] = None
-    str_category: Optional[str] = None
-    str_creative_commons_confirmed: Optional[str] = None
-    str_drink_alternate: Optional[str] = None
-    str_image_source: Optional[str] = None
-    str_ingredient1: Optional[str] = None
-    str_ingredient10: Optional[str] = None
-    str_ingredient11: Optional[str] = None
-    str_ingredient12: Optional[str] = None
-    str_ingredient13: Optional[str] = None
-    str_ingredient14: Optional[str] = None
-    str_ingredient15: Optional[str] = None
-    str_ingredient16: Optional[str] = None
-    str_ingredient17: Optional[str] = None
-    str_ingredient18: Optional[str] = None
-    str_ingredient19: Optional[str] = None
-    str_ingredient2: Optional[str] = None
-    str_ingredient20: Optional[str] = None
-    str_ingredient3: Optional[str] = None
-    str_ingredient4: Optional[str] = None
-    str_ingredient5: Optional[str] = None
-    str_ingredient6: Optional[str] = None
-    str_ingredient7: Optional[str] = None
-    str_ingredient8: Optional[str] = None
-    str_ingredient9: Optional[str] = None
-    str_instruction: Optional[str] = None
-    str_meal: Optional[str] = None
-    str_meal_thumb: Optional[str] = None
-    str_measure1: Optional[str] = None
-    str_measure10: Optional[str] = None
-    str_measure11: Optional[str] = None
-    str_measure12: Optional[str] = None
-    str_measure13: Optional[str] = None
-    str_measure14: Optional[str] = None
-    str_measure15: Optional[str] = None
-    str_measure16: Optional[str] = None
-    str_measure17: Optional[str] = None
-    str_measure18: Optional[str] = None
-    str_measure19: Optional[str] = None
-    str_measure2: Optional[str] = None
-    str_measure20: Optional[str] = None
-    str_measure3: Optional[str] = None
-    str_measure4: Optional[str] = None
-    str_measure5: Optional[str] = None
-    str_measure6: Optional[str] = None
-    str_measure7: Optional[str] = None
-    str_measure8: Optional[str] = None
-    str_measure9: Optional[str] = None
-    str_source: Optional[str] = None
-    str_tag: Optional[str] = None
-    str_youtube: Optional[str] = None
+class Latest(TypedDict, total=False):
+    date_modified: str
+    id_meal: str
+    str_area: str
+    str_category: str
+    str_creative_commons_confirmed: str
+    str_drink_alternate: str
+    str_image_source: str
+    str_ingredient1: str
+    str_ingredient10: str
+    str_ingredient11: str
+    str_ingredient12: str
+    str_ingredient13: str
+    str_ingredient14: str
+    str_ingredient15: str
+    str_ingredient16: str
+    str_ingredient17: str
+    str_ingredient18: str
+    str_ingredient19: str
+    str_ingredient2: str
+    str_ingredient20: str
+    str_ingredient3: str
+    str_ingredient4: str
+    str_ingredient5: str
+    str_ingredient6: str
+    str_ingredient7: str
+    str_ingredient8: str
+    str_ingredient9: str
+    str_instruction: str
+    str_meal: str
+    str_meal_thumb: str
+    str_measure1: str
+    str_measure10: str
+    str_measure11: str
+    str_measure12: str
+    str_measure13: str
+    str_measure14: str
+    str_measure15: str
+    str_measure16: str
+    str_measure17: str
+    str_measure18: str
+    str_measure19: str
+    str_measure2: str
+    str_measure20: str
+    str_measure3: str
+    str_measure4: str
+    str_measure5: str
+    str_measure6: str
+    str_measure7: str
+    str_measure8: str
+    str_measure9: str
+    str_source: str
+    str_tag: str
+    str_youtube: str
 
 
-@dataclass
-class LatestListMatch:
-    date_modified: Optional[str] = None
-    id_meal: Optional[str] = None
-    str_area: Optional[str] = None
-    str_category: Optional[str] = None
-    str_creative_commons_confirmed: Optional[str] = None
-    str_drink_alternate: Optional[str] = None
-    str_image_source: Optional[str] = None
-    str_ingredient1: Optional[str] = None
-    str_ingredient10: Optional[str] = None
-    str_ingredient11: Optional[str] = None
-    str_ingredient12: Optional[str] = None
-    str_ingredient13: Optional[str] = None
-    str_ingredient14: Optional[str] = None
-    str_ingredient15: Optional[str] = None
-    str_ingredient16: Optional[str] = None
-    str_ingredient17: Optional[str] = None
-    str_ingredient18: Optional[str] = None
-    str_ingredient19: Optional[str] = None
-    str_ingredient2: Optional[str] = None
-    str_ingredient20: Optional[str] = None
-    str_ingredient3: Optional[str] = None
-    str_ingredient4: Optional[str] = None
-    str_ingredient5: Optional[str] = None
-    str_ingredient6: Optional[str] = None
-    str_ingredient7: Optional[str] = None
-    str_ingredient8: Optional[str] = None
-    str_ingredient9: Optional[str] = None
-    str_instruction: Optional[str] = None
-    str_meal: Optional[str] = None
-    str_meal_thumb: Optional[str] = None
-    str_measure1: Optional[str] = None
-    str_measure10: Optional[str] = None
-    str_measure11: Optional[str] = None
-    str_measure12: Optional[str] = None
-    str_measure13: Optional[str] = None
-    str_measure14: Optional[str] = None
-    str_measure15: Optional[str] = None
-    str_measure16: Optional[str] = None
-    str_measure17: Optional[str] = None
-    str_measure18: Optional[str] = None
-    str_measure19: Optional[str] = None
-    str_measure2: Optional[str] = None
-    str_measure20: Optional[str] = None
-    str_measure3: Optional[str] = None
-    str_measure4: Optional[str] = None
-    str_measure5: Optional[str] = None
-    str_measure6: Optional[str] = None
-    str_measure7: Optional[str] = None
-    str_measure8: Optional[str] = None
-    str_measure9: Optional[str] = None
-    str_source: Optional[str] = None
-    str_tag: Optional[str] = None
-    str_youtube: Optional[str] = None
+class LatestListMatch(TypedDict, total=False):
+    date_modified: str
+    id_meal: str
+    str_area: str
+    str_category: str
+    str_creative_commons_confirmed: str
+    str_drink_alternate: str
+    str_image_source: str
+    str_ingredient1: str
+    str_ingredient10: str
+    str_ingredient11: str
+    str_ingredient12: str
+    str_ingredient13: str
+    str_ingredient14: str
+    str_ingredient15: str
+    str_ingredient16: str
+    str_ingredient17: str
+    str_ingredient18: str
+    str_ingredient19: str
+    str_ingredient2: str
+    str_ingredient20: str
+    str_ingredient3: str
+    str_ingredient4: str
+    str_ingredient5: str
+    str_ingredient6: str
+    str_ingredient7: str
+    str_ingredient8: str
+    str_ingredient9: str
+    str_instruction: str
+    str_meal: str
+    str_meal_thumb: str
+    str_measure1: str
+    str_measure10: str
+    str_measure11: str
+    str_measure12: str
+    str_measure13: str
+    str_measure14: str
+    str_measure15: str
+    str_measure16: str
+    str_measure17: str
+    str_measure18: str
+    str_measure19: str
+    str_measure2: str
+    str_measure20: str
+    str_measure3: str
+    str_measure4: str
+    str_measure5: str
+    str_measure6: str
+    str_measure7: str
+    str_measure8: str
+    str_measure9: str
+    str_source: str
+    str_tag: str
+    str_youtube: str
 
 
-@dataclass
-class List:
-    str_area: Optional[str] = None
-    str_category: Optional[str] = None
-    str_ingredient: Optional[str] = None
+class List(TypedDict, total=False):
+    str_area: str
+    str_category: str
+    str_ingredient: str
 
 
-@dataclass
-class ListListMatch:
-    str_area: Optional[str] = None
-    str_category: Optional[str] = None
-    str_ingredient: Optional[str] = None
+class ListListMatch(TypedDict, total=False):
+    str_area: str
+    str_category: str
+    str_ingredient: str
 
 
-@dataclass
-class Lookup:
-    date_modified: Optional[str] = None
-    id_meal: Optional[str] = None
-    str_area: Optional[str] = None
-    str_category: Optional[str] = None
-    str_creative_commons_confirmed: Optional[str] = None
-    str_drink_alternate: Optional[str] = None
-    str_image_source: Optional[str] = None
-    str_ingredient1: Optional[str] = None
-    str_ingredient10: Optional[str] = None
-    str_ingredient11: Optional[str] = None
-    str_ingredient12: Optional[str] = None
-    str_ingredient13: Optional[str] = None
-    str_ingredient14: Optional[str] = None
-    str_ingredient15: Optional[str] = None
-    str_ingredient16: Optional[str] = None
-    str_ingredient17: Optional[str] = None
-    str_ingredient18: Optional[str] = None
-    str_ingredient19: Optional[str] = None
-    str_ingredient2: Optional[str] = None
-    str_ingredient20: Optional[str] = None
-    str_ingredient3: Optional[str] = None
-    str_ingredient4: Optional[str] = None
-    str_ingredient5: Optional[str] = None
-    str_ingredient6: Optional[str] = None
-    str_ingredient7: Optional[str] = None
-    str_ingredient8: Optional[str] = None
-    str_ingredient9: Optional[str] = None
-    str_instruction: Optional[str] = None
-    str_meal: Optional[str] = None
-    str_meal_thumb: Optional[str] = None
-    str_measure1: Optional[str] = None
-    str_measure10: Optional[str] = None
-    str_measure11: Optional[str] = None
-    str_measure12: Optional[str] = None
-    str_measure13: Optional[str] = None
-    str_measure14: Optional[str] = None
-    str_measure15: Optional[str] = None
-    str_measure16: Optional[str] = None
-    str_measure17: Optional[str] = None
-    str_measure18: Optional[str] = None
-    str_measure19: Optional[str] = None
-    str_measure2: Optional[str] = None
-    str_measure20: Optional[str] = None
-    str_measure3: Optional[str] = None
-    str_measure4: Optional[str] = None
-    str_measure5: Optional[str] = None
-    str_measure6: Optional[str] = None
-    str_measure7: Optional[str] = None
-    str_measure8: Optional[str] = None
-    str_measure9: Optional[str] = None
-    str_source: Optional[str] = None
-    str_tag: Optional[str] = None
-    str_youtube: Optional[str] = None
+class Lookup(TypedDict, total=False):
+    date_modified: str
+    id_meal: str
+    str_area: str
+    str_category: str
+    str_creative_commons_confirmed: str
+    str_drink_alternate: str
+    str_image_source: str
+    str_ingredient1: str
+    str_ingredient10: str
+    str_ingredient11: str
+    str_ingredient12: str
+    str_ingredient13: str
+    str_ingredient14: str
+    str_ingredient15: str
+    str_ingredient16: str
+    str_ingredient17: str
+    str_ingredient18: str
+    str_ingredient19: str
+    str_ingredient2: str
+    str_ingredient20: str
+    str_ingredient3: str
+    str_ingredient4: str
+    str_ingredient5: str
+    str_ingredient6: str
+    str_ingredient7: str
+    str_ingredient8: str
+    str_ingredient9: str
+    str_instruction: str
+    str_meal: str
+    str_meal_thumb: str
+    str_measure1: str
+    str_measure10: str
+    str_measure11: str
+    str_measure12: str
+    str_measure13: str
+    str_measure14: str
+    str_measure15: str
+    str_measure16: str
+    str_measure17: str
+    str_measure18: str
+    str_measure19: str
+    str_measure2: str
+    str_measure20: str
+    str_measure3: str
+    str_measure4: str
+    str_measure5: str
+    str_measure6: str
+    str_measure7: str
+    str_measure8: str
+    str_measure9: str
+    str_source: str
+    str_tag: str
+    str_youtube: str
 
 
-@dataclass
-class LookupListMatch:
-    date_modified: Optional[str] = None
-    id_meal: Optional[str] = None
-    str_area: Optional[str] = None
-    str_category: Optional[str] = None
-    str_creative_commons_confirmed: Optional[str] = None
-    str_drink_alternate: Optional[str] = None
-    str_image_source: Optional[str] = None
-    str_ingredient1: Optional[str] = None
-    str_ingredient10: Optional[str] = None
-    str_ingredient11: Optional[str] = None
-    str_ingredient12: Optional[str] = None
-    str_ingredient13: Optional[str] = None
-    str_ingredient14: Optional[str] = None
-    str_ingredient15: Optional[str] = None
-    str_ingredient16: Optional[str] = None
-    str_ingredient17: Optional[str] = None
-    str_ingredient18: Optional[str] = None
-    str_ingredient19: Optional[str] = None
-    str_ingredient2: Optional[str] = None
-    str_ingredient20: Optional[str] = None
-    str_ingredient3: Optional[str] = None
-    str_ingredient4: Optional[str] = None
-    str_ingredient5: Optional[str] = None
-    str_ingredient6: Optional[str] = None
-    str_ingredient7: Optional[str] = None
-    str_ingredient8: Optional[str] = None
-    str_ingredient9: Optional[str] = None
-    str_instruction: Optional[str] = None
-    str_meal: Optional[str] = None
-    str_meal_thumb: Optional[str] = None
-    str_measure1: Optional[str] = None
-    str_measure10: Optional[str] = None
-    str_measure11: Optional[str] = None
-    str_measure12: Optional[str] = None
-    str_measure13: Optional[str] = None
-    str_measure14: Optional[str] = None
-    str_measure15: Optional[str] = None
-    str_measure16: Optional[str] = None
-    str_measure17: Optional[str] = None
-    str_measure18: Optional[str] = None
-    str_measure19: Optional[str] = None
-    str_measure2: Optional[str] = None
-    str_measure20: Optional[str] = None
-    str_measure3: Optional[str] = None
-    str_measure4: Optional[str] = None
-    str_measure5: Optional[str] = None
-    str_measure6: Optional[str] = None
-    str_measure7: Optional[str] = None
-    str_measure8: Optional[str] = None
-    str_measure9: Optional[str] = None
-    str_source: Optional[str] = None
-    str_tag: Optional[str] = None
-    str_youtube: Optional[str] = None
+class LookupListMatch(TypedDict, total=False):
+    date_modified: str
+    id_meal: str
+    str_area: str
+    str_category: str
+    str_creative_commons_confirmed: str
+    str_drink_alternate: str
+    str_image_source: str
+    str_ingredient1: str
+    str_ingredient10: str
+    str_ingredient11: str
+    str_ingredient12: str
+    str_ingredient13: str
+    str_ingredient14: str
+    str_ingredient15: str
+    str_ingredient16: str
+    str_ingredient17: str
+    str_ingredient18: str
+    str_ingredient19: str
+    str_ingredient2: str
+    str_ingredient20: str
+    str_ingredient3: str
+    str_ingredient4: str
+    str_ingredient5: str
+    str_ingredient6: str
+    str_ingredient7: str
+    str_ingredient8: str
+    str_ingredient9: str
+    str_instruction: str
+    str_meal: str
+    str_meal_thumb: str
+    str_measure1: str
+    str_measure10: str
+    str_measure11: str
+    str_measure12: str
+    str_measure13: str
+    str_measure14: str
+    str_measure15: str
+    str_measure16: str
+    str_measure17: str
+    str_measure18: str
+    str_measure19: str
+    str_measure2: str
+    str_measure20: str
+    str_measure3: str
+    str_measure4: str
+    str_measure5: str
+    str_measure6: str
+    str_measure7: str
+    str_measure8: str
+    str_measure9: str
+    str_source: str
+    str_tag: str
+    str_youtube: str
 
 
-@dataclass
-class Random:
-    date_modified: Optional[str] = None
-    id_meal: Optional[str] = None
-    str_area: Optional[str] = None
-    str_category: Optional[str] = None
-    str_creative_commons_confirmed: Optional[str] = None
-    str_drink_alternate: Optional[str] = None
-    str_image_source: Optional[str] = None
-    str_ingredient1: Optional[str] = None
-    str_ingredient10: Optional[str] = None
-    str_ingredient11: Optional[str] = None
-    str_ingredient12: Optional[str] = None
-    str_ingredient13: Optional[str] = None
-    str_ingredient14: Optional[str] = None
-    str_ingredient15: Optional[str] = None
-    str_ingredient16: Optional[str] = None
-    str_ingredient17: Optional[str] = None
-    str_ingredient18: Optional[str] = None
-    str_ingredient19: Optional[str] = None
-    str_ingredient2: Optional[str] = None
-    str_ingredient20: Optional[str] = None
-    str_ingredient3: Optional[str] = None
-    str_ingredient4: Optional[str] = None
-    str_ingredient5: Optional[str] = None
-    str_ingredient6: Optional[str] = None
-    str_ingredient7: Optional[str] = None
-    str_ingredient8: Optional[str] = None
-    str_ingredient9: Optional[str] = None
-    str_instruction: Optional[str] = None
-    str_meal: Optional[str] = None
-    str_meal_thumb: Optional[str] = None
-    str_measure1: Optional[str] = None
-    str_measure10: Optional[str] = None
-    str_measure11: Optional[str] = None
-    str_measure12: Optional[str] = None
-    str_measure13: Optional[str] = None
-    str_measure14: Optional[str] = None
-    str_measure15: Optional[str] = None
-    str_measure16: Optional[str] = None
-    str_measure17: Optional[str] = None
-    str_measure18: Optional[str] = None
-    str_measure19: Optional[str] = None
-    str_measure2: Optional[str] = None
-    str_measure20: Optional[str] = None
-    str_measure3: Optional[str] = None
-    str_measure4: Optional[str] = None
-    str_measure5: Optional[str] = None
-    str_measure6: Optional[str] = None
-    str_measure7: Optional[str] = None
-    str_measure8: Optional[str] = None
-    str_measure9: Optional[str] = None
-    str_source: Optional[str] = None
-    str_tag: Optional[str] = None
-    str_youtube: Optional[str] = None
+class Random(TypedDict, total=False):
+    date_modified: str
+    id_meal: str
+    str_area: str
+    str_category: str
+    str_creative_commons_confirmed: str
+    str_drink_alternate: str
+    str_image_source: str
+    str_ingredient1: str
+    str_ingredient10: str
+    str_ingredient11: str
+    str_ingredient12: str
+    str_ingredient13: str
+    str_ingredient14: str
+    str_ingredient15: str
+    str_ingredient16: str
+    str_ingredient17: str
+    str_ingredient18: str
+    str_ingredient19: str
+    str_ingredient2: str
+    str_ingredient20: str
+    str_ingredient3: str
+    str_ingredient4: str
+    str_ingredient5: str
+    str_ingredient6: str
+    str_ingredient7: str
+    str_ingredient8: str
+    str_ingredient9: str
+    str_instruction: str
+    str_meal: str
+    str_meal_thumb: str
+    str_measure1: str
+    str_measure10: str
+    str_measure11: str
+    str_measure12: str
+    str_measure13: str
+    str_measure14: str
+    str_measure15: str
+    str_measure16: str
+    str_measure17: str
+    str_measure18: str
+    str_measure19: str
+    str_measure2: str
+    str_measure20: str
+    str_measure3: str
+    str_measure4: str
+    str_measure5: str
+    str_measure6: str
+    str_measure7: str
+    str_measure8: str
+    str_measure9: str
+    str_source: str
+    str_tag: str
+    str_youtube: str
 
 
-@dataclass
-class RandomListMatch:
-    date_modified: Optional[str] = None
-    id_meal: Optional[str] = None
-    str_area: Optional[str] = None
-    str_category: Optional[str] = None
-    str_creative_commons_confirmed: Optional[str] = None
-    str_drink_alternate: Optional[str] = None
-    str_image_source: Optional[str] = None
-    str_ingredient1: Optional[str] = None
-    str_ingredient10: Optional[str] = None
-    str_ingredient11: Optional[str] = None
-    str_ingredient12: Optional[str] = None
-    str_ingredient13: Optional[str] = None
-    str_ingredient14: Optional[str] = None
-    str_ingredient15: Optional[str] = None
-    str_ingredient16: Optional[str] = None
-    str_ingredient17: Optional[str] = None
-    str_ingredient18: Optional[str] = None
-    str_ingredient19: Optional[str] = None
-    str_ingredient2: Optional[str] = None
-    str_ingredient20: Optional[str] = None
-    str_ingredient3: Optional[str] = None
-    str_ingredient4: Optional[str] = None
-    str_ingredient5: Optional[str] = None
-    str_ingredient6: Optional[str] = None
-    str_ingredient7: Optional[str] = None
-    str_ingredient8: Optional[str] = None
-    str_ingredient9: Optional[str] = None
-    str_instruction: Optional[str] = None
-    str_meal: Optional[str] = None
-    str_meal_thumb: Optional[str] = None
-    str_measure1: Optional[str] = None
-    str_measure10: Optional[str] = None
-    str_measure11: Optional[str] = None
-    str_measure12: Optional[str] = None
-    str_measure13: Optional[str] = None
-    str_measure14: Optional[str] = None
-    str_measure15: Optional[str] = None
-    str_measure16: Optional[str] = None
-    str_measure17: Optional[str] = None
-    str_measure18: Optional[str] = None
-    str_measure19: Optional[str] = None
-    str_measure2: Optional[str] = None
-    str_measure20: Optional[str] = None
-    str_measure3: Optional[str] = None
-    str_measure4: Optional[str] = None
-    str_measure5: Optional[str] = None
-    str_measure6: Optional[str] = None
-    str_measure7: Optional[str] = None
-    str_measure8: Optional[str] = None
-    str_measure9: Optional[str] = None
-    str_source: Optional[str] = None
-    str_tag: Optional[str] = None
-    str_youtube: Optional[str] = None
+class RandomListMatch(TypedDict, total=False):
+    date_modified: str
+    id_meal: str
+    str_area: str
+    str_category: str
+    str_creative_commons_confirmed: str
+    str_drink_alternate: str
+    str_image_source: str
+    str_ingredient1: str
+    str_ingredient10: str
+    str_ingredient11: str
+    str_ingredient12: str
+    str_ingredient13: str
+    str_ingredient14: str
+    str_ingredient15: str
+    str_ingredient16: str
+    str_ingredient17: str
+    str_ingredient18: str
+    str_ingredient19: str
+    str_ingredient2: str
+    str_ingredient20: str
+    str_ingredient3: str
+    str_ingredient4: str
+    str_ingredient5: str
+    str_ingredient6: str
+    str_ingredient7: str
+    str_ingredient8: str
+    str_ingredient9: str
+    str_instruction: str
+    str_meal: str
+    str_meal_thumb: str
+    str_measure1: str
+    str_measure10: str
+    str_measure11: str
+    str_measure12: str
+    str_measure13: str
+    str_measure14: str
+    str_measure15: str
+    str_measure16: str
+    str_measure17: str
+    str_measure18: str
+    str_measure19: str
+    str_measure2: str
+    str_measure20: str
+    str_measure3: str
+    str_measure4: str
+    str_measure5: str
+    str_measure6: str
+    str_measure7: str
+    str_measure8: str
+    str_measure9: str
+    str_source: str
+    str_tag: str
+    str_youtube: str
 
 
-@dataclass
-class Randomselection:
-    date_modified: Optional[str] = None
-    id_meal: Optional[str] = None
-    str_area: Optional[str] = None
-    str_category: Optional[str] = None
-    str_creative_commons_confirmed: Optional[str] = None
-    str_drink_alternate: Optional[str] = None
-    str_image_source: Optional[str] = None
-    str_ingredient1: Optional[str] = None
-    str_ingredient10: Optional[str] = None
-    str_ingredient11: Optional[str] = None
-    str_ingredient12: Optional[str] = None
-    str_ingredient13: Optional[str] = None
-    str_ingredient14: Optional[str] = None
-    str_ingredient15: Optional[str] = None
-    str_ingredient16: Optional[str] = None
-    str_ingredient17: Optional[str] = None
-    str_ingredient18: Optional[str] = None
-    str_ingredient19: Optional[str] = None
-    str_ingredient2: Optional[str] = None
-    str_ingredient20: Optional[str] = None
-    str_ingredient3: Optional[str] = None
-    str_ingredient4: Optional[str] = None
-    str_ingredient5: Optional[str] = None
-    str_ingredient6: Optional[str] = None
-    str_ingredient7: Optional[str] = None
-    str_ingredient8: Optional[str] = None
-    str_ingredient9: Optional[str] = None
-    str_instruction: Optional[str] = None
-    str_meal: Optional[str] = None
-    str_meal_thumb: Optional[str] = None
-    str_measure1: Optional[str] = None
-    str_measure10: Optional[str] = None
-    str_measure11: Optional[str] = None
-    str_measure12: Optional[str] = None
-    str_measure13: Optional[str] = None
-    str_measure14: Optional[str] = None
-    str_measure15: Optional[str] = None
-    str_measure16: Optional[str] = None
-    str_measure17: Optional[str] = None
-    str_measure18: Optional[str] = None
-    str_measure19: Optional[str] = None
-    str_measure2: Optional[str] = None
-    str_measure20: Optional[str] = None
-    str_measure3: Optional[str] = None
-    str_measure4: Optional[str] = None
-    str_measure5: Optional[str] = None
-    str_measure6: Optional[str] = None
-    str_measure7: Optional[str] = None
-    str_measure8: Optional[str] = None
-    str_measure9: Optional[str] = None
-    str_source: Optional[str] = None
-    str_tag: Optional[str] = None
-    str_youtube: Optional[str] = None
+class Randomselection(TypedDict, total=False):
+    date_modified: str
+    id_meal: str
+    str_area: str
+    str_category: str
+    str_creative_commons_confirmed: str
+    str_drink_alternate: str
+    str_image_source: str
+    str_ingredient1: str
+    str_ingredient10: str
+    str_ingredient11: str
+    str_ingredient12: str
+    str_ingredient13: str
+    str_ingredient14: str
+    str_ingredient15: str
+    str_ingredient16: str
+    str_ingredient17: str
+    str_ingredient18: str
+    str_ingredient19: str
+    str_ingredient2: str
+    str_ingredient20: str
+    str_ingredient3: str
+    str_ingredient4: str
+    str_ingredient5: str
+    str_ingredient6: str
+    str_ingredient7: str
+    str_ingredient8: str
+    str_ingredient9: str
+    str_instruction: str
+    str_meal: str
+    str_meal_thumb: str
+    str_measure1: str
+    str_measure10: str
+    str_measure11: str
+    str_measure12: str
+    str_measure13: str
+    str_measure14: str
+    str_measure15: str
+    str_measure16: str
+    str_measure17: str
+    str_measure18: str
+    str_measure19: str
+    str_measure2: str
+    str_measure20: str
+    str_measure3: str
+    str_measure4: str
+    str_measure5: str
+    str_measure6: str
+    str_measure7: str
+    str_measure8: str
+    str_measure9: str
+    str_source: str
+    str_tag: str
+    str_youtube: str
 
 
-@dataclass
-class RandomselectionListMatch:
-    date_modified: Optional[str] = None
-    id_meal: Optional[str] = None
-    str_area: Optional[str] = None
-    str_category: Optional[str] = None
-    str_creative_commons_confirmed: Optional[str] = None
-    str_drink_alternate: Optional[str] = None
-    str_image_source: Optional[str] = None
-    str_ingredient1: Optional[str] = None
-    str_ingredient10: Optional[str] = None
-    str_ingredient11: Optional[str] = None
-    str_ingredient12: Optional[str] = None
-    str_ingredient13: Optional[str] = None
-    str_ingredient14: Optional[str] = None
-    str_ingredient15: Optional[str] = None
-    str_ingredient16: Optional[str] = None
-    str_ingredient17: Optional[str] = None
-    str_ingredient18: Optional[str] = None
-    str_ingredient19: Optional[str] = None
-    str_ingredient2: Optional[str] = None
-    str_ingredient20: Optional[str] = None
-    str_ingredient3: Optional[str] = None
-    str_ingredient4: Optional[str] = None
-    str_ingredient5: Optional[str] = None
-    str_ingredient6: Optional[str] = None
-    str_ingredient7: Optional[str] = None
-    str_ingredient8: Optional[str] = None
-    str_ingredient9: Optional[str] = None
-    str_instruction: Optional[str] = None
-    str_meal: Optional[str] = None
-    str_meal_thumb: Optional[str] = None
-    str_measure1: Optional[str] = None
-    str_measure10: Optional[str] = None
-    str_measure11: Optional[str] = None
-    str_measure12: Optional[str] = None
-    str_measure13: Optional[str] = None
-    str_measure14: Optional[str] = None
-    str_measure15: Optional[str] = None
-    str_measure16: Optional[str] = None
-    str_measure17: Optional[str] = None
-    str_measure18: Optional[str] = None
-    str_measure19: Optional[str] = None
-    str_measure2: Optional[str] = None
-    str_measure20: Optional[str] = None
-    str_measure3: Optional[str] = None
-    str_measure4: Optional[str] = None
-    str_measure5: Optional[str] = None
-    str_measure6: Optional[str] = None
-    str_measure7: Optional[str] = None
-    str_measure8: Optional[str] = None
-    str_measure9: Optional[str] = None
-    str_source: Optional[str] = None
-    str_tag: Optional[str] = None
-    str_youtube: Optional[str] = None
+class RandomselectionListMatch(TypedDict, total=False):
+    date_modified: str
+    id_meal: str
+    str_area: str
+    str_category: str
+    str_creative_commons_confirmed: str
+    str_drink_alternate: str
+    str_image_source: str
+    str_ingredient1: str
+    str_ingredient10: str
+    str_ingredient11: str
+    str_ingredient12: str
+    str_ingredient13: str
+    str_ingredient14: str
+    str_ingredient15: str
+    str_ingredient16: str
+    str_ingredient17: str
+    str_ingredient18: str
+    str_ingredient19: str
+    str_ingredient2: str
+    str_ingredient20: str
+    str_ingredient3: str
+    str_ingredient4: str
+    str_ingredient5: str
+    str_ingredient6: str
+    str_ingredient7: str
+    str_ingredient8: str
+    str_ingredient9: str
+    str_instruction: str
+    str_meal: str
+    str_meal_thumb: str
+    str_measure1: str
+    str_measure10: str
+    str_measure11: str
+    str_measure12: str
+    str_measure13: str
+    str_measure14: str
+    str_measure15: str
+    str_measure16: str
+    str_measure17: str
+    str_measure18: str
+    str_measure19: str
+    str_measure2: str
+    str_measure20: str
+    str_measure3: str
+    str_measure4: str
+    str_measure5: str
+    str_measure6: str
+    str_measure7: str
+    str_measure8: str
+    str_measure9: str
+    str_source: str
+    str_tag: str
+    str_youtube: str
 
 
-@dataclass
-class Search:
-    date_modified: Optional[str] = None
-    id_meal: Optional[str] = None
-    str_area: Optional[str] = None
-    str_category: Optional[str] = None
-    str_creative_commons_confirmed: Optional[str] = None
-    str_drink_alternate: Optional[str] = None
-    str_image_source: Optional[str] = None
-    str_ingredient1: Optional[str] = None
-    str_ingredient10: Optional[str] = None
-    str_ingredient11: Optional[str] = None
-    str_ingredient12: Optional[str] = None
-    str_ingredient13: Optional[str] = None
-    str_ingredient14: Optional[str] = None
-    str_ingredient15: Optional[str] = None
-    str_ingredient16: Optional[str] = None
-    str_ingredient17: Optional[str] = None
-    str_ingredient18: Optional[str] = None
-    str_ingredient19: Optional[str] = None
-    str_ingredient2: Optional[str] = None
-    str_ingredient20: Optional[str] = None
-    str_ingredient3: Optional[str] = None
-    str_ingredient4: Optional[str] = None
-    str_ingredient5: Optional[str] = None
-    str_ingredient6: Optional[str] = None
-    str_ingredient7: Optional[str] = None
-    str_ingredient8: Optional[str] = None
-    str_ingredient9: Optional[str] = None
-    str_instruction: Optional[str] = None
-    str_meal: Optional[str] = None
-    str_meal_thumb: Optional[str] = None
-    str_measure1: Optional[str] = None
-    str_measure10: Optional[str] = None
-    str_measure11: Optional[str] = None
-    str_measure12: Optional[str] = None
-    str_measure13: Optional[str] = None
-    str_measure14: Optional[str] = None
-    str_measure15: Optional[str] = None
-    str_measure16: Optional[str] = None
-    str_measure17: Optional[str] = None
-    str_measure18: Optional[str] = None
-    str_measure19: Optional[str] = None
-    str_measure2: Optional[str] = None
-    str_measure20: Optional[str] = None
-    str_measure3: Optional[str] = None
-    str_measure4: Optional[str] = None
-    str_measure5: Optional[str] = None
-    str_measure6: Optional[str] = None
-    str_measure7: Optional[str] = None
-    str_measure8: Optional[str] = None
-    str_measure9: Optional[str] = None
-    str_source: Optional[str] = None
-    str_tag: Optional[str] = None
-    str_youtube: Optional[str] = None
+class Search(TypedDict, total=False):
+    date_modified: str
+    id_meal: str
+    str_area: str
+    str_category: str
+    str_creative_commons_confirmed: str
+    str_drink_alternate: str
+    str_image_source: str
+    str_ingredient1: str
+    str_ingredient10: str
+    str_ingredient11: str
+    str_ingredient12: str
+    str_ingredient13: str
+    str_ingredient14: str
+    str_ingredient15: str
+    str_ingredient16: str
+    str_ingredient17: str
+    str_ingredient18: str
+    str_ingredient19: str
+    str_ingredient2: str
+    str_ingredient20: str
+    str_ingredient3: str
+    str_ingredient4: str
+    str_ingredient5: str
+    str_ingredient6: str
+    str_ingredient7: str
+    str_ingredient8: str
+    str_ingredient9: str
+    str_instruction: str
+    str_meal: str
+    str_meal_thumb: str
+    str_measure1: str
+    str_measure10: str
+    str_measure11: str
+    str_measure12: str
+    str_measure13: str
+    str_measure14: str
+    str_measure15: str
+    str_measure16: str
+    str_measure17: str
+    str_measure18: str
+    str_measure19: str
+    str_measure2: str
+    str_measure20: str
+    str_measure3: str
+    str_measure4: str
+    str_measure5: str
+    str_measure6: str
+    str_measure7: str
+    str_measure8: str
+    str_measure9: str
+    str_source: str
+    str_tag: str
+    str_youtube: str
 
 
-@dataclass
-class SearchListMatch:
-    date_modified: Optional[str] = None
-    id_meal: Optional[str] = None
-    str_area: Optional[str] = None
-    str_category: Optional[str] = None
-    str_creative_commons_confirmed: Optional[str] = None
-    str_drink_alternate: Optional[str] = None
-    str_image_source: Optional[str] = None
-    str_ingredient1: Optional[str] = None
-    str_ingredient10: Optional[str] = None
-    str_ingredient11: Optional[str] = None
-    str_ingredient12: Optional[str] = None
-    str_ingredient13: Optional[str] = None
-    str_ingredient14: Optional[str] = None
-    str_ingredient15: Optional[str] = None
-    str_ingredient16: Optional[str] = None
-    str_ingredient17: Optional[str] = None
-    str_ingredient18: Optional[str] = None
-    str_ingredient19: Optional[str] = None
-    str_ingredient2: Optional[str] = None
-    str_ingredient20: Optional[str] = None
-    str_ingredient3: Optional[str] = None
-    str_ingredient4: Optional[str] = None
-    str_ingredient5: Optional[str] = None
-    str_ingredient6: Optional[str] = None
-    str_ingredient7: Optional[str] = None
-    str_ingredient8: Optional[str] = None
-    str_ingredient9: Optional[str] = None
-    str_instruction: Optional[str] = None
-    str_meal: Optional[str] = None
-    str_meal_thumb: Optional[str] = None
-    str_measure1: Optional[str] = None
-    str_measure10: Optional[str] = None
-    str_measure11: Optional[str] = None
-    str_measure12: Optional[str] = None
-    str_measure13: Optional[str] = None
-    str_measure14: Optional[str] = None
-    str_measure15: Optional[str] = None
-    str_measure16: Optional[str] = None
-    str_measure17: Optional[str] = None
-    str_measure18: Optional[str] = None
-    str_measure19: Optional[str] = None
-    str_measure2: Optional[str] = None
-    str_measure20: Optional[str] = None
-    str_measure3: Optional[str] = None
-    str_measure4: Optional[str] = None
-    str_measure5: Optional[str] = None
-    str_measure6: Optional[str] = None
-    str_measure7: Optional[str] = None
-    str_measure8: Optional[str] = None
-    str_measure9: Optional[str] = None
-    str_source: Optional[str] = None
-    str_tag: Optional[str] = None
-    str_youtube: Optional[str] = None
-
+class SearchListMatch(TypedDict, total=False):
+    date_modified: str
+    id_meal: str
+    str_area: str
+    str_category: str
+    str_creative_commons_confirmed: str
+    str_drink_alternate: str
+    str_image_source: str
+    str_ingredient1: str
+    str_ingredient10: str
+    str_ingredient11: str
+    str_ingredient12: str
+    str_ingredient13: str
+    str_ingredient14: str
+    str_ingredient15: str
+    str_ingredient16: str
+    str_ingredient17: str
+    str_ingredient18: str
+    str_ingredient19: str
+    str_ingredient2: str
+    str_ingredient20: str
+    str_ingredient3: str
+    str_ingredient4: str
+    str_ingredient5: str
+    str_ingredient6: str
+    str_ingredient7: str
+    str_ingredient8: str
+    str_ingredient9: str
+    str_instruction: str
+    str_meal: str
+    str_meal_thumb: str
+    str_measure1: str
+    str_measure10: str
+    str_measure11: str
+    str_measure12: str
+    str_measure13: str
+    str_measure14: str
+    str_measure15: str
+    str_measure16: str
+    str_measure17: str
+    str_measure18: str
+    str_measure19: str
+    str_measure2: str
+    str_measure20: str
+    str_measure3: str
+    str_measure4: str
+    str_measure5: str
+    str_measure6: str
+    str_measure7: str
+    str_measure8: str
+    str_measure9: str
+    str_source: str
+    str_tag: str
+    str_youtube: str

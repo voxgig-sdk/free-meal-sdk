@@ -30,16 +30,14 @@ client = FreeMealSDK.new({
 })
 ```
 
-### 2. List categorys
+### 2. List category records
 
 ```ruby
 begin
-  result = client.category.list
-  if result.is_a?(Array)
-    result.each do |item|
-      d = item.data_get
-      puts "#{d["id"]} #{d["name"]}"
-    end
+  # list returns an Array of Category records — iterate directly.
+  categorys = client.Category.list
+  categorys.each do |item|
+    puts "#{item["id"]} #{item["name"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -87,13 +85,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = FreeMealSDK.test
+client = FreeMealSDK.test({
+  "entity" => { "category" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.category.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+category = client.Category.load({ "id" => "test01" })
+puts category
 ```
 
 ### Use a custom fetch function
@@ -571,7 +573,7 @@ API path: `/search.php`
 
 ### Category
 
-Create an instance: `const category = client.category`
+Create an instance: `category = client.Category`
 
 #### Operations
 
@@ -590,14 +592,15 @@ Create an instance: `const category = client.category`
 
 #### Example: List
 
-```ts
-const categorys = await client.category.list()
+```ruby
+# list returns an Array of Category records (raises on error).
+categorys = client.Category.list
 ```
 
 
 ### Filter
 
-Create an instance: `const filter = client.filter`
+Create an instance: `filter = client.Filter`
 
 #### Operations
 
@@ -615,14 +618,15 @@ Create an instance: `const filter = client.filter`
 
 #### Example: List
 
-```ts
-const filters = await client.filter.list()
+```ruby
+# list returns an Array of Filter records (raises on error).
+filters = client.Filter.list
 ```
 
 
 ### Latest
 
-Create an instance: `const latest = client.latest`
+Create an instance: `latest = client.Latest`
 
 #### Operations
 
@@ -690,14 +694,15 @@ Create an instance: `const latest = client.latest`
 
 #### Example: List
 
-```ts
-const latests = await client.latest.list()
+```ruby
+# list returns an Array of Latest records (raises on error).
+latests = client.Latest.list
 ```
 
 
 ### List
 
-Create an instance: `const list = client.list`
+Create an instance: `list = client.List`
 
 #### Operations
 
@@ -715,14 +720,15 @@ Create an instance: `const list = client.list`
 
 #### Example: List
 
-```ts
-const lists = await client.list.list()
+```ruby
+# list returns an Array of List records (raises on error).
+lists = client.List.list
 ```
 
 
 ### Lookup
 
-Create an instance: `const lookup = client.lookup`
+Create an instance: `lookup = client.Lookup`
 
 #### Operations
 
@@ -790,14 +796,15 @@ Create an instance: `const lookup = client.lookup`
 
 #### Example: List
 
-```ts
-const lookups = await client.lookup.list()
+```ruby
+# list returns an Array of Lookup records (raises on error).
+lookups = client.Lookup.list
 ```
 
 
 ### Random
 
-Create an instance: `const random = client.random`
+Create an instance: `random = client.Random`
 
 #### Operations
 
@@ -865,14 +872,15 @@ Create an instance: `const random = client.random`
 
 #### Example: List
 
-```ts
-const randoms = await client.random.list()
+```ruby
+# list returns an Array of Random records (raises on error).
+randoms = client.Random.list
 ```
 
 
 ### Randomselection
 
-Create an instance: `const randomselection = client.randomselection`
+Create an instance: `randomselection = client.Randomselection`
 
 #### Operations
 
@@ -940,14 +948,15 @@ Create an instance: `const randomselection = client.randomselection`
 
 #### Example: List
 
-```ts
-const randomselections = await client.randomselection.list()
+```ruby
+# list returns an Array of Randomselection records (raises on error).
+randomselections = client.Randomselection.list
 ```
 
 
 ### Search
 
-Create an instance: `const search = client.search`
+Create an instance: `search = client.Search`
 
 #### Operations
 
@@ -1015,8 +1024,9 @@ Create an instance: `const search = client.search`
 
 #### Example: List
 
-```ts
-const searchs = await client.search.list()
+```ruby
+# list returns an Array of Search records (raises on error).
+searchs = client.Search.list
 ```
 
 
@@ -1091,7 +1101,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-category = client.category
+category = client.Category
 category.load({ "id" => "example_id" })
 
 # category.data_get now returns the loaded category data
