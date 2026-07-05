@@ -29,7 +29,7 @@ Category = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Category#list (any subset of Category fields).
+# Request payload for Category#list.
 #
 # @!attribute [rw] id_category
 #   @return [String, nil]
@@ -67,7 +67,7 @@ Filter = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Filter#list (any subset of Filter fields).
+# Request payload for Filter#list.
 #
 # @!attribute [rw] id_meal
 #   @return [String, nil]
@@ -301,7 +301,7 @@ Latest = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Latest#list (any subset of Latest fields).
+# Request payload for Latest#list.
 #
 # @!attribute [rw] date_modified
 #   @return [String, nil]
@@ -535,7 +535,7 @@ List = Struct.new(
   keyword_init: true
 )
 
-# Match filter for List#list (any subset of List fields).
+# Request payload for List#list.
 #
 # @!attribute [rw] str_area
 #   @return [String, nil]
@@ -769,7 +769,7 @@ Lookup = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Lookup#list (any subset of Lookup fields).
+# Request payload for Lookup#list.
 #
 # @!attribute [rw] date_modified
 #   @return [String, nil]
@@ -1203,7 +1203,7 @@ Random = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Random#list (any subset of Random fields).
+# Request payload for Random#list.
 #
 # @!attribute [rw] date_modified
 #   @return [String, nil]
@@ -1637,7 +1637,7 @@ Randomselection = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Randomselection#list (any subset of Randomselection fields).
+# Request payload for Randomselection#list.
 #
 # @!attribute [rw] date_modified
 #   @return [String, nil]
@@ -2071,7 +2071,7 @@ Search = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Search#list (any subset of Search fields).
+# Request payload for Search#list.
 #
 # @!attribute [rw] date_modified
 #   @return [String, nil]

@@ -16,8 +16,7 @@ type Category struct {
 	StrCategoryThumb *string `json:"str_category_thumb,omitempty"`
 }
 
-// CategoryListMatch mirrors the category fields as an all-optional match
-// filter (Go analog of Partial<Category>).
+// CategoryListMatch is the typed request payload for Category.ListTyped.
 type CategoryListMatch struct {
 	IdCategory *string `json:"id_category,omitempty"`
 	StrCategory *string `json:"str_category,omitempty"`
@@ -32,8 +31,7 @@ type Filter struct {
 	StrMealThumb *string `json:"str_meal_thumb,omitempty"`
 }
 
-// FilterListMatch mirrors the filter fields as an all-optional match
-// filter (Go analog of Partial<Filter>).
+// FilterListMatch is the typed request payload for Filter.ListTyped.
 type FilterListMatch struct {
 	IdMeal *string `json:"id_meal,omitempty"`
 	StrMeal *string `json:"str_meal,omitempty"`
@@ -97,8 +95,7 @@ type Latest struct {
 	StrYoutube *string `json:"str_youtube,omitempty"`
 }
 
-// LatestListMatch mirrors the latest fields as an all-optional match
-// filter (Go analog of Partial<Latest>).
+// LatestListMatch is the typed request payload for Latest.ListTyped.
 type LatestListMatch struct {
 	DateModified *string `json:"date_modified,omitempty"`
 	IdMeal *string `json:"id_meal,omitempty"`
@@ -162,8 +159,7 @@ type List struct {
 	StrIngredient *string `json:"str_ingredient,omitempty"`
 }
 
-// ListListMatch mirrors the list fields as an all-optional match
-// filter (Go analog of Partial<List>).
+// ListListMatch is the typed request payload for List.ListTyped.
 type ListListMatch struct {
 	StrArea *string `json:"str_area,omitempty"`
 	StrCategory *string `json:"str_category,omitempty"`
@@ -227,8 +223,7 @@ type Lookup struct {
 	StrYoutube *string `json:"str_youtube,omitempty"`
 }
 
-// LookupListMatch mirrors the lookup fields as an all-optional match
-// filter (Go analog of Partial<Lookup>).
+// LookupListMatch is the typed request payload for Lookup.ListTyped.
 type LookupListMatch struct {
 	DateModified *string `json:"date_modified,omitempty"`
 	IdMeal *string `json:"id_meal,omitempty"`
@@ -342,8 +337,7 @@ type Random struct {
 	StrYoutube *string `json:"str_youtube,omitempty"`
 }
 
-// RandomListMatch mirrors the random fields as an all-optional match
-// filter (Go analog of Partial<Random>).
+// RandomListMatch is the typed request payload for Random.ListTyped.
 type RandomListMatch struct {
 	DateModified *string `json:"date_modified,omitempty"`
 	IdMeal *string `json:"id_meal,omitempty"`
@@ -457,8 +451,7 @@ type Randomselection struct {
 	StrYoutube *string `json:"str_youtube,omitempty"`
 }
 
-// RandomselectionListMatch mirrors the randomselection fields as an all-optional match
-// filter (Go analog of Partial<Randomselection>).
+// RandomselectionListMatch is the typed request payload for Randomselection.ListTyped.
 type RandomselectionListMatch struct {
 	DateModified *string `json:"date_modified,omitempty"`
 	IdMeal *string `json:"id_meal,omitempty"`
@@ -572,8 +565,7 @@ type Search struct {
 	StrYoutube *string `json:"str_youtube,omitempty"`
 }
 
-// SearchListMatch mirrors the search fields as an all-optional match
-// filter (Go analog of Partial<Search>).
+// SearchListMatch is the typed request payload for Search.ListTyped.
 type SearchListMatch struct {
 	DateModified *string `json:"date_modified,omitempty"`
 	IdMeal *string `json:"id_meal,omitempty"`

@@ -4,6 +4,11 @@
 
 The Python SDK for the FreeMeal API — an entity-oriented client following Pythonic conventions.
 
+The SDK exposes the API as capitalised, semantic **Entities** — for example `client.Category()` — each
+carrying a small, uniform set of operations (`list`) instead of raw URL
+paths and query strings. You work with named resources and verbs, which
+keeps the cognitive load low.
+
 > Other languages, the CLI, and MCP server live alongside this one — see
 > the [top-level README](../README.md).
 
@@ -41,11 +46,39 @@ error — iterate it directly.
 
 ```python
 try:
-    categorys = client.Category().list({})
+    categorys = client.Category().list()
     for category in categorys:
         print(category)
 except Exception as err:
     print(f"list failed: {err}")
+```
+
+
+## Error handling
+
+Entity operations raise on failure, so wrap them in `try` / `except`:
+
+```python
+try:
+    categorys = client.Category().list()
+    print(categorys)
+except Exception as err:
+    print(f"list failed: {err}")
+```
+
+`direct()` does **not** raise — it returns the result envelope. Branch
+on `ok`; on failure `status` holds the HTTP status (for error responses)
+and `err` holds a transport error, so read both defensively:
+
+```python
+result = client.direct({
+    "path": "/api/resource/{id}",
+    "method": "GET",
+    "params": {"id": "example_id"},
+})
+
+if not result["ok"]:
+    print("request failed:", result.get("status"), result.get("err"))
 ```
 
 
@@ -66,7 +99,10 @@ if result["ok"]:
     print(result["status"])  # 200
     print(result["data"])    # response body
 else:
-    print(result["err"])     # error value
+    # A non-2xx response carries status + data (the error body); a
+    # transport-level failure carries err instead. Only one is present, so
+    # read both with .get() rather than indexing a key that may be absent.
+    print(result.get("status"), result.get("err"))
 ```
 
 ### Prepare a request without sending it
@@ -92,7 +128,7 @@ Create a mock client for unit testing — no server required:
 client = FreeMealSDK.test()
 
 # Entity ops return the bare record and raise on error.
-category = client.Category().load({"id": "test01"})
+category = client.Category().list()
 # category contains the mock response record
 ```
 
@@ -186,11 +222,7 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `load` | `(reqmatch, ctrl) -> any` | Load a single entity by match criteria. Raises on error. |
 | `list` | `(reqmatch, ctrl) -> list` | List entities matching the criteria. Raises on error. |
-| `create` | `(reqdata, ctrl) -> any` | Create a new entity. Raises on error. |
-| `update` | `(reqdata, ctrl) -> any` | Update an existing entity. Raises on error. |
-| `remove` | `(reqmatch, ctrl) -> any` | Remove an entity. Raises on error. |
 | `data_get` | `() -> dict` | Get entity data. |
 | `data_set` | `(data)` | Set entity data. |
 | `match_get` | `() -> dict` | Get entity match criteria. |
@@ -578,21 +610,21 @@ Create an instance: `category = client.Category()`
 
 | Method | Description |
 | --- | --- |
-| `list(match)` | List entities matching the criteria. |
+| `list()` | List entities, optionally matching the given criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `id_category` | ``$STRING`` |  |
-| `str_category` | ``$STRING`` |  |
-| `str_category_description` | ``$STRING`` |  |
-| `str_category_thumb` | ``$STRING`` |  |
+| `id_category` | `str` |  |
+| `str_category` | `str` |  |
+| `str_category_description` | `str` |  |
+| `str_category_thumb` | `str` |  |
 
 #### Example: List
 
 ```python
-categorys = client.Category().list({})
+categorys = client.Category().list()
 ```
 
 
@@ -604,20 +636,20 @@ Create an instance: `filter = client.Filter()`
 
 | Method | Description |
 | --- | --- |
-| `list(match)` | List entities matching the criteria. |
+| `list()` | List entities, optionally matching the given criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `id_meal` | ``$STRING`` |  |
-| `str_meal` | ``$STRING`` |  |
-| `str_meal_thumb` | ``$STRING`` |  |
+| `id_meal` | `str` |  |
+| `str_meal` | `str` |  |
+| `str_meal_thumb` | `str` |  |
 
 #### Example: List
 
 ```python
-filters = client.Filter().list({})
+filters = client.Filter().list()
 ```
 
 
@@ -629,70 +661,70 @@ Create an instance: `latest = client.Latest()`
 
 | Method | Description |
 | --- | --- |
-| `list(match)` | List entities matching the criteria. |
+| `list()` | List entities, optionally matching the given criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `date_modified` | ``$STRING`` |  |
-| `id_meal` | ``$STRING`` |  |
-| `str_area` | ``$STRING`` |  |
-| `str_category` | ``$STRING`` |  |
-| `str_creative_commons_confirmed` | ``$STRING`` |  |
-| `str_drink_alternate` | ``$STRING`` |  |
-| `str_image_source` | ``$STRING`` |  |
-| `str_ingredient1` | ``$STRING`` |  |
-| `str_ingredient10` | ``$STRING`` |  |
-| `str_ingredient11` | ``$STRING`` |  |
-| `str_ingredient12` | ``$STRING`` |  |
-| `str_ingredient13` | ``$STRING`` |  |
-| `str_ingredient14` | ``$STRING`` |  |
-| `str_ingredient15` | ``$STRING`` |  |
-| `str_ingredient16` | ``$STRING`` |  |
-| `str_ingredient17` | ``$STRING`` |  |
-| `str_ingredient18` | ``$STRING`` |  |
-| `str_ingredient19` | ``$STRING`` |  |
-| `str_ingredient2` | ``$STRING`` |  |
-| `str_ingredient20` | ``$STRING`` |  |
-| `str_ingredient3` | ``$STRING`` |  |
-| `str_ingredient4` | ``$STRING`` |  |
-| `str_ingredient5` | ``$STRING`` |  |
-| `str_ingredient6` | ``$STRING`` |  |
-| `str_ingredient7` | ``$STRING`` |  |
-| `str_ingredient8` | ``$STRING`` |  |
-| `str_ingredient9` | ``$STRING`` |  |
-| `str_instruction` | ``$STRING`` |  |
-| `str_meal` | ``$STRING`` |  |
-| `str_meal_thumb` | ``$STRING`` |  |
-| `str_measure1` | ``$STRING`` |  |
-| `str_measure10` | ``$STRING`` |  |
-| `str_measure11` | ``$STRING`` |  |
-| `str_measure12` | ``$STRING`` |  |
-| `str_measure13` | ``$STRING`` |  |
-| `str_measure14` | ``$STRING`` |  |
-| `str_measure15` | ``$STRING`` |  |
-| `str_measure16` | ``$STRING`` |  |
-| `str_measure17` | ``$STRING`` |  |
-| `str_measure18` | ``$STRING`` |  |
-| `str_measure19` | ``$STRING`` |  |
-| `str_measure2` | ``$STRING`` |  |
-| `str_measure20` | ``$STRING`` |  |
-| `str_measure3` | ``$STRING`` |  |
-| `str_measure4` | ``$STRING`` |  |
-| `str_measure5` | ``$STRING`` |  |
-| `str_measure6` | ``$STRING`` |  |
-| `str_measure7` | ``$STRING`` |  |
-| `str_measure8` | ``$STRING`` |  |
-| `str_measure9` | ``$STRING`` |  |
-| `str_source` | ``$STRING`` |  |
-| `str_tag` | ``$STRING`` |  |
-| `str_youtube` | ``$STRING`` |  |
+| `date_modified` | `str` |  |
+| `id_meal` | `str` |  |
+| `str_area` | `str` |  |
+| `str_category` | `str` |  |
+| `str_creative_commons_confirmed` | `str` |  |
+| `str_drink_alternate` | `str` |  |
+| `str_image_source` | `str` |  |
+| `str_ingredient1` | `str` |  |
+| `str_ingredient10` | `str` |  |
+| `str_ingredient11` | `str` |  |
+| `str_ingredient12` | `str` |  |
+| `str_ingredient13` | `str` |  |
+| `str_ingredient14` | `str` |  |
+| `str_ingredient15` | `str` |  |
+| `str_ingredient16` | `str` |  |
+| `str_ingredient17` | `str` |  |
+| `str_ingredient18` | `str` |  |
+| `str_ingredient19` | `str` |  |
+| `str_ingredient2` | `str` |  |
+| `str_ingredient20` | `str` |  |
+| `str_ingredient3` | `str` |  |
+| `str_ingredient4` | `str` |  |
+| `str_ingredient5` | `str` |  |
+| `str_ingredient6` | `str` |  |
+| `str_ingredient7` | `str` |  |
+| `str_ingredient8` | `str` |  |
+| `str_ingredient9` | `str` |  |
+| `str_instruction` | `str` |  |
+| `str_meal` | `str` |  |
+| `str_meal_thumb` | `str` |  |
+| `str_measure1` | `str` |  |
+| `str_measure10` | `str` |  |
+| `str_measure11` | `str` |  |
+| `str_measure12` | `str` |  |
+| `str_measure13` | `str` |  |
+| `str_measure14` | `str` |  |
+| `str_measure15` | `str` |  |
+| `str_measure16` | `str` |  |
+| `str_measure17` | `str` |  |
+| `str_measure18` | `str` |  |
+| `str_measure19` | `str` |  |
+| `str_measure2` | `str` |  |
+| `str_measure20` | `str` |  |
+| `str_measure3` | `str` |  |
+| `str_measure4` | `str` |  |
+| `str_measure5` | `str` |  |
+| `str_measure6` | `str` |  |
+| `str_measure7` | `str` |  |
+| `str_measure8` | `str` |  |
+| `str_measure9` | `str` |  |
+| `str_source` | `str` |  |
+| `str_tag` | `str` |  |
+| `str_youtube` | `str` |  |
 
 #### Example: List
 
 ```python
-latests = client.Latest().list({})
+latests = client.Latest().list()
 ```
 
 
@@ -704,20 +736,20 @@ Create an instance: `list = client.List()`
 
 | Method | Description |
 | --- | --- |
-| `list(match)` | List entities matching the criteria. |
+| `list()` | List entities, optionally matching the given criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `str_area` | ``$STRING`` |  |
-| `str_category` | ``$STRING`` |  |
-| `str_ingredient` | ``$STRING`` |  |
+| `str_area` | `str` |  |
+| `str_category` | `str` |  |
+| `str_ingredient` | `str` |  |
 
 #### Example: List
 
 ```python
-lists = client.List().list({})
+lists = client.List().list()
 ```
 
 
@@ -729,70 +761,70 @@ Create an instance: `lookup = client.Lookup()`
 
 | Method | Description |
 | --- | --- |
-| `list(match)` | List entities matching the criteria. |
+| `list()` | List entities, optionally matching the given criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `date_modified` | ``$STRING`` |  |
-| `id_meal` | ``$STRING`` |  |
-| `str_area` | ``$STRING`` |  |
-| `str_category` | ``$STRING`` |  |
-| `str_creative_commons_confirmed` | ``$STRING`` |  |
-| `str_drink_alternate` | ``$STRING`` |  |
-| `str_image_source` | ``$STRING`` |  |
-| `str_ingredient1` | ``$STRING`` |  |
-| `str_ingredient10` | ``$STRING`` |  |
-| `str_ingredient11` | ``$STRING`` |  |
-| `str_ingredient12` | ``$STRING`` |  |
-| `str_ingredient13` | ``$STRING`` |  |
-| `str_ingredient14` | ``$STRING`` |  |
-| `str_ingredient15` | ``$STRING`` |  |
-| `str_ingredient16` | ``$STRING`` |  |
-| `str_ingredient17` | ``$STRING`` |  |
-| `str_ingredient18` | ``$STRING`` |  |
-| `str_ingredient19` | ``$STRING`` |  |
-| `str_ingredient2` | ``$STRING`` |  |
-| `str_ingredient20` | ``$STRING`` |  |
-| `str_ingredient3` | ``$STRING`` |  |
-| `str_ingredient4` | ``$STRING`` |  |
-| `str_ingredient5` | ``$STRING`` |  |
-| `str_ingredient6` | ``$STRING`` |  |
-| `str_ingredient7` | ``$STRING`` |  |
-| `str_ingredient8` | ``$STRING`` |  |
-| `str_ingredient9` | ``$STRING`` |  |
-| `str_instruction` | ``$STRING`` |  |
-| `str_meal` | ``$STRING`` |  |
-| `str_meal_thumb` | ``$STRING`` |  |
-| `str_measure1` | ``$STRING`` |  |
-| `str_measure10` | ``$STRING`` |  |
-| `str_measure11` | ``$STRING`` |  |
-| `str_measure12` | ``$STRING`` |  |
-| `str_measure13` | ``$STRING`` |  |
-| `str_measure14` | ``$STRING`` |  |
-| `str_measure15` | ``$STRING`` |  |
-| `str_measure16` | ``$STRING`` |  |
-| `str_measure17` | ``$STRING`` |  |
-| `str_measure18` | ``$STRING`` |  |
-| `str_measure19` | ``$STRING`` |  |
-| `str_measure2` | ``$STRING`` |  |
-| `str_measure20` | ``$STRING`` |  |
-| `str_measure3` | ``$STRING`` |  |
-| `str_measure4` | ``$STRING`` |  |
-| `str_measure5` | ``$STRING`` |  |
-| `str_measure6` | ``$STRING`` |  |
-| `str_measure7` | ``$STRING`` |  |
-| `str_measure8` | ``$STRING`` |  |
-| `str_measure9` | ``$STRING`` |  |
-| `str_source` | ``$STRING`` |  |
-| `str_tag` | ``$STRING`` |  |
-| `str_youtube` | ``$STRING`` |  |
+| `date_modified` | `str` |  |
+| `id_meal` | `str` |  |
+| `str_area` | `str` |  |
+| `str_category` | `str` |  |
+| `str_creative_commons_confirmed` | `str` |  |
+| `str_drink_alternate` | `str` |  |
+| `str_image_source` | `str` |  |
+| `str_ingredient1` | `str` |  |
+| `str_ingredient10` | `str` |  |
+| `str_ingredient11` | `str` |  |
+| `str_ingredient12` | `str` |  |
+| `str_ingredient13` | `str` |  |
+| `str_ingredient14` | `str` |  |
+| `str_ingredient15` | `str` |  |
+| `str_ingredient16` | `str` |  |
+| `str_ingredient17` | `str` |  |
+| `str_ingredient18` | `str` |  |
+| `str_ingredient19` | `str` |  |
+| `str_ingredient2` | `str` |  |
+| `str_ingredient20` | `str` |  |
+| `str_ingredient3` | `str` |  |
+| `str_ingredient4` | `str` |  |
+| `str_ingredient5` | `str` |  |
+| `str_ingredient6` | `str` |  |
+| `str_ingredient7` | `str` |  |
+| `str_ingredient8` | `str` |  |
+| `str_ingredient9` | `str` |  |
+| `str_instruction` | `str` |  |
+| `str_meal` | `str` |  |
+| `str_meal_thumb` | `str` |  |
+| `str_measure1` | `str` |  |
+| `str_measure10` | `str` |  |
+| `str_measure11` | `str` |  |
+| `str_measure12` | `str` |  |
+| `str_measure13` | `str` |  |
+| `str_measure14` | `str` |  |
+| `str_measure15` | `str` |  |
+| `str_measure16` | `str` |  |
+| `str_measure17` | `str` |  |
+| `str_measure18` | `str` |  |
+| `str_measure19` | `str` |  |
+| `str_measure2` | `str` |  |
+| `str_measure20` | `str` |  |
+| `str_measure3` | `str` |  |
+| `str_measure4` | `str` |  |
+| `str_measure5` | `str` |  |
+| `str_measure6` | `str` |  |
+| `str_measure7` | `str` |  |
+| `str_measure8` | `str` |  |
+| `str_measure9` | `str` |  |
+| `str_source` | `str` |  |
+| `str_tag` | `str` |  |
+| `str_youtube` | `str` |  |
 
 #### Example: List
 
 ```python
-lookups = client.Lookup().list({})
+lookups = client.Lookup().list()
 ```
 
 
@@ -804,70 +836,70 @@ Create an instance: `random = client.Random()`
 
 | Method | Description |
 | --- | --- |
-| `list(match)` | List entities matching the criteria. |
+| `list()` | List entities, optionally matching the given criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `date_modified` | ``$STRING`` |  |
-| `id_meal` | ``$STRING`` |  |
-| `str_area` | ``$STRING`` |  |
-| `str_category` | ``$STRING`` |  |
-| `str_creative_commons_confirmed` | ``$STRING`` |  |
-| `str_drink_alternate` | ``$STRING`` |  |
-| `str_image_source` | ``$STRING`` |  |
-| `str_ingredient1` | ``$STRING`` |  |
-| `str_ingredient10` | ``$STRING`` |  |
-| `str_ingredient11` | ``$STRING`` |  |
-| `str_ingredient12` | ``$STRING`` |  |
-| `str_ingredient13` | ``$STRING`` |  |
-| `str_ingredient14` | ``$STRING`` |  |
-| `str_ingredient15` | ``$STRING`` |  |
-| `str_ingredient16` | ``$STRING`` |  |
-| `str_ingredient17` | ``$STRING`` |  |
-| `str_ingredient18` | ``$STRING`` |  |
-| `str_ingredient19` | ``$STRING`` |  |
-| `str_ingredient2` | ``$STRING`` |  |
-| `str_ingredient20` | ``$STRING`` |  |
-| `str_ingredient3` | ``$STRING`` |  |
-| `str_ingredient4` | ``$STRING`` |  |
-| `str_ingredient5` | ``$STRING`` |  |
-| `str_ingredient6` | ``$STRING`` |  |
-| `str_ingredient7` | ``$STRING`` |  |
-| `str_ingredient8` | ``$STRING`` |  |
-| `str_ingredient9` | ``$STRING`` |  |
-| `str_instruction` | ``$STRING`` |  |
-| `str_meal` | ``$STRING`` |  |
-| `str_meal_thumb` | ``$STRING`` |  |
-| `str_measure1` | ``$STRING`` |  |
-| `str_measure10` | ``$STRING`` |  |
-| `str_measure11` | ``$STRING`` |  |
-| `str_measure12` | ``$STRING`` |  |
-| `str_measure13` | ``$STRING`` |  |
-| `str_measure14` | ``$STRING`` |  |
-| `str_measure15` | ``$STRING`` |  |
-| `str_measure16` | ``$STRING`` |  |
-| `str_measure17` | ``$STRING`` |  |
-| `str_measure18` | ``$STRING`` |  |
-| `str_measure19` | ``$STRING`` |  |
-| `str_measure2` | ``$STRING`` |  |
-| `str_measure20` | ``$STRING`` |  |
-| `str_measure3` | ``$STRING`` |  |
-| `str_measure4` | ``$STRING`` |  |
-| `str_measure5` | ``$STRING`` |  |
-| `str_measure6` | ``$STRING`` |  |
-| `str_measure7` | ``$STRING`` |  |
-| `str_measure8` | ``$STRING`` |  |
-| `str_measure9` | ``$STRING`` |  |
-| `str_source` | ``$STRING`` |  |
-| `str_tag` | ``$STRING`` |  |
-| `str_youtube` | ``$STRING`` |  |
+| `date_modified` | `str` |  |
+| `id_meal` | `str` |  |
+| `str_area` | `str` |  |
+| `str_category` | `str` |  |
+| `str_creative_commons_confirmed` | `str` |  |
+| `str_drink_alternate` | `str` |  |
+| `str_image_source` | `str` |  |
+| `str_ingredient1` | `str` |  |
+| `str_ingredient10` | `str` |  |
+| `str_ingredient11` | `str` |  |
+| `str_ingredient12` | `str` |  |
+| `str_ingredient13` | `str` |  |
+| `str_ingredient14` | `str` |  |
+| `str_ingredient15` | `str` |  |
+| `str_ingredient16` | `str` |  |
+| `str_ingredient17` | `str` |  |
+| `str_ingredient18` | `str` |  |
+| `str_ingredient19` | `str` |  |
+| `str_ingredient2` | `str` |  |
+| `str_ingredient20` | `str` |  |
+| `str_ingredient3` | `str` |  |
+| `str_ingredient4` | `str` |  |
+| `str_ingredient5` | `str` |  |
+| `str_ingredient6` | `str` |  |
+| `str_ingredient7` | `str` |  |
+| `str_ingredient8` | `str` |  |
+| `str_ingredient9` | `str` |  |
+| `str_instruction` | `str` |  |
+| `str_meal` | `str` |  |
+| `str_meal_thumb` | `str` |  |
+| `str_measure1` | `str` |  |
+| `str_measure10` | `str` |  |
+| `str_measure11` | `str` |  |
+| `str_measure12` | `str` |  |
+| `str_measure13` | `str` |  |
+| `str_measure14` | `str` |  |
+| `str_measure15` | `str` |  |
+| `str_measure16` | `str` |  |
+| `str_measure17` | `str` |  |
+| `str_measure18` | `str` |  |
+| `str_measure19` | `str` |  |
+| `str_measure2` | `str` |  |
+| `str_measure20` | `str` |  |
+| `str_measure3` | `str` |  |
+| `str_measure4` | `str` |  |
+| `str_measure5` | `str` |  |
+| `str_measure6` | `str` |  |
+| `str_measure7` | `str` |  |
+| `str_measure8` | `str` |  |
+| `str_measure9` | `str` |  |
+| `str_source` | `str` |  |
+| `str_tag` | `str` |  |
+| `str_youtube` | `str` |  |
 
 #### Example: List
 
 ```python
-randoms = client.Random().list({})
+randoms = client.Random().list()
 ```
 
 
@@ -879,70 +911,70 @@ Create an instance: `randomselection = client.Randomselection()`
 
 | Method | Description |
 | --- | --- |
-| `list(match)` | List entities matching the criteria. |
+| `list()` | List entities, optionally matching the given criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `date_modified` | ``$STRING`` |  |
-| `id_meal` | ``$STRING`` |  |
-| `str_area` | ``$STRING`` |  |
-| `str_category` | ``$STRING`` |  |
-| `str_creative_commons_confirmed` | ``$STRING`` |  |
-| `str_drink_alternate` | ``$STRING`` |  |
-| `str_image_source` | ``$STRING`` |  |
-| `str_ingredient1` | ``$STRING`` |  |
-| `str_ingredient10` | ``$STRING`` |  |
-| `str_ingredient11` | ``$STRING`` |  |
-| `str_ingredient12` | ``$STRING`` |  |
-| `str_ingredient13` | ``$STRING`` |  |
-| `str_ingredient14` | ``$STRING`` |  |
-| `str_ingredient15` | ``$STRING`` |  |
-| `str_ingredient16` | ``$STRING`` |  |
-| `str_ingredient17` | ``$STRING`` |  |
-| `str_ingredient18` | ``$STRING`` |  |
-| `str_ingredient19` | ``$STRING`` |  |
-| `str_ingredient2` | ``$STRING`` |  |
-| `str_ingredient20` | ``$STRING`` |  |
-| `str_ingredient3` | ``$STRING`` |  |
-| `str_ingredient4` | ``$STRING`` |  |
-| `str_ingredient5` | ``$STRING`` |  |
-| `str_ingredient6` | ``$STRING`` |  |
-| `str_ingredient7` | ``$STRING`` |  |
-| `str_ingredient8` | ``$STRING`` |  |
-| `str_ingredient9` | ``$STRING`` |  |
-| `str_instruction` | ``$STRING`` |  |
-| `str_meal` | ``$STRING`` |  |
-| `str_meal_thumb` | ``$STRING`` |  |
-| `str_measure1` | ``$STRING`` |  |
-| `str_measure10` | ``$STRING`` |  |
-| `str_measure11` | ``$STRING`` |  |
-| `str_measure12` | ``$STRING`` |  |
-| `str_measure13` | ``$STRING`` |  |
-| `str_measure14` | ``$STRING`` |  |
-| `str_measure15` | ``$STRING`` |  |
-| `str_measure16` | ``$STRING`` |  |
-| `str_measure17` | ``$STRING`` |  |
-| `str_measure18` | ``$STRING`` |  |
-| `str_measure19` | ``$STRING`` |  |
-| `str_measure2` | ``$STRING`` |  |
-| `str_measure20` | ``$STRING`` |  |
-| `str_measure3` | ``$STRING`` |  |
-| `str_measure4` | ``$STRING`` |  |
-| `str_measure5` | ``$STRING`` |  |
-| `str_measure6` | ``$STRING`` |  |
-| `str_measure7` | ``$STRING`` |  |
-| `str_measure8` | ``$STRING`` |  |
-| `str_measure9` | ``$STRING`` |  |
-| `str_source` | ``$STRING`` |  |
-| `str_tag` | ``$STRING`` |  |
-| `str_youtube` | ``$STRING`` |  |
+| `date_modified` | `str` |  |
+| `id_meal` | `str` |  |
+| `str_area` | `str` |  |
+| `str_category` | `str` |  |
+| `str_creative_commons_confirmed` | `str` |  |
+| `str_drink_alternate` | `str` |  |
+| `str_image_source` | `str` |  |
+| `str_ingredient1` | `str` |  |
+| `str_ingredient10` | `str` |  |
+| `str_ingredient11` | `str` |  |
+| `str_ingredient12` | `str` |  |
+| `str_ingredient13` | `str` |  |
+| `str_ingredient14` | `str` |  |
+| `str_ingredient15` | `str` |  |
+| `str_ingredient16` | `str` |  |
+| `str_ingredient17` | `str` |  |
+| `str_ingredient18` | `str` |  |
+| `str_ingredient19` | `str` |  |
+| `str_ingredient2` | `str` |  |
+| `str_ingredient20` | `str` |  |
+| `str_ingredient3` | `str` |  |
+| `str_ingredient4` | `str` |  |
+| `str_ingredient5` | `str` |  |
+| `str_ingredient6` | `str` |  |
+| `str_ingredient7` | `str` |  |
+| `str_ingredient8` | `str` |  |
+| `str_ingredient9` | `str` |  |
+| `str_instruction` | `str` |  |
+| `str_meal` | `str` |  |
+| `str_meal_thumb` | `str` |  |
+| `str_measure1` | `str` |  |
+| `str_measure10` | `str` |  |
+| `str_measure11` | `str` |  |
+| `str_measure12` | `str` |  |
+| `str_measure13` | `str` |  |
+| `str_measure14` | `str` |  |
+| `str_measure15` | `str` |  |
+| `str_measure16` | `str` |  |
+| `str_measure17` | `str` |  |
+| `str_measure18` | `str` |  |
+| `str_measure19` | `str` |  |
+| `str_measure2` | `str` |  |
+| `str_measure20` | `str` |  |
+| `str_measure3` | `str` |  |
+| `str_measure4` | `str` |  |
+| `str_measure5` | `str` |  |
+| `str_measure6` | `str` |  |
+| `str_measure7` | `str` |  |
+| `str_measure8` | `str` |  |
+| `str_measure9` | `str` |  |
+| `str_source` | `str` |  |
+| `str_tag` | `str` |  |
+| `str_youtube` | `str` |  |
 
 #### Example: List
 
 ```python
-randomselections = client.Randomselection().list({})
+randomselections = client.Randomselection().list()
 ```
 
 
@@ -954,79 +986,83 @@ Create an instance: `search = client.Search()`
 
 | Method | Description |
 | --- | --- |
-| `list(match)` | List entities matching the criteria. |
+| `list()` | List entities, optionally matching the given criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `date_modified` | ``$STRING`` |  |
-| `id_meal` | ``$STRING`` |  |
-| `str_area` | ``$STRING`` |  |
-| `str_category` | ``$STRING`` |  |
-| `str_creative_commons_confirmed` | ``$STRING`` |  |
-| `str_drink_alternate` | ``$STRING`` |  |
-| `str_image_source` | ``$STRING`` |  |
-| `str_ingredient1` | ``$STRING`` |  |
-| `str_ingredient10` | ``$STRING`` |  |
-| `str_ingredient11` | ``$STRING`` |  |
-| `str_ingredient12` | ``$STRING`` |  |
-| `str_ingredient13` | ``$STRING`` |  |
-| `str_ingredient14` | ``$STRING`` |  |
-| `str_ingredient15` | ``$STRING`` |  |
-| `str_ingredient16` | ``$STRING`` |  |
-| `str_ingredient17` | ``$STRING`` |  |
-| `str_ingredient18` | ``$STRING`` |  |
-| `str_ingredient19` | ``$STRING`` |  |
-| `str_ingredient2` | ``$STRING`` |  |
-| `str_ingredient20` | ``$STRING`` |  |
-| `str_ingredient3` | ``$STRING`` |  |
-| `str_ingredient4` | ``$STRING`` |  |
-| `str_ingredient5` | ``$STRING`` |  |
-| `str_ingredient6` | ``$STRING`` |  |
-| `str_ingredient7` | ``$STRING`` |  |
-| `str_ingredient8` | ``$STRING`` |  |
-| `str_ingredient9` | ``$STRING`` |  |
-| `str_instruction` | ``$STRING`` |  |
-| `str_meal` | ``$STRING`` |  |
-| `str_meal_thumb` | ``$STRING`` |  |
-| `str_measure1` | ``$STRING`` |  |
-| `str_measure10` | ``$STRING`` |  |
-| `str_measure11` | ``$STRING`` |  |
-| `str_measure12` | ``$STRING`` |  |
-| `str_measure13` | ``$STRING`` |  |
-| `str_measure14` | ``$STRING`` |  |
-| `str_measure15` | ``$STRING`` |  |
-| `str_measure16` | ``$STRING`` |  |
-| `str_measure17` | ``$STRING`` |  |
-| `str_measure18` | ``$STRING`` |  |
-| `str_measure19` | ``$STRING`` |  |
-| `str_measure2` | ``$STRING`` |  |
-| `str_measure20` | ``$STRING`` |  |
-| `str_measure3` | ``$STRING`` |  |
-| `str_measure4` | ``$STRING`` |  |
-| `str_measure5` | ``$STRING`` |  |
-| `str_measure6` | ``$STRING`` |  |
-| `str_measure7` | ``$STRING`` |  |
-| `str_measure8` | ``$STRING`` |  |
-| `str_measure9` | ``$STRING`` |  |
-| `str_source` | ``$STRING`` |  |
-| `str_tag` | ``$STRING`` |  |
-| `str_youtube` | ``$STRING`` |  |
+| `date_modified` | `str` |  |
+| `id_meal` | `str` |  |
+| `str_area` | `str` |  |
+| `str_category` | `str` |  |
+| `str_creative_commons_confirmed` | `str` |  |
+| `str_drink_alternate` | `str` |  |
+| `str_image_source` | `str` |  |
+| `str_ingredient1` | `str` |  |
+| `str_ingredient10` | `str` |  |
+| `str_ingredient11` | `str` |  |
+| `str_ingredient12` | `str` |  |
+| `str_ingredient13` | `str` |  |
+| `str_ingredient14` | `str` |  |
+| `str_ingredient15` | `str` |  |
+| `str_ingredient16` | `str` |  |
+| `str_ingredient17` | `str` |  |
+| `str_ingredient18` | `str` |  |
+| `str_ingredient19` | `str` |  |
+| `str_ingredient2` | `str` |  |
+| `str_ingredient20` | `str` |  |
+| `str_ingredient3` | `str` |  |
+| `str_ingredient4` | `str` |  |
+| `str_ingredient5` | `str` |  |
+| `str_ingredient6` | `str` |  |
+| `str_ingredient7` | `str` |  |
+| `str_ingredient8` | `str` |  |
+| `str_ingredient9` | `str` |  |
+| `str_instruction` | `str` |  |
+| `str_meal` | `str` |  |
+| `str_meal_thumb` | `str` |  |
+| `str_measure1` | `str` |  |
+| `str_measure10` | `str` |  |
+| `str_measure11` | `str` |  |
+| `str_measure12` | `str` |  |
+| `str_measure13` | `str` |  |
+| `str_measure14` | `str` |  |
+| `str_measure15` | `str` |  |
+| `str_measure16` | `str` |  |
+| `str_measure17` | `str` |  |
+| `str_measure18` | `str` |  |
+| `str_measure19` | `str` |  |
+| `str_measure2` | `str` |  |
+| `str_measure20` | `str` |  |
+| `str_measure3` | `str` |  |
+| `str_measure4` | `str` |  |
+| `str_measure5` | `str` |  |
+| `str_measure6` | `str` |  |
+| `str_measure7` | `str` |  |
+| `str_measure8` | `str` |  |
+| `str_measure9` | `str` |  |
+| `str_source` | `str` |  |
+| `str_tag` | `str` |  |
+| `str_youtube` | `str` |  |
 
 #### Example: List
 
 ```python
-searchs = client.Search().list({})
+searchs = client.Search().list()
 ```
 
 
-## Explanation
+## Advanced
+
+> The sections above cover everyday use. The material below explains the
+> SDK's internals — useful when extending it with custom features, but not
+> needed for normal use.
 
 ### The operation pipeline
 
-Every entity operation (load, list, create, update, remove) follows a
-six-stage pipeline. Each stage fires a feature hook before executing:
+Every entity operation follows a six-stage pipeline. Each stage fires a
+feature hook before executing:
 
 ```
 PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
@@ -1043,8 +1079,9 @@ PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
 - **PreDone**: Final stage before returning to the caller. Entity
   state (match, data) is updated here.
 
-If any stage returns an error, the pipeline short-circuits and the
-error is returned to the caller as the second element in the return tuple.
+If any stage errors, the pipeline short-circuits and the error surfaces
+to the caller — see [Error handling](#error-handling) for how that looks
+in this language.
 
 ### Features and hooks
 
@@ -1087,14 +1124,14 @@ Import entity or utility modules directly only when needed.
 
 ### Entity state
 
-Entity instances are stateful. After a successful `load`, the entity
+Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```python
 category = client.Category()
-category.load({"id": "example_id"})
+category.list()
 
-# category.data_get() now returns the loaded category data
+# category.data_get() now returns the category data from the last list
 # category.match_get() returns the last match criteria
 ```
 

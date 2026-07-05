@@ -13,6 +13,10 @@
 ---@field str_category_thumb? string
 
 ---@class CategoryListMatch
+---@field id_category? string
+---@field str_category? string
+---@field str_category_description? string
+---@field str_category_thumb? string
 
 ---@class Filter
 ---@field id_meal? string
@@ -20,6 +24,9 @@
 ---@field str_meal_thumb? string
 
 ---@class FilterListMatch
+---@field id_meal? string
+---@field str_meal? string
+---@field str_meal_thumb? string
 
 ---@class Latest
 ---@field date_modified? string
@@ -77,6 +84,59 @@
 ---@field str_youtube? string
 
 ---@class LatestListMatch
+---@field date_modified? string
+---@field id_meal? string
+---@field str_area? string
+---@field str_category? string
+---@field str_creative_commons_confirmed? string
+---@field str_drink_alternate? string
+---@field str_image_source? string
+---@field str_ingredient1? string
+---@field str_ingredient10? string
+---@field str_ingredient11? string
+---@field str_ingredient12? string
+---@field str_ingredient13? string
+---@field str_ingredient14? string
+---@field str_ingredient15? string
+---@field str_ingredient16? string
+---@field str_ingredient17? string
+---@field str_ingredient18? string
+---@field str_ingredient19? string
+---@field str_ingredient2? string
+---@field str_ingredient20? string
+---@field str_ingredient3? string
+---@field str_ingredient4? string
+---@field str_ingredient5? string
+---@field str_ingredient6? string
+---@field str_ingredient7? string
+---@field str_ingredient8? string
+---@field str_ingredient9? string
+---@field str_instruction? string
+---@field str_meal? string
+---@field str_meal_thumb? string
+---@field str_measure1? string
+---@field str_measure10? string
+---@field str_measure11? string
+---@field str_measure12? string
+---@field str_measure13? string
+---@field str_measure14? string
+---@field str_measure15? string
+---@field str_measure16? string
+---@field str_measure17? string
+---@field str_measure18? string
+---@field str_measure19? string
+---@field str_measure2? string
+---@field str_measure20? string
+---@field str_measure3? string
+---@field str_measure4? string
+---@field str_measure5? string
+---@field str_measure6? string
+---@field str_measure7? string
+---@field str_measure8? string
+---@field str_measure9? string
+---@field str_source? string
+---@field str_tag? string
+---@field str_youtube? string
 
 ---@class List
 ---@field str_area? string
@@ -84,6 +144,9 @@
 ---@field str_ingredient? string
 
 ---@class ListListMatch
+---@field str_area? string
+---@field str_category? string
+---@field str_ingredient? string
 
 ---@class Lookup
 ---@field date_modified? string
@@ -141,6 +204,59 @@
 ---@field str_youtube? string
 
 ---@class LookupListMatch
+---@field date_modified? string
+---@field id_meal? string
+---@field str_area? string
+---@field str_category? string
+---@field str_creative_commons_confirmed? string
+---@field str_drink_alternate? string
+---@field str_image_source? string
+---@field str_ingredient1? string
+---@field str_ingredient10? string
+---@field str_ingredient11? string
+---@field str_ingredient12? string
+---@field str_ingredient13? string
+---@field str_ingredient14? string
+---@field str_ingredient15? string
+---@field str_ingredient16? string
+---@field str_ingredient17? string
+---@field str_ingredient18? string
+---@field str_ingredient19? string
+---@field str_ingredient2? string
+---@field str_ingredient20? string
+---@field str_ingredient3? string
+---@field str_ingredient4? string
+---@field str_ingredient5? string
+---@field str_ingredient6? string
+---@field str_ingredient7? string
+---@field str_ingredient8? string
+---@field str_ingredient9? string
+---@field str_instruction? string
+---@field str_meal? string
+---@field str_meal_thumb? string
+---@field str_measure1? string
+---@field str_measure10? string
+---@field str_measure11? string
+---@field str_measure12? string
+---@field str_measure13? string
+---@field str_measure14? string
+---@field str_measure15? string
+---@field str_measure16? string
+---@field str_measure17? string
+---@field str_measure18? string
+---@field str_measure19? string
+---@field str_measure2? string
+---@field str_measure20? string
+---@field str_measure3? string
+---@field str_measure4? string
+---@field str_measure5? string
+---@field str_measure6? string
+---@field str_measure7? string
+---@field str_measure8? string
+---@field str_measure9? string
+---@field str_source? string
+---@field str_tag? string
+---@field str_youtube? string
 
 ---@class Random
 ---@field date_modified? string
@@ -198,6 +314,59 @@
 ---@field str_youtube? string
 
 ---@class RandomListMatch
+---@field date_modified? string
+---@field id_meal? string
+---@field str_area? string
+---@field str_category? string
+---@field str_creative_commons_confirmed? string
+---@field str_drink_alternate? string
+---@field str_image_source? string
+---@field str_ingredient1? string
+---@field str_ingredient10? string
+---@field str_ingredient11? string
+---@field str_ingredient12? string
+---@field str_ingredient13? string
+---@field str_ingredient14? string
+---@field str_ingredient15? string
+---@field str_ingredient16? string
+---@field str_ingredient17? string
+---@field str_ingredient18? string
+---@field str_ingredient19? string
+---@field str_ingredient2? string
+---@field str_ingredient20? string
+---@field str_ingredient3? string
+---@field str_ingredient4? string
+---@field str_ingredient5? string
+---@field str_ingredient6? string
+---@field str_ingredient7? string
+---@field str_ingredient8? string
+---@field str_ingredient9? string
+---@field str_instruction? string
+---@field str_meal? string
+---@field str_meal_thumb? string
+---@field str_measure1? string
+---@field str_measure10? string
+---@field str_measure11? string
+---@field str_measure12? string
+---@field str_measure13? string
+---@field str_measure14? string
+---@field str_measure15? string
+---@field str_measure16? string
+---@field str_measure17? string
+---@field str_measure18? string
+---@field str_measure19? string
+---@field str_measure2? string
+---@field str_measure20? string
+---@field str_measure3? string
+---@field str_measure4? string
+---@field str_measure5? string
+---@field str_measure6? string
+---@field str_measure7? string
+---@field str_measure8? string
+---@field str_measure9? string
+---@field str_source? string
+---@field str_tag? string
+---@field str_youtube? string
 
 ---@class Randomselection
 ---@field date_modified? string
@@ -255,6 +424,59 @@
 ---@field str_youtube? string
 
 ---@class RandomselectionListMatch
+---@field date_modified? string
+---@field id_meal? string
+---@field str_area? string
+---@field str_category? string
+---@field str_creative_commons_confirmed? string
+---@field str_drink_alternate? string
+---@field str_image_source? string
+---@field str_ingredient1? string
+---@field str_ingredient10? string
+---@field str_ingredient11? string
+---@field str_ingredient12? string
+---@field str_ingredient13? string
+---@field str_ingredient14? string
+---@field str_ingredient15? string
+---@field str_ingredient16? string
+---@field str_ingredient17? string
+---@field str_ingredient18? string
+---@field str_ingredient19? string
+---@field str_ingredient2? string
+---@field str_ingredient20? string
+---@field str_ingredient3? string
+---@field str_ingredient4? string
+---@field str_ingredient5? string
+---@field str_ingredient6? string
+---@field str_ingredient7? string
+---@field str_ingredient8? string
+---@field str_ingredient9? string
+---@field str_instruction? string
+---@field str_meal? string
+---@field str_meal_thumb? string
+---@field str_measure1? string
+---@field str_measure10? string
+---@field str_measure11? string
+---@field str_measure12? string
+---@field str_measure13? string
+---@field str_measure14? string
+---@field str_measure15? string
+---@field str_measure16? string
+---@field str_measure17? string
+---@field str_measure18? string
+---@field str_measure19? string
+---@field str_measure2? string
+---@field str_measure20? string
+---@field str_measure3? string
+---@field str_measure4? string
+---@field str_measure5? string
+---@field str_measure6? string
+---@field str_measure7? string
+---@field str_measure8? string
+---@field str_measure9? string
+---@field str_source? string
+---@field str_tag? string
+---@field str_youtube? string
 
 ---@class Search
 ---@field date_modified? string
@@ -312,6 +534,59 @@
 ---@field str_youtube? string
 
 ---@class SearchListMatch
+---@field date_modified? string
+---@field id_meal? string
+---@field str_area? string
+---@field str_category? string
+---@field str_creative_commons_confirmed? string
+---@field str_drink_alternate? string
+---@field str_image_source? string
+---@field str_ingredient1? string
+---@field str_ingredient10? string
+---@field str_ingredient11? string
+---@field str_ingredient12? string
+---@field str_ingredient13? string
+---@field str_ingredient14? string
+---@field str_ingredient15? string
+---@field str_ingredient16? string
+---@field str_ingredient17? string
+---@field str_ingredient18? string
+---@field str_ingredient19? string
+---@field str_ingredient2? string
+---@field str_ingredient20? string
+---@field str_ingredient3? string
+---@field str_ingredient4? string
+---@field str_ingredient5? string
+---@field str_ingredient6? string
+---@field str_ingredient7? string
+---@field str_ingredient8? string
+---@field str_ingredient9? string
+---@field str_instruction? string
+---@field str_meal? string
+---@field str_meal_thumb? string
+---@field str_measure1? string
+---@field str_measure10? string
+---@field str_measure11? string
+---@field str_measure12? string
+---@field str_measure13? string
+---@field str_measure14? string
+---@field str_measure15? string
+---@field str_measure16? string
+---@field str_measure17? string
+---@field str_measure18? string
+---@field str_measure19? string
+---@field str_measure2? string
+---@field str_measure20? string
+---@field str_measure3? string
+---@field str_measure4? string
+---@field str_measure5? string
+---@field str_measure6? string
+---@field str_measure7? string
+---@field str_measure8? string
+---@field str_measure9? string
+---@field str_source? string
+---@field str_tag? string
+---@field str_youtube? string
 
 local M = {}
 

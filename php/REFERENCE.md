@@ -8,7 +8,7 @@ Complete API reference for the FreeMeal PHP SDK.
 ### Constructor
 
 ```php
-require_once __DIR__ . '/free-meal_sdk.php';
+require_once __DIR__ . '/freemeal_sdk.php';
 
 $client = new FreeMealSDK($options);
 ```
@@ -74,11 +74,11 @@ Create a new `RandomselectionEntity` instance. Pass `null` for no initial data.
 
 Create a new `SearchEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): FreeMealUtility`
 
 Return a copy of the SDK utility object.
 
@@ -121,36 +121,36 @@ $category = $client->Category();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `id_category` | ``$STRING`` | No |  |
-| `str_category` | ``$STRING`` | No |  |
-| `str_category_description` | ``$STRING`` | No |  |
-| `str_category_thumb` | ``$STRING`` | No |  |
+| `id_category` | `string` | No |  |
+| `str_category` | `string` | No |  |
+| `str_category_description` | `string` | No |  |
+| `str_category_thumb` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Category()->list([]);
+$results = $client->Category()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -159,7 +159,7 @@ Set the entity match criteria.
 Create a new `CategoryEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -176,35 +176,35 @@ $filter = $client->Filter();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `id_meal` | ``$STRING`` | No |  |
-| `str_meal` | ``$STRING`` | No |  |
-| `str_meal_thumb` | ``$STRING`` | No |  |
+| `id_meal` | `string` | No |  |
+| `str_meal` | `string` | No |  |
+| `str_meal_thumb` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Filter()->list([]);
+$results = $client->Filter()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -213,7 +213,7 @@ Set the entity match criteria.
 Create a new `FilterEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -230,85 +230,85 @@ $latest = $client->Latest();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `date_modified` | ``$STRING`` | No |  |
-| `id_meal` | ``$STRING`` | No |  |
-| `str_area` | ``$STRING`` | No |  |
-| `str_category` | ``$STRING`` | No |  |
-| `str_creative_commons_confirmed` | ``$STRING`` | No |  |
-| `str_drink_alternate` | ``$STRING`` | No |  |
-| `str_image_source` | ``$STRING`` | No |  |
-| `str_ingredient1` | ``$STRING`` | No |  |
-| `str_ingredient10` | ``$STRING`` | No |  |
-| `str_ingredient11` | ``$STRING`` | No |  |
-| `str_ingredient12` | ``$STRING`` | No |  |
-| `str_ingredient13` | ``$STRING`` | No |  |
-| `str_ingredient14` | ``$STRING`` | No |  |
-| `str_ingredient15` | ``$STRING`` | No |  |
-| `str_ingredient16` | ``$STRING`` | No |  |
-| `str_ingredient17` | ``$STRING`` | No |  |
-| `str_ingredient18` | ``$STRING`` | No |  |
-| `str_ingredient19` | ``$STRING`` | No |  |
-| `str_ingredient2` | ``$STRING`` | No |  |
-| `str_ingredient20` | ``$STRING`` | No |  |
-| `str_ingredient3` | ``$STRING`` | No |  |
-| `str_ingredient4` | ``$STRING`` | No |  |
-| `str_ingredient5` | ``$STRING`` | No |  |
-| `str_ingredient6` | ``$STRING`` | No |  |
-| `str_ingredient7` | ``$STRING`` | No |  |
-| `str_ingredient8` | ``$STRING`` | No |  |
-| `str_ingredient9` | ``$STRING`` | No |  |
-| `str_instruction` | ``$STRING`` | No |  |
-| `str_meal` | ``$STRING`` | No |  |
-| `str_meal_thumb` | ``$STRING`` | No |  |
-| `str_measure1` | ``$STRING`` | No |  |
-| `str_measure10` | ``$STRING`` | No |  |
-| `str_measure11` | ``$STRING`` | No |  |
-| `str_measure12` | ``$STRING`` | No |  |
-| `str_measure13` | ``$STRING`` | No |  |
-| `str_measure14` | ``$STRING`` | No |  |
-| `str_measure15` | ``$STRING`` | No |  |
-| `str_measure16` | ``$STRING`` | No |  |
-| `str_measure17` | ``$STRING`` | No |  |
-| `str_measure18` | ``$STRING`` | No |  |
-| `str_measure19` | ``$STRING`` | No |  |
-| `str_measure2` | ``$STRING`` | No |  |
-| `str_measure20` | ``$STRING`` | No |  |
-| `str_measure3` | ``$STRING`` | No |  |
-| `str_measure4` | ``$STRING`` | No |  |
-| `str_measure5` | ``$STRING`` | No |  |
-| `str_measure6` | ``$STRING`` | No |  |
-| `str_measure7` | ``$STRING`` | No |  |
-| `str_measure8` | ``$STRING`` | No |  |
-| `str_measure9` | ``$STRING`` | No |  |
-| `str_source` | ``$STRING`` | No |  |
-| `str_tag` | ``$STRING`` | No |  |
-| `str_youtube` | ``$STRING`` | No |  |
+| `date_modified` | `string` | No |  |
+| `id_meal` | `string` | No |  |
+| `str_area` | `string` | No |  |
+| `str_category` | `string` | No |  |
+| `str_creative_commons_confirmed` | `string` | No |  |
+| `str_drink_alternate` | `string` | No |  |
+| `str_image_source` | `string` | No |  |
+| `str_ingredient1` | `string` | No |  |
+| `str_ingredient10` | `string` | No |  |
+| `str_ingredient11` | `string` | No |  |
+| `str_ingredient12` | `string` | No |  |
+| `str_ingredient13` | `string` | No |  |
+| `str_ingredient14` | `string` | No |  |
+| `str_ingredient15` | `string` | No |  |
+| `str_ingredient16` | `string` | No |  |
+| `str_ingredient17` | `string` | No |  |
+| `str_ingredient18` | `string` | No |  |
+| `str_ingredient19` | `string` | No |  |
+| `str_ingredient2` | `string` | No |  |
+| `str_ingredient20` | `string` | No |  |
+| `str_ingredient3` | `string` | No |  |
+| `str_ingredient4` | `string` | No |  |
+| `str_ingredient5` | `string` | No |  |
+| `str_ingredient6` | `string` | No |  |
+| `str_ingredient7` | `string` | No |  |
+| `str_ingredient8` | `string` | No |  |
+| `str_ingredient9` | `string` | No |  |
+| `str_instruction` | `string` | No |  |
+| `str_meal` | `string` | No |  |
+| `str_meal_thumb` | `string` | No |  |
+| `str_measure1` | `string` | No |  |
+| `str_measure10` | `string` | No |  |
+| `str_measure11` | `string` | No |  |
+| `str_measure12` | `string` | No |  |
+| `str_measure13` | `string` | No |  |
+| `str_measure14` | `string` | No |  |
+| `str_measure15` | `string` | No |  |
+| `str_measure16` | `string` | No |  |
+| `str_measure17` | `string` | No |  |
+| `str_measure18` | `string` | No |  |
+| `str_measure19` | `string` | No |  |
+| `str_measure2` | `string` | No |  |
+| `str_measure20` | `string` | No |  |
+| `str_measure3` | `string` | No |  |
+| `str_measure4` | `string` | No |  |
+| `str_measure5` | `string` | No |  |
+| `str_measure6` | `string` | No |  |
+| `str_measure7` | `string` | No |  |
+| `str_measure8` | `string` | No |  |
+| `str_measure9` | `string` | No |  |
+| `str_source` | `string` | No |  |
+| `str_tag` | `string` | No |  |
+| `str_youtube` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Latest()->list([]);
+$results = $client->Latest()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -317,7 +317,7 @@ Set the entity match criteria.
 Create a new `LatestEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -334,35 +334,35 @@ $list = $client->List();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `str_area` | ``$STRING`` | No |  |
-| `str_category` | ``$STRING`` | No |  |
-| `str_ingredient` | ``$STRING`` | No |  |
+| `str_area` | `string` | No |  |
+| `str_category` | `string` | No |  |
+| `str_ingredient` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->List()->list([]);
+$results = $client->List()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -371,7 +371,7 @@ Set the entity match criteria.
 Create a new `ListEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -388,85 +388,85 @@ $lookup = $client->Lookup();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `date_modified` | ``$STRING`` | No |  |
-| `id_meal` | ``$STRING`` | No |  |
-| `str_area` | ``$STRING`` | No |  |
-| `str_category` | ``$STRING`` | No |  |
-| `str_creative_commons_confirmed` | ``$STRING`` | No |  |
-| `str_drink_alternate` | ``$STRING`` | No |  |
-| `str_image_source` | ``$STRING`` | No |  |
-| `str_ingredient1` | ``$STRING`` | No |  |
-| `str_ingredient10` | ``$STRING`` | No |  |
-| `str_ingredient11` | ``$STRING`` | No |  |
-| `str_ingredient12` | ``$STRING`` | No |  |
-| `str_ingredient13` | ``$STRING`` | No |  |
-| `str_ingredient14` | ``$STRING`` | No |  |
-| `str_ingredient15` | ``$STRING`` | No |  |
-| `str_ingredient16` | ``$STRING`` | No |  |
-| `str_ingredient17` | ``$STRING`` | No |  |
-| `str_ingredient18` | ``$STRING`` | No |  |
-| `str_ingredient19` | ``$STRING`` | No |  |
-| `str_ingredient2` | ``$STRING`` | No |  |
-| `str_ingredient20` | ``$STRING`` | No |  |
-| `str_ingredient3` | ``$STRING`` | No |  |
-| `str_ingredient4` | ``$STRING`` | No |  |
-| `str_ingredient5` | ``$STRING`` | No |  |
-| `str_ingredient6` | ``$STRING`` | No |  |
-| `str_ingredient7` | ``$STRING`` | No |  |
-| `str_ingredient8` | ``$STRING`` | No |  |
-| `str_ingredient9` | ``$STRING`` | No |  |
-| `str_instruction` | ``$STRING`` | No |  |
-| `str_meal` | ``$STRING`` | No |  |
-| `str_meal_thumb` | ``$STRING`` | No |  |
-| `str_measure1` | ``$STRING`` | No |  |
-| `str_measure10` | ``$STRING`` | No |  |
-| `str_measure11` | ``$STRING`` | No |  |
-| `str_measure12` | ``$STRING`` | No |  |
-| `str_measure13` | ``$STRING`` | No |  |
-| `str_measure14` | ``$STRING`` | No |  |
-| `str_measure15` | ``$STRING`` | No |  |
-| `str_measure16` | ``$STRING`` | No |  |
-| `str_measure17` | ``$STRING`` | No |  |
-| `str_measure18` | ``$STRING`` | No |  |
-| `str_measure19` | ``$STRING`` | No |  |
-| `str_measure2` | ``$STRING`` | No |  |
-| `str_measure20` | ``$STRING`` | No |  |
-| `str_measure3` | ``$STRING`` | No |  |
-| `str_measure4` | ``$STRING`` | No |  |
-| `str_measure5` | ``$STRING`` | No |  |
-| `str_measure6` | ``$STRING`` | No |  |
-| `str_measure7` | ``$STRING`` | No |  |
-| `str_measure8` | ``$STRING`` | No |  |
-| `str_measure9` | ``$STRING`` | No |  |
-| `str_source` | ``$STRING`` | No |  |
-| `str_tag` | ``$STRING`` | No |  |
-| `str_youtube` | ``$STRING`` | No |  |
+| `date_modified` | `string` | No |  |
+| `id_meal` | `string` | No |  |
+| `str_area` | `string` | No |  |
+| `str_category` | `string` | No |  |
+| `str_creative_commons_confirmed` | `string` | No |  |
+| `str_drink_alternate` | `string` | No |  |
+| `str_image_source` | `string` | No |  |
+| `str_ingredient1` | `string` | No |  |
+| `str_ingredient10` | `string` | No |  |
+| `str_ingredient11` | `string` | No |  |
+| `str_ingredient12` | `string` | No |  |
+| `str_ingredient13` | `string` | No |  |
+| `str_ingredient14` | `string` | No |  |
+| `str_ingredient15` | `string` | No |  |
+| `str_ingredient16` | `string` | No |  |
+| `str_ingredient17` | `string` | No |  |
+| `str_ingredient18` | `string` | No |  |
+| `str_ingredient19` | `string` | No |  |
+| `str_ingredient2` | `string` | No |  |
+| `str_ingredient20` | `string` | No |  |
+| `str_ingredient3` | `string` | No |  |
+| `str_ingredient4` | `string` | No |  |
+| `str_ingredient5` | `string` | No |  |
+| `str_ingredient6` | `string` | No |  |
+| `str_ingredient7` | `string` | No |  |
+| `str_ingredient8` | `string` | No |  |
+| `str_ingredient9` | `string` | No |  |
+| `str_instruction` | `string` | No |  |
+| `str_meal` | `string` | No |  |
+| `str_meal_thumb` | `string` | No |  |
+| `str_measure1` | `string` | No |  |
+| `str_measure10` | `string` | No |  |
+| `str_measure11` | `string` | No |  |
+| `str_measure12` | `string` | No |  |
+| `str_measure13` | `string` | No |  |
+| `str_measure14` | `string` | No |  |
+| `str_measure15` | `string` | No |  |
+| `str_measure16` | `string` | No |  |
+| `str_measure17` | `string` | No |  |
+| `str_measure18` | `string` | No |  |
+| `str_measure19` | `string` | No |  |
+| `str_measure2` | `string` | No |  |
+| `str_measure20` | `string` | No |  |
+| `str_measure3` | `string` | No |  |
+| `str_measure4` | `string` | No |  |
+| `str_measure5` | `string` | No |  |
+| `str_measure6` | `string` | No |  |
+| `str_measure7` | `string` | No |  |
+| `str_measure8` | `string` | No |  |
+| `str_measure9` | `string` | No |  |
+| `str_source` | `string` | No |  |
+| `str_tag` | `string` | No |  |
+| `str_youtube` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Lookup()->list([]);
+$results = $client->Lookup()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -475,7 +475,7 @@ Set the entity match criteria.
 Create a new `LookupEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -492,85 +492,85 @@ $random = $client->Random();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `date_modified` | ``$STRING`` | No |  |
-| `id_meal` | ``$STRING`` | No |  |
-| `str_area` | ``$STRING`` | No |  |
-| `str_category` | ``$STRING`` | No |  |
-| `str_creative_commons_confirmed` | ``$STRING`` | No |  |
-| `str_drink_alternate` | ``$STRING`` | No |  |
-| `str_image_source` | ``$STRING`` | No |  |
-| `str_ingredient1` | ``$STRING`` | No |  |
-| `str_ingredient10` | ``$STRING`` | No |  |
-| `str_ingredient11` | ``$STRING`` | No |  |
-| `str_ingredient12` | ``$STRING`` | No |  |
-| `str_ingredient13` | ``$STRING`` | No |  |
-| `str_ingredient14` | ``$STRING`` | No |  |
-| `str_ingredient15` | ``$STRING`` | No |  |
-| `str_ingredient16` | ``$STRING`` | No |  |
-| `str_ingredient17` | ``$STRING`` | No |  |
-| `str_ingredient18` | ``$STRING`` | No |  |
-| `str_ingredient19` | ``$STRING`` | No |  |
-| `str_ingredient2` | ``$STRING`` | No |  |
-| `str_ingredient20` | ``$STRING`` | No |  |
-| `str_ingredient3` | ``$STRING`` | No |  |
-| `str_ingredient4` | ``$STRING`` | No |  |
-| `str_ingredient5` | ``$STRING`` | No |  |
-| `str_ingredient6` | ``$STRING`` | No |  |
-| `str_ingredient7` | ``$STRING`` | No |  |
-| `str_ingredient8` | ``$STRING`` | No |  |
-| `str_ingredient9` | ``$STRING`` | No |  |
-| `str_instruction` | ``$STRING`` | No |  |
-| `str_meal` | ``$STRING`` | No |  |
-| `str_meal_thumb` | ``$STRING`` | No |  |
-| `str_measure1` | ``$STRING`` | No |  |
-| `str_measure10` | ``$STRING`` | No |  |
-| `str_measure11` | ``$STRING`` | No |  |
-| `str_measure12` | ``$STRING`` | No |  |
-| `str_measure13` | ``$STRING`` | No |  |
-| `str_measure14` | ``$STRING`` | No |  |
-| `str_measure15` | ``$STRING`` | No |  |
-| `str_measure16` | ``$STRING`` | No |  |
-| `str_measure17` | ``$STRING`` | No |  |
-| `str_measure18` | ``$STRING`` | No |  |
-| `str_measure19` | ``$STRING`` | No |  |
-| `str_measure2` | ``$STRING`` | No |  |
-| `str_measure20` | ``$STRING`` | No |  |
-| `str_measure3` | ``$STRING`` | No |  |
-| `str_measure4` | ``$STRING`` | No |  |
-| `str_measure5` | ``$STRING`` | No |  |
-| `str_measure6` | ``$STRING`` | No |  |
-| `str_measure7` | ``$STRING`` | No |  |
-| `str_measure8` | ``$STRING`` | No |  |
-| `str_measure9` | ``$STRING`` | No |  |
-| `str_source` | ``$STRING`` | No |  |
-| `str_tag` | ``$STRING`` | No |  |
-| `str_youtube` | ``$STRING`` | No |  |
+| `date_modified` | `string` | No |  |
+| `id_meal` | `string` | No |  |
+| `str_area` | `string` | No |  |
+| `str_category` | `string` | No |  |
+| `str_creative_commons_confirmed` | `string` | No |  |
+| `str_drink_alternate` | `string` | No |  |
+| `str_image_source` | `string` | No |  |
+| `str_ingredient1` | `string` | No |  |
+| `str_ingredient10` | `string` | No |  |
+| `str_ingredient11` | `string` | No |  |
+| `str_ingredient12` | `string` | No |  |
+| `str_ingredient13` | `string` | No |  |
+| `str_ingredient14` | `string` | No |  |
+| `str_ingredient15` | `string` | No |  |
+| `str_ingredient16` | `string` | No |  |
+| `str_ingredient17` | `string` | No |  |
+| `str_ingredient18` | `string` | No |  |
+| `str_ingredient19` | `string` | No |  |
+| `str_ingredient2` | `string` | No |  |
+| `str_ingredient20` | `string` | No |  |
+| `str_ingredient3` | `string` | No |  |
+| `str_ingredient4` | `string` | No |  |
+| `str_ingredient5` | `string` | No |  |
+| `str_ingredient6` | `string` | No |  |
+| `str_ingredient7` | `string` | No |  |
+| `str_ingredient8` | `string` | No |  |
+| `str_ingredient9` | `string` | No |  |
+| `str_instruction` | `string` | No |  |
+| `str_meal` | `string` | No |  |
+| `str_meal_thumb` | `string` | No |  |
+| `str_measure1` | `string` | No |  |
+| `str_measure10` | `string` | No |  |
+| `str_measure11` | `string` | No |  |
+| `str_measure12` | `string` | No |  |
+| `str_measure13` | `string` | No |  |
+| `str_measure14` | `string` | No |  |
+| `str_measure15` | `string` | No |  |
+| `str_measure16` | `string` | No |  |
+| `str_measure17` | `string` | No |  |
+| `str_measure18` | `string` | No |  |
+| `str_measure19` | `string` | No |  |
+| `str_measure2` | `string` | No |  |
+| `str_measure20` | `string` | No |  |
+| `str_measure3` | `string` | No |  |
+| `str_measure4` | `string` | No |  |
+| `str_measure5` | `string` | No |  |
+| `str_measure6` | `string` | No |  |
+| `str_measure7` | `string` | No |  |
+| `str_measure8` | `string` | No |  |
+| `str_measure9` | `string` | No |  |
+| `str_source` | `string` | No |  |
+| `str_tag` | `string` | No |  |
+| `str_youtube` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Random()->list([]);
+$results = $client->Random()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -579,7 +579,7 @@ Set the entity match criteria.
 Create a new `RandomEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -596,85 +596,85 @@ $randomselection = $client->Randomselection();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `date_modified` | ``$STRING`` | No |  |
-| `id_meal` | ``$STRING`` | No |  |
-| `str_area` | ``$STRING`` | No |  |
-| `str_category` | ``$STRING`` | No |  |
-| `str_creative_commons_confirmed` | ``$STRING`` | No |  |
-| `str_drink_alternate` | ``$STRING`` | No |  |
-| `str_image_source` | ``$STRING`` | No |  |
-| `str_ingredient1` | ``$STRING`` | No |  |
-| `str_ingredient10` | ``$STRING`` | No |  |
-| `str_ingredient11` | ``$STRING`` | No |  |
-| `str_ingredient12` | ``$STRING`` | No |  |
-| `str_ingredient13` | ``$STRING`` | No |  |
-| `str_ingredient14` | ``$STRING`` | No |  |
-| `str_ingredient15` | ``$STRING`` | No |  |
-| `str_ingredient16` | ``$STRING`` | No |  |
-| `str_ingredient17` | ``$STRING`` | No |  |
-| `str_ingredient18` | ``$STRING`` | No |  |
-| `str_ingredient19` | ``$STRING`` | No |  |
-| `str_ingredient2` | ``$STRING`` | No |  |
-| `str_ingredient20` | ``$STRING`` | No |  |
-| `str_ingredient3` | ``$STRING`` | No |  |
-| `str_ingredient4` | ``$STRING`` | No |  |
-| `str_ingredient5` | ``$STRING`` | No |  |
-| `str_ingredient6` | ``$STRING`` | No |  |
-| `str_ingredient7` | ``$STRING`` | No |  |
-| `str_ingredient8` | ``$STRING`` | No |  |
-| `str_ingredient9` | ``$STRING`` | No |  |
-| `str_instruction` | ``$STRING`` | No |  |
-| `str_meal` | ``$STRING`` | No |  |
-| `str_meal_thumb` | ``$STRING`` | No |  |
-| `str_measure1` | ``$STRING`` | No |  |
-| `str_measure10` | ``$STRING`` | No |  |
-| `str_measure11` | ``$STRING`` | No |  |
-| `str_measure12` | ``$STRING`` | No |  |
-| `str_measure13` | ``$STRING`` | No |  |
-| `str_measure14` | ``$STRING`` | No |  |
-| `str_measure15` | ``$STRING`` | No |  |
-| `str_measure16` | ``$STRING`` | No |  |
-| `str_measure17` | ``$STRING`` | No |  |
-| `str_measure18` | ``$STRING`` | No |  |
-| `str_measure19` | ``$STRING`` | No |  |
-| `str_measure2` | ``$STRING`` | No |  |
-| `str_measure20` | ``$STRING`` | No |  |
-| `str_measure3` | ``$STRING`` | No |  |
-| `str_measure4` | ``$STRING`` | No |  |
-| `str_measure5` | ``$STRING`` | No |  |
-| `str_measure6` | ``$STRING`` | No |  |
-| `str_measure7` | ``$STRING`` | No |  |
-| `str_measure8` | ``$STRING`` | No |  |
-| `str_measure9` | ``$STRING`` | No |  |
-| `str_source` | ``$STRING`` | No |  |
-| `str_tag` | ``$STRING`` | No |  |
-| `str_youtube` | ``$STRING`` | No |  |
+| `date_modified` | `string` | No |  |
+| `id_meal` | `string` | No |  |
+| `str_area` | `string` | No |  |
+| `str_category` | `string` | No |  |
+| `str_creative_commons_confirmed` | `string` | No |  |
+| `str_drink_alternate` | `string` | No |  |
+| `str_image_source` | `string` | No |  |
+| `str_ingredient1` | `string` | No |  |
+| `str_ingredient10` | `string` | No |  |
+| `str_ingredient11` | `string` | No |  |
+| `str_ingredient12` | `string` | No |  |
+| `str_ingredient13` | `string` | No |  |
+| `str_ingredient14` | `string` | No |  |
+| `str_ingredient15` | `string` | No |  |
+| `str_ingredient16` | `string` | No |  |
+| `str_ingredient17` | `string` | No |  |
+| `str_ingredient18` | `string` | No |  |
+| `str_ingredient19` | `string` | No |  |
+| `str_ingredient2` | `string` | No |  |
+| `str_ingredient20` | `string` | No |  |
+| `str_ingredient3` | `string` | No |  |
+| `str_ingredient4` | `string` | No |  |
+| `str_ingredient5` | `string` | No |  |
+| `str_ingredient6` | `string` | No |  |
+| `str_ingredient7` | `string` | No |  |
+| `str_ingredient8` | `string` | No |  |
+| `str_ingredient9` | `string` | No |  |
+| `str_instruction` | `string` | No |  |
+| `str_meal` | `string` | No |  |
+| `str_meal_thumb` | `string` | No |  |
+| `str_measure1` | `string` | No |  |
+| `str_measure10` | `string` | No |  |
+| `str_measure11` | `string` | No |  |
+| `str_measure12` | `string` | No |  |
+| `str_measure13` | `string` | No |  |
+| `str_measure14` | `string` | No |  |
+| `str_measure15` | `string` | No |  |
+| `str_measure16` | `string` | No |  |
+| `str_measure17` | `string` | No |  |
+| `str_measure18` | `string` | No |  |
+| `str_measure19` | `string` | No |  |
+| `str_measure2` | `string` | No |  |
+| `str_measure20` | `string` | No |  |
+| `str_measure3` | `string` | No |  |
+| `str_measure4` | `string` | No |  |
+| `str_measure5` | `string` | No |  |
+| `str_measure6` | `string` | No |  |
+| `str_measure7` | `string` | No |  |
+| `str_measure8` | `string` | No |  |
+| `str_measure9` | `string` | No |  |
+| `str_source` | `string` | No |  |
+| `str_tag` | `string` | No |  |
+| `str_youtube` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Randomselection()->list([]);
+$results = $client->Randomselection()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -683,7 +683,7 @@ Set the entity match criteria.
 Create a new `RandomselectionEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -700,85 +700,85 @@ $search = $client->Search();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `date_modified` | ``$STRING`` | No |  |
-| `id_meal` | ``$STRING`` | No |  |
-| `str_area` | ``$STRING`` | No |  |
-| `str_category` | ``$STRING`` | No |  |
-| `str_creative_commons_confirmed` | ``$STRING`` | No |  |
-| `str_drink_alternate` | ``$STRING`` | No |  |
-| `str_image_source` | ``$STRING`` | No |  |
-| `str_ingredient1` | ``$STRING`` | No |  |
-| `str_ingredient10` | ``$STRING`` | No |  |
-| `str_ingredient11` | ``$STRING`` | No |  |
-| `str_ingredient12` | ``$STRING`` | No |  |
-| `str_ingredient13` | ``$STRING`` | No |  |
-| `str_ingredient14` | ``$STRING`` | No |  |
-| `str_ingredient15` | ``$STRING`` | No |  |
-| `str_ingredient16` | ``$STRING`` | No |  |
-| `str_ingredient17` | ``$STRING`` | No |  |
-| `str_ingredient18` | ``$STRING`` | No |  |
-| `str_ingredient19` | ``$STRING`` | No |  |
-| `str_ingredient2` | ``$STRING`` | No |  |
-| `str_ingredient20` | ``$STRING`` | No |  |
-| `str_ingredient3` | ``$STRING`` | No |  |
-| `str_ingredient4` | ``$STRING`` | No |  |
-| `str_ingredient5` | ``$STRING`` | No |  |
-| `str_ingredient6` | ``$STRING`` | No |  |
-| `str_ingredient7` | ``$STRING`` | No |  |
-| `str_ingredient8` | ``$STRING`` | No |  |
-| `str_ingredient9` | ``$STRING`` | No |  |
-| `str_instruction` | ``$STRING`` | No |  |
-| `str_meal` | ``$STRING`` | No |  |
-| `str_meal_thumb` | ``$STRING`` | No |  |
-| `str_measure1` | ``$STRING`` | No |  |
-| `str_measure10` | ``$STRING`` | No |  |
-| `str_measure11` | ``$STRING`` | No |  |
-| `str_measure12` | ``$STRING`` | No |  |
-| `str_measure13` | ``$STRING`` | No |  |
-| `str_measure14` | ``$STRING`` | No |  |
-| `str_measure15` | ``$STRING`` | No |  |
-| `str_measure16` | ``$STRING`` | No |  |
-| `str_measure17` | ``$STRING`` | No |  |
-| `str_measure18` | ``$STRING`` | No |  |
-| `str_measure19` | ``$STRING`` | No |  |
-| `str_measure2` | ``$STRING`` | No |  |
-| `str_measure20` | ``$STRING`` | No |  |
-| `str_measure3` | ``$STRING`` | No |  |
-| `str_measure4` | ``$STRING`` | No |  |
-| `str_measure5` | ``$STRING`` | No |  |
-| `str_measure6` | ``$STRING`` | No |  |
-| `str_measure7` | ``$STRING`` | No |  |
-| `str_measure8` | ``$STRING`` | No |  |
-| `str_measure9` | ``$STRING`` | No |  |
-| `str_source` | ``$STRING`` | No |  |
-| `str_tag` | ``$STRING`` | No |  |
-| `str_youtube` | ``$STRING`` | No |  |
+| `date_modified` | `string` | No |  |
+| `id_meal` | `string` | No |  |
+| `str_area` | `string` | No |  |
+| `str_category` | `string` | No |  |
+| `str_creative_commons_confirmed` | `string` | No |  |
+| `str_drink_alternate` | `string` | No |  |
+| `str_image_source` | `string` | No |  |
+| `str_ingredient1` | `string` | No |  |
+| `str_ingredient10` | `string` | No |  |
+| `str_ingredient11` | `string` | No |  |
+| `str_ingredient12` | `string` | No |  |
+| `str_ingredient13` | `string` | No |  |
+| `str_ingredient14` | `string` | No |  |
+| `str_ingredient15` | `string` | No |  |
+| `str_ingredient16` | `string` | No |  |
+| `str_ingredient17` | `string` | No |  |
+| `str_ingredient18` | `string` | No |  |
+| `str_ingredient19` | `string` | No |  |
+| `str_ingredient2` | `string` | No |  |
+| `str_ingredient20` | `string` | No |  |
+| `str_ingredient3` | `string` | No |  |
+| `str_ingredient4` | `string` | No |  |
+| `str_ingredient5` | `string` | No |  |
+| `str_ingredient6` | `string` | No |  |
+| `str_ingredient7` | `string` | No |  |
+| `str_ingredient8` | `string` | No |  |
+| `str_ingredient9` | `string` | No |  |
+| `str_instruction` | `string` | No |  |
+| `str_meal` | `string` | No |  |
+| `str_meal_thumb` | `string` | No |  |
+| `str_measure1` | `string` | No |  |
+| `str_measure10` | `string` | No |  |
+| `str_measure11` | `string` | No |  |
+| `str_measure12` | `string` | No |  |
+| `str_measure13` | `string` | No |  |
+| `str_measure14` | `string` | No |  |
+| `str_measure15` | `string` | No |  |
+| `str_measure16` | `string` | No |  |
+| `str_measure17` | `string` | No |  |
+| `str_measure18` | `string` | No |  |
+| `str_measure19` | `string` | No |  |
+| `str_measure2` | `string` | No |  |
+| `str_measure20` | `string` | No |  |
+| `str_measure3` | `string` | No |  |
+| `str_measure4` | `string` | No |  |
+| `str_measure5` | `string` | No |  |
+| `str_measure6` | `string` | No |  |
+| `str_measure7` | `string` | No |  |
+| `str_measure8` | `string` | No |  |
+| `str_measure9` | `string` | No |  |
+| `str_source` | `string` | No |  |
+| `str_tag` | `string` | No |  |
+| `str_youtube` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Search()->list([]);
+$results = $client->Search()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -787,7 +787,7 @@ Set the entity match criteria.
 Create a new `SearchEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

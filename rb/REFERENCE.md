@@ -8,7 +8,7 @@ Complete API reference for the FreeMeal Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'free-meal_sdk'
+require_relative 'FreeMeal_sdk'
 
 client = FreeMealSDK.new(options)
 ```
@@ -122,19 +122,19 @@ category = client.Category
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `id_category` | ``$STRING`` | No |  |
-| `str_category` | ``$STRING`` | No |  |
-| `str_category_description` | ``$STRING`` | No |  |
-| `str_category_thumb` | ``$STRING`` | No |  |
+| `id_category` | `String` | No |  |
+| `str_category` | `String` | No |  |
+| `str_category_description` | `String` | No |  |
+| `str_category_thumb` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Category.list(nil)
+results = client.Category.list
 ```
 
 ### Common Methods
@@ -177,18 +177,18 @@ filter = client.Filter
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `id_meal` | ``$STRING`` | No |  |
-| `str_meal` | ``$STRING`` | No |  |
-| `str_meal_thumb` | ``$STRING`` | No |  |
+| `id_meal` | `String` | No |  |
+| `str_meal` | `String` | No |  |
+| `str_meal_thumb` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Filter.list(nil)
+results = client.Filter.list
 ```
 
 ### Common Methods
@@ -231,68 +231,68 @@ latest = client.Latest
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `date_modified` | ``$STRING`` | No |  |
-| `id_meal` | ``$STRING`` | No |  |
-| `str_area` | ``$STRING`` | No |  |
-| `str_category` | ``$STRING`` | No |  |
-| `str_creative_commons_confirmed` | ``$STRING`` | No |  |
-| `str_drink_alternate` | ``$STRING`` | No |  |
-| `str_image_source` | ``$STRING`` | No |  |
-| `str_ingredient1` | ``$STRING`` | No |  |
-| `str_ingredient10` | ``$STRING`` | No |  |
-| `str_ingredient11` | ``$STRING`` | No |  |
-| `str_ingredient12` | ``$STRING`` | No |  |
-| `str_ingredient13` | ``$STRING`` | No |  |
-| `str_ingredient14` | ``$STRING`` | No |  |
-| `str_ingredient15` | ``$STRING`` | No |  |
-| `str_ingredient16` | ``$STRING`` | No |  |
-| `str_ingredient17` | ``$STRING`` | No |  |
-| `str_ingredient18` | ``$STRING`` | No |  |
-| `str_ingredient19` | ``$STRING`` | No |  |
-| `str_ingredient2` | ``$STRING`` | No |  |
-| `str_ingredient20` | ``$STRING`` | No |  |
-| `str_ingredient3` | ``$STRING`` | No |  |
-| `str_ingredient4` | ``$STRING`` | No |  |
-| `str_ingredient5` | ``$STRING`` | No |  |
-| `str_ingredient6` | ``$STRING`` | No |  |
-| `str_ingredient7` | ``$STRING`` | No |  |
-| `str_ingredient8` | ``$STRING`` | No |  |
-| `str_ingredient9` | ``$STRING`` | No |  |
-| `str_instruction` | ``$STRING`` | No |  |
-| `str_meal` | ``$STRING`` | No |  |
-| `str_meal_thumb` | ``$STRING`` | No |  |
-| `str_measure1` | ``$STRING`` | No |  |
-| `str_measure10` | ``$STRING`` | No |  |
-| `str_measure11` | ``$STRING`` | No |  |
-| `str_measure12` | ``$STRING`` | No |  |
-| `str_measure13` | ``$STRING`` | No |  |
-| `str_measure14` | ``$STRING`` | No |  |
-| `str_measure15` | ``$STRING`` | No |  |
-| `str_measure16` | ``$STRING`` | No |  |
-| `str_measure17` | ``$STRING`` | No |  |
-| `str_measure18` | ``$STRING`` | No |  |
-| `str_measure19` | ``$STRING`` | No |  |
-| `str_measure2` | ``$STRING`` | No |  |
-| `str_measure20` | ``$STRING`` | No |  |
-| `str_measure3` | ``$STRING`` | No |  |
-| `str_measure4` | ``$STRING`` | No |  |
-| `str_measure5` | ``$STRING`` | No |  |
-| `str_measure6` | ``$STRING`` | No |  |
-| `str_measure7` | ``$STRING`` | No |  |
-| `str_measure8` | ``$STRING`` | No |  |
-| `str_measure9` | ``$STRING`` | No |  |
-| `str_source` | ``$STRING`` | No |  |
-| `str_tag` | ``$STRING`` | No |  |
-| `str_youtube` | ``$STRING`` | No |  |
+| `date_modified` | `String` | No |  |
+| `id_meal` | `String` | No |  |
+| `str_area` | `String` | No |  |
+| `str_category` | `String` | No |  |
+| `str_creative_commons_confirmed` | `String` | No |  |
+| `str_drink_alternate` | `String` | No |  |
+| `str_image_source` | `String` | No |  |
+| `str_ingredient1` | `String` | No |  |
+| `str_ingredient10` | `String` | No |  |
+| `str_ingredient11` | `String` | No |  |
+| `str_ingredient12` | `String` | No |  |
+| `str_ingredient13` | `String` | No |  |
+| `str_ingredient14` | `String` | No |  |
+| `str_ingredient15` | `String` | No |  |
+| `str_ingredient16` | `String` | No |  |
+| `str_ingredient17` | `String` | No |  |
+| `str_ingredient18` | `String` | No |  |
+| `str_ingredient19` | `String` | No |  |
+| `str_ingredient2` | `String` | No |  |
+| `str_ingredient20` | `String` | No |  |
+| `str_ingredient3` | `String` | No |  |
+| `str_ingredient4` | `String` | No |  |
+| `str_ingredient5` | `String` | No |  |
+| `str_ingredient6` | `String` | No |  |
+| `str_ingredient7` | `String` | No |  |
+| `str_ingredient8` | `String` | No |  |
+| `str_ingredient9` | `String` | No |  |
+| `str_instruction` | `String` | No |  |
+| `str_meal` | `String` | No |  |
+| `str_meal_thumb` | `String` | No |  |
+| `str_measure1` | `String` | No |  |
+| `str_measure10` | `String` | No |  |
+| `str_measure11` | `String` | No |  |
+| `str_measure12` | `String` | No |  |
+| `str_measure13` | `String` | No |  |
+| `str_measure14` | `String` | No |  |
+| `str_measure15` | `String` | No |  |
+| `str_measure16` | `String` | No |  |
+| `str_measure17` | `String` | No |  |
+| `str_measure18` | `String` | No |  |
+| `str_measure19` | `String` | No |  |
+| `str_measure2` | `String` | No |  |
+| `str_measure20` | `String` | No |  |
+| `str_measure3` | `String` | No |  |
+| `str_measure4` | `String` | No |  |
+| `str_measure5` | `String` | No |  |
+| `str_measure6` | `String` | No |  |
+| `str_measure7` | `String` | No |  |
+| `str_measure8` | `String` | No |  |
+| `str_measure9` | `String` | No |  |
+| `str_source` | `String` | No |  |
+| `str_tag` | `String` | No |  |
+| `str_youtube` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Latest.list(nil)
+results = client.Latest.list
 ```
 
 ### Common Methods
@@ -335,18 +335,18 @@ list = client.List
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `str_area` | ``$STRING`` | No |  |
-| `str_category` | ``$STRING`` | No |  |
-| `str_ingredient` | ``$STRING`` | No |  |
+| `str_area` | `String` | No |  |
+| `str_category` | `String` | No |  |
+| `str_ingredient` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.List.list(nil)
+results = client.List.list
 ```
 
 ### Common Methods
@@ -389,68 +389,68 @@ lookup = client.Lookup
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `date_modified` | ``$STRING`` | No |  |
-| `id_meal` | ``$STRING`` | No |  |
-| `str_area` | ``$STRING`` | No |  |
-| `str_category` | ``$STRING`` | No |  |
-| `str_creative_commons_confirmed` | ``$STRING`` | No |  |
-| `str_drink_alternate` | ``$STRING`` | No |  |
-| `str_image_source` | ``$STRING`` | No |  |
-| `str_ingredient1` | ``$STRING`` | No |  |
-| `str_ingredient10` | ``$STRING`` | No |  |
-| `str_ingredient11` | ``$STRING`` | No |  |
-| `str_ingredient12` | ``$STRING`` | No |  |
-| `str_ingredient13` | ``$STRING`` | No |  |
-| `str_ingredient14` | ``$STRING`` | No |  |
-| `str_ingredient15` | ``$STRING`` | No |  |
-| `str_ingredient16` | ``$STRING`` | No |  |
-| `str_ingredient17` | ``$STRING`` | No |  |
-| `str_ingredient18` | ``$STRING`` | No |  |
-| `str_ingredient19` | ``$STRING`` | No |  |
-| `str_ingredient2` | ``$STRING`` | No |  |
-| `str_ingredient20` | ``$STRING`` | No |  |
-| `str_ingredient3` | ``$STRING`` | No |  |
-| `str_ingredient4` | ``$STRING`` | No |  |
-| `str_ingredient5` | ``$STRING`` | No |  |
-| `str_ingredient6` | ``$STRING`` | No |  |
-| `str_ingredient7` | ``$STRING`` | No |  |
-| `str_ingredient8` | ``$STRING`` | No |  |
-| `str_ingredient9` | ``$STRING`` | No |  |
-| `str_instruction` | ``$STRING`` | No |  |
-| `str_meal` | ``$STRING`` | No |  |
-| `str_meal_thumb` | ``$STRING`` | No |  |
-| `str_measure1` | ``$STRING`` | No |  |
-| `str_measure10` | ``$STRING`` | No |  |
-| `str_measure11` | ``$STRING`` | No |  |
-| `str_measure12` | ``$STRING`` | No |  |
-| `str_measure13` | ``$STRING`` | No |  |
-| `str_measure14` | ``$STRING`` | No |  |
-| `str_measure15` | ``$STRING`` | No |  |
-| `str_measure16` | ``$STRING`` | No |  |
-| `str_measure17` | ``$STRING`` | No |  |
-| `str_measure18` | ``$STRING`` | No |  |
-| `str_measure19` | ``$STRING`` | No |  |
-| `str_measure2` | ``$STRING`` | No |  |
-| `str_measure20` | ``$STRING`` | No |  |
-| `str_measure3` | ``$STRING`` | No |  |
-| `str_measure4` | ``$STRING`` | No |  |
-| `str_measure5` | ``$STRING`` | No |  |
-| `str_measure6` | ``$STRING`` | No |  |
-| `str_measure7` | ``$STRING`` | No |  |
-| `str_measure8` | ``$STRING`` | No |  |
-| `str_measure9` | ``$STRING`` | No |  |
-| `str_source` | ``$STRING`` | No |  |
-| `str_tag` | ``$STRING`` | No |  |
-| `str_youtube` | ``$STRING`` | No |  |
+| `date_modified` | `String` | No |  |
+| `id_meal` | `String` | No |  |
+| `str_area` | `String` | No |  |
+| `str_category` | `String` | No |  |
+| `str_creative_commons_confirmed` | `String` | No |  |
+| `str_drink_alternate` | `String` | No |  |
+| `str_image_source` | `String` | No |  |
+| `str_ingredient1` | `String` | No |  |
+| `str_ingredient10` | `String` | No |  |
+| `str_ingredient11` | `String` | No |  |
+| `str_ingredient12` | `String` | No |  |
+| `str_ingredient13` | `String` | No |  |
+| `str_ingredient14` | `String` | No |  |
+| `str_ingredient15` | `String` | No |  |
+| `str_ingredient16` | `String` | No |  |
+| `str_ingredient17` | `String` | No |  |
+| `str_ingredient18` | `String` | No |  |
+| `str_ingredient19` | `String` | No |  |
+| `str_ingredient2` | `String` | No |  |
+| `str_ingredient20` | `String` | No |  |
+| `str_ingredient3` | `String` | No |  |
+| `str_ingredient4` | `String` | No |  |
+| `str_ingredient5` | `String` | No |  |
+| `str_ingredient6` | `String` | No |  |
+| `str_ingredient7` | `String` | No |  |
+| `str_ingredient8` | `String` | No |  |
+| `str_ingredient9` | `String` | No |  |
+| `str_instruction` | `String` | No |  |
+| `str_meal` | `String` | No |  |
+| `str_meal_thumb` | `String` | No |  |
+| `str_measure1` | `String` | No |  |
+| `str_measure10` | `String` | No |  |
+| `str_measure11` | `String` | No |  |
+| `str_measure12` | `String` | No |  |
+| `str_measure13` | `String` | No |  |
+| `str_measure14` | `String` | No |  |
+| `str_measure15` | `String` | No |  |
+| `str_measure16` | `String` | No |  |
+| `str_measure17` | `String` | No |  |
+| `str_measure18` | `String` | No |  |
+| `str_measure19` | `String` | No |  |
+| `str_measure2` | `String` | No |  |
+| `str_measure20` | `String` | No |  |
+| `str_measure3` | `String` | No |  |
+| `str_measure4` | `String` | No |  |
+| `str_measure5` | `String` | No |  |
+| `str_measure6` | `String` | No |  |
+| `str_measure7` | `String` | No |  |
+| `str_measure8` | `String` | No |  |
+| `str_measure9` | `String` | No |  |
+| `str_source` | `String` | No |  |
+| `str_tag` | `String` | No |  |
+| `str_youtube` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Lookup.list(nil)
+results = client.Lookup.list
 ```
 
 ### Common Methods
@@ -493,68 +493,68 @@ random = client.Random
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `date_modified` | ``$STRING`` | No |  |
-| `id_meal` | ``$STRING`` | No |  |
-| `str_area` | ``$STRING`` | No |  |
-| `str_category` | ``$STRING`` | No |  |
-| `str_creative_commons_confirmed` | ``$STRING`` | No |  |
-| `str_drink_alternate` | ``$STRING`` | No |  |
-| `str_image_source` | ``$STRING`` | No |  |
-| `str_ingredient1` | ``$STRING`` | No |  |
-| `str_ingredient10` | ``$STRING`` | No |  |
-| `str_ingredient11` | ``$STRING`` | No |  |
-| `str_ingredient12` | ``$STRING`` | No |  |
-| `str_ingredient13` | ``$STRING`` | No |  |
-| `str_ingredient14` | ``$STRING`` | No |  |
-| `str_ingredient15` | ``$STRING`` | No |  |
-| `str_ingredient16` | ``$STRING`` | No |  |
-| `str_ingredient17` | ``$STRING`` | No |  |
-| `str_ingredient18` | ``$STRING`` | No |  |
-| `str_ingredient19` | ``$STRING`` | No |  |
-| `str_ingredient2` | ``$STRING`` | No |  |
-| `str_ingredient20` | ``$STRING`` | No |  |
-| `str_ingredient3` | ``$STRING`` | No |  |
-| `str_ingredient4` | ``$STRING`` | No |  |
-| `str_ingredient5` | ``$STRING`` | No |  |
-| `str_ingredient6` | ``$STRING`` | No |  |
-| `str_ingredient7` | ``$STRING`` | No |  |
-| `str_ingredient8` | ``$STRING`` | No |  |
-| `str_ingredient9` | ``$STRING`` | No |  |
-| `str_instruction` | ``$STRING`` | No |  |
-| `str_meal` | ``$STRING`` | No |  |
-| `str_meal_thumb` | ``$STRING`` | No |  |
-| `str_measure1` | ``$STRING`` | No |  |
-| `str_measure10` | ``$STRING`` | No |  |
-| `str_measure11` | ``$STRING`` | No |  |
-| `str_measure12` | ``$STRING`` | No |  |
-| `str_measure13` | ``$STRING`` | No |  |
-| `str_measure14` | ``$STRING`` | No |  |
-| `str_measure15` | ``$STRING`` | No |  |
-| `str_measure16` | ``$STRING`` | No |  |
-| `str_measure17` | ``$STRING`` | No |  |
-| `str_measure18` | ``$STRING`` | No |  |
-| `str_measure19` | ``$STRING`` | No |  |
-| `str_measure2` | ``$STRING`` | No |  |
-| `str_measure20` | ``$STRING`` | No |  |
-| `str_measure3` | ``$STRING`` | No |  |
-| `str_measure4` | ``$STRING`` | No |  |
-| `str_measure5` | ``$STRING`` | No |  |
-| `str_measure6` | ``$STRING`` | No |  |
-| `str_measure7` | ``$STRING`` | No |  |
-| `str_measure8` | ``$STRING`` | No |  |
-| `str_measure9` | ``$STRING`` | No |  |
-| `str_source` | ``$STRING`` | No |  |
-| `str_tag` | ``$STRING`` | No |  |
-| `str_youtube` | ``$STRING`` | No |  |
+| `date_modified` | `String` | No |  |
+| `id_meal` | `String` | No |  |
+| `str_area` | `String` | No |  |
+| `str_category` | `String` | No |  |
+| `str_creative_commons_confirmed` | `String` | No |  |
+| `str_drink_alternate` | `String` | No |  |
+| `str_image_source` | `String` | No |  |
+| `str_ingredient1` | `String` | No |  |
+| `str_ingredient10` | `String` | No |  |
+| `str_ingredient11` | `String` | No |  |
+| `str_ingredient12` | `String` | No |  |
+| `str_ingredient13` | `String` | No |  |
+| `str_ingredient14` | `String` | No |  |
+| `str_ingredient15` | `String` | No |  |
+| `str_ingredient16` | `String` | No |  |
+| `str_ingredient17` | `String` | No |  |
+| `str_ingredient18` | `String` | No |  |
+| `str_ingredient19` | `String` | No |  |
+| `str_ingredient2` | `String` | No |  |
+| `str_ingredient20` | `String` | No |  |
+| `str_ingredient3` | `String` | No |  |
+| `str_ingredient4` | `String` | No |  |
+| `str_ingredient5` | `String` | No |  |
+| `str_ingredient6` | `String` | No |  |
+| `str_ingredient7` | `String` | No |  |
+| `str_ingredient8` | `String` | No |  |
+| `str_ingredient9` | `String` | No |  |
+| `str_instruction` | `String` | No |  |
+| `str_meal` | `String` | No |  |
+| `str_meal_thumb` | `String` | No |  |
+| `str_measure1` | `String` | No |  |
+| `str_measure10` | `String` | No |  |
+| `str_measure11` | `String` | No |  |
+| `str_measure12` | `String` | No |  |
+| `str_measure13` | `String` | No |  |
+| `str_measure14` | `String` | No |  |
+| `str_measure15` | `String` | No |  |
+| `str_measure16` | `String` | No |  |
+| `str_measure17` | `String` | No |  |
+| `str_measure18` | `String` | No |  |
+| `str_measure19` | `String` | No |  |
+| `str_measure2` | `String` | No |  |
+| `str_measure20` | `String` | No |  |
+| `str_measure3` | `String` | No |  |
+| `str_measure4` | `String` | No |  |
+| `str_measure5` | `String` | No |  |
+| `str_measure6` | `String` | No |  |
+| `str_measure7` | `String` | No |  |
+| `str_measure8` | `String` | No |  |
+| `str_measure9` | `String` | No |  |
+| `str_source` | `String` | No |  |
+| `str_tag` | `String` | No |  |
+| `str_youtube` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Random.list(nil)
+results = client.Random.list
 ```
 
 ### Common Methods
@@ -597,68 +597,68 @@ randomselection = client.Randomselection
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `date_modified` | ``$STRING`` | No |  |
-| `id_meal` | ``$STRING`` | No |  |
-| `str_area` | ``$STRING`` | No |  |
-| `str_category` | ``$STRING`` | No |  |
-| `str_creative_commons_confirmed` | ``$STRING`` | No |  |
-| `str_drink_alternate` | ``$STRING`` | No |  |
-| `str_image_source` | ``$STRING`` | No |  |
-| `str_ingredient1` | ``$STRING`` | No |  |
-| `str_ingredient10` | ``$STRING`` | No |  |
-| `str_ingredient11` | ``$STRING`` | No |  |
-| `str_ingredient12` | ``$STRING`` | No |  |
-| `str_ingredient13` | ``$STRING`` | No |  |
-| `str_ingredient14` | ``$STRING`` | No |  |
-| `str_ingredient15` | ``$STRING`` | No |  |
-| `str_ingredient16` | ``$STRING`` | No |  |
-| `str_ingredient17` | ``$STRING`` | No |  |
-| `str_ingredient18` | ``$STRING`` | No |  |
-| `str_ingredient19` | ``$STRING`` | No |  |
-| `str_ingredient2` | ``$STRING`` | No |  |
-| `str_ingredient20` | ``$STRING`` | No |  |
-| `str_ingredient3` | ``$STRING`` | No |  |
-| `str_ingredient4` | ``$STRING`` | No |  |
-| `str_ingredient5` | ``$STRING`` | No |  |
-| `str_ingredient6` | ``$STRING`` | No |  |
-| `str_ingredient7` | ``$STRING`` | No |  |
-| `str_ingredient8` | ``$STRING`` | No |  |
-| `str_ingredient9` | ``$STRING`` | No |  |
-| `str_instruction` | ``$STRING`` | No |  |
-| `str_meal` | ``$STRING`` | No |  |
-| `str_meal_thumb` | ``$STRING`` | No |  |
-| `str_measure1` | ``$STRING`` | No |  |
-| `str_measure10` | ``$STRING`` | No |  |
-| `str_measure11` | ``$STRING`` | No |  |
-| `str_measure12` | ``$STRING`` | No |  |
-| `str_measure13` | ``$STRING`` | No |  |
-| `str_measure14` | ``$STRING`` | No |  |
-| `str_measure15` | ``$STRING`` | No |  |
-| `str_measure16` | ``$STRING`` | No |  |
-| `str_measure17` | ``$STRING`` | No |  |
-| `str_measure18` | ``$STRING`` | No |  |
-| `str_measure19` | ``$STRING`` | No |  |
-| `str_measure2` | ``$STRING`` | No |  |
-| `str_measure20` | ``$STRING`` | No |  |
-| `str_measure3` | ``$STRING`` | No |  |
-| `str_measure4` | ``$STRING`` | No |  |
-| `str_measure5` | ``$STRING`` | No |  |
-| `str_measure6` | ``$STRING`` | No |  |
-| `str_measure7` | ``$STRING`` | No |  |
-| `str_measure8` | ``$STRING`` | No |  |
-| `str_measure9` | ``$STRING`` | No |  |
-| `str_source` | ``$STRING`` | No |  |
-| `str_tag` | ``$STRING`` | No |  |
-| `str_youtube` | ``$STRING`` | No |  |
+| `date_modified` | `String` | No |  |
+| `id_meal` | `String` | No |  |
+| `str_area` | `String` | No |  |
+| `str_category` | `String` | No |  |
+| `str_creative_commons_confirmed` | `String` | No |  |
+| `str_drink_alternate` | `String` | No |  |
+| `str_image_source` | `String` | No |  |
+| `str_ingredient1` | `String` | No |  |
+| `str_ingredient10` | `String` | No |  |
+| `str_ingredient11` | `String` | No |  |
+| `str_ingredient12` | `String` | No |  |
+| `str_ingredient13` | `String` | No |  |
+| `str_ingredient14` | `String` | No |  |
+| `str_ingredient15` | `String` | No |  |
+| `str_ingredient16` | `String` | No |  |
+| `str_ingredient17` | `String` | No |  |
+| `str_ingredient18` | `String` | No |  |
+| `str_ingredient19` | `String` | No |  |
+| `str_ingredient2` | `String` | No |  |
+| `str_ingredient20` | `String` | No |  |
+| `str_ingredient3` | `String` | No |  |
+| `str_ingredient4` | `String` | No |  |
+| `str_ingredient5` | `String` | No |  |
+| `str_ingredient6` | `String` | No |  |
+| `str_ingredient7` | `String` | No |  |
+| `str_ingredient8` | `String` | No |  |
+| `str_ingredient9` | `String` | No |  |
+| `str_instruction` | `String` | No |  |
+| `str_meal` | `String` | No |  |
+| `str_meal_thumb` | `String` | No |  |
+| `str_measure1` | `String` | No |  |
+| `str_measure10` | `String` | No |  |
+| `str_measure11` | `String` | No |  |
+| `str_measure12` | `String` | No |  |
+| `str_measure13` | `String` | No |  |
+| `str_measure14` | `String` | No |  |
+| `str_measure15` | `String` | No |  |
+| `str_measure16` | `String` | No |  |
+| `str_measure17` | `String` | No |  |
+| `str_measure18` | `String` | No |  |
+| `str_measure19` | `String` | No |  |
+| `str_measure2` | `String` | No |  |
+| `str_measure20` | `String` | No |  |
+| `str_measure3` | `String` | No |  |
+| `str_measure4` | `String` | No |  |
+| `str_measure5` | `String` | No |  |
+| `str_measure6` | `String` | No |  |
+| `str_measure7` | `String` | No |  |
+| `str_measure8` | `String` | No |  |
+| `str_measure9` | `String` | No |  |
+| `str_source` | `String` | No |  |
+| `str_tag` | `String` | No |  |
+| `str_youtube` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Randomselection.list(nil)
+results = client.Randomselection.list
 ```
 
 ### Common Methods
@@ -701,68 +701,68 @@ search = client.Search
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `date_modified` | ``$STRING`` | No |  |
-| `id_meal` | ``$STRING`` | No |  |
-| `str_area` | ``$STRING`` | No |  |
-| `str_category` | ``$STRING`` | No |  |
-| `str_creative_commons_confirmed` | ``$STRING`` | No |  |
-| `str_drink_alternate` | ``$STRING`` | No |  |
-| `str_image_source` | ``$STRING`` | No |  |
-| `str_ingredient1` | ``$STRING`` | No |  |
-| `str_ingredient10` | ``$STRING`` | No |  |
-| `str_ingredient11` | ``$STRING`` | No |  |
-| `str_ingredient12` | ``$STRING`` | No |  |
-| `str_ingredient13` | ``$STRING`` | No |  |
-| `str_ingredient14` | ``$STRING`` | No |  |
-| `str_ingredient15` | ``$STRING`` | No |  |
-| `str_ingredient16` | ``$STRING`` | No |  |
-| `str_ingredient17` | ``$STRING`` | No |  |
-| `str_ingredient18` | ``$STRING`` | No |  |
-| `str_ingredient19` | ``$STRING`` | No |  |
-| `str_ingredient2` | ``$STRING`` | No |  |
-| `str_ingredient20` | ``$STRING`` | No |  |
-| `str_ingredient3` | ``$STRING`` | No |  |
-| `str_ingredient4` | ``$STRING`` | No |  |
-| `str_ingredient5` | ``$STRING`` | No |  |
-| `str_ingredient6` | ``$STRING`` | No |  |
-| `str_ingredient7` | ``$STRING`` | No |  |
-| `str_ingredient8` | ``$STRING`` | No |  |
-| `str_ingredient9` | ``$STRING`` | No |  |
-| `str_instruction` | ``$STRING`` | No |  |
-| `str_meal` | ``$STRING`` | No |  |
-| `str_meal_thumb` | ``$STRING`` | No |  |
-| `str_measure1` | ``$STRING`` | No |  |
-| `str_measure10` | ``$STRING`` | No |  |
-| `str_measure11` | ``$STRING`` | No |  |
-| `str_measure12` | ``$STRING`` | No |  |
-| `str_measure13` | ``$STRING`` | No |  |
-| `str_measure14` | ``$STRING`` | No |  |
-| `str_measure15` | ``$STRING`` | No |  |
-| `str_measure16` | ``$STRING`` | No |  |
-| `str_measure17` | ``$STRING`` | No |  |
-| `str_measure18` | ``$STRING`` | No |  |
-| `str_measure19` | ``$STRING`` | No |  |
-| `str_measure2` | ``$STRING`` | No |  |
-| `str_measure20` | ``$STRING`` | No |  |
-| `str_measure3` | ``$STRING`` | No |  |
-| `str_measure4` | ``$STRING`` | No |  |
-| `str_measure5` | ``$STRING`` | No |  |
-| `str_measure6` | ``$STRING`` | No |  |
-| `str_measure7` | ``$STRING`` | No |  |
-| `str_measure8` | ``$STRING`` | No |  |
-| `str_measure9` | ``$STRING`` | No |  |
-| `str_source` | ``$STRING`` | No |  |
-| `str_tag` | ``$STRING`` | No |  |
-| `str_youtube` | ``$STRING`` | No |  |
+| `date_modified` | `String` | No |  |
+| `id_meal` | `String` | No |  |
+| `str_area` | `String` | No |  |
+| `str_category` | `String` | No |  |
+| `str_creative_commons_confirmed` | `String` | No |  |
+| `str_drink_alternate` | `String` | No |  |
+| `str_image_source` | `String` | No |  |
+| `str_ingredient1` | `String` | No |  |
+| `str_ingredient10` | `String` | No |  |
+| `str_ingredient11` | `String` | No |  |
+| `str_ingredient12` | `String` | No |  |
+| `str_ingredient13` | `String` | No |  |
+| `str_ingredient14` | `String` | No |  |
+| `str_ingredient15` | `String` | No |  |
+| `str_ingredient16` | `String` | No |  |
+| `str_ingredient17` | `String` | No |  |
+| `str_ingredient18` | `String` | No |  |
+| `str_ingredient19` | `String` | No |  |
+| `str_ingredient2` | `String` | No |  |
+| `str_ingredient20` | `String` | No |  |
+| `str_ingredient3` | `String` | No |  |
+| `str_ingredient4` | `String` | No |  |
+| `str_ingredient5` | `String` | No |  |
+| `str_ingredient6` | `String` | No |  |
+| `str_ingredient7` | `String` | No |  |
+| `str_ingredient8` | `String` | No |  |
+| `str_ingredient9` | `String` | No |  |
+| `str_instruction` | `String` | No |  |
+| `str_meal` | `String` | No |  |
+| `str_meal_thumb` | `String` | No |  |
+| `str_measure1` | `String` | No |  |
+| `str_measure10` | `String` | No |  |
+| `str_measure11` | `String` | No |  |
+| `str_measure12` | `String` | No |  |
+| `str_measure13` | `String` | No |  |
+| `str_measure14` | `String` | No |  |
+| `str_measure15` | `String` | No |  |
+| `str_measure16` | `String` | No |  |
+| `str_measure17` | `String` | No |  |
+| `str_measure18` | `String` | No |  |
+| `str_measure19` | `String` | No |  |
+| `str_measure2` | `String` | No |  |
+| `str_measure20` | `String` | No |  |
+| `str_measure3` | `String` | No |  |
+| `str_measure4` | `String` | No |  |
+| `str_measure5` | `String` | No |  |
+| `str_measure6` | `String` | No |  |
+| `str_measure7` | `String` | No |  |
+| `str_measure8` | `String` | No |  |
+| `str_measure9` | `String` | No |  |
+| `str_source` | `String` | No |  |
+| `str_tag` | `String` | No |  |
+| `str_youtube` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Search.list(nil)
+results = client.Search.list
 ```
 
 ### Common Methods

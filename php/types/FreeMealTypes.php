@@ -21,7 +21,7 @@ class Category
     public ?string $str_category_thumb = null;
 }
 
-/** Match filter for Category#list (any subset of Category fields). */
+/** Request payload for Category#list. */
 class CategoryListMatch
 {
     public ?string $id_category = null;
@@ -38,7 +38,7 @@ class Filter
     public ?string $str_meal_thumb = null;
 }
 
-/** Match filter for Filter#list (any subset of Filter fields). */
+/** Request payload for Filter#list. */
 class FilterListMatch
 {
     public ?string $id_meal = null;
@@ -104,7 +104,7 @@ class Latest
     public ?string $str_youtube = null;
 }
 
-/** Match filter for Latest#list (any subset of Latest fields). */
+/** Request payload for Latest#list. */
 class LatestListMatch
 {
     public ?string $date_modified = null;
@@ -170,7 +170,7 @@ class List
     public ?string $str_ingredient = null;
 }
 
-/** Match filter for List#list (any subset of List fields). */
+/** Request payload for List#list. */
 class ListListMatch
 {
     public ?string $str_area = null;
@@ -236,7 +236,7 @@ class Lookup
     public ?string $str_youtube = null;
 }
 
-/** Match filter for Lookup#list (any subset of Lookup fields). */
+/** Request payload for Lookup#list. */
 class LookupListMatch
 {
     public ?string $date_modified = null;
@@ -352,7 +352,7 @@ class Random
     public ?string $str_youtube = null;
 }
 
-/** Match filter for Random#list (any subset of Random fields). */
+/** Request payload for Random#list. */
 class RandomListMatch
 {
     public ?string $date_modified = null;
@@ -468,7 +468,7 @@ class Randomselection
     public ?string $str_youtube = null;
 }
 
-/** Match filter for Randomselection#list (any subset of Randomselection fields). */
+/** Request payload for Randomselection#list. */
 class RandomselectionListMatch
 {
     public ?string $date_modified = null;
@@ -584,7 +584,7 @@ class Search
     public ?string $str_youtube = null;
 }
 
-/** Match filter for Search#list (any subset of Search fields). */
+/** Request payload for Search#list. */
 class SearchListMatch
 {
     public ?string $date_modified = null;

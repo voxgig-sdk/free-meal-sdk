@@ -221,49 +221,49 @@ class FreeMealSDK:
 
 
     def Category(self, data=None) -> "CategoryEntity":
-        """Entity factory: client.Category().list({}) / client.Category().load({"id": ...})."""
+        """Entity factory: client.Category().list() / client.Category().load({"id": ...})."""
         from entity.category_entity import CategoryEntity
         return CategoryEntity(self, data)
 
 
     def Filter(self, data=None) -> "FilterEntity":
-        """Entity factory: client.Filter().list({}) / client.Filter().load({"id": ...})."""
+        """Entity factory: client.Filter().list() / client.Filter().load({"id": ...})."""
         from entity.filter_entity import FilterEntity
         return FilterEntity(self, data)
 
 
     def Latest(self, data=None) -> "LatestEntity":
-        """Entity factory: client.Latest().list({}) / client.Latest().load({"id": ...})."""
+        """Entity factory: client.Latest().list() / client.Latest().load({"id": ...})."""
         from entity.latest_entity import LatestEntity
         return LatestEntity(self, data)
 
 
     def List(self, data=None) -> "ListEntity":
-        """Entity factory: client.List().list({}) / client.List().load({"id": ...})."""
+        """Entity factory: client.List().list() / client.List().load({"id": ...})."""
         from entity.list_entity import ListEntity
         return ListEntity(self, data)
 
 
     def Lookup(self, data=None) -> "LookupEntity":
-        """Entity factory: client.Lookup().list({}) / client.Lookup().load({"id": ...})."""
+        """Entity factory: client.Lookup().list() / client.Lookup().load({"id": ...})."""
         from entity.lookup_entity import LookupEntity
         return LookupEntity(self, data)
 
 
     def Random(self, data=None) -> "RandomEntity":
-        """Entity factory: client.Random().list({}) / client.Random().load({"id": ...})."""
+        """Entity factory: client.Random().list() / client.Random().load({"id": ...})."""
         from entity.random_entity import RandomEntity
         return RandomEntity(self, data)
 
 
     def Randomselection(self, data=None) -> "RandomselectionEntity":
-        """Entity factory: client.Randomselection().list({}) / client.Randomselection().load({"id": ...})."""
+        """Entity factory: client.Randomselection().list() / client.Randomselection().load({"id": ...})."""
         from entity.randomselection_entity import RandomselectionEntity
         return RandomselectionEntity(self, data)
 
 
     def Search(self, data=None) -> "SearchEntity":
-        """Entity factory: client.Search().list({}) / client.Search().load({"id": ...})."""
+        """Entity factory: client.Search().list() / client.Search().load({"id": ...})."""
         from entity.search_entity import SearchEntity
         return SearchEntity(self, data)
 
