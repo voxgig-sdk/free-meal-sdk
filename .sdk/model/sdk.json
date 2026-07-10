@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -2364,15 +2361,25 @@
           "email": "thedatadb@gmail.com"
         },
         "description": "Provides access to a free recipe API with features like searching meals by name, listing meals by first letter, looking up meal details by ID, and more. Supports JSON format data retrieval.",
+        "meta_source": "https://www.freepublicapis.com",
+        "security": {
+          "in": "path",
+          "name": "api_key",
+          "prefix": "",
+          "scheme": "ApiKeyAuth",
+          "type": "apiKey"
+        },
         "servers": [
           {
             "description": "Production server (test API key: 1)",
             "url": "https://www.themealdb.com/api/json/v1/1"
           }
         ],
+        "summary": "Provides access to a free recipe API with features like searching meals by name, listing meals by first letter, looking up meal details by ID, and more.",
         "termsOfService": "https://www.themealdb.com/api.php",
         "title": "Free Meal API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://www.themealdb.com/api.php"
       },
       "option": {},
       "target": {
@@ -2425,6 +2432,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -2475,6 +2485,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },

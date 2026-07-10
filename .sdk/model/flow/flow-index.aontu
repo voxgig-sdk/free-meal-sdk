@@ -1,0 +1,10 @@
+# Flows
+
+@"BasicCategoryFlow.aontu"
+@"BasicFilterFlow.aontu"
+@"BasicLatestFlow.aontu"
+@"BasicListFlow.aontu"
+@"BasicLookupFlow.aontu"
+@"BasicRandomFlow.aontu"
+@"BasicRandomselectionFlow.aontu"
+@"BasicSearchFlow.aontu"
