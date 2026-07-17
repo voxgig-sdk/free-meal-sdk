@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- FreeMeal SDK exists test
 
 local sdk = require("free-meal_sdk")
 
