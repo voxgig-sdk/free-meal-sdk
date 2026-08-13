@@ -60,8 +60,8 @@ Entity operations raise on failure, so wrap them in `try` / `except`:
 
 ```python
 try:
-    categorys = client.Category().list()
-    print(categorys)
+    latests = client.Latest().list()
+    print(latests)
 except Exception as err:
     print(f"list failed: {err}")
 ```
@@ -127,9 +127,10 @@ Create a mock client for unit testing — no server required:
 ```python
 client = FreeMealSDK.test()
 
-# Entity ops return the bare record and raise on error.
-category = client.Category().list()
-# category contains the mock response record
+# Entity ops return the ENTITY and raises on error;
+# call data_get() for the record.
+latest = client.Latest().list()
+# latest contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -232,7 +233,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `dict` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (a `dict` for single-entity
 ops, a `list` for `list`) and raise on error. Wrap calls in
 `try`/`except` to handle failures.
 
@@ -254,10 +255,10 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `id_category` |  |
-| `str_category` |  |
-| `str_category_description` |  |
-| `str_category_thumb` |  |
+| `idCategory` |  |
+| `strCategory` |  |
+| `strCategoryDescription` |  |
+| `strCategoryThumb` |  |
 
 Operations: List.
 
@@ -267,9 +268,9 @@ API path: `/categories.php`
 
 | Field | Description |
 | --- | --- |
-| `id_meal` |  |
-| `str_meal` |  |
-| `str_meal_thumb` |  |
+| `idMeal` |  |
+| `strMeal` |  |
+| `strMealThumb` |  |
 
 Operations: List.
 
@@ -279,59 +280,59 @@ API path: `/filter.php`
 
 | Field | Description |
 | --- | --- |
-| `date_modified` |  |
-| `id_meal` |  |
-| `str_area` |  |
-| `str_category` |  |
-| `str_creative_commons_confirmed` |  |
-| `str_drink_alternate` |  |
-| `str_image_source` |  |
-| `str_ingredient1` |  |
-| `str_ingredient10` |  |
-| `str_ingredient11` |  |
-| `str_ingredient12` |  |
-| `str_ingredient13` |  |
-| `str_ingredient14` |  |
-| `str_ingredient15` |  |
-| `str_ingredient16` |  |
-| `str_ingredient17` |  |
-| `str_ingredient18` |  |
-| `str_ingredient19` |  |
-| `str_ingredient2` |  |
-| `str_ingredient20` |  |
-| `str_ingredient3` |  |
-| `str_ingredient4` |  |
-| `str_ingredient5` |  |
-| `str_ingredient6` |  |
-| `str_ingredient7` |  |
-| `str_ingredient8` |  |
-| `str_ingredient9` |  |
-| `str_instruction` |  |
-| `str_meal` |  |
-| `str_meal_thumb` |  |
-| `str_measure1` |  |
-| `str_measure10` |  |
-| `str_measure11` |  |
-| `str_measure12` |  |
-| `str_measure13` |  |
-| `str_measure14` |  |
-| `str_measure15` |  |
-| `str_measure16` |  |
-| `str_measure17` |  |
-| `str_measure18` |  |
-| `str_measure19` |  |
-| `str_measure2` |  |
-| `str_measure20` |  |
-| `str_measure3` |  |
-| `str_measure4` |  |
-| `str_measure5` |  |
-| `str_measure6` |  |
-| `str_measure7` |  |
-| `str_measure8` |  |
-| `str_measure9` |  |
-| `str_source` |  |
-| `str_tag` |  |
-| `str_youtube` |  |
+| `dateModified` |  |
+| `idMeal` |  |
+| `strArea` |  |
+| `strCategory` |  |
+| `strCreativeCommonsConfirmed` |  |
+| `strDrinkAlternate` |  |
+| `strImageSource` |  |
+| `strIngredient1` |  |
+| `strIngredient10` |  |
+| `strIngredient11` |  |
+| `strIngredient12` |  |
+| `strIngredient13` |  |
+| `strIngredient14` |  |
+| `strIngredient15` |  |
+| `strIngredient16` |  |
+| `strIngredient17` |  |
+| `strIngredient18` |  |
+| `strIngredient19` |  |
+| `strIngredient2` |  |
+| `strIngredient20` |  |
+| `strIngredient3` |  |
+| `strIngredient4` |  |
+| `strIngredient5` |  |
+| `strIngredient6` |  |
+| `strIngredient7` |  |
+| `strIngredient8` |  |
+| `strIngredient9` |  |
+| `strInstructions` |  |
+| `strMeal` |  |
+| `strMealThumb` |  |
+| `strMeasure1` |  |
+| `strMeasure10` |  |
+| `strMeasure11` |  |
+| `strMeasure12` |  |
+| `strMeasure13` |  |
+| `strMeasure14` |  |
+| `strMeasure15` |  |
+| `strMeasure16` |  |
+| `strMeasure17` |  |
+| `strMeasure18` |  |
+| `strMeasure19` |  |
+| `strMeasure2` |  |
+| `strMeasure20` |  |
+| `strMeasure3` |  |
+| `strMeasure4` |  |
+| `strMeasure5` |  |
+| `strMeasure6` |  |
+| `strMeasure7` |  |
+| `strMeasure8` |  |
+| `strMeasure9` |  |
+| `strSource` |  |
+| `strTags` |  |
+| `strYoutube` |  |
 
 Operations: List.
 
@@ -341,9 +342,9 @@ API path: `/latest.php`
 
 | Field | Description |
 | --- | --- |
-| `str_area` |  |
-| `str_category` |  |
-| `str_ingredient` |  |
+| `strArea` |  |
+| `strCategory` |  |
+| `strIngredient` |  |
 
 Operations: List.
 
@@ -353,59 +354,59 @@ API path: `/list.php`
 
 | Field | Description |
 | --- | --- |
-| `date_modified` |  |
-| `id_meal` |  |
-| `str_area` |  |
-| `str_category` |  |
-| `str_creative_commons_confirmed` |  |
-| `str_drink_alternate` |  |
-| `str_image_source` |  |
-| `str_ingredient1` |  |
-| `str_ingredient10` |  |
-| `str_ingredient11` |  |
-| `str_ingredient12` |  |
-| `str_ingredient13` |  |
-| `str_ingredient14` |  |
-| `str_ingredient15` |  |
-| `str_ingredient16` |  |
-| `str_ingredient17` |  |
-| `str_ingredient18` |  |
-| `str_ingredient19` |  |
-| `str_ingredient2` |  |
-| `str_ingredient20` |  |
-| `str_ingredient3` |  |
-| `str_ingredient4` |  |
-| `str_ingredient5` |  |
-| `str_ingredient6` |  |
-| `str_ingredient7` |  |
-| `str_ingredient8` |  |
-| `str_ingredient9` |  |
-| `str_instruction` |  |
-| `str_meal` |  |
-| `str_meal_thumb` |  |
-| `str_measure1` |  |
-| `str_measure10` |  |
-| `str_measure11` |  |
-| `str_measure12` |  |
-| `str_measure13` |  |
-| `str_measure14` |  |
-| `str_measure15` |  |
-| `str_measure16` |  |
-| `str_measure17` |  |
-| `str_measure18` |  |
-| `str_measure19` |  |
-| `str_measure2` |  |
-| `str_measure20` |  |
-| `str_measure3` |  |
-| `str_measure4` |  |
-| `str_measure5` |  |
-| `str_measure6` |  |
-| `str_measure7` |  |
-| `str_measure8` |  |
-| `str_measure9` |  |
-| `str_source` |  |
-| `str_tag` |  |
-| `str_youtube` |  |
+| `dateModified` |  |
+| `idMeal` |  |
+| `strArea` |  |
+| `strCategory` |  |
+| `strCreativeCommonsConfirmed` |  |
+| `strDrinkAlternate` |  |
+| `strImageSource` |  |
+| `strIngredient1` |  |
+| `strIngredient10` |  |
+| `strIngredient11` |  |
+| `strIngredient12` |  |
+| `strIngredient13` |  |
+| `strIngredient14` |  |
+| `strIngredient15` |  |
+| `strIngredient16` |  |
+| `strIngredient17` |  |
+| `strIngredient18` |  |
+| `strIngredient19` |  |
+| `strIngredient2` |  |
+| `strIngredient20` |  |
+| `strIngredient3` |  |
+| `strIngredient4` |  |
+| `strIngredient5` |  |
+| `strIngredient6` |  |
+| `strIngredient7` |  |
+| `strIngredient8` |  |
+| `strIngredient9` |  |
+| `strInstructions` |  |
+| `strMeal` |  |
+| `strMealThumb` |  |
+| `strMeasure1` |  |
+| `strMeasure10` |  |
+| `strMeasure11` |  |
+| `strMeasure12` |  |
+| `strMeasure13` |  |
+| `strMeasure14` |  |
+| `strMeasure15` |  |
+| `strMeasure16` |  |
+| `strMeasure17` |  |
+| `strMeasure18` |  |
+| `strMeasure19` |  |
+| `strMeasure2` |  |
+| `strMeasure20` |  |
+| `strMeasure3` |  |
+| `strMeasure4` |  |
+| `strMeasure5` |  |
+| `strMeasure6` |  |
+| `strMeasure7` |  |
+| `strMeasure8` |  |
+| `strMeasure9` |  |
+| `strSource` |  |
+| `strTags` |  |
+| `strYoutube` |  |
 
 Operations: List.
 
@@ -415,59 +416,59 @@ API path: `/lookup.php`
 
 | Field | Description |
 | --- | --- |
-| `date_modified` |  |
-| `id_meal` |  |
-| `str_area` |  |
-| `str_category` |  |
-| `str_creative_commons_confirmed` |  |
-| `str_drink_alternate` |  |
-| `str_image_source` |  |
-| `str_ingredient1` |  |
-| `str_ingredient10` |  |
-| `str_ingredient11` |  |
-| `str_ingredient12` |  |
-| `str_ingredient13` |  |
-| `str_ingredient14` |  |
-| `str_ingredient15` |  |
-| `str_ingredient16` |  |
-| `str_ingredient17` |  |
-| `str_ingredient18` |  |
-| `str_ingredient19` |  |
-| `str_ingredient2` |  |
-| `str_ingredient20` |  |
-| `str_ingredient3` |  |
-| `str_ingredient4` |  |
-| `str_ingredient5` |  |
-| `str_ingredient6` |  |
-| `str_ingredient7` |  |
-| `str_ingredient8` |  |
-| `str_ingredient9` |  |
-| `str_instruction` |  |
-| `str_meal` |  |
-| `str_meal_thumb` |  |
-| `str_measure1` |  |
-| `str_measure10` |  |
-| `str_measure11` |  |
-| `str_measure12` |  |
-| `str_measure13` |  |
-| `str_measure14` |  |
-| `str_measure15` |  |
-| `str_measure16` |  |
-| `str_measure17` |  |
-| `str_measure18` |  |
-| `str_measure19` |  |
-| `str_measure2` |  |
-| `str_measure20` |  |
-| `str_measure3` |  |
-| `str_measure4` |  |
-| `str_measure5` |  |
-| `str_measure6` |  |
-| `str_measure7` |  |
-| `str_measure8` |  |
-| `str_measure9` |  |
-| `str_source` |  |
-| `str_tag` |  |
-| `str_youtube` |  |
+| `dateModified` |  |
+| `idMeal` |  |
+| `strArea` |  |
+| `strCategory` |  |
+| `strCreativeCommonsConfirmed` |  |
+| `strDrinkAlternate` |  |
+| `strImageSource` |  |
+| `strIngredient1` |  |
+| `strIngredient10` |  |
+| `strIngredient11` |  |
+| `strIngredient12` |  |
+| `strIngredient13` |  |
+| `strIngredient14` |  |
+| `strIngredient15` |  |
+| `strIngredient16` |  |
+| `strIngredient17` |  |
+| `strIngredient18` |  |
+| `strIngredient19` |  |
+| `strIngredient2` |  |
+| `strIngredient20` |  |
+| `strIngredient3` |  |
+| `strIngredient4` |  |
+| `strIngredient5` |  |
+| `strIngredient6` |  |
+| `strIngredient7` |  |
+| `strIngredient8` |  |
+| `strIngredient9` |  |
+| `strInstructions` |  |
+| `strMeal` |  |
+| `strMealThumb` |  |
+| `strMeasure1` |  |
+| `strMeasure10` |  |
+| `strMeasure11` |  |
+| `strMeasure12` |  |
+| `strMeasure13` |  |
+| `strMeasure14` |  |
+| `strMeasure15` |  |
+| `strMeasure16` |  |
+| `strMeasure17` |  |
+| `strMeasure18` |  |
+| `strMeasure19` |  |
+| `strMeasure2` |  |
+| `strMeasure20` |  |
+| `strMeasure3` |  |
+| `strMeasure4` |  |
+| `strMeasure5` |  |
+| `strMeasure6` |  |
+| `strMeasure7` |  |
+| `strMeasure8` |  |
+| `strMeasure9` |  |
+| `strSource` |  |
+| `strTags` |  |
+| `strYoutube` |  |
 
 Operations: List.
 
@@ -477,59 +478,59 @@ API path: `/random.php`
 
 | Field | Description |
 | --- | --- |
-| `date_modified` |  |
-| `id_meal` |  |
-| `str_area` |  |
-| `str_category` |  |
-| `str_creative_commons_confirmed` |  |
-| `str_drink_alternate` |  |
-| `str_image_source` |  |
-| `str_ingredient1` |  |
-| `str_ingredient10` |  |
-| `str_ingredient11` |  |
-| `str_ingredient12` |  |
-| `str_ingredient13` |  |
-| `str_ingredient14` |  |
-| `str_ingredient15` |  |
-| `str_ingredient16` |  |
-| `str_ingredient17` |  |
-| `str_ingredient18` |  |
-| `str_ingredient19` |  |
-| `str_ingredient2` |  |
-| `str_ingredient20` |  |
-| `str_ingredient3` |  |
-| `str_ingredient4` |  |
-| `str_ingredient5` |  |
-| `str_ingredient6` |  |
-| `str_ingredient7` |  |
-| `str_ingredient8` |  |
-| `str_ingredient9` |  |
-| `str_instruction` |  |
-| `str_meal` |  |
-| `str_meal_thumb` |  |
-| `str_measure1` |  |
-| `str_measure10` |  |
-| `str_measure11` |  |
-| `str_measure12` |  |
-| `str_measure13` |  |
-| `str_measure14` |  |
-| `str_measure15` |  |
-| `str_measure16` |  |
-| `str_measure17` |  |
-| `str_measure18` |  |
-| `str_measure19` |  |
-| `str_measure2` |  |
-| `str_measure20` |  |
-| `str_measure3` |  |
-| `str_measure4` |  |
-| `str_measure5` |  |
-| `str_measure6` |  |
-| `str_measure7` |  |
-| `str_measure8` |  |
-| `str_measure9` |  |
-| `str_source` |  |
-| `str_tag` |  |
-| `str_youtube` |  |
+| `dateModified` |  |
+| `idMeal` |  |
+| `strArea` |  |
+| `strCategory` |  |
+| `strCreativeCommonsConfirmed` |  |
+| `strDrinkAlternate` |  |
+| `strImageSource` |  |
+| `strIngredient1` |  |
+| `strIngredient10` |  |
+| `strIngredient11` |  |
+| `strIngredient12` |  |
+| `strIngredient13` |  |
+| `strIngredient14` |  |
+| `strIngredient15` |  |
+| `strIngredient16` |  |
+| `strIngredient17` |  |
+| `strIngredient18` |  |
+| `strIngredient19` |  |
+| `strIngredient2` |  |
+| `strIngredient20` |  |
+| `strIngredient3` |  |
+| `strIngredient4` |  |
+| `strIngredient5` |  |
+| `strIngredient6` |  |
+| `strIngredient7` |  |
+| `strIngredient8` |  |
+| `strIngredient9` |  |
+| `strInstructions` |  |
+| `strMeal` |  |
+| `strMealThumb` |  |
+| `strMeasure1` |  |
+| `strMeasure10` |  |
+| `strMeasure11` |  |
+| `strMeasure12` |  |
+| `strMeasure13` |  |
+| `strMeasure14` |  |
+| `strMeasure15` |  |
+| `strMeasure16` |  |
+| `strMeasure17` |  |
+| `strMeasure18` |  |
+| `strMeasure19` |  |
+| `strMeasure2` |  |
+| `strMeasure20` |  |
+| `strMeasure3` |  |
+| `strMeasure4` |  |
+| `strMeasure5` |  |
+| `strMeasure6` |  |
+| `strMeasure7` |  |
+| `strMeasure8` |  |
+| `strMeasure9` |  |
+| `strSource` |  |
+| `strTags` |  |
+| `strYoutube` |  |
 
 Operations: List.
 
@@ -539,59 +540,59 @@ API path: `/randomselection.php`
 
 | Field | Description |
 | --- | --- |
-| `date_modified` |  |
-| `id_meal` |  |
-| `str_area` |  |
-| `str_category` |  |
-| `str_creative_commons_confirmed` |  |
-| `str_drink_alternate` |  |
-| `str_image_source` |  |
-| `str_ingredient1` |  |
-| `str_ingredient10` |  |
-| `str_ingredient11` |  |
-| `str_ingredient12` |  |
-| `str_ingredient13` |  |
-| `str_ingredient14` |  |
-| `str_ingredient15` |  |
-| `str_ingredient16` |  |
-| `str_ingredient17` |  |
-| `str_ingredient18` |  |
-| `str_ingredient19` |  |
-| `str_ingredient2` |  |
-| `str_ingredient20` |  |
-| `str_ingredient3` |  |
-| `str_ingredient4` |  |
-| `str_ingredient5` |  |
-| `str_ingredient6` |  |
-| `str_ingredient7` |  |
-| `str_ingredient8` |  |
-| `str_ingredient9` |  |
-| `str_instruction` |  |
-| `str_meal` |  |
-| `str_meal_thumb` |  |
-| `str_measure1` |  |
-| `str_measure10` |  |
-| `str_measure11` |  |
-| `str_measure12` |  |
-| `str_measure13` |  |
-| `str_measure14` |  |
-| `str_measure15` |  |
-| `str_measure16` |  |
-| `str_measure17` |  |
-| `str_measure18` |  |
-| `str_measure19` |  |
-| `str_measure2` |  |
-| `str_measure20` |  |
-| `str_measure3` |  |
-| `str_measure4` |  |
-| `str_measure5` |  |
-| `str_measure6` |  |
-| `str_measure7` |  |
-| `str_measure8` |  |
-| `str_measure9` |  |
-| `str_source` |  |
-| `str_tag` |  |
-| `str_youtube` |  |
+| `dateModified` |  |
+| `idMeal` |  |
+| `strArea` |  |
+| `strCategory` |  |
+| `strCreativeCommonsConfirmed` |  |
+| `strDrinkAlternate` |  |
+| `strImageSource` |  |
+| `strIngredient1` |  |
+| `strIngredient10` |  |
+| `strIngredient11` |  |
+| `strIngredient12` |  |
+| `strIngredient13` |  |
+| `strIngredient14` |  |
+| `strIngredient15` |  |
+| `strIngredient16` |  |
+| `strIngredient17` |  |
+| `strIngredient18` |  |
+| `strIngredient19` |  |
+| `strIngredient2` |  |
+| `strIngredient20` |  |
+| `strIngredient3` |  |
+| `strIngredient4` |  |
+| `strIngredient5` |  |
+| `strIngredient6` |  |
+| `strIngredient7` |  |
+| `strIngredient8` |  |
+| `strIngredient9` |  |
+| `strInstructions` |  |
+| `strMeal` |  |
+| `strMealThumb` |  |
+| `strMeasure1` |  |
+| `strMeasure10` |  |
+| `strMeasure11` |  |
+| `strMeasure12` |  |
+| `strMeasure13` |  |
+| `strMeasure14` |  |
+| `strMeasure15` |  |
+| `strMeasure16` |  |
+| `strMeasure17` |  |
+| `strMeasure18` |  |
+| `strMeasure19` |  |
+| `strMeasure2` |  |
+| `strMeasure20` |  |
+| `strMeasure3` |  |
+| `strMeasure4` |  |
+| `strMeasure5` |  |
+| `strMeasure6` |  |
+| `strMeasure7` |  |
+| `strMeasure8` |  |
+| `strMeasure9` |  |
+| `strSource` |  |
+| `strTags` |  |
+| `strYoutube` |  |
 
 Operations: List.
 
@@ -616,10 +617,10 @@ Create an instance: `category = client.Category()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `id_category` | `str` |  |
-| `str_category` | `str` |  |
-| `str_category_description` | `str` |  |
-| `str_category_thumb` | `str` |  |
+| `idCategory` | `str` |  |
+| `strCategory` | `str` |  |
+| `strCategoryDescription` | `str` |  |
+| `strCategoryThumb` | `str` |  |
 
 #### Example: List
 
@@ -642,9 +643,9 @@ Create an instance: `filter = client.Filter()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `id_meal` | `str` |  |
-| `str_meal` | `str` |  |
-| `str_meal_thumb` | `str` |  |
+| `idMeal` | `str` |  |
+| `strMeal` | `str` |  |
+| `strMealThumb` | `str` |  |
 
 #### Example: List
 
@@ -667,59 +668,59 @@ Create an instance: `latest = client.Latest()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `date_modified` | `str` |  |
-| `id_meal` | `str` |  |
-| `str_area` | `str` |  |
-| `str_category` | `str` |  |
-| `str_creative_commons_confirmed` | `str` |  |
-| `str_drink_alternate` | `str` |  |
-| `str_image_source` | `str` |  |
-| `str_ingredient1` | `str` |  |
-| `str_ingredient10` | `str` |  |
-| `str_ingredient11` | `str` |  |
-| `str_ingredient12` | `str` |  |
-| `str_ingredient13` | `str` |  |
-| `str_ingredient14` | `str` |  |
-| `str_ingredient15` | `str` |  |
-| `str_ingredient16` | `str` |  |
-| `str_ingredient17` | `str` |  |
-| `str_ingredient18` | `str` |  |
-| `str_ingredient19` | `str` |  |
-| `str_ingredient2` | `str` |  |
-| `str_ingredient20` | `str` |  |
-| `str_ingredient3` | `str` |  |
-| `str_ingredient4` | `str` |  |
-| `str_ingredient5` | `str` |  |
-| `str_ingredient6` | `str` |  |
-| `str_ingredient7` | `str` |  |
-| `str_ingredient8` | `str` |  |
-| `str_ingredient9` | `str` |  |
-| `str_instruction` | `str` |  |
-| `str_meal` | `str` |  |
-| `str_meal_thumb` | `str` |  |
-| `str_measure1` | `str` |  |
-| `str_measure10` | `str` |  |
-| `str_measure11` | `str` |  |
-| `str_measure12` | `str` |  |
-| `str_measure13` | `str` |  |
-| `str_measure14` | `str` |  |
-| `str_measure15` | `str` |  |
-| `str_measure16` | `str` |  |
-| `str_measure17` | `str` |  |
-| `str_measure18` | `str` |  |
-| `str_measure19` | `str` |  |
-| `str_measure2` | `str` |  |
-| `str_measure20` | `str` |  |
-| `str_measure3` | `str` |  |
-| `str_measure4` | `str` |  |
-| `str_measure5` | `str` |  |
-| `str_measure6` | `str` |  |
-| `str_measure7` | `str` |  |
-| `str_measure8` | `str` |  |
-| `str_measure9` | `str` |  |
-| `str_source` | `str` |  |
-| `str_tag` | `str` |  |
-| `str_youtube` | `str` |  |
+| `dateModified` | `str` |  |
+| `idMeal` | `str` |  |
+| `strArea` | `str` |  |
+| `strCategory` | `str` |  |
+| `strCreativeCommonsConfirmed` | `str` |  |
+| `strDrinkAlternate` | `str` |  |
+| `strImageSource` | `str` |  |
+| `strIngredient1` | `str` |  |
+| `strIngredient10` | `str` |  |
+| `strIngredient11` | `str` |  |
+| `strIngredient12` | `str` |  |
+| `strIngredient13` | `str` |  |
+| `strIngredient14` | `str` |  |
+| `strIngredient15` | `str` |  |
+| `strIngredient16` | `str` |  |
+| `strIngredient17` | `str` |  |
+| `strIngredient18` | `str` |  |
+| `strIngredient19` | `str` |  |
+| `strIngredient2` | `str` |  |
+| `strIngredient20` | `str` |  |
+| `strIngredient3` | `str` |  |
+| `strIngredient4` | `str` |  |
+| `strIngredient5` | `str` |  |
+| `strIngredient6` | `str` |  |
+| `strIngredient7` | `str` |  |
+| `strIngredient8` | `str` |  |
+| `strIngredient9` | `str` |  |
+| `strInstructions` | `str` |  |
+| `strMeal` | `str` |  |
+| `strMealThumb` | `str` |  |
+| `strMeasure1` | `str` |  |
+| `strMeasure10` | `str` |  |
+| `strMeasure11` | `str` |  |
+| `strMeasure12` | `str` |  |
+| `strMeasure13` | `str` |  |
+| `strMeasure14` | `str` |  |
+| `strMeasure15` | `str` |  |
+| `strMeasure16` | `str` |  |
+| `strMeasure17` | `str` |  |
+| `strMeasure18` | `str` |  |
+| `strMeasure19` | `str` |  |
+| `strMeasure2` | `str` |  |
+| `strMeasure20` | `str` |  |
+| `strMeasure3` | `str` |  |
+| `strMeasure4` | `str` |  |
+| `strMeasure5` | `str` |  |
+| `strMeasure6` | `str` |  |
+| `strMeasure7` | `str` |  |
+| `strMeasure8` | `str` |  |
+| `strMeasure9` | `str` |  |
+| `strSource` | `str` |  |
+| `strTags` | `str` |  |
+| `strYoutube` | `str` |  |
 
 #### Example: List
 
@@ -742,9 +743,9 @@ Create an instance: `list = client.List()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `str_area` | `str` |  |
-| `str_category` | `str` |  |
-| `str_ingredient` | `str` |  |
+| `strArea` | `str` |  |
+| `strCategory` | `str` |  |
+| `strIngredient` | `str` |  |
 
 #### Example: List
 
@@ -767,59 +768,59 @@ Create an instance: `lookup = client.Lookup()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `date_modified` | `str` |  |
-| `id_meal` | `str` |  |
-| `str_area` | `str` |  |
-| `str_category` | `str` |  |
-| `str_creative_commons_confirmed` | `str` |  |
-| `str_drink_alternate` | `str` |  |
-| `str_image_source` | `str` |  |
-| `str_ingredient1` | `str` |  |
-| `str_ingredient10` | `str` |  |
-| `str_ingredient11` | `str` |  |
-| `str_ingredient12` | `str` |  |
-| `str_ingredient13` | `str` |  |
-| `str_ingredient14` | `str` |  |
-| `str_ingredient15` | `str` |  |
-| `str_ingredient16` | `str` |  |
-| `str_ingredient17` | `str` |  |
-| `str_ingredient18` | `str` |  |
-| `str_ingredient19` | `str` |  |
-| `str_ingredient2` | `str` |  |
-| `str_ingredient20` | `str` |  |
-| `str_ingredient3` | `str` |  |
-| `str_ingredient4` | `str` |  |
-| `str_ingredient5` | `str` |  |
-| `str_ingredient6` | `str` |  |
-| `str_ingredient7` | `str` |  |
-| `str_ingredient8` | `str` |  |
-| `str_ingredient9` | `str` |  |
-| `str_instruction` | `str` |  |
-| `str_meal` | `str` |  |
-| `str_meal_thumb` | `str` |  |
-| `str_measure1` | `str` |  |
-| `str_measure10` | `str` |  |
-| `str_measure11` | `str` |  |
-| `str_measure12` | `str` |  |
-| `str_measure13` | `str` |  |
-| `str_measure14` | `str` |  |
-| `str_measure15` | `str` |  |
-| `str_measure16` | `str` |  |
-| `str_measure17` | `str` |  |
-| `str_measure18` | `str` |  |
-| `str_measure19` | `str` |  |
-| `str_measure2` | `str` |  |
-| `str_measure20` | `str` |  |
-| `str_measure3` | `str` |  |
-| `str_measure4` | `str` |  |
-| `str_measure5` | `str` |  |
-| `str_measure6` | `str` |  |
-| `str_measure7` | `str` |  |
-| `str_measure8` | `str` |  |
-| `str_measure9` | `str` |  |
-| `str_source` | `str` |  |
-| `str_tag` | `str` |  |
-| `str_youtube` | `str` |  |
+| `dateModified` | `str` |  |
+| `idMeal` | `str` |  |
+| `strArea` | `str` |  |
+| `strCategory` | `str` |  |
+| `strCreativeCommonsConfirmed` | `str` |  |
+| `strDrinkAlternate` | `str` |  |
+| `strImageSource` | `str` |  |
+| `strIngredient1` | `str` |  |
+| `strIngredient10` | `str` |  |
+| `strIngredient11` | `str` |  |
+| `strIngredient12` | `str` |  |
+| `strIngredient13` | `str` |  |
+| `strIngredient14` | `str` |  |
+| `strIngredient15` | `str` |  |
+| `strIngredient16` | `str` |  |
+| `strIngredient17` | `str` |  |
+| `strIngredient18` | `str` |  |
+| `strIngredient19` | `str` |  |
+| `strIngredient2` | `str` |  |
+| `strIngredient20` | `str` |  |
+| `strIngredient3` | `str` |  |
+| `strIngredient4` | `str` |  |
+| `strIngredient5` | `str` |  |
+| `strIngredient6` | `str` |  |
+| `strIngredient7` | `str` |  |
+| `strIngredient8` | `str` |  |
+| `strIngredient9` | `str` |  |
+| `strInstructions` | `str` |  |
+| `strMeal` | `str` |  |
+| `strMealThumb` | `str` |  |
+| `strMeasure1` | `str` |  |
+| `strMeasure10` | `str` |  |
+| `strMeasure11` | `str` |  |
+| `strMeasure12` | `str` |  |
+| `strMeasure13` | `str` |  |
+| `strMeasure14` | `str` |  |
+| `strMeasure15` | `str` |  |
+| `strMeasure16` | `str` |  |
+| `strMeasure17` | `str` |  |
+| `strMeasure18` | `str` |  |
+| `strMeasure19` | `str` |  |
+| `strMeasure2` | `str` |  |
+| `strMeasure20` | `str` |  |
+| `strMeasure3` | `str` |  |
+| `strMeasure4` | `str` |  |
+| `strMeasure5` | `str` |  |
+| `strMeasure6` | `str` |  |
+| `strMeasure7` | `str` |  |
+| `strMeasure8` | `str` |  |
+| `strMeasure9` | `str` |  |
+| `strSource` | `str` |  |
+| `strTags` | `str` |  |
+| `strYoutube` | `str` |  |
 
 #### Example: List
 
@@ -842,59 +843,59 @@ Create an instance: `random = client.Random()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `date_modified` | `str` |  |
-| `id_meal` | `str` |  |
-| `str_area` | `str` |  |
-| `str_category` | `str` |  |
-| `str_creative_commons_confirmed` | `str` |  |
-| `str_drink_alternate` | `str` |  |
-| `str_image_source` | `str` |  |
-| `str_ingredient1` | `str` |  |
-| `str_ingredient10` | `str` |  |
-| `str_ingredient11` | `str` |  |
-| `str_ingredient12` | `str` |  |
-| `str_ingredient13` | `str` |  |
-| `str_ingredient14` | `str` |  |
-| `str_ingredient15` | `str` |  |
-| `str_ingredient16` | `str` |  |
-| `str_ingredient17` | `str` |  |
-| `str_ingredient18` | `str` |  |
-| `str_ingredient19` | `str` |  |
-| `str_ingredient2` | `str` |  |
-| `str_ingredient20` | `str` |  |
-| `str_ingredient3` | `str` |  |
-| `str_ingredient4` | `str` |  |
-| `str_ingredient5` | `str` |  |
-| `str_ingredient6` | `str` |  |
-| `str_ingredient7` | `str` |  |
-| `str_ingredient8` | `str` |  |
-| `str_ingredient9` | `str` |  |
-| `str_instruction` | `str` |  |
-| `str_meal` | `str` |  |
-| `str_meal_thumb` | `str` |  |
-| `str_measure1` | `str` |  |
-| `str_measure10` | `str` |  |
-| `str_measure11` | `str` |  |
-| `str_measure12` | `str` |  |
-| `str_measure13` | `str` |  |
-| `str_measure14` | `str` |  |
-| `str_measure15` | `str` |  |
-| `str_measure16` | `str` |  |
-| `str_measure17` | `str` |  |
-| `str_measure18` | `str` |  |
-| `str_measure19` | `str` |  |
-| `str_measure2` | `str` |  |
-| `str_measure20` | `str` |  |
-| `str_measure3` | `str` |  |
-| `str_measure4` | `str` |  |
-| `str_measure5` | `str` |  |
-| `str_measure6` | `str` |  |
-| `str_measure7` | `str` |  |
-| `str_measure8` | `str` |  |
-| `str_measure9` | `str` |  |
-| `str_source` | `str` |  |
-| `str_tag` | `str` |  |
-| `str_youtube` | `str` |  |
+| `dateModified` | `str` |  |
+| `idMeal` | `str` |  |
+| `strArea` | `str` |  |
+| `strCategory` | `str` |  |
+| `strCreativeCommonsConfirmed` | `str` |  |
+| `strDrinkAlternate` | `str` |  |
+| `strImageSource` | `str` |  |
+| `strIngredient1` | `str` |  |
+| `strIngredient10` | `str` |  |
+| `strIngredient11` | `str` |  |
+| `strIngredient12` | `str` |  |
+| `strIngredient13` | `str` |  |
+| `strIngredient14` | `str` |  |
+| `strIngredient15` | `str` |  |
+| `strIngredient16` | `str` |  |
+| `strIngredient17` | `str` |  |
+| `strIngredient18` | `str` |  |
+| `strIngredient19` | `str` |  |
+| `strIngredient2` | `str` |  |
+| `strIngredient20` | `str` |  |
+| `strIngredient3` | `str` |  |
+| `strIngredient4` | `str` |  |
+| `strIngredient5` | `str` |  |
+| `strIngredient6` | `str` |  |
+| `strIngredient7` | `str` |  |
+| `strIngredient8` | `str` |  |
+| `strIngredient9` | `str` |  |
+| `strInstructions` | `str` |  |
+| `strMeal` | `str` |  |
+| `strMealThumb` | `str` |  |
+| `strMeasure1` | `str` |  |
+| `strMeasure10` | `str` |  |
+| `strMeasure11` | `str` |  |
+| `strMeasure12` | `str` |  |
+| `strMeasure13` | `str` |  |
+| `strMeasure14` | `str` |  |
+| `strMeasure15` | `str` |  |
+| `strMeasure16` | `str` |  |
+| `strMeasure17` | `str` |  |
+| `strMeasure18` | `str` |  |
+| `strMeasure19` | `str` |  |
+| `strMeasure2` | `str` |  |
+| `strMeasure20` | `str` |  |
+| `strMeasure3` | `str` |  |
+| `strMeasure4` | `str` |  |
+| `strMeasure5` | `str` |  |
+| `strMeasure6` | `str` |  |
+| `strMeasure7` | `str` |  |
+| `strMeasure8` | `str` |  |
+| `strMeasure9` | `str` |  |
+| `strSource` | `str` |  |
+| `strTags` | `str` |  |
+| `strYoutube` | `str` |  |
 
 #### Example: List
 
@@ -917,59 +918,59 @@ Create an instance: `randomselection = client.Randomselection()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `date_modified` | `str` |  |
-| `id_meal` | `str` |  |
-| `str_area` | `str` |  |
-| `str_category` | `str` |  |
-| `str_creative_commons_confirmed` | `str` |  |
-| `str_drink_alternate` | `str` |  |
-| `str_image_source` | `str` |  |
-| `str_ingredient1` | `str` |  |
-| `str_ingredient10` | `str` |  |
-| `str_ingredient11` | `str` |  |
-| `str_ingredient12` | `str` |  |
-| `str_ingredient13` | `str` |  |
-| `str_ingredient14` | `str` |  |
-| `str_ingredient15` | `str` |  |
-| `str_ingredient16` | `str` |  |
-| `str_ingredient17` | `str` |  |
-| `str_ingredient18` | `str` |  |
-| `str_ingredient19` | `str` |  |
-| `str_ingredient2` | `str` |  |
-| `str_ingredient20` | `str` |  |
-| `str_ingredient3` | `str` |  |
-| `str_ingredient4` | `str` |  |
-| `str_ingredient5` | `str` |  |
-| `str_ingredient6` | `str` |  |
-| `str_ingredient7` | `str` |  |
-| `str_ingredient8` | `str` |  |
-| `str_ingredient9` | `str` |  |
-| `str_instruction` | `str` |  |
-| `str_meal` | `str` |  |
-| `str_meal_thumb` | `str` |  |
-| `str_measure1` | `str` |  |
-| `str_measure10` | `str` |  |
-| `str_measure11` | `str` |  |
-| `str_measure12` | `str` |  |
-| `str_measure13` | `str` |  |
-| `str_measure14` | `str` |  |
-| `str_measure15` | `str` |  |
-| `str_measure16` | `str` |  |
-| `str_measure17` | `str` |  |
-| `str_measure18` | `str` |  |
-| `str_measure19` | `str` |  |
-| `str_measure2` | `str` |  |
-| `str_measure20` | `str` |  |
-| `str_measure3` | `str` |  |
-| `str_measure4` | `str` |  |
-| `str_measure5` | `str` |  |
-| `str_measure6` | `str` |  |
-| `str_measure7` | `str` |  |
-| `str_measure8` | `str` |  |
-| `str_measure9` | `str` |  |
-| `str_source` | `str` |  |
-| `str_tag` | `str` |  |
-| `str_youtube` | `str` |  |
+| `dateModified` | `str` |  |
+| `idMeal` | `str` |  |
+| `strArea` | `str` |  |
+| `strCategory` | `str` |  |
+| `strCreativeCommonsConfirmed` | `str` |  |
+| `strDrinkAlternate` | `str` |  |
+| `strImageSource` | `str` |  |
+| `strIngredient1` | `str` |  |
+| `strIngredient10` | `str` |  |
+| `strIngredient11` | `str` |  |
+| `strIngredient12` | `str` |  |
+| `strIngredient13` | `str` |  |
+| `strIngredient14` | `str` |  |
+| `strIngredient15` | `str` |  |
+| `strIngredient16` | `str` |  |
+| `strIngredient17` | `str` |  |
+| `strIngredient18` | `str` |  |
+| `strIngredient19` | `str` |  |
+| `strIngredient2` | `str` |  |
+| `strIngredient20` | `str` |  |
+| `strIngredient3` | `str` |  |
+| `strIngredient4` | `str` |  |
+| `strIngredient5` | `str` |  |
+| `strIngredient6` | `str` |  |
+| `strIngredient7` | `str` |  |
+| `strIngredient8` | `str` |  |
+| `strIngredient9` | `str` |  |
+| `strInstructions` | `str` |  |
+| `strMeal` | `str` |  |
+| `strMealThumb` | `str` |  |
+| `strMeasure1` | `str` |  |
+| `strMeasure10` | `str` |  |
+| `strMeasure11` | `str` |  |
+| `strMeasure12` | `str` |  |
+| `strMeasure13` | `str` |  |
+| `strMeasure14` | `str` |  |
+| `strMeasure15` | `str` |  |
+| `strMeasure16` | `str` |  |
+| `strMeasure17` | `str` |  |
+| `strMeasure18` | `str` |  |
+| `strMeasure19` | `str` |  |
+| `strMeasure2` | `str` |  |
+| `strMeasure20` | `str` |  |
+| `strMeasure3` | `str` |  |
+| `strMeasure4` | `str` |  |
+| `strMeasure5` | `str` |  |
+| `strMeasure6` | `str` |  |
+| `strMeasure7` | `str` |  |
+| `strMeasure8` | `str` |  |
+| `strMeasure9` | `str` |  |
+| `strSource` | `str` |  |
+| `strTags` | `str` |  |
+| `strYoutube` | `str` |  |
 
 #### Example: List
 
@@ -992,59 +993,59 @@ Create an instance: `search = client.Search()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `date_modified` | `str` |  |
-| `id_meal` | `str` |  |
-| `str_area` | `str` |  |
-| `str_category` | `str` |  |
-| `str_creative_commons_confirmed` | `str` |  |
-| `str_drink_alternate` | `str` |  |
-| `str_image_source` | `str` |  |
-| `str_ingredient1` | `str` |  |
-| `str_ingredient10` | `str` |  |
-| `str_ingredient11` | `str` |  |
-| `str_ingredient12` | `str` |  |
-| `str_ingredient13` | `str` |  |
-| `str_ingredient14` | `str` |  |
-| `str_ingredient15` | `str` |  |
-| `str_ingredient16` | `str` |  |
-| `str_ingredient17` | `str` |  |
-| `str_ingredient18` | `str` |  |
-| `str_ingredient19` | `str` |  |
-| `str_ingredient2` | `str` |  |
-| `str_ingredient20` | `str` |  |
-| `str_ingredient3` | `str` |  |
-| `str_ingredient4` | `str` |  |
-| `str_ingredient5` | `str` |  |
-| `str_ingredient6` | `str` |  |
-| `str_ingredient7` | `str` |  |
-| `str_ingredient8` | `str` |  |
-| `str_ingredient9` | `str` |  |
-| `str_instruction` | `str` |  |
-| `str_meal` | `str` |  |
-| `str_meal_thumb` | `str` |  |
-| `str_measure1` | `str` |  |
-| `str_measure10` | `str` |  |
-| `str_measure11` | `str` |  |
-| `str_measure12` | `str` |  |
-| `str_measure13` | `str` |  |
-| `str_measure14` | `str` |  |
-| `str_measure15` | `str` |  |
-| `str_measure16` | `str` |  |
-| `str_measure17` | `str` |  |
-| `str_measure18` | `str` |  |
-| `str_measure19` | `str` |  |
-| `str_measure2` | `str` |  |
-| `str_measure20` | `str` |  |
-| `str_measure3` | `str` |  |
-| `str_measure4` | `str` |  |
-| `str_measure5` | `str` |  |
-| `str_measure6` | `str` |  |
-| `str_measure7` | `str` |  |
-| `str_measure8` | `str` |  |
-| `str_measure9` | `str` |  |
-| `str_source` | `str` |  |
-| `str_tag` | `str` |  |
-| `str_youtube` | `str` |  |
+| `dateModified` | `str` |  |
+| `idMeal` | `str` |  |
+| `strArea` | `str` |  |
+| `strCategory` | `str` |  |
+| `strCreativeCommonsConfirmed` | `str` |  |
+| `strDrinkAlternate` | `str` |  |
+| `strImageSource` | `str` |  |
+| `strIngredient1` | `str` |  |
+| `strIngredient10` | `str` |  |
+| `strIngredient11` | `str` |  |
+| `strIngredient12` | `str` |  |
+| `strIngredient13` | `str` |  |
+| `strIngredient14` | `str` |  |
+| `strIngredient15` | `str` |  |
+| `strIngredient16` | `str` |  |
+| `strIngredient17` | `str` |  |
+| `strIngredient18` | `str` |  |
+| `strIngredient19` | `str` |  |
+| `strIngredient2` | `str` |  |
+| `strIngredient20` | `str` |  |
+| `strIngredient3` | `str` |  |
+| `strIngredient4` | `str` |  |
+| `strIngredient5` | `str` |  |
+| `strIngredient6` | `str` |  |
+| `strIngredient7` | `str` |  |
+| `strIngredient8` | `str` |  |
+| `strIngredient9` | `str` |  |
+| `strInstructions` | `str` |  |
+| `strMeal` | `str` |  |
+| `strMealThumb` | `str` |  |
+| `strMeasure1` | `str` |  |
+| `strMeasure10` | `str` |  |
+| `strMeasure11` | `str` |  |
+| `strMeasure12` | `str` |  |
+| `strMeasure13` | `str` |  |
+| `strMeasure14` | `str` |  |
+| `strMeasure15` | `str` |  |
+| `strMeasure16` | `str` |  |
+| `strMeasure17` | `str` |  |
+| `strMeasure18` | `str` |  |
+| `strMeasure19` | `str` |  |
+| `strMeasure2` | `str` |  |
+| `strMeasure20` | `str` |  |
+| `strMeasure3` | `str` |  |
+| `strMeasure4` | `str` |  |
+| `strMeasure5` | `str` |  |
+| `strMeasure6` | `str` |  |
+| `strMeasure7` | `str` |  |
+| `strMeasure8` | `str` |  |
+| `strMeasure9` | `str` |  |
+| `strSource` | `str` |  |
+| `strTags` | `str` |  |
+| `strYoutube` | `str` |  |
 
 #### Example: List
 
@@ -1128,11 +1129,11 @@ Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-category = client.Category()
-category.list()
+latest = client.Latest()
+latest.list()
 
-# category.data_get() now returns the category data from the last list
-# category.match_get() returns the last match criteria
+# latest.data_get() now returns the latest data from the last list
+# latest.match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

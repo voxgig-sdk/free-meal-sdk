@@ -37,7 +37,7 @@ class LatestEntity extends FreeMealEntityBase<Latest> {
 
 
 
-  async list(this: any, reqmatch?: LatestListMatch, ctrl?: Control): Promise<Latest[]> {
+  async list(this: any, reqmatch?: LatestListMatch, ctrl?: Control): Promise<LatestEntity[]> {
 
     const utility = this._utility
 

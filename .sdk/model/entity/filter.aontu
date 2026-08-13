@@ -6,17 +6,17 @@ main: kit: entity: filter: {
 
   fields: [
     {
-      name: "id_meal"
+      name: "idMeal"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "str_meal"
+      name: "strMeal"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "str_meal_thumb"
+      name: "strMealThumb"
       req: false
       type: "`$STRING`"
     }
@@ -70,7 +70,7 @@ main: kit: entity: filter: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.meals`"
           }
         }
       ]

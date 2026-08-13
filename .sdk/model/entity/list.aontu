@@ -6,17 +6,17 @@ main: kit: entity: list: {
 
   fields: [
     {
-      name: "str_area"
+      name: "strArea"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "str_category"
+      name: "strCategory"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "str_ingredient"
+      name: "strIngredient"
       req: false
       type: "`$STRING`"
     }
@@ -67,7 +67,7 @@ main: kit: entity: list: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.meals`"
           }
         }
       ]

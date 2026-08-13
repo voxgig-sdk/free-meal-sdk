@@ -16,11 +16,11 @@
 import pytest
 
 from freemeal_sdk import FreeMealSDK
-from core.error import FreeMealError
-from core.result import FreeMealResult
-from core.response import FreeMealResponse
-from core.spec import FreeMealSpec
-from feature.base_feature import FreeMealBaseFeature
+from freemeal_sdk.core.error import FreeMealError
+from freemeal_sdk.core.result import FreeMealResult
+from freemeal_sdk.core.response import FreeMealResponse
+from freemeal_sdk.core.spec import FreeMealSpec
+from freemeal_sdk.feature.base_feature import FreeMealBaseFeature
 
 
 def _client():

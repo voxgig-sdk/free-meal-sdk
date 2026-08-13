@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# FreeMeal SDK exists test
 
 import pytest
 from freemeal_sdk import FreeMealSDK

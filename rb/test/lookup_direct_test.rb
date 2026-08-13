@@ -60,16 +60,16 @@ def lookup_direct_setup(mockres)
   calls = []
 
   env = Runner.env_override({
-    "FREEMEAL_TEST_LOOKUP_ENTID" => {},
-    "FREEMEAL_TEST_LIVE" => "FALSE",
-    "FREEMEAL_APIKEY" => "NONE",
+    "FREE_MEAL_TEST_LOOKUP_ENTID" => {},
+    "FREE_MEAL_TEST_LIVE" => "FALSE",
+    "FREE_MEAL_APIKEY" => "NONE",
   })
 
-  live = env["FREEMEAL_TEST_LIVE"] == "TRUE"
+  live = env["FREE_MEAL_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {
-      "apikey" => env["FREEMEAL_APIKEY"],
+      "apikey" => env["FREE_MEAL_APIKEY"],
     }
     client = FreeMealSDK.new(merged_opts)
     return {

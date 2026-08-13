@@ -37,7 +37,7 @@ class RandomselectionEntity extends FreeMealEntityBase<Randomselection> {
 
 
 
-  async list(this: any, reqmatch?: RandomselectionListMatch, ctrl?: Control): Promise<Randomselection[]> {
+  async list(this: any, reqmatch?: RandomselectionListMatch, ctrl?: Control): Promise<RandomselectionEntity[]> {
 
     const utility = this._utility
 

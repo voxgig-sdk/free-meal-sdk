@@ -37,7 +37,7 @@ class FilterEntity extends FreeMealEntityBase<Filter> {
 
 
 
-  async list(this: any, reqmatch?: FilterListMatch, ctrl?: Control): Promise<Filter[]> {
+  async list(this: any, reqmatch?: FilterListMatch, ctrl?: Control): Promise<FilterEntity[]> {
 
     const utility = this._utility
 

@@ -72,7 +72,7 @@ class SearchEntityTest extends TestCase
         // The basic flow consumes synthetic IDs from the fixture. In live mode
         // without an *_ENTID env override, those IDs hit the live API and 4xx.
         if (!empty($setup["synthetic_only"])) {
-            $this->markTestSkipped("live entity test uses synthetic IDs from fixture — set FREEMEAL_TEST_SEARCH_ENTID JSON to run live");
+            $this->markTestSkipped("live entity test uses synthetic IDs from fixture — set FREE_MEAL_TEST_SEARCH_ENTID JSON to run live");
             return;
         }
         $client = $setup["client"];
@@ -117,39 +117,39 @@ function search_basic_setup($extra)
     // Detect ENTID env override before envOverride consumes it. When live
     // mode is on without a real override, the basic test runs against synthetic
     // IDs from the fixture and 4xx's. Surface this so the test can skip.
-    $entid_env_raw = getenv("FREEMEAL_TEST_SEARCH_ENTID");
+    $entid_env_raw = getenv("FREE_MEAL_TEST_SEARCH_ENTID");
     $idmap_overridden = $entid_env_raw !== false && str_starts_with(trim($entid_env_raw), "{");
 
     $env = Runner::env_override([
-        "FREEMEAL_TEST_SEARCH_ENTID" => $idmap,
-        "FREEMEAL_TEST_LIVE" => "FALSE",
-        "FREEMEAL_TEST_EXPLAIN" => "FALSE",
-        "FREEMEAL_APIKEY" => "NONE",
+        "FREE_MEAL_TEST_SEARCH_ENTID" => $idmap,
+        "FREE_MEAL_TEST_LIVE" => "FALSE",
+        "FREE_MEAL_TEST_EXPLAIN" => "FALSE",
+        "FREE_MEAL_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
-        $env["FREEMEAL_TEST_SEARCH_ENTID"]);
+        $env["FREE_MEAL_TEST_SEARCH_ENTID"]);
     if ($idmap_resolved === null) {
         $idmap_resolved = Helpers::to_map($idmap);
     }
 
-    if ($env["FREEMEAL_TEST_LIVE"] === "TRUE") {
+    if ($env["FREE_MEAL_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["FREEMEAL_APIKEY"],
+                "apikey" => $env["FREE_MEAL_APIKEY"],
             ],
             $extra ?? [],
         ]);
         $client = new FreeMealSDK(Helpers::to_map($merged_opts));
     }
 
-    $live = $env["FREEMEAL_TEST_LIVE"] === "TRUE";
+    $live = $env["FREE_MEAL_TEST_LIVE"] === "TRUE";
     return [
         "client" => $client,
         "data" => $entity_data,
         "idmap" => $idmap_resolved,
         "env" => $env,
-        "explain" => $env["FREEMEAL_TEST_EXPLAIN"] === "TRUE",
+        "explain" => $env["FREE_MEAL_TEST_EXPLAIN"] === "TRUE",
         "live" => $live,
         "synthetic_only" => $live && !$idmap_overridden,
         "now" => (int)(microtime(true) * 1000),

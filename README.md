@@ -38,18 +38,27 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = FreeMealSDK.test()
-const categorys = await client.Category().list()
-// categorys is an array of bare Category records populated with mock data
-console.log(categorys)
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = FreeMealSDK.test({
+  entity: {
+    latest: {
+      test01: { id: 'test01' },
+    },
+  },
+})
+const latests = await client.Latest().list()
+// latests is an array of Latest entities, populated with mock data
+// — call latests[0].data() for the record itself
+console.log(latests)
 ```
 
 ### Python
 
 ```python
 client = FreeMealSDK.test()
-categorys = client.Category().list()
-print(categorys)
+latests = client.Latest().list()
+print(latests)
 ```
 
 ### PHP
@@ -57,16 +66,16 @@ print(categorys)
 ```php
 // Seed fixture data so offline calls resolve without a live server.
 $client = FreeMealSDK::test([
-    "entity" => ["category" => ["test01" => []]],
+    "entity" => ["latest" => ["test01" => []]],
 ]);
-$categorys = $client->Category()->list();
+$latests = $client->Latest()->list();
 ```
 
 ### Golang
 
 ```go
 client := sdk.Test()
-result, err := client.Category(nil).List(
+result, err := client.Latest(nil).List(
     nil, nil,
 )
 ```
@@ -76,16 +85,16 @@ result, err := client.Category(nil).List(
 ```ruby
 # Seed fixture data so offline calls resolve without a live server.
 client = FreeMealSDK.test({
-  "entity" => { "category" => { "test01" => {} } },
+  "entity" => { "latest" => { "test01" => {} } },
 })
-categorys = client.Category.list()
+latests = client.Latest.list()
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local results, err = client:Category():list()
+local results, err = client:Latest():list()
 ```
 
 ## Packages
@@ -112,7 +121,7 @@ const client = new FreeMealSDK({
   apikey: process.env.FREE_MEAL_APIKEY,
 })
 
-// List all categorys (returns Category[])
+// List all categorys (returns CategoryEntity[] — .data() for the record)
 const categorys = await client.Category().list()
 for (const category of categorys) {
   console.log(category)
@@ -363,6 +372,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://www.themealdb.com/api/json/v1/1](https://www.themealdb.com/api/json/v1/1)
 

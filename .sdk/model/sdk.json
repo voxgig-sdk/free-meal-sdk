@@ -5,6 +5,10 @@
       "desc": ""
     },
     "kit": {
+      "author": {
+        "name": "",
+        "url": ""
+      },
       "config": {
         "docs_order": [
           "ts",
@@ -18,6 +22,7 @@
           "content-type": "application/json"
         }
       },
+      "contributor": {},
       "entity": {
         "category": {
           "active": true,
@@ -27,25 +32,25 @@
           "fields": [
             {
               "active": true,
-              "name": "id_category",
+              "name": "idCategory",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_category",
+              "name": "strCategory",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_category_description",
+              "name": "strCategoryDescription",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_category_thumb",
+              "name": "strCategoryThumb",
               "req": false,
               "type": "`$STRING`"
             }
@@ -59,6 +64,7 @@
                 {
                   "active": true,
                   "args": {},
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/categories.php",
                   "parts": [
@@ -67,7 +73,7 @@
                   "select": {},
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.categories`"
                   }
                 }
               ]
@@ -85,19 +91,19 @@
           "fields": [
             {
               "active": true,
-              "name": "id_meal",
+              "name": "idMeal",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_meal",
+              "name": "strMeal",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_meal_thumb",
+              "name": "strMealThumb",
               "req": false,
               "type": "`$STRING`"
             }
@@ -141,6 +147,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/filter.php",
                   "parts": [
@@ -155,7 +162,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.meals`"
                   }
                 }
               ]
@@ -173,319 +180,319 @@
           "fields": [
             {
               "active": true,
-              "name": "date_modified",
+              "name": "dateModified",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "id_meal",
+              "name": "idMeal",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_area",
+              "name": "strArea",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_category",
+              "name": "strCategory",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_creative_commons_confirmed",
+              "name": "strCreativeCommonsConfirmed",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_drink_alternate",
+              "name": "strDrinkAlternate",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_image_source",
+              "name": "strImageSource",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient1",
+              "name": "strIngredient1",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient10",
+              "name": "strIngredient10",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient11",
+              "name": "strIngredient11",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient12",
+              "name": "strIngredient12",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient13",
+              "name": "strIngredient13",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient14",
+              "name": "strIngredient14",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient15",
+              "name": "strIngredient15",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient16",
+              "name": "strIngredient16",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient17",
+              "name": "strIngredient17",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient18",
+              "name": "strIngredient18",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient19",
+              "name": "strIngredient19",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient2",
+              "name": "strIngredient2",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient20",
+              "name": "strIngredient20",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient3",
+              "name": "strIngredient3",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient4",
+              "name": "strIngredient4",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient5",
+              "name": "strIngredient5",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient6",
+              "name": "strIngredient6",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient7",
+              "name": "strIngredient7",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient8",
+              "name": "strIngredient8",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient9",
+              "name": "strIngredient9",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_instruction",
+              "name": "strInstructions",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_meal",
+              "name": "strMeal",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_meal_thumb",
+              "name": "strMealThumb",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure1",
+              "name": "strMeasure1",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure10",
+              "name": "strMeasure10",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure11",
+              "name": "strMeasure11",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure12",
+              "name": "strMeasure12",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure13",
+              "name": "strMeasure13",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure14",
+              "name": "strMeasure14",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure15",
+              "name": "strMeasure15",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure16",
+              "name": "strMeasure16",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure17",
+              "name": "strMeasure17",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure18",
+              "name": "strMeasure18",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure19",
+              "name": "strMeasure19",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure2",
+              "name": "strMeasure2",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure20",
+              "name": "strMeasure20",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure3",
+              "name": "strMeasure3",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure4",
+              "name": "strMeasure4",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure5",
+              "name": "strMeasure5",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure6",
+              "name": "strMeasure6",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure7",
+              "name": "strMeasure7",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure8",
+              "name": "strMeasure8",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure9",
+              "name": "strMeasure9",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_source",
+              "name": "strSource",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_tag",
+              "name": "strTags",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_youtube",
+              "name": "strYoutube",
               "req": false,
               "type": "`$STRING`"
             }
@@ -499,6 +506,7 @@
                 {
                   "active": true,
                   "args": {},
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/latest.php",
                   "parts": [
@@ -507,7 +515,7 @@
                   "select": {},
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.meals`"
                   }
                 }
               ]
@@ -525,19 +533,19 @@
           "fields": [
             {
               "active": true,
-              "name": "str_area",
+              "name": "strArea",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_category",
+              "name": "strCategory",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient",
+              "name": "strIngredient",
               "req": false,
               "type": "`$STRING`"
             }
@@ -578,6 +586,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/list.php",
                   "parts": [
@@ -592,7 +601,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.meals`"
                   }
                 }
               ]
@@ -610,319 +619,319 @@
           "fields": [
             {
               "active": true,
-              "name": "date_modified",
+              "name": "dateModified",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "id_meal",
+              "name": "idMeal",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_area",
+              "name": "strArea",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_category",
+              "name": "strCategory",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_creative_commons_confirmed",
+              "name": "strCreativeCommonsConfirmed",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_drink_alternate",
+              "name": "strDrinkAlternate",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_image_source",
+              "name": "strImageSource",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient1",
+              "name": "strIngredient1",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient10",
+              "name": "strIngredient10",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient11",
+              "name": "strIngredient11",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient12",
+              "name": "strIngredient12",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient13",
+              "name": "strIngredient13",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient14",
+              "name": "strIngredient14",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient15",
+              "name": "strIngredient15",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient16",
+              "name": "strIngredient16",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient17",
+              "name": "strIngredient17",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient18",
+              "name": "strIngredient18",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient19",
+              "name": "strIngredient19",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient2",
+              "name": "strIngredient2",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient20",
+              "name": "strIngredient20",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient3",
+              "name": "strIngredient3",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient4",
+              "name": "strIngredient4",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient5",
+              "name": "strIngredient5",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient6",
+              "name": "strIngredient6",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient7",
+              "name": "strIngredient7",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient8",
+              "name": "strIngredient8",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient9",
+              "name": "strIngredient9",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_instruction",
+              "name": "strInstructions",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_meal",
+              "name": "strMeal",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_meal_thumb",
+              "name": "strMealThumb",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure1",
+              "name": "strMeasure1",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure10",
+              "name": "strMeasure10",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure11",
+              "name": "strMeasure11",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure12",
+              "name": "strMeasure12",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure13",
+              "name": "strMeasure13",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure14",
+              "name": "strMeasure14",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure15",
+              "name": "strMeasure15",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure16",
+              "name": "strMeasure16",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure17",
+              "name": "strMeasure17",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure18",
+              "name": "strMeasure18",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure19",
+              "name": "strMeasure19",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure2",
+              "name": "strMeasure2",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure20",
+              "name": "strMeasure20",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure3",
+              "name": "strMeasure3",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure4",
+              "name": "strMeasure4",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure5",
+              "name": "strMeasure5",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure6",
+              "name": "strMeasure6",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure7",
+              "name": "strMeasure7",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure8",
+              "name": "strMeasure8",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure9",
+              "name": "strMeasure9",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_source",
+              "name": "strSource",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_tag",
+              "name": "strTags",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_youtube",
+              "name": "strYoutube",
               "req": false,
               "type": "`$STRING`"
             }
@@ -948,6 +957,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/lookup.php",
                   "parts": [
@@ -960,7 +970,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.meals`"
                   }
                 }
               ]
@@ -978,319 +988,319 @@
           "fields": [
             {
               "active": true,
-              "name": "date_modified",
+              "name": "dateModified",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "id_meal",
+              "name": "idMeal",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_area",
+              "name": "strArea",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_category",
+              "name": "strCategory",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_creative_commons_confirmed",
+              "name": "strCreativeCommonsConfirmed",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_drink_alternate",
+              "name": "strDrinkAlternate",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_image_source",
+              "name": "strImageSource",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient1",
+              "name": "strIngredient1",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient10",
+              "name": "strIngredient10",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient11",
+              "name": "strIngredient11",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient12",
+              "name": "strIngredient12",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient13",
+              "name": "strIngredient13",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient14",
+              "name": "strIngredient14",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient15",
+              "name": "strIngredient15",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient16",
+              "name": "strIngredient16",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient17",
+              "name": "strIngredient17",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient18",
+              "name": "strIngredient18",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient19",
+              "name": "strIngredient19",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient2",
+              "name": "strIngredient2",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient20",
+              "name": "strIngredient20",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient3",
+              "name": "strIngredient3",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient4",
+              "name": "strIngredient4",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient5",
+              "name": "strIngredient5",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient6",
+              "name": "strIngredient6",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient7",
+              "name": "strIngredient7",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient8",
+              "name": "strIngredient8",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient9",
+              "name": "strIngredient9",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_instruction",
+              "name": "strInstructions",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_meal",
+              "name": "strMeal",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_meal_thumb",
+              "name": "strMealThumb",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure1",
+              "name": "strMeasure1",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure10",
+              "name": "strMeasure10",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure11",
+              "name": "strMeasure11",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure12",
+              "name": "strMeasure12",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure13",
+              "name": "strMeasure13",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure14",
+              "name": "strMeasure14",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure15",
+              "name": "strMeasure15",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure16",
+              "name": "strMeasure16",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure17",
+              "name": "strMeasure17",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure18",
+              "name": "strMeasure18",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure19",
+              "name": "strMeasure19",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure2",
+              "name": "strMeasure2",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure20",
+              "name": "strMeasure20",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure3",
+              "name": "strMeasure3",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure4",
+              "name": "strMeasure4",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure5",
+              "name": "strMeasure5",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure6",
+              "name": "strMeasure6",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure7",
+              "name": "strMeasure7",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure8",
+              "name": "strMeasure8",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure9",
+              "name": "strMeasure9",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_source",
+              "name": "strSource",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_tag",
+              "name": "strTags",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_youtube",
+              "name": "strYoutube",
               "req": false,
               "type": "`$STRING`"
             }
@@ -1304,6 +1314,7 @@
                 {
                   "active": true,
                   "args": {},
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/random.php",
                   "parts": [
@@ -1312,7 +1323,7 @@
                   "select": {},
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.meals`"
                   }
                 }
               ]
@@ -1330,319 +1341,319 @@
           "fields": [
             {
               "active": true,
-              "name": "date_modified",
+              "name": "dateModified",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "id_meal",
+              "name": "idMeal",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_area",
+              "name": "strArea",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_category",
+              "name": "strCategory",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_creative_commons_confirmed",
+              "name": "strCreativeCommonsConfirmed",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_drink_alternate",
+              "name": "strDrinkAlternate",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_image_source",
+              "name": "strImageSource",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient1",
+              "name": "strIngredient1",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient10",
+              "name": "strIngredient10",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient11",
+              "name": "strIngredient11",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient12",
+              "name": "strIngredient12",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient13",
+              "name": "strIngredient13",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient14",
+              "name": "strIngredient14",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient15",
+              "name": "strIngredient15",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient16",
+              "name": "strIngredient16",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient17",
+              "name": "strIngredient17",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient18",
+              "name": "strIngredient18",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient19",
+              "name": "strIngredient19",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient2",
+              "name": "strIngredient2",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient20",
+              "name": "strIngredient20",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient3",
+              "name": "strIngredient3",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient4",
+              "name": "strIngredient4",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient5",
+              "name": "strIngredient5",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient6",
+              "name": "strIngredient6",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient7",
+              "name": "strIngredient7",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient8",
+              "name": "strIngredient8",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient9",
+              "name": "strIngredient9",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_instruction",
+              "name": "strInstructions",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_meal",
+              "name": "strMeal",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_meal_thumb",
+              "name": "strMealThumb",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure1",
+              "name": "strMeasure1",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure10",
+              "name": "strMeasure10",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure11",
+              "name": "strMeasure11",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure12",
+              "name": "strMeasure12",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure13",
+              "name": "strMeasure13",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure14",
+              "name": "strMeasure14",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure15",
+              "name": "strMeasure15",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure16",
+              "name": "strMeasure16",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure17",
+              "name": "strMeasure17",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure18",
+              "name": "strMeasure18",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure19",
+              "name": "strMeasure19",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure2",
+              "name": "strMeasure2",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure20",
+              "name": "strMeasure20",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure3",
+              "name": "strMeasure3",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure4",
+              "name": "strMeasure4",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure5",
+              "name": "strMeasure5",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure6",
+              "name": "strMeasure6",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure7",
+              "name": "strMeasure7",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure8",
+              "name": "strMeasure8",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure9",
+              "name": "strMeasure9",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_source",
+              "name": "strSource",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_tag",
+              "name": "strTags",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_youtube",
+              "name": "strYoutube",
               "req": false,
               "type": "`$STRING`"
             }
@@ -1656,6 +1667,7 @@
                 {
                   "active": true,
                   "args": {},
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/randomselection.php",
                   "parts": [
@@ -1664,7 +1676,7 @@
                   "select": {},
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.meals`"
                   }
                 }
               ]
@@ -1682,319 +1694,319 @@
           "fields": [
             {
               "active": true,
-              "name": "date_modified",
+              "name": "dateModified",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "id_meal",
+              "name": "idMeal",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_area",
+              "name": "strArea",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_category",
+              "name": "strCategory",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_creative_commons_confirmed",
+              "name": "strCreativeCommonsConfirmed",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_drink_alternate",
+              "name": "strDrinkAlternate",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_image_source",
+              "name": "strImageSource",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient1",
+              "name": "strIngredient1",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient10",
+              "name": "strIngredient10",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient11",
+              "name": "strIngredient11",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient12",
+              "name": "strIngredient12",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient13",
+              "name": "strIngredient13",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient14",
+              "name": "strIngredient14",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient15",
+              "name": "strIngredient15",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient16",
+              "name": "strIngredient16",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient17",
+              "name": "strIngredient17",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient18",
+              "name": "strIngredient18",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient19",
+              "name": "strIngredient19",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient2",
+              "name": "strIngredient2",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient20",
+              "name": "strIngredient20",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient3",
+              "name": "strIngredient3",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient4",
+              "name": "strIngredient4",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient5",
+              "name": "strIngredient5",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient6",
+              "name": "strIngredient6",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient7",
+              "name": "strIngredient7",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient8",
+              "name": "strIngredient8",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_ingredient9",
+              "name": "strIngredient9",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_instruction",
+              "name": "strInstructions",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_meal",
+              "name": "strMeal",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_meal_thumb",
+              "name": "strMealThumb",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure1",
+              "name": "strMeasure1",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure10",
+              "name": "strMeasure10",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure11",
+              "name": "strMeasure11",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure12",
+              "name": "strMeasure12",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure13",
+              "name": "strMeasure13",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure14",
+              "name": "strMeasure14",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure15",
+              "name": "strMeasure15",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure16",
+              "name": "strMeasure16",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure17",
+              "name": "strMeasure17",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure18",
+              "name": "strMeasure18",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure19",
+              "name": "strMeasure19",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure2",
+              "name": "strMeasure2",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure20",
+              "name": "strMeasure20",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure3",
+              "name": "strMeasure3",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure4",
+              "name": "strMeasure4",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure5",
+              "name": "strMeasure5",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure6",
+              "name": "strMeasure6",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure7",
+              "name": "strMeasure7",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure8",
+              "name": "strMeasure8",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_measure9",
+              "name": "strMeasure9",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_source",
+              "name": "strSource",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_tag",
+              "name": "strTags",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "str_youtube",
+              "name": "strYoutube",
               "req": false,
               "type": "`$STRING`"
             }
@@ -2029,6 +2041,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/search.php",
                   "parts": [
@@ -2042,7 +2055,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.meals`"
                   }
                 }
               ]
@@ -2382,18 +2395,41 @@
         "website": "https://www.themealdb.com/api.php"
       },
       "option": {},
+      "repo": {
+        "host": "github.com",
+        "path": ""
+      },
       "target": {
         "go": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "go",
+          "feature": {
+            "fullset": [
+              "test/feature_test.go"
+            ],
+            "trim": true
+          },
           "module": {
-            "name": "free-meal"
+            "goversion": "",
+            "name": "free-meal",
+            "package": "",
+            "path": ""
           },
           "name": "go",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -2415,22 +2451,40 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Golang"
         },
         "go-cli": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "go",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "free-meal"
+            "goversion": "",
+            "name": "free-meal",
+            "package": "",
+            "path": ""
           },
           "name": "go-cli",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "phase": {
             "agentguide": {
               "active": false
@@ -2469,21 +2523,39 @@
                 "recipe": "github"
               },
               "via": "root"
-            }
+            },
+            "version": "0.0.1"
           },
           "title": "Go CLI"
         },
         "go-mcp": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "go",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "free-meal"
+            "goversion": "",
+            "name": "free-meal",
+            "package": "",
+            "path": ""
           },
           "name": "go-mcp",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "phase": {
             "agentguide": {
               "active": false
@@ -2522,12 +2594,17 @@
                 "recipe": "github"
               },
               "via": "root"
-            }
+            },
+            "version": "0.0.1"
           },
           "title": "Go MCP server"
         },
         "lua": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "--"
           },
@@ -2539,10 +2616,23 @@
             }
           },
           "ext": "lua",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "free-meal"
+            "goversion": "",
+            "name": "free-meal",
+            "package": "",
+            "path": ""
           },
           "name": "lua",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -2564,22 +2654,40 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Lua"
         },
         "php": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "php",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "free-meal"
+            "goversion": "",
+            "name": "free-meal",
+            "package": "",
+            "path": ""
           },
           "name": "php",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -2601,13 +2709,18 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "PHP"
         },
         "py": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "#"
           },
@@ -2619,10 +2732,23 @@
             }
           },
           "ext": "py",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "free-meal"
+            "goversion": "",
+            "name": "free-meal",
+            "package": "",
+            "path": ""
           },
           "name": "py",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -2644,13 +2770,18 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Python"
         },
         "rb": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "#"
           },
@@ -2667,10 +2798,23 @@
             }
           },
           "ext": "rb",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "free-meal"
+            "goversion": "",
+            "name": "free-meal",
+            "package": "",
+            "path": ""
           },
           "name": "rb",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -2692,13 +2836,18 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Ruby"
         },
         "ts": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "comment": {
             "line": "//"
@@ -2721,10 +2870,23 @@
             }
           },
           "ext": "ts",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "free-meal"
+            "goversion": "",
+            "name": "free-meal",
+            "package": "",
+            "path": ""
           },
           "name": "ts",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -2746,9 +2908,17 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "title": "TypeScript"
+        }
+      },
+      "test": {
+        "live": {
+          "app": false,
+          "base": "",
+          "strict": false
         }
       }
     }

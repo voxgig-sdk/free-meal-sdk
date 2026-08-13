@@ -6,22 +6,22 @@ main: kit: entity: category: {
 
   fields: [
     {
-      name: "id_category"
+      name: "idCategory"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "str_category"
+      name: "strCategory"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "str_category_description"
+      name: "strCategoryDescription"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "str_category_thumb"
+      name: "strCategoryThumb"
       req: false
       type: "`$STRING`"
     }
@@ -40,7 +40,7 @@ main: kit: entity: category: {
           ]
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.categories`"
           }
         }
       ]

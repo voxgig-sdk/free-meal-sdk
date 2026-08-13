@@ -19,11 +19,15 @@ import {
 describe('LookupDirect', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when FREEMEAL_TEST_LIVE=TRUE.
-  afterEach(liveDelay('FREEMEAL_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when FREE_MEAL_TEST_LIVE=TRUE.
+  afterEach(liveDelay('FREE_MEAL_TEST_LIVE'))
 
   test('direct-exists', async () => {
     const sdk = new FreeMealSDK({
+      // Concrete base: a live construction must satisfy any server
+      // variables a templated base URL declares; overriding base with a
+      // literal (as the direct flow tests do) sidesteps the requirement.
+      base: 'http://localhost:8080',
       system: { fetch: async () => ({}) }
     })
     assert('function' === typeof sdk.direct)
@@ -80,19 +84,19 @@ function directSetup(mockres?: any) {
   const calls: any[] = []
 
   const env = envOverride({
-    'FREEMEAL_TEST_LOOKUP_ENTID': {},
-    'FREEMEAL_TEST_LIVE': 'FALSE',
-    'FREEMEAL_APIKEY': 'NONE',
+    'FREE_MEAL_TEST_LOOKUP_ENTID': {},
+    'FREE_MEAL_TEST_LIVE': 'FALSE',
+    'FREE_MEAL_APIKEY': 'NONE',
   })
 
-  const live = 'TRUE' === env.FREEMEAL_TEST_LIVE
+  const live = 'TRUE' === env.FREE_MEAL_TEST_LIVE
 
   if (live) {
     const client = new FreeMealSDK({
-      apikey: env.FREEMEAL_APIKEY,
+      apikey: env.FREE_MEAL_APIKEY,
     })
 
-    let idmap: any = env['FREEMEAL_TEST_LOOKUP_ENTID']
+    let idmap: any = env['FREE_MEAL_TEST_LOOKUP_ENTID']
     if ('string' === typeof idmap && idmap.startsWith('{')) {
       idmap = JSON.parse(idmap)
     }

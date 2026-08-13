@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ FreeMealUtility.registrar = ->(u) {
   u.prepare_params = FreeMealUtilities::PrepareParams
   u.prepare_path = FreeMealUtilities::PreparePath
   u.prepare_query = FreeMealUtilities::PrepareQuery
+  u.graphql_body = FreeMealUtilities::GraphqlBody
+  u.graphql_errors = FreeMealUtilities::GraphqlErrors
   u.result_basic = FreeMealUtilities::ResultBasic
   u.result_body = FreeMealUtilities::ResultBody
   u.result_headers = FreeMealUtilities::ResultHeaders

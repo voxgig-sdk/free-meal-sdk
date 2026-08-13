@@ -66,16 +66,16 @@ function randomselection_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "FREEMEAL_TEST_RANDOMSELECTION_ENTID" => [],
-        "FREEMEAL_TEST_LIVE" => "FALSE",
-        "FREEMEAL_APIKEY" => "NONE",
+        "FREE_MEAL_TEST_RANDOMSELECTION_ENTID" => [],
+        "FREE_MEAL_TEST_LIVE" => "FALSE",
+        "FREE_MEAL_APIKEY" => "NONE",
     ]);
 
-    $live = $env["FREEMEAL_TEST_LIVE"] === "TRUE";
+    $live = $env["FREE_MEAL_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
-            "apikey" => $env["FREEMEAL_APIKEY"],
+            "apikey" => $env["FREE_MEAL_APIKEY"],
         ];
         $client = new FreeMealSDK($merged_opts);
         return [

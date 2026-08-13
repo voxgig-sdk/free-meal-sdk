@@ -23,8 +23,8 @@ module FreeMealTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("FREEMEAL_TEST_LIVE")
-    override = getenv("FREEMEAL_TEST_OVERRIDE")
+    live = getenv("FREE_MEAL_TEST_LIVE")
+    override = getenv("FREE_MEAL_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module FreeMealTestRunner
       end
     end
 
-    explain = getenv("FREEMEAL_TEST_EXPLAIN")
-    m["FREEMEAL_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("FREE_MEAL_TEST_EXPLAIN")
+    m["FREE_MEAL_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

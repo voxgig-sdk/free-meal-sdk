@@ -26,8 +26,8 @@ import {
 describe('RandomselectionEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when FREEMEAL_TEST_LIVE=TRUE.
-  afterEach(liveDelay('FREEMEAL_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when FREE_MEAL_TEST_LIVE=TRUE.
+  afterEach(liveDelay('FREE_MEAL_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = FreeMealSDK.test()
@@ -63,7 +63,7 @@ describe('RandomselectionEntity', async () => {
     const randomselection_ref01_ent = client.Randomselection()
     const randomselection_ref01_match: any = {}
 
-    const randomselection_ref01_list = await randomselection_ref01_ent.list(randomselection_ref01_match)
+    const randomselection_ref01_list = (await randomselection_ref01_ent.list(randomselection_ref01_match)).map((e: any) => e.data())
 
 
   })

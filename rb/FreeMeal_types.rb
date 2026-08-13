@@ -10,2281 +10,2281 @@
 
 # Category entity data model.
 #
-# @!attribute [rw] id_category
+# @!attribute [rw] idCategory
 #   @return [String, nil]
 #
-# @!attribute [rw] str_category
+# @!attribute [rw] strCategory
 #   @return [String, nil]
 #
-# @!attribute [rw] str_category_description
+# @!attribute [rw] strCategoryDescription
 #   @return [String, nil]
 #
-# @!attribute [rw] str_category_thumb
+# @!attribute [rw] strCategoryThumb
 #   @return [String, nil]
 Category = Struct.new(
-  :id_category,
-  :str_category,
-  :str_category_description,
-  :str_category_thumb,
+  :idCategory,
+  :strCategory,
+  :strCategoryDescription,
+  :strCategoryThumb,
   keyword_init: true
 )
 
 # Request payload for Category#list.
 #
-# @!attribute [rw] id_category
+# @!attribute [rw] idCategory
 #   @return [String, nil]
 #
-# @!attribute [rw] str_category
+# @!attribute [rw] strCategory
 #   @return [String, nil]
 #
-# @!attribute [rw] str_category_description
+# @!attribute [rw] strCategoryDescription
 #   @return [String, nil]
 #
-# @!attribute [rw] str_category_thumb
+# @!attribute [rw] strCategoryThumb
 #   @return [String, nil]
 CategoryListMatch = Struct.new(
-  :id_category,
-  :str_category,
-  :str_category_description,
-  :str_category_thumb,
+  :idCategory,
+  :strCategory,
+  :strCategoryDescription,
+  :strCategoryThumb,
   keyword_init: true
 )
 
 # Filter entity data model.
 #
-# @!attribute [rw] id_meal
+# @!attribute [rw] idMeal
 #   @return [String, nil]
 #
-# @!attribute [rw] str_meal
+# @!attribute [rw] strMeal
 #   @return [String, nil]
 #
-# @!attribute [rw] str_meal_thumb
+# @!attribute [rw] strMealThumb
 #   @return [String, nil]
 Filter = Struct.new(
-  :id_meal,
-  :str_meal,
-  :str_meal_thumb,
+  :idMeal,
+  :strMeal,
+  :strMealThumb,
   keyword_init: true
 )
 
 # Request payload for Filter#list.
 #
-# @!attribute [rw] id_meal
+# @!attribute [rw] idMeal
 #   @return [String, nil]
 #
-# @!attribute [rw] str_meal
+# @!attribute [rw] strMeal
 #   @return [String, nil]
 #
-# @!attribute [rw] str_meal_thumb
+# @!attribute [rw] strMealThumb
 #   @return [String, nil]
 FilterListMatch = Struct.new(
-  :id_meal,
-  :str_meal,
-  :str_meal_thumb,
+  :idMeal,
+  :strMeal,
+  :strMealThumb,
   keyword_init: true
 )
 
 # Latest entity data model.
 #
-# @!attribute [rw] date_modified
+# @!attribute [rw] dateModified
 #   @return [String, nil]
 #
-# @!attribute [rw] id_meal
+# @!attribute [rw] idMeal
 #   @return [String, nil]
 #
-# @!attribute [rw] str_area
+# @!attribute [rw] strArea
 #   @return [String, nil]
 #
-# @!attribute [rw] str_category
+# @!attribute [rw] strCategory
 #   @return [String, nil]
 #
-# @!attribute [rw] str_creative_commons_confirmed
+# @!attribute [rw] strCreativeCommonsConfirmed
 #   @return [String, nil]
 #
-# @!attribute [rw] str_drink_alternate
+# @!attribute [rw] strDrinkAlternate
 #   @return [String, nil]
 #
-# @!attribute [rw] str_image_source
+# @!attribute [rw] strImageSource
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient1
+# @!attribute [rw] strIngredient1
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient10
+# @!attribute [rw] strIngredient10
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient11
+# @!attribute [rw] strIngredient11
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient12
+# @!attribute [rw] strIngredient12
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient13
+# @!attribute [rw] strIngredient13
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient14
+# @!attribute [rw] strIngredient14
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient15
+# @!attribute [rw] strIngredient15
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient16
+# @!attribute [rw] strIngredient16
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient17
+# @!attribute [rw] strIngredient17
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient18
+# @!attribute [rw] strIngredient18
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient19
+# @!attribute [rw] strIngredient19
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient2
+# @!attribute [rw] strIngredient2
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient20
+# @!attribute [rw] strIngredient20
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient3
+# @!attribute [rw] strIngredient3
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient4
+# @!attribute [rw] strIngredient4
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient5
+# @!attribute [rw] strIngredient5
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient6
+# @!attribute [rw] strIngredient6
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient7
+# @!attribute [rw] strIngredient7
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient8
+# @!attribute [rw] strIngredient8
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient9
+# @!attribute [rw] strIngredient9
 #   @return [String, nil]
 #
-# @!attribute [rw] str_instruction
+# @!attribute [rw] strInstructions
 #   @return [String, nil]
 #
-# @!attribute [rw] str_meal
+# @!attribute [rw] strMeal
 #   @return [String, nil]
 #
-# @!attribute [rw] str_meal_thumb
+# @!attribute [rw] strMealThumb
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure1
+# @!attribute [rw] strMeasure1
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure10
+# @!attribute [rw] strMeasure10
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure11
+# @!attribute [rw] strMeasure11
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure12
+# @!attribute [rw] strMeasure12
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure13
+# @!attribute [rw] strMeasure13
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure14
+# @!attribute [rw] strMeasure14
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure15
+# @!attribute [rw] strMeasure15
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure16
+# @!attribute [rw] strMeasure16
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure17
+# @!attribute [rw] strMeasure17
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure18
+# @!attribute [rw] strMeasure18
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure19
+# @!attribute [rw] strMeasure19
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure2
+# @!attribute [rw] strMeasure2
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure20
+# @!attribute [rw] strMeasure20
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure3
+# @!attribute [rw] strMeasure3
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure4
+# @!attribute [rw] strMeasure4
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure5
+# @!attribute [rw] strMeasure5
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure6
+# @!attribute [rw] strMeasure6
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure7
+# @!attribute [rw] strMeasure7
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure8
+# @!attribute [rw] strMeasure8
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure9
+# @!attribute [rw] strMeasure9
 #   @return [String, nil]
 #
-# @!attribute [rw] str_source
+# @!attribute [rw] strSource
 #   @return [String, nil]
 #
-# @!attribute [rw] str_tag
+# @!attribute [rw] strTags
 #   @return [String, nil]
 #
-# @!attribute [rw] str_youtube
+# @!attribute [rw] strYoutube
 #   @return [String, nil]
 Latest = Struct.new(
-  :date_modified,
-  :id_meal,
-  :str_area,
-  :str_category,
-  :str_creative_commons_confirmed,
-  :str_drink_alternate,
-  :str_image_source,
-  :str_ingredient1,
-  :str_ingredient10,
-  :str_ingredient11,
-  :str_ingredient12,
-  :str_ingredient13,
-  :str_ingredient14,
-  :str_ingredient15,
-  :str_ingredient16,
-  :str_ingredient17,
-  :str_ingredient18,
-  :str_ingredient19,
-  :str_ingredient2,
-  :str_ingredient20,
-  :str_ingredient3,
-  :str_ingredient4,
-  :str_ingredient5,
-  :str_ingredient6,
-  :str_ingredient7,
-  :str_ingredient8,
-  :str_ingredient9,
-  :str_instruction,
-  :str_meal,
-  :str_meal_thumb,
-  :str_measure1,
-  :str_measure10,
-  :str_measure11,
-  :str_measure12,
-  :str_measure13,
-  :str_measure14,
-  :str_measure15,
-  :str_measure16,
-  :str_measure17,
-  :str_measure18,
-  :str_measure19,
-  :str_measure2,
-  :str_measure20,
-  :str_measure3,
-  :str_measure4,
-  :str_measure5,
-  :str_measure6,
-  :str_measure7,
-  :str_measure8,
-  :str_measure9,
-  :str_source,
-  :str_tag,
-  :str_youtube,
+  :dateModified,
+  :idMeal,
+  :strArea,
+  :strCategory,
+  :strCreativeCommonsConfirmed,
+  :strDrinkAlternate,
+  :strImageSource,
+  :strIngredient1,
+  :strIngredient10,
+  :strIngredient11,
+  :strIngredient12,
+  :strIngredient13,
+  :strIngredient14,
+  :strIngredient15,
+  :strIngredient16,
+  :strIngredient17,
+  :strIngredient18,
+  :strIngredient19,
+  :strIngredient2,
+  :strIngredient20,
+  :strIngredient3,
+  :strIngredient4,
+  :strIngredient5,
+  :strIngredient6,
+  :strIngredient7,
+  :strIngredient8,
+  :strIngredient9,
+  :strInstructions,
+  :strMeal,
+  :strMealThumb,
+  :strMeasure1,
+  :strMeasure10,
+  :strMeasure11,
+  :strMeasure12,
+  :strMeasure13,
+  :strMeasure14,
+  :strMeasure15,
+  :strMeasure16,
+  :strMeasure17,
+  :strMeasure18,
+  :strMeasure19,
+  :strMeasure2,
+  :strMeasure20,
+  :strMeasure3,
+  :strMeasure4,
+  :strMeasure5,
+  :strMeasure6,
+  :strMeasure7,
+  :strMeasure8,
+  :strMeasure9,
+  :strSource,
+  :strTags,
+  :strYoutube,
   keyword_init: true
 )
 
 # Request payload for Latest#list.
 #
-# @!attribute [rw] date_modified
+# @!attribute [rw] dateModified
 #   @return [String, nil]
 #
-# @!attribute [rw] id_meal
+# @!attribute [rw] idMeal
 #   @return [String, nil]
 #
-# @!attribute [rw] str_area
+# @!attribute [rw] strArea
 #   @return [String, nil]
 #
-# @!attribute [rw] str_category
+# @!attribute [rw] strCategory
 #   @return [String, nil]
 #
-# @!attribute [rw] str_creative_commons_confirmed
+# @!attribute [rw] strCreativeCommonsConfirmed
 #   @return [String, nil]
 #
-# @!attribute [rw] str_drink_alternate
+# @!attribute [rw] strDrinkAlternate
 #   @return [String, nil]
 #
-# @!attribute [rw] str_image_source
+# @!attribute [rw] strImageSource
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient1
+# @!attribute [rw] strIngredient1
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient10
+# @!attribute [rw] strIngredient10
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient11
+# @!attribute [rw] strIngredient11
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient12
+# @!attribute [rw] strIngredient12
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient13
+# @!attribute [rw] strIngredient13
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient14
+# @!attribute [rw] strIngredient14
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient15
+# @!attribute [rw] strIngredient15
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient16
+# @!attribute [rw] strIngredient16
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient17
+# @!attribute [rw] strIngredient17
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient18
+# @!attribute [rw] strIngredient18
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient19
+# @!attribute [rw] strIngredient19
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient2
+# @!attribute [rw] strIngredient2
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient20
+# @!attribute [rw] strIngredient20
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient3
+# @!attribute [rw] strIngredient3
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient4
+# @!attribute [rw] strIngredient4
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient5
+# @!attribute [rw] strIngredient5
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient6
+# @!attribute [rw] strIngredient6
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient7
+# @!attribute [rw] strIngredient7
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient8
+# @!attribute [rw] strIngredient8
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient9
+# @!attribute [rw] strIngredient9
 #   @return [String, nil]
 #
-# @!attribute [rw] str_instruction
+# @!attribute [rw] strInstructions
 #   @return [String, nil]
 #
-# @!attribute [rw] str_meal
+# @!attribute [rw] strMeal
 #   @return [String, nil]
 #
-# @!attribute [rw] str_meal_thumb
+# @!attribute [rw] strMealThumb
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure1
+# @!attribute [rw] strMeasure1
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure10
+# @!attribute [rw] strMeasure10
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure11
+# @!attribute [rw] strMeasure11
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure12
+# @!attribute [rw] strMeasure12
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure13
+# @!attribute [rw] strMeasure13
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure14
+# @!attribute [rw] strMeasure14
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure15
+# @!attribute [rw] strMeasure15
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure16
+# @!attribute [rw] strMeasure16
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure17
+# @!attribute [rw] strMeasure17
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure18
+# @!attribute [rw] strMeasure18
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure19
+# @!attribute [rw] strMeasure19
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure2
+# @!attribute [rw] strMeasure2
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure20
+# @!attribute [rw] strMeasure20
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure3
+# @!attribute [rw] strMeasure3
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure4
+# @!attribute [rw] strMeasure4
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure5
+# @!attribute [rw] strMeasure5
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure6
+# @!attribute [rw] strMeasure6
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure7
+# @!attribute [rw] strMeasure7
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure8
+# @!attribute [rw] strMeasure8
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure9
+# @!attribute [rw] strMeasure9
 #   @return [String, nil]
 #
-# @!attribute [rw] str_source
+# @!attribute [rw] strSource
 #   @return [String, nil]
 #
-# @!attribute [rw] str_tag
+# @!attribute [rw] strTags
 #   @return [String, nil]
 #
-# @!attribute [rw] str_youtube
+# @!attribute [rw] strYoutube
 #   @return [String, nil]
 LatestListMatch = Struct.new(
-  :date_modified,
-  :id_meal,
-  :str_area,
-  :str_category,
-  :str_creative_commons_confirmed,
-  :str_drink_alternate,
-  :str_image_source,
-  :str_ingredient1,
-  :str_ingredient10,
-  :str_ingredient11,
-  :str_ingredient12,
-  :str_ingredient13,
-  :str_ingredient14,
-  :str_ingredient15,
-  :str_ingredient16,
-  :str_ingredient17,
-  :str_ingredient18,
-  :str_ingredient19,
-  :str_ingredient2,
-  :str_ingredient20,
-  :str_ingredient3,
-  :str_ingredient4,
-  :str_ingredient5,
-  :str_ingredient6,
-  :str_ingredient7,
-  :str_ingredient8,
-  :str_ingredient9,
-  :str_instruction,
-  :str_meal,
-  :str_meal_thumb,
-  :str_measure1,
-  :str_measure10,
-  :str_measure11,
-  :str_measure12,
-  :str_measure13,
-  :str_measure14,
-  :str_measure15,
-  :str_measure16,
-  :str_measure17,
-  :str_measure18,
-  :str_measure19,
-  :str_measure2,
-  :str_measure20,
-  :str_measure3,
-  :str_measure4,
-  :str_measure5,
-  :str_measure6,
-  :str_measure7,
-  :str_measure8,
-  :str_measure9,
-  :str_source,
-  :str_tag,
-  :str_youtube,
+  :dateModified,
+  :idMeal,
+  :strArea,
+  :strCategory,
+  :strCreativeCommonsConfirmed,
+  :strDrinkAlternate,
+  :strImageSource,
+  :strIngredient1,
+  :strIngredient10,
+  :strIngredient11,
+  :strIngredient12,
+  :strIngredient13,
+  :strIngredient14,
+  :strIngredient15,
+  :strIngredient16,
+  :strIngredient17,
+  :strIngredient18,
+  :strIngredient19,
+  :strIngredient2,
+  :strIngredient20,
+  :strIngredient3,
+  :strIngredient4,
+  :strIngredient5,
+  :strIngredient6,
+  :strIngredient7,
+  :strIngredient8,
+  :strIngredient9,
+  :strInstructions,
+  :strMeal,
+  :strMealThumb,
+  :strMeasure1,
+  :strMeasure10,
+  :strMeasure11,
+  :strMeasure12,
+  :strMeasure13,
+  :strMeasure14,
+  :strMeasure15,
+  :strMeasure16,
+  :strMeasure17,
+  :strMeasure18,
+  :strMeasure19,
+  :strMeasure2,
+  :strMeasure20,
+  :strMeasure3,
+  :strMeasure4,
+  :strMeasure5,
+  :strMeasure6,
+  :strMeasure7,
+  :strMeasure8,
+  :strMeasure9,
+  :strSource,
+  :strTags,
+  :strYoutube,
   keyword_init: true
 )
 
 # List entity data model.
 #
-# @!attribute [rw] str_area
+# @!attribute [rw] strArea
 #   @return [String, nil]
 #
-# @!attribute [rw] str_category
+# @!attribute [rw] strCategory
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient
+# @!attribute [rw] strIngredient
 #   @return [String, nil]
 List = Struct.new(
-  :str_area,
-  :str_category,
-  :str_ingredient,
+  :strArea,
+  :strCategory,
+  :strIngredient,
   keyword_init: true
 )
 
 # Request payload for List#list.
 #
-# @!attribute [rw] str_area
+# @!attribute [rw] strArea
 #   @return [String, nil]
 #
-# @!attribute [rw] str_category
+# @!attribute [rw] strCategory
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient
+# @!attribute [rw] strIngredient
 #   @return [String, nil]
 ListListMatch = Struct.new(
-  :str_area,
-  :str_category,
-  :str_ingredient,
+  :strArea,
+  :strCategory,
+  :strIngredient,
   keyword_init: true
 )
 
 # Lookup entity data model.
 #
-# @!attribute [rw] date_modified
+# @!attribute [rw] dateModified
 #   @return [String, nil]
 #
-# @!attribute [rw] id_meal
+# @!attribute [rw] idMeal
 #   @return [String, nil]
 #
-# @!attribute [rw] str_area
+# @!attribute [rw] strArea
 #   @return [String, nil]
 #
-# @!attribute [rw] str_category
+# @!attribute [rw] strCategory
 #   @return [String, nil]
 #
-# @!attribute [rw] str_creative_commons_confirmed
+# @!attribute [rw] strCreativeCommonsConfirmed
 #   @return [String, nil]
 #
-# @!attribute [rw] str_drink_alternate
+# @!attribute [rw] strDrinkAlternate
 #   @return [String, nil]
 #
-# @!attribute [rw] str_image_source
+# @!attribute [rw] strImageSource
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient1
+# @!attribute [rw] strIngredient1
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient10
+# @!attribute [rw] strIngredient10
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient11
+# @!attribute [rw] strIngredient11
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient12
+# @!attribute [rw] strIngredient12
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient13
+# @!attribute [rw] strIngredient13
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient14
+# @!attribute [rw] strIngredient14
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient15
+# @!attribute [rw] strIngredient15
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient16
+# @!attribute [rw] strIngredient16
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient17
+# @!attribute [rw] strIngredient17
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient18
+# @!attribute [rw] strIngredient18
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient19
+# @!attribute [rw] strIngredient19
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient2
+# @!attribute [rw] strIngredient2
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient20
+# @!attribute [rw] strIngredient20
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient3
+# @!attribute [rw] strIngredient3
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient4
+# @!attribute [rw] strIngredient4
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient5
+# @!attribute [rw] strIngredient5
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient6
+# @!attribute [rw] strIngredient6
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient7
+# @!attribute [rw] strIngredient7
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient8
+# @!attribute [rw] strIngredient8
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient9
+# @!attribute [rw] strIngredient9
 #   @return [String, nil]
 #
-# @!attribute [rw] str_instruction
+# @!attribute [rw] strInstructions
 #   @return [String, nil]
 #
-# @!attribute [rw] str_meal
+# @!attribute [rw] strMeal
 #   @return [String, nil]
 #
-# @!attribute [rw] str_meal_thumb
+# @!attribute [rw] strMealThumb
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure1
+# @!attribute [rw] strMeasure1
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure10
+# @!attribute [rw] strMeasure10
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure11
+# @!attribute [rw] strMeasure11
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure12
+# @!attribute [rw] strMeasure12
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure13
+# @!attribute [rw] strMeasure13
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure14
+# @!attribute [rw] strMeasure14
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure15
+# @!attribute [rw] strMeasure15
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure16
+# @!attribute [rw] strMeasure16
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure17
+# @!attribute [rw] strMeasure17
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure18
+# @!attribute [rw] strMeasure18
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure19
+# @!attribute [rw] strMeasure19
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure2
+# @!attribute [rw] strMeasure2
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure20
+# @!attribute [rw] strMeasure20
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure3
+# @!attribute [rw] strMeasure3
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure4
+# @!attribute [rw] strMeasure4
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure5
+# @!attribute [rw] strMeasure5
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure6
+# @!attribute [rw] strMeasure6
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure7
+# @!attribute [rw] strMeasure7
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure8
+# @!attribute [rw] strMeasure8
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure9
+# @!attribute [rw] strMeasure9
 #   @return [String, nil]
 #
-# @!attribute [rw] str_source
+# @!attribute [rw] strSource
 #   @return [String, nil]
 #
-# @!attribute [rw] str_tag
+# @!attribute [rw] strTags
 #   @return [String, nil]
 #
-# @!attribute [rw] str_youtube
+# @!attribute [rw] strYoutube
 #   @return [String, nil]
 Lookup = Struct.new(
-  :date_modified,
-  :id_meal,
-  :str_area,
-  :str_category,
-  :str_creative_commons_confirmed,
-  :str_drink_alternate,
-  :str_image_source,
-  :str_ingredient1,
-  :str_ingredient10,
-  :str_ingredient11,
-  :str_ingredient12,
-  :str_ingredient13,
-  :str_ingredient14,
-  :str_ingredient15,
-  :str_ingredient16,
-  :str_ingredient17,
-  :str_ingredient18,
-  :str_ingredient19,
-  :str_ingredient2,
-  :str_ingredient20,
-  :str_ingredient3,
-  :str_ingredient4,
-  :str_ingredient5,
-  :str_ingredient6,
-  :str_ingredient7,
-  :str_ingredient8,
-  :str_ingredient9,
-  :str_instruction,
-  :str_meal,
-  :str_meal_thumb,
-  :str_measure1,
-  :str_measure10,
-  :str_measure11,
-  :str_measure12,
-  :str_measure13,
-  :str_measure14,
-  :str_measure15,
-  :str_measure16,
-  :str_measure17,
-  :str_measure18,
-  :str_measure19,
-  :str_measure2,
-  :str_measure20,
-  :str_measure3,
-  :str_measure4,
-  :str_measure5,
-  :str_measure6,
-  :str_measure7,
-  :str_measure8,
-  :str_measure9,
-  :str_source,
-  :str_tag,
-  :str_youtube,
+  :dateModified,
+  :idMeal,
+  :strArea,
+  :strCategory,
+  :strCreativeCommonsConfirmed,
+  :strDrinkAlternate,
+  :strImageSource,
+  :strIngredient1,
+  :strIngredient10,
+  :strIngredient11,
+  :strIngredient12,
+  :strIngredient13,
+  :strIngredient14,
+  :strIngredient15,
+  :strIngredient16,
+  :strIngredient17,
+  :strIngredient18,
+  :strIngredient19,
+  :strIngredient2,
+  :strIngredient20,
+  :strIngredient3,
+  :strIngredient4,
+  :strIngredient5,
+  :strIngredient6,
+  :strIngredient7,
+  :strIngredient8,
+  :strIngredient9,
+  :strInstructions,
+  :strMeal,
+  :strMealThumb,
+  :strMeasure1,
+  :strMeasure10,
+  :strMeasure11,
+  :strMeasure12,
+  :strMeasure13,
+  :strMeasure14,
+  :strMeasure15,
+  :strMeasure16,
+  :strMeasure17,
+  :strMeasure18,
+  :strMeasure19,
+  :strMeasure2,
+  :strMeasure20,
+  :strMeasure3,
+  :strMeasure4,
+  :strMeasure5,
+  :strMeasure6,
+  :strMeasure7,
+  :strMeasure8,
+  :strMeasure9,
+  :strSource,
+  :strTags,
+  :strYoutube,
   keyword_init: true
 )
 
 # Request payload for Lookup#list.
 #
-# @!attribute [rw] date_modified
+# @!attribute [rw] dateModified
 #   @return [String, nil]
 #
-# @!attribute [rw] id_meal
+# @!attribute [rw] idMeal
 #   @return [String, nil]
 #
-# @!attribute [rw] str_area
+# @!attribute [rw] strArea
 #   @return [String, nil]
 #
-# @!attribute [rw] str_category
+# @!attribute [rw] strCategory
 #   @return [String, nil]
 #
-# @!attribute [rw] str_creative_commons_confirmed
+# @!attribute [rw] strCreativeCommonsConfirmed
 #   @return [String, nil]
 #
-# @!attribute [rw] str_drink_alternate
+# @!attribute [rw] strDrinkAlternate
 #   @return [String, nil]
 #
-# @!attribute [rw] str_image_source
+# @!attribute [rw] strImageSource
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient1
+# @!attribute [rw] strIngredient1
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient10
+# @!attribute [rw] strIngredient10
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient11
+# @!attribute [rw] strIngredient11
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient12
+# @!attribute [rw] strIngredient12
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient13
+# @!attribute [rw] strIngredient13
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient14
+# @!attribute [rw] strIngredient14
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient15
+# @!attribute [rw] strIngredient15
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient16
+# @!attribute [rw] strIngredient16
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient17
+# @!attribute [rw] strIngredient17
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient18
+# @!attribute [rw] strIngredient18
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient19
+# @!attribute [rw] strIngredient19
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient2
+# @!attribute [rw] strIngredient2
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient20
+# @!attribute [rw] strIngredient20
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient3
+# @!attribute [rw] strIngredient3
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient4
+# @!attribute [rw] strIngredient4
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient5
+# @!attribute [rw] strIngredient5
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient6
+# @!attribute [rw] strIngredient6
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient7
+# @!attribute [rw] strIngredient7
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient8
+# @!attribute [rw] strIngredient8
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient9
+# @!attribute [rw] strIngredient9
 #   @return [String, nil]
 #
-# @!attribute [rw] str_instruction
+# @!attribute [rw] strInstructions
 #   @return [String, nil]
 #
-# @!attribute [rw] str_meal
+# @!attribute [rw] strMeal
 #   @return [String, nil]
 #
-# @!attribute [rw] str_meal_thumb
+# @!attribute [rw] strMealThumb
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure1
+# @!attribute [rw] strMeasure1
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure10
+# @!attribute [rw] strMeasure10
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure11
+# @!attribute [rw] strMeasure11
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure12
+# @!attribute [rw] strMeasure12
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure13
+# @!attribute [rw] strMeasure13
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure14
+# @!attribute [rw] strMeasure14
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure15
+# @!attribute [rw] strMeasure15
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure16
+# @!attribute [rw] strMeasure16
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure17
+# @!attribute [rw] strMeasure17
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure18
+# @!attribute [rw] strMeasure18
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure19
+# @!attribute [rw] strMeasure19
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure2
+# @!attribute [rw] strMeasure2
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure20
+# @!attribute [rw] strMeasure20
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure3
+# @!attribute [rw] strMeasure3
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure4
+# @!attribute [rw] strMeasure4
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure5
+# @!attribute [rw] strMeasure5
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure6
+# @!attribute [rw] strMeasure6
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure7
+# @!attribute [rw] strMeasure7
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure8
+# @!attribute [rw] strMeasure8
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure9
+# @!attribute [rw] strMeasure9
 #   @return [String, nil]
 #
-# @!attribute [rw] str_source
+# @!attribute [rw] strSource
 #   @return [String, nil]
 #
-# @!attribute [rw] str_tag
+# @!attribute [rw] strTags
 #   @return [String, nil]
 #
-# @!attribute [rw] str_youtube
+# @!attribute [rw] strYoutube
 #   @return [String, nil]
 LookupListMatch = Struct.new(
-  :date_modified,
-  :id_meal,
-  :str_area,
-  :str_category,
-  :str_creative_commons_confirmed,
-  :str_drink_alternate,
-  :str_image_source,
-  :str_ingredient1,
-  :str_ingredient10,
-  :str_ingredient11,
-  :str_ingredient12,
-  :str_ingredient13,
-  :str_ingredient14,
-  :str_ingredient15,
-  :str_ingredient16,
-  :str_ingredient17,
-  :str_ingredient18,
-  :str_ingredient19,
-  :str_ingredient2,
-  :str_ingredient20,
-  :str_ingredient3,
-  :str_ingredient4,
-  :str_ingredient5,
-  :str_ingredient6,
-  :str_ingredient7,
-  :str_ingredient8,
-  :str_ingredient9,
-  :str_instruction,
-  :str_meal,
-  :str_meal_thumb,
-  :str_measure1,
-  :str_measure10,
-  :str_measure11,
-  :str_measure12,
-  :str_measure13,
-  :str_measure14,
-  :str_measure15,
-  :str_measure16,
-  :str_measure17,
-  :str_measure18,
-  :str_measure19,
-  :str_measure2,
-  :str_measure20,
-  :str_measure3,
-  :str_measure4,
-  :str_measure5,
-  :str_measure6,
-  :str_measure7,
-  :str_measure8,
-  :str_measure9,
-  :str_source,
-  :str_tag,
-  :str_youtube,
+  :dateModified,
+  :idMeal,
+  :strArea,
+  :strCategory,
+  :strCreativeCommonsConfirmed,
+  :strDrinkAlternate,
+  :strImageSource,
+  :strIngredient1,
+  :strIngredient10,
+  :strIngredient11,
+  :strIngredient12,
+  :strIngredient13,
+  :strIngredient14,
+  :strIngredient15,
+  :strIngredient16,
+  :strIngredient17,
+  :strIngredient18,
+  :strIngredient19,
+  :strIngredient2,
+  :strIngredient20,
+  :strIngredient3,
+  :strIngredient4,
+  :strIngredient5,
+  :strIngredient6,
+  :strIngredient7,
+  :strIngredient8,
+  :strIngredient9,
+  :strInstructions,
+  :strMeal,
+  :strMealThumb,
+  :strMeasure1,
+  :strMeasure10,
+  :strMeasure11,
+  :strMeasure12,
+  :strMeasure13,
+  :strMeasure14,
+  :strMeasure15,
+  :strMeasure16,
+  :strMeasure17,
+  :strMeasure18,
+  :strMeasure19,
+  :strMeasure2,
+  :strMeasure20,
+  :strMeasure3,
+  :strMeasure4,
+  :strMeasure5,
+  :strMeasure6,
+  :strMeasure7,
+  :strMeasure8,
+  :strMeasure9,
+  :strSource,
+  :strTags,
+  :strYoutube,
   keyword_init: true
 )
 
 # Random entity data model.
 #
-# @!attribute [rw] date_modified
+# @!attribute [rw] dateModified
 #   @return [String, nil]
 #
-# @!attribute [rw] id_meal
+# @!attribute [rw] idMeal
 #   @return [String, nil]
 #
-# @!attribute [rw] str_area
+# @!attribute [rw] strArea
 #   @return [String, nil]
 #
-# @!attribute [rw] str_category
+# @!attribute [rw] strCategory
 #   @return [String, nil]
 #
-# @!attribute [rw] str_creative_commons_confirmed
+# @!attribute [rw] strCreativeCommonsConfirmed
 #   @return [String, nil]
 #
-# @!attribute [rw] str_drink_alternate
+# @!attribute [rw] strDrinkAlternate
 #   @return [String, nil]
 #
-# @!attribute [rw] str_image_source
+# @!attribute [rw] strImageSource
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient1
+# @!attribute [rw] strIngredient1
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient10
+# @!attribute [rw] strIngredient10
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient11
+# @!attribute [rw] strIngredient11
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient12
+# @!attribute [rw] strIngredient12
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient13
+# @!attribute [rw] strIngredient13
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient14
+# @!attribute [rw] strIngredient14
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient15
+# @!attribute [rw] strIngredient15
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient16
+# @!attribute [rw] strIngredient16
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient17
+# @!attribute [rw] strIngredient17
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient18
+# @!attribute [rw] strIngredient18
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient19
+# @!attribute [rw] strIngredient19
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient2
+# @!attribute [rw] strIngredient2
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient20
+# @!attribute [rw] strIngredient20
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient3
+# @!attribute [rw] strIngredient3
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient4
+# @!attribute [rw] strIngredient4
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient5
+# @!attribute [rw] strIngredient5
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient6
+# @!attribute [rw] strIngredient6
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient7
+# @!attribute [rw] strIngredient7
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient8
+# @!attribute [rw] strIngredient8
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient9
+# @!attribute [rw] strIngredient9
 #   @return [String, nil]
 #
-# @!attribute [rw] str_instruction
+# @!attribute [rw] strInstructions
 #   @return [String, nil]
 #
-# @!attribute [rw] str_meal
+# @!attribute [rw] strMeal
 #   @return [String, nil]
 #
-# @!attribute [rw] str_meal_thumb
+# @!attribute [rw] strMealThumb
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure1
+# @!attribute [rw] strMeasure1
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure10
+# @!attribute [rw] strMeasure10
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure11
+# @!attribute [rw] strMeasure11
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure12
+# @!attribute [rw] strMeasure12
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure13
+# @!attribute [rw] strMeasure13
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure14
+# @!attribute [rw] strMeasure14
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure15
+# @!attribute [rw] strMeasure15
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure16
+# @!attribute [rw] strMeasure16
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure17
+# @!attribute [rw] strMeasure17
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure18
+# @!attribute [rw] strMeasure18
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure19
+# @!attribute [rw] strMeasure19
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure2
+# @!attribute [rw] strMeasure2
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure20
+# @!attribute [rw] strMeasure20
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure3
+# @!attribute [rw] strMeasure3
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure4
+# @!attribute [rw] strMeasure4
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure5
+# @!attribute [rw] strMeasure5
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure6
+# @!attribute [rw] strMeasure6
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure7
+# @!attribute [rw] strMeasure7
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure8
+# @!attribute [rw] strMeasure8
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure9
+# @!attribute [rw] strMeasure9
 #   @return [String, nil]
 #
-# @!attribute [rw] str_source
+# @!attribute [rw] strSource
 #   @return [String, nil]
 #
-# @!attribute [rw] str_tag
+# @!attribute [rw] strTags
 #   @return [String, nil]
 #
-# @!attribute [rw] str_youtube
+# @!attribute [rw] strYoutube
 #   @return [String, nil]
-Random = Struct.new(
-  :date_modified,
-  :id_meal,
-  :str_area,
-  :str_category,
-  :str_creative_commons_confirmed,
-  :str_drink_alternate,
-  :str_image_source,
-  :str_ingredient1,
-  :str_ingredient10,
-  :str_ingredient11,
-  :str_ingredient12,
-  :str_ingredient13,
-  :str_ingredient14,
-  :str_ingredient15,
-  :str_ingredient16,
-  :str_ingredient17,
-  :str_ingredient18,
-  :str_ingredient19,
-  :str_ingredient2,
-  :str_ingredient20,
-  :str_ingredient3,
-  :str_ingredient4,
-  :str_ingredient5,
-  :str_ingredient6,
-  :str_ingredient7,
-  :str_ingredient8,
-  :str_ingredient9,
-  :str_instruction,
-  :str_meal,
-  :str_meal_thumb,
-  :str_measure1,
-  :str_measure10,
-  :str_measure11,
-  :str_measure12,
-  :str_measure13,
-  :str_measure14,
-  :str_measure15,
-  :str_measure16,
-  :str_measure17,
-  :str_measure18,
-  :str_measure19,
-  :str_measure2,
-  :str_measure20,
-  :str_measure3,
-  :str_measure4,
-  :str_measure5,
-  :str_measure6,
-  :str_measure7,
-  :str_measure8,
-  :str_measure9,
-  :str_source,
-  :str_tag,
-  :str_youtube,
+RandomType = Struct.new(
+  :dateModified,
+  :idMeal,
+  :strArea,
+  :strCategory,
+  :strCreativeCommonsConfirmed,
+  :strDrinkAlternate,
+  :strImageSource,
+  :strIngredient1,
+  :strIngredient10,
+  :strIngredient11,
+  :strIngredient12,
+  :strIngredient13,
+  :strIngredient14,
+  :strIngredient15,
+  :strIngredient16,
+  :strIngredient17,
+  :strIngredient18,
+  :strIngredient19,
+  :strIngredient2,
+  :strIngredient20,
+  :strIngredient3,
+  :strIngredient4,
+  :strIngredient5,
+  :strIngredient6,
+  :strIngredient7,
+  :strIngredient8,
+  :strIngredient9,
+  :strInstructions,
+  :strMeal,
+  :strMealThumb,
+  :strMeasure1,
+  :strMeasure10,
+  :strMeasure11,
+  :strMeasure12,
+  :strMeasure13,
+  :strMeasure14,
+  :strMeasure15,
+  :strMeasure16,
+  :strMeasure17,
+  :strMeasure18,
+  :strMeasure19,
+  :strMeasure2,
+  :strMeasure20,
+  :strMeasure3,
+  :strMeasure4,
+  :strMeasure5,
+  :strMeasure6,
+  :strMeasure7,
+  :strMeasure8,
+  :strMeasure9,
+  :strSource,
+  :strTags,
+  :strYoutube,
   keyword_init: true
 )
 
 # Request payload for Random#list.
 #
-# @!attribute [rw] date_modified
+# @!attribute [rw] dateModified
 #   @return [String, nil]
 #
-# @!attribute [rw] id_meal
+# @!attribute [rw] idMeal
 #   @return [String, nil]
 #
-# @!attribute [rw] str_area
+# @!attribute [rw] strArea
 #   @return [String, nil]
 #
-# @!attribute [rw] str_category
+# @!attribute [rw] strCategory
 #   @return [String, nil]
 #
-# @!attribute [rw] str_creative_commons_confirmed
+# @!attribute [rw] strCreativeCommonsConfirmed
 #   @return [String, nil]
 #
-# @!attribute [rw] str_drink_alternate
+# @!attribute [rw] strDrinkAlternate
 #   @return [String, nil]
 #
-# @!attribute [rw] str_image_source
+# @!attribute [rw] strImageSource
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient1
+# @!attribute [rw] strIngredient1
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient10
+# @!attribute [rw] strIngredient10
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient11
+# @!attribute [rw] strIngredient11
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient12
+# @!attribute [rw] strIngredient12
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient13
+# @!attribute [rw] strIngredient13
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient14
+# @!attribute [rw] strIngredient14
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient15
+# @!attribute [rw] strIngredient15
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient16
+# @!attribute [rw] strIngredient16
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient17
+# @!attribute [rw] strIngredient17
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient18
+# @!attribute [rw] strIngredient18
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient19
+# @!attribute [rw] strIngredient19
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient2
+# @!attribute [rw] strIngredient2
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient20
+# @!attribute [rw] strIngredient20
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient3
+# @!attribute [rw] strIngredient3
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient4
+# @!attribute [rw] strIngredient4
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient5
+# @!attribute [rw] strIngredient5
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient6
+# @!attribute [rw] strIngredient6
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient7
+# @!attribute [rw] strIngredient7
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient8
+# @!attribute [rw] strIngredient8
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient9
+# @!attribute [rw] strIngredient9
 #   @return [String, nil]
 #
-# @!attribute [rw] str_instruction
+# @!attribute [rw] strInstructions
 #   @return [String, nil]
 #
-# @!attribute [rw] str_meal
+# @!attribute [rw] strMeal
 #   @return [String, nil]
 #
-# @!attribute [rw] str_meal_thumb
+# @!attribute [rw] strMealThumb
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure1
+# @!attribute [rw] strMeasure1
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure10
+# @!attribute [rw] strMeasure10
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure11
+# @!attribute [rw] strMeasure11
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure12
+# @!attribute [rw] strMeasure12
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure13
+# @!attribute [rw] strMeasure13
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure14
+# @!attribute [rw] strMeasure14
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure15
+# @!attribute [rw] strMeasure15
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure16
+# @!attribute [rw] strMeasure16
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure17
+# @!attribute [rw] strMeasure17
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure18
+# @!attribute [rw] strMeasure18
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure19
+# @!attribute [rw] strMeasure19
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure2
+# @!attribute [rw] strMeasure2
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure20
+# @!attribute [rw] strMeasure20
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure3
+# @!attribute [rw] strMeasure3
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure4
+# @!attribute [rw] strMeasure4
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure5
+# @!attribute [rw] strMeasure5
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure6
+# @!attribute [rw] strMeasure6
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure7
+# @!attribute [rw] strMeasure7
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure8
+# @!attribute [rw] strMeasure8
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure9
+# @!attribute [rw] strMeasure9
 #   @return [String, nil]
 #
-# @!attribute [rw] str_source
+# @!attribute [rw] strSource
 #   @return [String, nil]
 #
-# @!attribute [rw] str_tag
+# @!attribute [rw] strTags
 #   @return [String, nil]
 #
-# @!attribute [rw] str_youtube
+# @!attribute [rw] strYoutube
 #   @return [String, nil]
 RandomListMatch = Struct.new(
-  :date_modified,
-  :id_meal,
-  :str_area,
-  :str_category,
-  :str_creative_commons_confirmed,
-  :str_drink_alternate,
-  :str_image_source,
-  :str_ingredient1,
-  :str_ingredient10,
-  :str_ingredient11,
-  :str_ingredient12,
-  :str_ingredient13,
-  :str_ingredient14,
-  :str_ingredient15,
-  :str_ingredient16,
-  :str_ingredient17,
-  :str_ingredient18,
-  :str_ingredient19,
-  :str_ingredient2,
-  :str_ingredient20,
-  :str_ingredient3,
-  :str_ingredient4,
-  :str_ingredient5,
-  :str_ingredient6,
-  :str_ingredient7,
-  :str_ingredient8,
-  :str_ingredient9,
-  :str_instruction,
-  :str_meal,
-  :str_meal_thumb,
-  :str_measure1,
-  :str_measure10,
-  :str_measure11,
-  :str_measure12,
-  :str_measure13,
-  :str_measure14,
-  :str_measure15,
-  :str_measure16,
-  :str_measure17,
-  :str_measure18,
-  :str_measure19,
-  :str_measure2,
-  :str_measure20,
-  :str_measure3,
-  :str_measure4,
-  :str_measure5,
-  :str_measure6,
-  :str_measure7,
-  :str_measure8,
-  :str_measure9,
-  :str_source,
-  :str_tag,
-  :str_youtube,
+  :dateModified,
+  :idMeal,
+  :strArea,
+  :strCategory,
+  :strCreativeCommonsConfirmed,
+  :strDrinkAlternate,
+  :strImageSource,
+  :strIngredient1,
+  :strIngredient10,
+  :strIngredient11,
+  :strIngredient12,
+  :strIngredient13,
+  :strIngredient14,
+  :strIngredient15,
+  :strIngredient16,
+  :strIngredient17,
+  :strIngredient18,
+  :strIngredient19,
+  :strIngredient2,
+  :strIngredient20,
+  :strIngredient3,
+  :strIngredient4,
+  :strIngredient5,
+  :strIngredient6,
+  :strIngredient7,
+  :strIngredient8,
+  :strIngredient9,
+  :strInstructions,
+  :strMeal,
+  :strMealThumb,
+  :strMeasure1,
+  :strMeasure10,
+  :strMeasure11,
+  :strMeasure12,
+  :strMeasure13,
+  :strMeasure14,
+  :strMeasure15,
+  :strMeasure16,
+  :strMeasure17,
+  :strMeasure18,
+  :strMeasure19,
+  :strMeasure2,
+  :strMeasure20,
+  :strMeasure3,
+  :strMeasure4,
+  :strMeasure5,
+  :strMeasure6,
+  :strMeasure7,
+  :strMeasure8,
+  :strMeasure9,
+  :strSource,
+  :strTags,
+  :strYoutube,
   keyword_init: true
 )
 
 # Randomselection entity data model.
 #
-# @!attribute [rw] date_modified
+# @!attribute [rw] dateModified
 #   @return [String, nil]
 #
-# @!attribute [rw] id_meal
+# @!attribute [rw] idMeal
 #   @return [String, nil]
 #
-# @!attribute [rw] str_area
+# @!attribute [rw] strArea
 #   @return [String, nil]
 #
-# @!attribute [rw] str_category
+# @!attribute [rw] strCategory
 #   @return [String, nil]
 #
-# @!attribute [rw] str_creative_commons_confirmed
+# @!attribute [rw] strCreativeCommonsConfirmed
 #   @return [String, nil]
 #
-# @!attribute [rw] str_drink_alternate
+# @!attribute [rw] strDrinkAlternate
 #   @return [String, nil]
 #
-# @!attribute [rw] str_image_source
+# @!attribute [rw] strImageSource
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient1
+# @!attribute [rw] strIngredient1
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient10
+# @!attribute [rw] strIngredient10
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient11
+# @!attribute [rw] strIngredient11
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient12
+# @!attribute [rw] strIngredient12
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient13
+# @!attribute [rw] strIngredient13
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient14
+# @!attribute [rw] strIngredient14
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient15
+# @!attribute [rw] strIngredient15
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient16
+# @!attribute [rw] strIngredient16
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient17
+# @!attribute [rw] strIngredient17
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient18
+# @!attribute [rw] strIngredient18
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient19
+# @!attribute [rw] strIngredient19
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient2
+# @!attribute [rw] strIngredient2
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient20
+# @!attribute [rw] strIngredient20
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient3
+# @!attribute [rw] strIngredient3
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient4
+# @!attribute [rw] strIngredient4
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient5
+# @!attribute [rw] strIngredient5
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient6
+# @!attribute [rw] strIngredient6
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient7
+# @!attribute [rw] strIngredient7
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient8
+# @!attribute [rw] strIngredient8
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient9
+# @!attribute [rw] strIngredient9
 #   @return [String, nil]
 #
-# @!attribute [rw] str_instruction
+# @!attribute [rw] strInstructions
 #   @return [String, nil]
 #
-# @!attribute [rw] str_meal
+# @!attribute [rw] strMeal
 #   @return [String, nil]
 #
-# @!attribute [rw] str_meal_thumb
+# @!attribute [rw] strMealThumb
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure1
+# @!attribute [rw] strMeasure1
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure10
+# @!attribute [rw] strMeasure10
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure11
+# @!attribute [rw] strMeasure11
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure12
+# @!attribute [rw] strMeasure12
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure13
+# @!attribute [rw] strMeasure13
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure14
+# @!attribute [rw] strMeasure14
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure15
+# @!attribute [rw] strMeasure15
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure16
+# @!attribute [rw] strMeasure16
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure17
+# @!attribute [rw] strMeasure17
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure18
+# @!attribute [rw] strMeasure18
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure19
+# @!attribute [rw] strMeasure19
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure2
+# @!attribute [rw] strMeasure2
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure20
+# @!attribute [rw] strMeasure20
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure3
+# @!attribute [rw] strMeasure3
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure4
+# @!attribute [rw] strMeasure4
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure5
+# @!attribute [rw] strMeasure5
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure6
+# @!attribute [rw] strMeasure6
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure7
+# @!attribute [rw] strMeasure7
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure8
+# @!attribute [rw] strMeasure8
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure9
+# @!attribute [rw] strMeasure9
 #   @return [String, nil]
 #
-# @!attribute [rw] str_source
+# @!attribute [rw] strSource
 #   @return [String, nil]
 #
-# @!attribute [rw] str_tag
+# @!attribute [rw] strTags
 #   @return [String, nil]
 #
-# @!attribute [rw] str_youtube
+# @!attribute [rw] strYoutube
 #   @return [String, nil]
 Randomselection = Struct.new(
-  :date_modified,
-  :id_meal,
-  :str_area,
-  :str_category,
-  :str_creative_commons_confirmed,
-  :str_drink_alternate,
-  :str_image_source,
-  :str_ingredient1,
-  :str_ingredient10,
-  :str_ingredient11,
-  :str_ingredient12,
-  :str_ingredient13,
-  :str_ingredient14,
-  :str_ingredient15,
-  :str_ingredient16,
-  :str_ingredient17,
-  :str_ingredient18,
-  :str_ingredient19,
-  :str_ingredient2,
-  :str_ingredient20,
-  :str_ingredient3,
-  :str_ingredient4,
-  :str_ingredient5,
-  :str_ingredient6,
-  :str_ingredient7,
-  :str_ingredient8,
-  :str_ingredient9,
-  :str_instruction,
-  :str_meal,
-  :str_meal_thumb,
-  :str_measure1,
-  :str_measure10,
-  :str_measure11,
-  :str_measure12,
-  :str_measure13,
-  :str_measure14,
-  :str_measure15,
-  :str_measure16,
-  :str_measure17,
-  :str_measure18,
-  :str_measure19,
-  :str_measure2,
-  :str_measure20,
-  :str_measure3,
-  :str_measure4,
-  :str_measure5,
-  :str_measure6,
-  :str_measure7,
-  :str_measure8,
-  :str_measure9,
-  :str_source,
-  :str_tag,
-  :str_youtube,
+  :dateModified,
+  :idMeal,
+  :strArea,
+  :strCategory,
+  :strCreativeCommonsConfirmed,
+  :strDrinkAlternate,
+  :strImageSource,
+  :strIngredient1,
+  :strIngredient10,
+  :strIngredient11,
+  :strIngredient12,
+  :strIngredient13,
+  :strIngredient14,
+  :strIngredient15,
+  :strIngredient16,
+  :strIngredient17,
+  :strIngredient18,
+  :strIngredient19,
+  :strIngredient2,
+  :strIngredient20,
+  :strIngredient3,
+  :strIngredient4,
+  :strIngredient5,
+  :strIngredient6,
+  :strIngredient7,
+  :strIngredient8,
+  :strIngredient9,
+  :strInstructions,
+  :strMeal,
+  :strMealThumb,
+  :strMeasure1,
+  :strMeasure10,
+  :strMeasure11,
+  :strMeasure12,
+  :strMeasure13,
+  :strMeasure14,
+  :strMeasure15,
+  :strMeasure16,
+  :strMeasure17,
+  :strMeasure18,
+  :strMeasure19,
+  :strMeasure2,
+  :strMeasure20,
+  :strMeasure3,
+  :strMeasure4,
+  :strMeasure5,
+  :strMeasure6,
+  :strMeasure7,
+  :strMeasure8,
+  :strMeasure9,
+  :strSource,
+  :strTags,
+  :strYoutube,
   keyword_init: true
 )
 
 # Request payload for Randomselection#list.
 #
-# @!attribute [rw] date_modified
+# @!attribute [rw] dateModified
 #   @return [String, nil]
 #
-# @!attribute [rw] id_meal
+# @!attribute [rw] idMeal
 #   @return [String, nil]
 #
-# @!attribute [rw] str_area
+# @!attribute [rw] strArea
 #   @return [String, nil]
 #
-# @!attribute [rw] str_category
+# @!attribute [rw] strCategory
 #   @return [String, nil]
 #
-# @!attribute [rw] str_creative_commons_confirmed
+# @!attribute [rw] strCreativeCommonsConfirmed
 #   @return [String, nil]
 #
-# @!attribute [rw] str_drink_alternate
+# @!attribute [rw] strDrinkAlternate
 #   @return [String, nil]
 #
-# @!attribute [rw] str_image_source
+# @!attribute [rw] strImageSource
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient1
+# @!attribute [rw] strIngredient1
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient10
+# @!attribute [rw] strIngredient10
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient11
+# @!attribute [rw] strIngredient11
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient12
+# @!attribute [rw] strIngredient12
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient13
+# @!attribute [rw] strIngredient13
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient14
+# @!attribute [rw] strIngredient14
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient15
+# @!attribute [rw] strIngredient15
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient16
+# @!attribute [rw] strIngredient16
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient17
+# @!attribute [rw] strIngredient17
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient18
+# @!attribute [rw] strIngredient18
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient19
+# @!attribute [rw] strIngredient19
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient2
+# @!attribute [rw] strIngredient2
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient20
+# @!attribute [rw] strIngredient20
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient3
+# @!attribute [rw] strIngredient3
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient4
+# @!attribute [rw] strIngredient4
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient5
+# @!attribute [rw] strIngredient5
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient6
+# @!attribute [rw] strIngredient6
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient7
+# @!attribute [rw] strIngredient7
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient8
+# @!attribute [rw] strIngredient8
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient9
+# @!attribute [rw] strIngredient9
 #   @return [String, nil]
 #
-# @!attribute [rw] str_instruction
+# @!attribute [rw] strInstructions
 #   @return [String, nil]
 #
-# @!attribute [rw] str_meal
+# @!attribute [rw] strMeal
 #   @return [String, nil]
 #
-# @!attribute [rw] str_meal_thumb
+# @!attribute [rw] strMealThumb
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure1
+# @!attribute [rw] strMeasure1
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure10
+# @!attribute [rw] strMeasure10
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure11
+# @!attribute [rw] strMeasure11
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure12
+# @!attribute [rw] strMeasure12
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure13
+# @!attribute [rw] strMeasure13
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure14
+# @!attribute [rw] strMeasure14
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure15
+# @!attribute [rw] strMeasure15
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure16
+# @!attribute [rw] strMeasure16
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure17
+# @!attribute [rw] strMeasure17
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure18
+# @!attribute [rw] strMeasure18
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure19
+# @!attribute [rw] strMeasure19
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure2
+# @!attribute [rw] strMeasure2
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure20
+# @!attribute [rw] strMeasure20
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure3
+# @!attribute [rw] strMeasure3
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure4
+# @!attribute [rw] strMeasure4
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure5
+# @!attribute [rw] strMeasure5
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure6
+# @!attribute [rw] strMeasure6
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure7
+# @!attribute [rw] strMeasure7
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure8
+# @!attribute [rw] strMeasure8
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure9
+# @!attribute [rw] strMeasure9
 #   @return [String, nil]
 #
-# @!attribute [rw] str_source
+# @!attribute [rw] strSource
 #   @return [String, nil]
 #
-# @!attribute [rw] str_tag
+# @!attribute [rw] strTags
 #   @return [String, nil]
 #
-# @!attribute [rw] str_youtube
+# @!attribute [rw] strYoutube
 #   @return [String, nil]
 RandomselectionListMatch = Struct.new(
-  :date_modified,
-  :id_meal,
-  :str_area,
-  :str_category,
-  :str_creative_commons_confirmed,
-  :str_drink_alternate,
-  :str_image_source,
-  :str_ingredient1,
-  :str_ingredient10,
-  :str_ingredient11,
-  :str_ingredient12,
-  :str_ingredient13,
-  :str_ingredient14,
-  :str_ingredient15,
-  :str_ingredient16,
-  :str_ingredient17,
-  :str_ingredient18,
-  :str_ingredient19,
-  :str_ingredient2,
-  :str_ingredient20,
-  :str_ingredient3,
-  :str_ingredient4,
-  :str_ingredient5,
-  :str_ingredient6,
-  :str_ingredient7,
-  :str_ingredient8,
-  :str_ingredient9,
-  :str_instruction,
-  :str_meal,
-  :str_meal_thumb,
-  :str_measure1,
-  :str_measure10,
-  :str_measure11,
-  :str_measure12,
-  :str_measure13,
-  :str_measure14,
-  :str_measure15,
-  :str_measure16,
-  :str_measure17,
-  :str_measure18,
-  :str_measure19,
-  :str_measure2,
-  :str_measure20,
-  :str_measure3,
-  :str_measure4,
-  :str_measure5,
-  :str_measure6,
-  :str_measure7,
-  :str_measure8,
-  :str_measure9,
-  :str_source,
-  :str_tag,
-  :str_youtube,
+  :dateModified,
+  :idMeal,
+  :strArea,
+  :strCategory,
+  :strCreativeCommonsConfirmed,
+  :strDrinkAlternate,
+  :strImageSource,
+  :strIngredient1,
+  :strIngredient10,
+  :strIngredient11,
+  :strIngredient12,
+  :strIngredient13,
+  :strIngredient14,
+  :strIngredient15,
+  :strIngredient16,
+  :strIngredient17,
+  :strIngredient18,
+  :strIngredient19,
+  :strIngredient2,
+  :strIngredient20,
+  :strIngredient3,
+  :strIngredient4,
+  :strIngredient5,
+  :strIngredient6,
+  :strIngredient7,
+  :strIngredient8,
+  :strIngredient9,
+  :strInstructions,
+  :strMeal,
+  :strMealThumb,
+  :strMeasure1,
+  :strMeasure10,
+  :strMeasure11,
+  :strMeasure12,
+  :strMeasure13,
+  :strMeasure14,
+  :strMeasure15,
+  :strMeasure16,
+  :strMeasure17,
+  :strMeasure18,
+  :strMeasure19,
+  :strMeasure2,
+  :strMeasure20,
+  :strMeasure3,
+  :strMeasure4,
+  :strMeasure5,
+  :strMeasure6,
+  :strMeasure7,
+  :strMeasure8,
+  :strMeasure9,
+  :strSource,
+  :strTags,
+  :strYoutube,
   keyword_init: true
 )
 
 # Search entity data model.
 #
-# @!attribute [rw] date_modified
+# @!attribute [rw] dateModified
 #   @return [String, nil]
 #
-# @!attribute [rw] id_meal
+# @!attribute [rw] idMeal
 #   @return [String, nil]
 #
-# @!attribute [rw] str_area
+# @!attribute [rw] strArea
 #   @return [String, nil]
 #
-# @!attribute [rw] str_category
+# @!attribute [rw] strCategory
 #   @return [String, nil]
 #
-# @!attribute [rw] str_creative_commons_confirmed
+# @!attribute [rw] strCreativeCommonsConfirmed
 #   @return [String, nil]
 #
-# @!attribute [rw] str_drink_alternate
+# @!attribute [rw] strDrinkAlternate
 #   @return [String, nil]
 #
-# @!attribute [rw] str_image_source
+# @!attribute [rw] strImageSource
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient1
+# @!attribute [rw] strIngredient1
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient10
+# @!attribute [rw] strIngredient10
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient11
+# @!attribute [rw] strIngredient11
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient12
+# @!attribute [rw] strIngredient12
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient13
+# @!attribute [rw] strIngredient13
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient14
+# @!attribute [rw] strIngredient14
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient15
+# @!attribute [rw] strIngredient15
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient16
+# @!attribute [rw] strIngredient16
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient17
+# @!attribute [rw] strIngredient17
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient18
+# @!attribute [rw] strIngredient18
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient19
+# @!attribute [rw] strIngredient19
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient2
+# @!attribute [rw] strIngredient2
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient20
+# @!attribute [rw] strIngredient20
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient3
+# @!attribute [rw] strIngredient3
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient4
+# @!attribute [rw] strIngredient4
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient5
+# @!attribute [rw] strIngredient5
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient6
+# @!attribute [rw] strIngredient6
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient7
+# @!attribute [rw] strIngredient7
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient8
+# @!attribute [rw] strIngredient8
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient9
+# @!attribute [rw] strIngredient9
 #   @return [String, nil]
 #
-# @!attribute [rw] str_instruction
+# @!attribute [rw] strInstructions
 #   @return [String, nil]
 #
-# @!attribute [rw] str_meal
+# @!attribute [rw] strMeal
 #   @return [String, nil]
 #
-# @!attribute [rw] str_meal_thumb
+# @!attribute [rw] strMealThumb
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure1
+# @!attribute [rw] strMeasure1
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure10
+# @!attribute [rw] strMeasure10
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure11
+# @!attribute [rw] strMeasure11
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure12
+# @!attribute [rw] strMeasure12
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure13
+# @!attribute [rw] strMeasure13
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure14
+# @!attribute [rw] strMeasure14
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure15
+# @!attribute [rw] strMeasure15
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure16
+# @!attribute [rw] strMeasure16
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure17
+# @!attribute [rw] strMeasure17
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure18
+# @!attribute [rw] strMeasure18
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure19
+# @!attribute [rw] strMeasure19
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure2
+# @!attribute [rw] strMeasure2
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure20
+# @!attribute [rw] strMeasure20
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure3
+# @!attribute [rw] strMeasure3
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure4
+# @!attribute [rw] strMeasure4
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure5
+# @!attribute [rw] strMeasure5
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure6
+# @!attribute [rw] strMeasure6
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure7
+# @!attribute [rw] strMeasure7
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure8
+# @!attribute [rw] strMeasure8
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure9
+# @!attribute [rw] strMeasure9
 #   @return [String, nil]
 #
-# @!attribute [rw] str_source
+# @!attribute [rw] strSource
 #   @return [String, nil]
 #
-# @!attribute [rw] str_tag
+# @!attribute [rw] strTags
 #   @return [String, nil]
 #
-# @!attribute [rw] str_youtube
+# @!attribute [rw] strYoutube
 #   @return [String, nil]
 Search = Struct.new(
-  :date_modified,
-  :id_meal,
-  :str_area,
-  :str_category,
-  :str_creative_commons_confirmed,
-  :str_drink_alternate,
-  :str_image_source,
-  :str_ingredient1,
-  :str_ingredient10,
-  :str_ingredient11,
-  :str_ingredient12,
-  :str_ingredient13,
-  :str_ingredient14,
-  :str_ingredient15,
-  :str_ingredient16,
-  :str_ingredient17,
-  :str_ingredient18,
-  :str_ingredient19,
-  :str_ingredient2,
-  :str_ingredient20,
-  :str_ingredient3,
-  :str_ingredient4,
-  :str_ingredient5,
-  :str_ingredient6,
-  :str_ingredient7,
-  :str_ingredient8,
-  :str_ingredient9,
-  :str_instruction,
-  :str_meal,
-  :str_meal_thumb,
-  :str_measure1,
-  :str_measure10,
-  :str_measure11,
-  :str_measure12,
-  :str_measure13,
-  :str_measure14,
-  :str_measure15,
-  :str_measure16,
-  :str_measure17,
-  :str_measure18,
-  :str_measure19,
-  :str_measure2,
-  :str_measure20,
-  :str_measure3,
-  :str_measure4,
-  :str_measure5,
-  :str_measure6,
-  :str_measure7,
-  :str_measure8,
-  :str_measure9,
-  :str_source,
-  :str_tag,
-  :str_youtube,
+  :dateModified,
+  :idMeal,
+  :strArea,
+  :strCategory,
+  :strCreativeCommonsConfirmed,
+  :strDrinkAlternate,
+  :strImageSource,
+  :strIngredient1,
+  :strIngredient10,
+  :strIngredient11,
+  :strIngredient12,
+  :strIngredient13,
+  :strIngredient14,
+  :strIngredient15,
+  :strIngredient16,
+  :strIngredient17,
+  :strIngredient18,
+  :strIngredient19,
+  :strIngredient2,
+  :strIngredient20,
+  :strIngredient3,
+  :strIngredient4,
+  :strIngredient5,
+  :strIngredient6,
+  :strIngredient7,
+  :strIngredient8,
+  :strIngredient9,
+  :strInstructions,
+  :strMeal,
+  :strMealThumb,
+  :strMeasure1,
+  :strMeasure10,
+  :strMeasure11,
+  :strMeasure12,
+  :strMeasure13,
+  :strMeasure14,
+  :strMeasure15,
+  :strMeasure16,
+  :strMeasure17,
+  :strMeasure18,
+  :strMeasure19,
+  :strMeasure2,
+  :strMeasure20,
+  :strMeasure3,
+  :strMeasure4,
+  :strMeasure5,
+  :strMeasure6,
+  :strMeasure7,
+  :strMeasure8,
+  :strMeasure9,
+  :strSource,
+  :strTags,
+  :strYoutube,
   keyword_init: true
 )
 
 # Request payload for Search#list.
 #
-# @!attribute [rw] date_modified
+# @!attribute [rw] dateModified
 #   @return [String, nil]
 #
-# @!attribute [rw] id_meal
+# @!attribute [rw] idMeal
 #   @return [String, nil]
 #
-# @!attribute [rw] str_area
+# @!attribute [rw] strArea
 #   @return [String, nil]
 #
-# @!attribute [rw] str_category
+# @!attribute [rw] strCategory
 #   @return [String, nil]
 #
-# @!attribute [rw] str_creative_commons_confirmed
+# @!attribute [rw] strCreativeCommonsConfirmed
 #   @return [String, nil]
 #
-# @!attribute [rw] str_drink_alternate
+# @!attribute [rw] strDrinkAlternate
 #   @return [String, nil]
 #
-# @!attribute [rw] str_image_source
+# @!attribute [rw] strImageSource
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient1
+# @!attribute [rw] strIngredient1
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient10
+# @!attribute [rw] strIngredient10
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient11
+# @!attribute [rw] strIngredient11
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient12
+# @!attribute [rw] strIngredient12
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient13
+# @!attribute [rw] strIngredient13
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient14
+# @!attribute [rw] strIngredient14
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient15
+# @!attribute [rw] strIngredient15
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient16
+# @!attribute [rw] strIngredient16
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient17
+# @!attribute [rw] strIngredient17
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient18
+# @!attribute [rw] strIngredient18
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient19
+# @!attribute [rw] strIngredient19
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient2
+# @!attribute [rw] strIngredient2
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient20
+# @!attribute [rw] strIngredient20
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient3
+# @!attribute [rw] strIngredient3
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient4
+# @!attribute [rw] strIngredient4
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient5
+# @!attribute [rw] strIngredient5
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient6
+# @!attribute [rw] strIngredient6
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient7
+# @!attribute [rw] strIngredient7
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient8
+# @!attribute [rw] strIngredient8
 #   @return [String, nil]
 #
-# @!attribute [rw] str_ingredient9
+# @!attribute [rw] strIngredient9
 #   @return [String, nil]
 #
-# @!attribute [rw] str_instruction
+# @!attribute [rw] strInstructions
 #   @return [String, nil]
 #
-# @!attribute [rw] str_meal
+# @!attribute [rw] strMeal
 #   @return [String, nil]
 #
-# @!attribute [rw] str_meal_thumb
+# @!attribute [rw] strMealThumb
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure1
+# @!attribute [rw] strMeasure1
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure10
+# @!attribute [rw] strMeasure10
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure11
+# @!attribute [rw] strMeasure11
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure12
+# @!attribute [rw] strMeasure12
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure13
+# @!attribute [rw] strMeasure13
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure14
+# @!attribute [rw] strMeasure14
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure15
+# @!attribute [rw] strMeasure15
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure16
+# @!attribute [rw] strMeasure16
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure17
+# @!attribute [rw] strMeasure17
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure18
+# @!attribute [rw] strMeasure18
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure19
+# @!attribute [rw] strMeasure19
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure2
+# @!attribute [rw] strMeasure2
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure20
+# @!attribute [rw] strMeasure20
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure3
+# @!attribute [rw] strMeasure3
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure4
+# @!attribute [rw] strMeasure4
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure5
+# @!attribute [rw] strMeasure5
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure6
+# @!attribute [rw] strMeasure6
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure7
+# @!attribute [rw] strMeasure7
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure8
+# @!attribute [rw] strMeasure8
 #   @return [String, nil]
 #
-# @!attribute [rw] str_measure9
+# @!attribute [rw] strMeasure9
 #   @return [String, nil]
 #
-# @!attribute [rw] str_source
+# @!attribute [rw] strSource
 #   @return [String, nil]
 #
-# @!attribute [rw] str_tag
+# @!attribute [rw] strTags
 #   @return [String, nil]
 #
-# @!attribute [rw] str_youtube
+# @!attribute [rw] strYoutube
 #   @return [String, nil]
 SearchListMatch = Struct.new(
-  :date_modified,
-  :id_meal,
-  :str_area,
-  :str_category,
-  :str_creative_commons_confirmed,
-  :str_drink_alternate,
-  :str_image_source,
-  :str_ingredient1,
-  :str_ingredient10,
-  :str_ingredient11,
-  :str_ingredient12,
-  :str_ingredient13,
-  :str_ingredient14,
-  :str_ingredient15,
-  :str_ingredient16,
-  :str_ingredient17,
-  :str_ingredient18,
-  :str_ingredient19,
-  :str_ingredient2,
-  :str_ingredient20,
-  :str_ingredient3,
-  :str_ingredient4,
-  :str_ingredient5,
-  :str_ingredient6,
-  :str_ingredient7,
-  :str_ingredient8,
-  :str_ingredient9,
-  :str_instruction,
-  :str_meal,
-  :str_meal_thumb,
-  :str_measure1,
-  :str_measure10,
-  :str_measure11,
-  :str_measure12,
-  :str_measure13,
-  :str_measure14,
-  :str_measure15,
-  :str_measure16,
-  :str_measure17,
-  :str_measure18,
-  :str_measure19,
-  :str_measure2,
-  :str_measure20,
-  :str_measure3,
-  :str_measure4,
-  :str_measure5,
-  :str_measure6,
-  :str_measure7,
-  :str_measure8,
-  :str_measure9,
-  :str_source,
-  :str_tag,
-  :str_youtube,
+  :dateModified,
+  :idMeal,
+  :strArea,
+  :strCategory,
+  :strCreativeCommonsConfirmed,
+  :strDrinkAlternate,
+  :strImageSource,
+  :strIngredient1,
+  :strIngredient10,
+  :strIngredient11,
+  :strIngredient12,
+  :strIngredient13,
+  :strIngredient14,
+  :strIngredient15,
+  :strIngredient16,
+  :strIngredient17,
+  :strIngredient18,
+  :strIngredient19,
+  :strIngredient2,
+  :strIngredient20,
+  :strIngredient3,
+  :strIngredient4,
+  :strIngredient5,
+  :strIngredient6,
+  :strIngredient7,
+  :strIngredient8,
+  :strIngredient9,
+  :strInstructions,
+  :strMeal,
+  :strMealThumb,
+  :strMeasure1,
+  :strMeasure10,
+  :strMeasure11,
+  :strMeasure12,
+  :strMeasure13,
+  :strMeasure14,
+  :strMeasure15,
+  :strMeasure16,
+  :strMeasure17,
+  :strMeasure18,
+  :strMeasure19,
+  :strMeasure2,
+  :strMeasure20,
+  :strMeasure3,
+  :strMeasure4,
+  :strMeasure5,
+  :strMeasure6,
+  :strMeasure7,
+  :strMeasure8,
+  :strMeasure9,
+  :strSource,
+  :strTags,
+  :strYoutube,
   keyword_init: true
 )
 

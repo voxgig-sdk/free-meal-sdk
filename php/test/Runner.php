@@ -43,8 +43,8 @@ class FreeMealTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('FREEMEAL_TEST_LIVE');
-        $override = self::getenv('FREEMEAL_TEST_OVERRIDE');
+        $live = self::getenv('FREE_MEAL_TEST_LIVE');
+        $override = self::getenv('FREE_MEAL_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class FreeMealTestRunner
             }
         }
 
-        $explain = self::getenv('FREEMEAL_TEST_EXPLAIN');
+        $explain = self::getenv('FREE_MEAL_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['FREEMEAL_TEST_EXPLAIN'] = $explain;
+            $m['FREE_MEAL_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

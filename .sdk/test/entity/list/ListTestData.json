@@ -2,28 +2,28 @@
   "existing": {
     "list": {
       "LIST00": {
-        "str_area": "s1e",
-        "str_category": "s1f",
-        "str_ingredient": "s20"
+        "strArea": "s1e",
+        "strCategory": "s1f",
+        "strIngredient": "s20"
       },
       "LIST01": {
-        "str_area": "s3c",
-        "str_category": "s3d",
-        "str_ingredient": "s3e"
+        "strArea": "s3c",
+        "strCategory": "s3d",
+        "strIngredient": "s3e"
       },
       "LIST02": {
-        "str_area": "s5a",
-        "str_category": "s5b",
-        "str_ingredient": "s5c"
+        "strArea": "s5a",
+        "strCategory": "s5b",
+        "strIngredient": "s5c"
       }
     }
   },
   "new": {
     "list": {
       "list_ref01": {
-        "str_area": "s78",
-        "str_category": "s79",
-        "str_ingredient": "s7a"
+        "strArea": "s78",
+        "strCategory": "s79",
+        "strIngredient": "s7a"
       }
     }
   }

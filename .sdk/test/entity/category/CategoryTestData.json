@@ -2,32 +2,32 @@
   "existing": {
     "category": {
       "CATEGORY00": {
-        "id_category": "s28",
-        "str_category": "s29",
-        "str_category_description": "s2a",
-        "str_category_thumb": "s2b"
+        "idCategory": "s28",
+        "strCategory": "s29",
+        "strCategoryDescription": "s2a",
+        "strCategoryThumb": "s2b"
       },
       "CATEGORY01": {
-        "id_category": "s50",
-        "str_category": "s51",
-        "str_category_description": "s52",
-        "str_category_thumb": "s53"
+        "idCategory": "s50",
+        "strCategory": "s51",
+        "strCategoryDescription": "s52",
+        "strCategoryThumb": "s53"
       },
       "CATEGORY02": {
-        "id_category": "s78",
-        "str_category": "s79",
-        "str_category_description": "s7a",
-        "str_category_thumb": "s7b"
+        "idCategory": "s78",
+        "strCategory": "s79",
+        "strCategoryDescription": "s7a",
+        "strCategoryThumb": "s7b"
       }
     }
   },
   "new": {
     "category": {
       "category_ref01": {
-        "id_category": "sa0",
-        "str_category": "sa1",
-        "str_category_description": "sa2",
-        "str_category_thumb": "sa3"
+        "idCategory": "sa0",
+        "strCategory": "sa1",
+        "strCategoryDescription": "sa2",
+        "strCategoryThumb": "sa3"
       }
     }
   }

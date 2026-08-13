@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import FreeMealControl
-from core.error import FreeMealError
-from core.result import FreeMealResult
-from core.spec import FreeMealSpec
+from projectname_sdk.config import make_config
+from projectname_sdk.features import _make_feature
+from projectname_sdk.core.control import FreeMealControl
+from projectname_sdk.core.error import FreeMealError
+from projectname_sdk.core.result import FreeMealResult
+from projectname_sdk.core.spec import FreeMealSpec
 
 
 # True when this SDK was generated with the named feature.

@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from freemeal_sdk.utility.voxgig_struct import voxgig_struct as vs
 from freemeal_sdk import FreeMealSDK
-from core import helpers
+from freemeal_sdk.core import helpers
 from test import runner
 
 
@@ -58,16 +58,16 @@ def _category_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "FREEMEAL_TEST_CATEGORY_ENTID": {},
-        "FREEMEAL_TEST_LIVE": "FALSE",
-        "FREEMEAL_APIKEY": "NONE",
+        "FREE_MEAL_TEST_CATEGORY_ENTID": {},
+        "FREE_MEAL_TEST_LIVE": "FALSE",
+        "FREE_MEAL_APIKEY": "NONE",
     })
 
-    live = env.get("FREEMEAL_TEST_LIVE") == "TRUE"
+    live = env.get("FREE_MEAL_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("FREEMEAL_APIKEY"),
+            "apikey": env.get("FREE_MEAL_APIKEY"),
         }
         client = FreeMealSDK(merged_opts)
         return {

@@ -26,8 +26,8 @@ import {
 describe('LatestEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when FREEMEAL_TEST_LIVE=TRUE.
-  afterEach(liveDelay('FREEMEAL_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when FREE_MEAL_TEST_LIVE=TRUE.
+  afterEach(liveDelay('FREE_MEAL_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = FreeMealSDK.test()
@@ -63,7 +63,7 @@ describe('LatestEntity', async () => {
     const latest_ref01_ent = client.Latest()
     const latest_ref01_match: any = {}
 
-    const latest_ref01_list = await latest_ref01_ent.list(latest_ref01_match)
+    const latest_ref01_list = (await latest_ref01_ent.list(latest_ref01_match)).map((e: any) => e.data())
 
 
   })

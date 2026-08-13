@@ -36,9 +36,10 @@ func TestLatestDirect(t *testing.T) {
 			"params": map[string]any{},
 		})
 		if setup.live {
-			// Live mode is lenient: synthetic IDs frequently 4xx and the
-			// list-response shape varies wildly across public APIs. Skip
-			// rather than fail when the call doesn't return a usable list.
+			// Live-mode leniency is a model decision
+			// (main.kit.test.live.strict): synthetic IDs 4xx constantly
+			// against an arbitrary public API, so the default SKIPS here.
+			// A project that owns its test server sets strict and FAILS.
 			if err != nil {
 				t.Skipf("list call failed (likely synthetic IDs against live API): %v", err)
 			}
@@ -91,21 +92,21 @@ func latestDirectSetup(mockres any) *latestDirectSetupResult {
 	calls := &[]map[string]any{}
 
 	env := envOverride(map[string]any{
-		"FREEMEAL_TEST_LATEST_ENTID": map[string]any{},
-		"FREEMEAL_TEST_LIVE":    "FALSE",
-		"FREEMEAL_APIKEY":       "NONE",
+		"FREE_MEAL_TEST_LATEST_ENTID": map[string]any{},
+		"FREE_MEAL_TEST_LIVE":    "FALSE",
+		"FREE_MEAL_APIKEY":       "NONE",
 	})
 
-	live := env["FREEMEAL_TEST_LIVE"] == "TRUE"
+	live := env["FREE_MEAL_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["FREEMEAL_APIKEY"],
+			"apikey": env["FREE_MEAL_APIKEY"],
 		}
 		client := sdk.NewFreeMealSDK(mergedOpts)
 
 		idmap := map[string]any{}
-		if entidRaw, ok := env["FREEMEAL_TEST_LATEST_ENTID"]; ok {
+		if entidRaw, ok := env["FREE_MEAL_TEST_LATEST_ENTID"]; ok {
 			if entidStr, ok := entidRaw.(string); ok && strings.HasPrefix(entidStr, "{") {
 				json.Unmarshal([]byte(entidStr), &idmap)
 			} else if entidMap, ok := entidRaw.(map[string]any); ok {
