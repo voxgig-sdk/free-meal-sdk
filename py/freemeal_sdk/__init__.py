@@ -23,8 +23,8 @@ class FreeMealSDK:
         utility = FreeMealUtility()
         self._utility = utility
 
-        from freemeal_sdk.config import make_config
-        config = make_config()
+        from freemeal_sdk.config import shared_config
+        config = shared_config()
 
         self._rootctx = utility.make_context({
             "client": self,

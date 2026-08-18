@@ -15,7 +15,7 @@ require_relative "../FreeMeal_sdk"
 module FreeMealFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = FreeMealConfig.make_config["feature"]
+    f = FreeMealConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 

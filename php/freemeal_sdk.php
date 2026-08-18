@@ -40,7 +40,7 @@ class FreeMealSDK
         $utility = new FreeMealUtility();
         $this->_utility = $utility;
 
-        $config = FreeMealConfig::make_config();
+        $config = FreeMealConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

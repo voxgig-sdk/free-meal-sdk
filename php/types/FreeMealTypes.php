@@ -163,7 +163,7 @@ class LatestListMatch
 }
 
 /** List entity data model. */
-class List
+class ListType
 {
     public ?string $strArea = null;
     public ?string $strCategory = null;

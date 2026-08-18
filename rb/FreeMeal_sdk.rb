@@ -28,7 +28,7 @@ class FreeMealSDK
     utility = FreeMealUtility.new
     @_utility = utility
 
-    config = FreeMealConfig.make_config
+    config = FreeMealConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,
