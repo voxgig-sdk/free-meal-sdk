@@ -119,10 +119,10 @@ local category = client:Category(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `idCategory` | `string` | No |  |
-| `strCategory` | `string` | No |  |
-| `strCategoryDescription` | `string` | No |  |
-| `strCategoryThumb` | `string` | No |  |
+| `idCategory` | `string` | No | Unique category identifier |
+| `strCategory` | `string` | No | Category name |
+| `strCategoryDescription` | `string` | No | Category description |
+| `strCategoryThumb` | `string` | No | URL to category thumbnail image |
 
 ### Operations
 
@@ -174,9 +174,9 @@ local filter = client:Filter(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `idMeal` | `string` | No |  |
-| `strMeal` | `string` | No |  |
-| `strMealThumb` | `string` | No |  |
+| `idMeal` | `string` | No | Unique meal identifier |
+| `strMeal` | `string` | No | Meal name |
+| `strMealThumb` | `string` | No | URL to meal thumbnail image |
 
 ### Operations
 
@@ -229,9 +229,9 @@ local latest = client:Latest(nil)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `dateModified` | `string` | No |  |
-| `idMeal` | `string` | No |  |
-| `strArea` | `string` | No |  |
-| `strCategory` | `string` | No |  |
+| `idMeal` | `string` | No | Unique meal identifier |
+| `strArea` | `string` | No | Meal area/region |
+| `strCategory` | `string` | No | Meal category |
 | `strCreativeCommonsConfirmed` | `string` | No |  |
 | `strDrinkAlternate` | `string` | No |  |
 | `strImageSource` | `string` | No |  |
@@ -255,9 +255,9 @@ local latest = client:Latest(nil)
 | `strIngredient7` | `string` | No |  |
 | `strIngredient8` | `string` | No |  |
 | `strIngredient9` | `string` | No |  |
-| `strInstructions` | `string` | No |  |
-| `strMeal` | `string` | No |  |
-| `strMealThumb` | `string` | No |  |
+| `strInstructions` | `string` | No | Cooking instructions |
+| `strMeal` | `string` | No | Meal name |
+| `strMealThumb` | `string` | No | URL to meal thumbnail image |
 | `strMeasure1` | `string` | No |  |
 | `strMeasure10` | `string` | No |  |
 | `strMeasure11` | `string` | No |  |
@@ -279,8 +279,8 @@ local latest = client:Latest(nil)
 | `strMeasure8` | `string` | No |  |
 | `strMeasure9` | `string` | No |  |
 | `strSource` | `string` | No |  |
-| `strTags` | `string` | No |  |
-| `strYoutube` | `string` | No |  |
+| `strTags` | `string` | No | Comma-separated tags |
+| `strYoutube` | `string` | No | YouTube video URL |
 
 ### Operations
 
@@ -387,9 +387,9 @@ local lookup = client:Lookup(nil)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `dateModified` | `string` | No |  |
-| `idMeal` | `string` | No |  |
-| `strArea` | `string` | No |  |
-| `strCategory` | `string` | No |  |
+| `idMeal` | `string` | No | Unique meal identifier |
+| `strArea` | `string` | No | Meal area/region |
+| `strCategory` | `string` | No | Meal category |
 | `strCreativeCommonsConfirmed` | `string` | No |  |
 | `strDrinkAlternate` | `string` | No |  |
 | `strImageSource` | `string` | No |  |
@@ -413,9 +413,9 @@ local lookup = client:Lookup(nil)
 | `strIngredient7` | `string` | No |  |
 | `strIngredient8` | `string` | No |  |
 | `strIngredient9` | `string` | No |  |
-| `strInstructions` | `string` | No |  |
-| `strMeal` | `string` | No |  |
-| `strMealThumb` | `string` | No |  |
+| `strInstructions` | `string` | No | Cooking instructions |
+| `strMeal` | `string` | No | Meal name |
+| `strMealThumb` | `string` | No | URL to meal thumbnail image |
 | `strMeasure1` | `string` | No |  |
 | `strMeasure10` | `string` | No |  |
 | `strMeasure11` | `string` | No |  |
@@ -437,8 +437,8 @@ local lookup = client:Lookup(nil)
 | `strMeasure8` | `string` | No |  |
 | `strMeasure9` | `string` | No |  |
 | `strSource` | `string` | No |  |
-| `strTags` | `string` | No |  |
-| `strYoutube` | `string` | No |  |
+| `strTags` | `string` | No | Comma-separated tags |
+| `strYoutube` | `string` | No | YouTube video URL |
 
 ### Operations
 
@@ -491,9 +491,9 @@ local random = client:Random(nil)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `dateModified` | `string` | No |  |
-| `idMeal` | `string` | No |  |
-| `strArea` | `string` | No |  |
-| `strCategory` | `string` | No |  |
+| `idMeal` | `string` | No | Unique meal identifier |
+| `strArea` | `string` | No | Meal area/region |
+| `strCategory` | `string` | No | Meal category |
 | `strCreativeCommonsConfirmed` | `string` | No |  |
 | `strDrinkAlternate` | `string` | No |  |
 | `strImageSource` | `string` | No |  |
@@ -517,9 +517,9 @@ local random = client:Random(nil)
 | `strIngredient7` | `string` | No |  |
 | `strIngredient8` | `string` | No |  |
 | `strIngredient9` | `string` | No |  |
-| `strInstructions` | `string` | No |  |
-| `strMeal` | `string` | No |  |
-| `strMealThumb` | `string` | No |  |
+| `strInstructions` | `string` | No | Cooking instructions |
+| `strMeal` | `string` | No | Meal name |
+| `strMealThumb` | `string` | No | URL to meal thumbnail image |
 | `strMeasure1` | `string` | No |  |
 | `strMeasure10` | `string` | No |  |
 | `strMeasure11` | `string` | No |  |
@@ -541,8 +541,8 @@ local random = client:Random(nil)
 | `strMeasure8` | `string` | No |  |
 | `strMeasure9` | `string` | No |  |
 | `strSource` | `string` | No |  |
-| `strTags` | `string` | No |  |
-| `strYoutube` | `string` | No |  |
+| `strTags` | `string` | No | Comma-separated tags |
+| `strYoutube` | `string` | No | YouTube video URL |
 
 ### Operations
 
@@ -595,9 +595,9 @@ local randomselection = client:Randomselection(nil)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `dateModified` | `string` | No |  |
-| `idMeal` | `string` | No |  |
-| `strArea` | `string` | No |  |
-| `strCategory` | `string` | No |  |
+| `idMeal` | `string` | No | Unique meal identifier |
+| `strArea` | `string` | No | Meal area/region |
+| `strCategory` | `string` | No | Meal category |
 | `strCreativeCommonsConfirmed` | `string` | No |  |
 | `strDrinkAlternate` | `string` | No |  |
 | `strImageSource` | `string` | No |  |
@@ -621,9 +621,9 @@ local randomselection = client:Randomselection(nil)
 | `strIngredient7` | `string` | No |  |
 | `strIngredient8` | `string` | No |  |
 | `strIngredient9` | `string` | No |  |
-| `strInstructions` | `string` | No |  |
-| `strMeal` | `string` | No |  |
-| `strMealThumb` | `string` | No |  |
+| `strInstructions` | `string` | No | Cooking instructions |
+| `strMeal` | `string` | No | Meal name |
+| `strMealThumb` | `string` | No | URL to meal thumbnail image |
 | `strMeasure1` | `string` | No |  |
 | `strMeasure10` | `string` | No |  |
 | `strMeasure11` | `string` | No |  |
@@ -645,8 +645,8 @@ local randomselection = client:Randomselection(nil)
 | `strMeasure8` | `string` | No |  |
 | `strMeasure9` | `string` | No |  |
 | `strSource` | `string` | No |  |
-| `strTags` | `string` | No |  |
-| `strYoutube` | `string` | No |  |
+| `strTags` | `string` | No | Comma-separated tags |
+| `strYoutube` | `string` | No | YouTube video URL |
 
 ### Operations
 
@@ -699,9 +699,9 @@ local search = client:Search(nil)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `dateModified` | `string` | No |  |
-| `idMeal` | `string` | No |  |
-| `strArea` | `string` | No |  |
-| `strCategory` | `string` | No |  |
+| `idMeal` | `string` | No | Unique meal identifier |
+| `strArea` | `string` | No | Meal area/region |
+| `strCategory` | `string` | No | Meal category |
 | `strCreativeCommonsConfirmed` | `string` | No |  |
 | `strDrinkAlternate` | `string` | No |  |
 | `strImageSource` | `string` | No |  |
@@ -725,9 +725,9 @@ local search = client:Search(nil)
 | `strIngredient7` | `string` | No |  |
 | `strIngredient8` | `string` | No |  |
 | `strIngredient9` | `string` | No |  |
-| `strInstructions` | `string` | No |  |
-| `strMeal` | `string` | No |  |
-| `strMealThumb` | `string` | No |  |
+| `strInstructions` | `string` | No | Cooking instructions |
+| `strMeal` | `string` | No | Meal name |
+| `strMealThumb` | `string` | No | URL to meal thumbnail image |
 | `strMeasure1` | `string` | No |  |
 | `strMeasure10` | `string` | No |  |
 | `strMeasure11` | `string` | No |  |
@@ -749,8 +749,8 @@ local search = client:Search(nil)
 | `strMeasure8` | `string` | No |  |
 | `strMeasure9` | `string` | No |  |
 | `strSource` | `string` | No |  |
-| `strTags` | `string` | No |  |
-| `strYoutube` | `string` | No |  |
+| `strTags` | `string` | No | Comma-separated tags |
+| `strYoutube` | `string` | No | YouTube video URL |
 
 ### Operations
 

@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "FreeMeal",
+			"slug": "free-meal",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -43,18 +46,22 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "idCategory",
+						"short": "Unique category identifier",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strCategory",
+						"short": "Category name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strCategoryDescription",
+						"short": "Category description",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strCategoryThumb",
+						"short": "URL to category thumbnail image",
 						"type": "`$STRING`",
 					},
 				},
@@ -89,14 +96,17 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "idMeal",
+						"short": "Unique meal identifier",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeal",
+						"short": "Meal name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMealThumb",
+						"short": "URL to meal thumbnail image",
 						"type": "`$STRING`",
 					},
 				},
@@ -165,14 +175,17 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "idMeal",
+						"short": "Unique meal identifier",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strArea",
+						"short": "Meal area/region",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strCategory",
+						"short": "Meal category",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -269,14 +282,17 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "strInstructions",
+						"short": "Cooking instructions",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeal",
+						"short": "Meal name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMealThumb",
+						"short": "URL to meal thumbnail image",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -365,10 +381,12 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "strTags",
+						"short": "Comma-separated tags",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strYoutube",
+						"short": "YouTube video URL",
 						"type": "`$STRING`",
 					},
 				},
@@ -476,14 +494,17 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "idMeal",
+						"short": "Unique meal identifier",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strArea",
+						"short": "Meal area/region",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strCategory",
+						"short": "Meal category",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -580,14 +601,17 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "strInstructions",
+						"short": "Cooking instructions",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeal",
+						"short": "Meal name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMealThumb",
+						"short": "URL to meal thumbnail image",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -676,10 +700,12 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "strTags",
+						"short": "Comma-separated tags",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strYoutube",
+						"short": "YouTube video URL",
 						"type": "`$STRING`",
 					},
 				},
@@ -733,14 +759,17 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "idMeal",
+						"short": "Unique meal identifier",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strArea",
+						"short": "Meal area/region",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strCategory",
+						"short": "Meal category",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -837,14 +866,17 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "strInstructions",
+						"short": "Cooking instructions",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeal",
+						"short": "Meal name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMealThumb",
+						"short": "URL to meal thumbnail image",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -933,10 +965,12 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "strTags",
+						"short": "Comma-separated tags",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strYoutube",
+						"short": "YouTube video URL",
 						"type": "`$STRING`",
 					},
 				},
@@ -975,14 +1009,17 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "idMeal",
+						"short": "Unique meal identifier",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strArea",
+						"short": "Meal area/region",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strCategory",
+						"short": "Meal category",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -1079,14 +1116,17 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "strInstructions",
+						"short": "Cooking instructions",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeal",
+						"short": "Meal name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMealThumb",
+						"short": "URL to meal thumbnail image",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -1175,10 +1215,12 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "strTags",
+						"short": "Comma-separated tags",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strYoutube",
+						"short": "YouTube video URL",
 						"type": "`$STRING`",
 					},
 				},
@@ -1217,14 +1259,17 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "idMeal",
+						"short": "Unique meal identifier",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strArea",
+						"short": "Meal area/region",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strCategory",
+						"short": "Meal category",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -1321,14 +1366,17 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "strInstructions",
+						"short": "Cooking instructions",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeal",
+						"short": "Meal name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMealThumb",
+						"short": "URL to meal thumbnail image",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -1417,10 +1465,12 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "strTags",
+						"short": "Comma-separated tags",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strYoutube",
+						"short": "YouTube video URL",
 						"type": "`$STRING`",
 					},
 				},

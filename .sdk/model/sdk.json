@@ -36,24 +36,28 @@
               "active": true,
               "name": "idCategory",
               "req": false,
+              "short": "Unique category identifier",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "strCategory",
               "req": false,
+              "short": "Category name",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "strCategoryDescription",
               "req": false,
+              "short": "Category description",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "strCategoryThumb",
               "req": false,
+              "short": "URL to category thumbnail image",
               "type": "`$STRING`"
             }
           ],
@@ -95,18 +99,21 @@
               "active": true,
               "name": "idMeal",
               "req": false,
+              "short": "Unique meal identifier",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "strMeal",
               "req": false,
+              "short": "Meal name",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "strMealThumb",
               "req": false,
+              "short": "URL to meal thumbnail image",
               "type": "`$STRING`"
             }
           ],
@@ -190,18 +197,21 @@
               "active": true,
               "name": "idMeal",
               "req": false,
+              "short": "Unique meal identifier",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "strArea",
               "req": false,
+              "short": "Meal area/region",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "strCategory",
               "req": false,
+              "short": "Meal category",
               "type": "`$STRING`"
             },
             {
@@ -346,18 +356,21 @@
               "active": true,
               "name": "strInstructions",
               "req": false,
+              "short": "Cooking instructions",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "strMeal",
               "req": false,
+              "short": "Meal name",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "strMealThumb",
               "req": false,
+              "short": "URL to meal thumbnail image",
               "type": "`$STRING`"
             },
             {
@@ -490,12 +503,14 @@
               "active": true,
               "name": "strTags",
               "req": false,
+              "short": "Comma-separated tags",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "strYoutube",
               "req": false,
+              "short": "YouTube video URL",
               "type": "`$STRING`"
             }
           ],
@@ -629,18 +644,21 @@
               "active": true,
               "name": "idMeal",
               "req": false,
+              "short": "Unique meal identifier",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "strArea",
               "req": false,
+              "short": "Meal area/region",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "strCategory",
               "req": false,
+              "short": "Meal category",
               "type": "`$STRING`"
             },
             {
@@ -785,18 +803,21 @@
               "active": true,
               "name": "strInstructions",
               "req": false,
+              "short": "Cooking instructions",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "strMeal",
               "req": false,
+              "short": "Meal name",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "strMealThumb",
               "req": false,
+              "short": "URL to meal thumbnail image",
               "type": "`$STRING`"
             },
             {
@@ -929,12 +950,14 @@
               "active": true,
               "name": "strTags",
               "req": false,
+              "short": "Comma-separated tags",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "strYoutube",
               "req": false,
+              "short": "YouTube video URL",
               "type": "`$STRING`"
             }
           ],
@@ -998,18 +1021,21 @@
               "active": true,
               "name": "idMeal",
               "req": false,
+              "short": "Unique meal identifier",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "strArea",
               "req": false,
+              "short": "Meal area/region",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "strCategory",
               "req": false,
+              "short": "Meal category",
               "type": "`$STRING`"
             },
             {
@@ -1154,18 +1180,21 @@
               "active": true,
               "name": "strInstructions",
               "req": false,
+              "short": "Cooking instructions",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "strMeal",
               "req": false,
+              "short": "Meal name",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "strMealThumb",
               "req": false,
+              "short": "URL to meal thumbnail image",
               "type": "`$STRING`"
             },
             {
@@ -1298,12 +1327,14 @@
               "active": true,
               "name": "strTags",
               "req": false,
+              "short": "Comma-separated tags",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "strYoutube",
               "req": false,
+              "short": "YouTube video URL",
               "type": "`$STRING`"
             }
           ],
@@ -1351,18 +1382,21 @@
               "active": true,
               "name": "idMeal",
               "req": false,
+              "short": "Unique meal identifier",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "strArea",
               "req": false,
+              "short": "Meal area/region",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "strCategory",
               "req": false,
+              "short": "Meal category",
               "type": "`$STRING`"
             },
             {
@@ -1507,18 +1541,21 @@
               "active": true,
               "name": "strInstructions",
               "req": false,
+              "short": "Cooking instructions",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "strMeal",
               "req": false,
+              "short": "Meal name",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "strMealThumb",
               "req": false,
+              "short": "URL to meal thumbnail image",
               "type": "`$STRING`"
             },
             {
@@ -1651,12 +1688,14 @@
               "active": true,
               "name": "strTags",
               "req": false,
+              "short": "Comma-separated tags",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "strYoutube",
               "req": false,
+              "short": "YouTube video URL",
               "type": "`$STRING`"
             }
           ],
@@ -1704,18 +1743,21 @@
               "active": true,
               "name": "idMeal",
               "req": false,
+              "short": "Unique meal identifier",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "strArea",
               "req": false,
+              "short": "Meal area/region",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "strCategory",
               "req": false,
+              "short": "Meal category",
               "type": "`$STRING`"
             },
             {
@@ -1860,18 +1902,21 @@
               "active": true,
               "name": "strInstructions",
               "req": false,
+              "short": "Cooking instructions",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "strMeal",
               "req": false,
+              "short": "Meal name",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "strMealThumb",
               "req": false,
+              "short": "URL to meal thumbnail image",
               "type": "`$STRING`"
             },
             {
@@ -2004,12 +2049,14 @@
               "active": true,
               "name": "strTags",
               "req": false,
+              "short": "Comma-separated tags",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "strYoutube",
               "req": false,
+              "short": "YouTube video URL",
               "type": "`$STRING`"
             }
           ],

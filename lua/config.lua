@@ -7,6 +7,9 @@ local function make_config()
   return {
     main = {
       name = "FreeMeal",
+      slug = "free-meal",
+      version = "0.0.1",
+      target = "lua",
     },
     feature = {
       ["test"] = {
@@ -39,18 +42,22 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "idCategory",
+            ["short"] = "Unique category identifier",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "strCategory",
+            ["short"] = "Category name",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "strCategoryDescription",
+            ["short"] = "Category description",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "strCategoryThumb",
+            ["short"] = "URL to category thumbnail image",
             ["type"] = "`$STRING`",
           },
         },
@@ -85,14 +92,17 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "idMeal",
+            ["short"] = "Unique meal identifier",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "strMeal",
+            ["short"] = "Meal name",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "strMealThumb",
+            ["short"] = "URL to meal thumbnail image",
             ["type"] = "`$STRING`",
           },
         },
@@ -161,14 +171,17 @@ local function make_config()
           },
           {
             ["name"] = "idMeal",
+            ["short"] = "Unique meal identifier",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "strArea",
+            ["short"] = "Meal area/region",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "strCategory",
+            ["short"] = "Meal category",
             ["type"] = "`$STRING`",
           },
           {
@@ -265,14 +278,17 @@ local function make_config()
           },
           {
             ["name"] = "strInstructions",
+            ["short"] = "Cooking instructions",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "strMeal",
+            ["short"] = "Meal name",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "strMealThumb",
+            ["short"] = "URL to meal thumbnail image",
             ["type"] = "`$STRING`",
           },
           {
@@ -361,10 +377,12 @@ local function make_config()
           },
           {
             ["name"] = "strTags",
+            ["short"] = "Comma-separated tags",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "strYoutube",
+            ["short"] = "YouTube video URL",
             ["type"] = "`$STRING`",
           },
         },
@@ -472,14 +490,17 @@ local function make_config()
           },
           {
             ["name"] = "idMeal",
+            ["short"] = "Unique meal identifier",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "strArea",
+            ["short"] = "Meal area/region",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "strCategory",
+            ["short"] = "Meal category",
             ["type"] = "`$STRING`",
           },
           {
@@ -576,14 +597,17 @@ local function make_config()
           },
           {
             ["name"] = "strInstructions",
+            ["short"] = "Cooking instructions",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "strMeal",
+            ["short"] = "Meal name",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "strMealThumb",
+            ["short"] = "URL to meal thumbnail image",
             ["type"] = "`$STRING`",
           },
           {
@@ -672,10 +696,12 @@ local function make_config()
           },
           {
             ["name"] = "strTags",
+            ["short"] = "Comma-separated tags",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "strYoutube",
+            ["short"] = "YouTube video URL",
             ["type"] = "`$STRING`",
           },
         },
@@ -729,14 +755,17 @@ local function make_config()
           },
           {
             ["name"] = "idMeal",
+            ["short"] = "Unique meal identifier",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "strArea",
+            ["short"] = "Meal area/region",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "strCategory",
+            ["short"] = "Meal category",
             ["type"] = "`$STRING`",
           },
           {
@@ -833,14 +862,17 @@ local function make_config()
           },
           {
             ["name"] = "strInstructions",
+            ["short"] = "Cooking instructions",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "strMeal",
+            ["short"] = "Meal name",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "strMealThumb",
+            ["short"] = "URL to meal thumbnail image",
             ["type"] = "`$STRING`",
           },
           {
@@ -929,10 +961,12 @@ local function make_config()
           },
           {
             ["name"] = "strTags",
+            ["short"] = "Comma-separated tags",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "strYoutube",
+            ["short"] = "YouTube video URL",
             ["type"] = "`$STRING`",
           },
         },
@@ -971,14 +1005,17 @@ local function make_config()
           },
           {
             ["name"] = "idMeal",
+            ["short"] = "Unique meal identifier",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "strArea",
+            ["short"] = "Meal area/region",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "strCategory",
+            ["short"] = "Meal category",
             ["type"] = "`$STRING`",
           },
           {
@@ -1075,14 +1112,17 @@ local function make_config()
           },
           {
             ["name"] = "strInstructions",
+            ["short"] = "Cooking instructions",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "strMeal",
+            ["short"] = "Meal name",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "strMealThumb",
+            ["short"] = "URL to meal thumbnail image",
             ["type"] = "`$STRING`",
           },
           {
@@ -1171,10 +1211,12 @@ local function make_config()
           },
           {
             ["name"] = "strTags",
+            ["short"] = "Comma-separated tags",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "strYoutube",
+            ["short"] = "YouTube video URL",
             ["type"] = "`$STRING`",
           },
         },
@@ -1213,14 +1255,17 @@ local function make_config()
           },
           {
             ["name"] = "idMeal",
+            ["short"] = "Unique meal identifier",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "strArea",
+            ["short"] = "Meal area/region",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "strCategory",
+            ["short"] = "Meal category",
             ["type"] = "`$STRING`",
           },
           {
@@ -1317,14 +1362,17 @@ local function make_config()
           },
           {
             ["name"] = "strInstructions",
+            ["short"] = "Cooking instructions",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "strMeal",
+            ["short"] = "Meal name",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "strMealThumb",
+            ["short"] = "URL to meal thumbnail image",
             ["type"] = "`$STRING`",
           },
           {
@@ -1413,10 +1461,12 @@ local function make_config()
           },
           {
             ["name"] = "strTags",
+            ["short"] = "Comma-separated tags",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "strYoutube",
+            ["short"] = "YouTube video URL",
             ["type"] = "`$STRING`",
           },
         },

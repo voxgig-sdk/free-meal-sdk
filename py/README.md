@@ -255,10 +255,10 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `idCategory` |  |
-| `strCategory` |  |
-| `strCategoryDescription` |  |
-| `strCategoryThumb` |  |
+| `idCategory` | Unique category identifier |
+| `strCategory` | Category name |
+| `strCategoryDescription` | Category description |
+| `strCategoryThumb` | URL to category thumbnail image |
 
 Operations: List.
 
@@ -268,9 +268,9 @@ API path: `/categories.php`
 
 | Field | Description |
 | --- | --- |
-| `idMeal` |  |
-| `strMeal` |  |
-| `strMealThumb` |  |
+| `idMeal` | Unique meal identifier |
+| `strMeal` | Meal name |
+| `strMealThumb` | URL to meal thumbnail image |
 
 Operations: List.
 
@@ -281,9 +281,9 @@ API path: `/filter.php`
 | Field | Description |
 | --- | --- |
 | `dateModified` |  |
-| `idMeal` |  |
-| `strArea` |  |
-| `strCategory` |  |
+| `idMeal` | Unique meal identifier |
+| `strArea` | Meal area/region |
+| `strCategory` | Meal category |
 | `strCreativeCommonsConfirmed` |  |
 | `strDrinkAlternate` |  |
 | `strImageSource` |  |
@@ -307,9 +307,9 @@ API path: `/filter.php`
 | `strIngredient7` |  |
 | `strIngredient8` |  |
 | `strIngredient9` |  |
-| `strInstructions` |  |
-| `strMeal` |  |
-| `strMealThumb` |  |
+| `strInstructions` | Cooking instructions |
+| `strMeal` | Meal name |
+| `strMealThumb` | URL to meal thumbnail image |
 | `strMeasure1` |  |
 | `strMeasure10` |  |
 | `strMeasure11` |  |
@@ -331,8 +331,8 @@ API path: `/filter.php`
 | `strMeasure8` |  |
 | `strMeasure9` |  |
 | `strSource` |  |
-| `strTags` |  |
-| `strYoutube` |  |
+| `strTags` | Comma-separated tags |
+| `strYoutube` | YouTube video URL |
 
 Operations: List.
 
@@ -355,9 +355,9 @@ API path: `/list.php`
 | Field | Description |
 | --- | --- |
 | `dateModified` |  |
-| `idMeal` |  |
-| `strArea` |  |
-| `strCategory` |  |
+| `idMeal` | Unique meal identifier |
+| `strArea` | Meal area/region |
+| `strCategory` | Meal category |
 | `strCreativeCommonsConfirmed` |  |
 | `strDrinkAlternate` |  |
 | `strImageSource` |  |
@@ -381,9 +381,9 @@ API path: `/list.php`
 | `strIngredient7` |  |
 | `strIngredient8` |  |
 | `strIngredient9` |  |
-| `strInstructions` |  |
-| `strMeal` |  |
-| `strMealThumb` |  |
+| `strInstructions` | Cooking instructions |
+| `strMeal` | Meal name |
+| `strMealThumb` | URL to meal thumbnail image |
 | `strMeasure1` |  |
 | `strMeasure10` |  |
 | `strMeasure11` |  |
@@ -405,8 +405,8 @@ API path: `/list.php`
 | `strMeasure8` |  |
 | `strMeasure9` |  |
 | `strSource` |  |
-| `strTags` |  |
-| `strYoutube` |  |
+| `strTags` | Comma-separated tags |
+| `strYoutube` | YouTube video URL |
 
 Operations: List.
 
@@ -417,9 +417,9 @@ API path: `/lookup.php`
 | Field | Description |
 | --- | --- |
 | `dateModified` |  |
-| `idMeal` |  |
-| `strArea` |  |
-| `strCategory` |  |
+| `idMeal` | Unique meal identifier |
+| `strArea` | Meal area/region |
+| `strCategory` | Meal category |
 | `strCreativeCommonsConfirmed` |  |
 | `strDrinkAlternate` |  |
 | `strImageSource` |  |
@@ -443,9 +443,9 @@ API path: `/lookup.php`
 | `strIngredient7` |  |
 | `strIngredient8` |  |
 | `strIngredient9` |  |
-| `strInstructions` |  |
-| `strMeal` |  |
-| `strMealThumb` |  |
+| `strInstructions` | Cooking instructions |
+| `strMeal` | Meal name |
+| `strMealThumb` | URL to meal thumbnail image |
 | `strMeasure1` |  |
 | `strMeasure10` |  |
 | `strMeasure11` |  |
@@ -467,8 +467,8 @@ API path: `/lookup.php`
 | `strMeasure8` |  |
 | `strMeasure9` |  |
 | `strSource` |  |
-| `strTags` |  |
-| `strYoutube` |  |
+| `strTags` | Comma-separated tags |
+| `strYoutube` | YouTube video URL |
 
 Operations: List.
 
@@ -479,9 +479,9 @@ API path: `/random.php`
 | Field | Description |
 | --- | --- |
 | `dateModified` |  |
-| `idMeal` |  |
-| `strArea` |  |
-| `strCategory` |  |
+| `idMeal` | Unique meal identifier |
+| `strArea` | Meal area/region |
+| `strCategory` | Meal category |
 | `strCreativeCommonsConfirmed` |  |
 | `strDrinkAlternate` |  |
 | `strImageSource` |  |
@@ -505,9 +505,9 @@ API path: `/random.php`
 | `strIngredient7` |  |
 | `strIngredient8` |  |
 | `strIngredient9` |  |
-| `strInstructions` |  |
-| `strMeal` |  |
-| `strMealThumb` |  |
+| `strInstructions` | Cooking instructions |
+| `strMeal` | Meal name |
+| `strMealThumb` | URL to meal thumbnail image |
 | `strMeasure1` |  |
 | `strMeasure10` |  |
 | `strMeasure11` |  |
@@ -529,8 +529,8 @@ API path: `/random.php`
 | `strMeasure8` |  |
 | `strMeasure9` |  |
 | `strSource` |  |
-| `strTags` |  |
-| `strYoutube` |  |
+| `strTags` | Comma-separated tags |
+| `strYoutube` | YouTube video URL |
 
 Operations: List.
 
@@ -541,9 +541,9 @@ API path: `/randomselection.php`
 | Field | Description |
 | --- | --- |
 | `dateModified` |  |
-| `idMeal` |  |
-| `strArea` |  |
-| `strCategory` |  |
+| `idMeal` | Unique meal identifier |
+| `strArea` | Meal area/region |
+| `strCategory` | Meal category |
 | `strCreativeCommonsConfirmed` |  |
 | `strDrinkAlternate` |  |
 | `strImageSource` |  |
@@ -567,9 +567,9 @@ API path: `/randomselection.php`
 | `strIngredient7` |  |
 | `strIngredient8` |  |
 | `strIngredient9` |  |
-| `strInstructions` |  |
-| `strMeal` |  |
-| `strMealThumb` |  |
+| `strInstructions` | Cooking instructions |
+| `strMeal` | Meal name |
+| `strMealThumb` | URL to meal thumbnail image |
 | `strMeasure1` |  |
 | `strMeasure10` |  |
 | `strMeasure11` |  |
@@ -591,8 +591,8 @@ API path: `/randomselection.php`
 | `strMeasure8` |  |
 | `strMeasure9` |  |
 | `strSource` |  |
-| `strTags` |  |
-| `strYoutube` |  |
+| `strTags` | Comma-separated tags |
+| `strYoutube` | YouTube video URL |
 
 Operations: List.
 
@@ -617,10 +617,10 @@ Create an instance: `category = client.Category()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `idCategory` | `str` |  |
-| `strCategory` | `str` |  |
-| `strCategoryDescription` | `str` |  |
-| `strCategoryThumb` | `str` |  |
+| `idCategory` | `str` | Unique category identifier |
+| `strCategory` | `str` | Category name |
+| `strCategoryDescription` | `str` | Category description |
+| `strCategoryThumb` | `str` | URL to category thumbnail image |
 
 #### Example: List
 
@@ -643,9 +643,9 @@ Create an instance: `filter = client.Filter()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `idMeal` | `str` |  |
-| `strMeal` | `str` |  |
-| `strMealThumb` | `str` |  |
+| `idMeal` | `str` | Unique meal identifier |
+| `strMeal` | `str` | Meal name |
+| `strMealThumb` | `str` | URL to meal thumbnail image |
 
 #### Example: List
 
@@ -669,9 +669,9 @@ Create an instance: `latest = client.Latest()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `dateModified` | `str` |  |
-| `idMeal` | `str` |  |
-| `strArea` | `str` |  |
-| `strCategory` | `str` |  |
+| `idMeal` | `str` | Unique meal identifier |
+| `strArea` | `str` | Meal area/region |
+| `strCategory` | `str` | Meal category |
 | `strCreativeCommonsConfirmed` | `str` |  |
 | `strDrinkAlternate` | `str` |  |
 | `strImageSource` | `str` |  |
@@ -695,9 +695,9 @@ Create an instance: `latest = client.Latest()`
 | `strIngredient7` | `str` |  |
 | `strIngredient8` | `str` |  |
 | `strIngredient9` | `str` |  |
-| `strInstructions` | `str` |  |
-| `strMeal` | `str` |  |
-| `strMealThumb` | `str` |  |
+| `strInstructions` | `str` | Cooking instructions |
+| `strMeal` | `str` | Meal name |
+| `strMealThumb` | `str` | URL to meal thumbnail image |
 | `strMeasure1` | `str` |  |
 | `strMeasure10` | `str` |  |
 | `strMeasure11` | `str` |  |
@@ -719,8 +719,8 @@ Create an instance: `latest = client.Latest()`
 | `strMeasure8` | `str` |  |
 | `strMeasure9` | `str` |  |
 | `strSource` | `str` |  |
-| `strTags` | `str` |  |
-| `strYoutube` | `str` |  |
+| `strTags` | `str` | Comma-separated tags |
+| `strYoutube` | `str` | YouTube video URL |
 
 #### Example: List
 
@@ -769,9 +769,9 @@ Create an instance: `lookup = client.Lookup()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `dateModified` | `str` |  |
-| `idMeal` | `str` |  |
-| `strArea` | `str` |  |
-| `strCategory` | `str` |  |
+| `idMeal` | `str` | Unique meal identifier |
+| `strArea` | `str` | Meal area/region |
+| `strCategory` | `str` | Meal category |
 | `strCreativeCommonsConfirmed` | `str` |  |
 | `strDrinkAlternate` | `str` |  |
 | `strImageSource` | `str` |  |
@@ -795,9 +795,9 @@ Create an instance: `lookup = client.Lookup()`
 | `strIngredient7` | `str` |  |
 | `strIngredient8` | `str` |  |
 | `strIngredient9` | `str` |  |
-| `strInstructions` | `str` |  |
-| `strMeal` | `str` |  |
-| `strMealThumb` | `str` |  |
+| `strInstructions` | `str` | Cooking instructions |
+| `strMeal` | `str` | Meal name |
+| `strMealThumb` | `str` | URL to meal thumbnail image |
 | `strMeasure1` | `str` |  |
 | `strMeasure10` | `str` |  |
 | `strMeasure11` | `str` |  |
@@ -819,8 +819,8 @@ Create an instance: `lookup = client.Lookup()`
 | `strMeasure8` | `str` |  |
 | `strMeasure9` | `str` |  |
 | `strSource` | `str` |  |
-| `strTags` | `str` |  |
-| `strYoutube` | `str` |  |
+| `strTags` | `str` | Comma-separated tags |
+| `strYoutube` | `str` | YouTube video URL |
 
 #### Example: List
 
@@ -844,9 +844,9 @@ Create an instance: `random = client.Random()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `dateModified` | `str` |  |
-| `idMeal` | `str` |  |
-| `strArea` | `str` |  |
-| `strCategory` | `str` |  |
+| `idMeal` | `str` | Unique meal identifier |
+| `strArea` | `str` | Meal area/region |
+| `strCategory` | `str` | Meal category |
 | `strCreativeCommonsConfirmed` | `str` |  |
 | `strDrinkAlternate` | `str` |  |
 | `strImageSource` | `str` |  |
@@ -870,9 +870,9 @@ Create an instance: `random = client.Random()`
 | `strIngredient7` | `str` |  |
 | `strIngredient8` | `str` |  |
 | `strIngredient9` | `str` |  |
-| `strInstructions` | `str` |  |
-| `strMeal` | `str` |  |
-| `strMealThumb` | `str` |  |
+| `strInstructions` | `str` | Cooking instructions |
+| `strMeal` | `str` | Meal name |
+| `strMealThumb` | `str` | URL to meal thumbnail image |
 | `strMeasure1` | `str` |  |
 | `strMeasure10` | `str` |  |
 | `strMeasure11` | `str` |  |
@@ -894,8 +894,8 @@ Create an instance: `random = client.Random()`
 | `strMeasure8` | `str` |  |
 | `strMeasure9` | `str` |  |
 | `strSource` | `str` |  |
-| `strTags` | `str` |  |
-| `strYoutube` | `str` |  |
+| `strTags` | `str` | Comma-separated tags |
+| `strYoutube` | `str` | YouTube video URL |
 
 #### Example: List
 
@@ -919,9 +919,9 @@ Create an instance: `randomselection = client.Randomselection()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `dateModified` | `str` |  |
-| `idMeal` | `str` |  |
-| `strArea` | `str` |  |
-| `strCategory` | `str` |  |
+| `idMeal` | `str` | Unique meal identifier |
+| `strArea` | `str` | Meal area/region |
+| `strCategory` | `str` | Meal category |
 | `strCreativeCommonsConfirmed` | `str` |  |
 | `strDrinkAlternate` | `str` |  |
 | `strImageSource` | `str` |  |
@@ -945,9 +945,9 @@ Create an instance: `randomselection = client.Randomselection()`
 | `strIngredient7` | `str` |  |
 | `strIngredient8` | `str` |  |
 | `strIngredient9` | `str` |  |
-| `strInstructions` | `str` |  |
-| `strMeal` | `str` |  |
-| `strMealThumb` | `str` |  |
+| `strInstructions` | `str` | Cooking instructions |
+| `strMeal` | `str` | Meal name |
+| `strMealThumb` | `str` | URL to meal thumbnail image |
 | `strMeasure1` | `str` |  |
 | `strMeasure10` | `str` |  |
 | `strMeasure11` | `str` |  |
@@ -969,8 +969,8 @@ Create an instance: `randomselection = client.Randomselection()`
 | `strMeasure8` | `str` |  |
 | `strMeasure9` | `str` |  |
 | `strSource` | `str` |  |
-| `strTags` | `str` |  |
-| `strYoutube` | `str` |  |
+| `strTags` | `str` | Comma-separated tags |
+| `strYoutube` | `str` | YouTube video URL |
 
 #### Example: List
 
@@ -994,9 +994,9 @@ Create an instance: `search = client.Search()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `dateModified` | `str` |  |
-| `idMeal` | `str` |  |
-| `strArea` | `str` |  |
-| `strCategory` | `str` |  |
+| `idMeal` | `str` | Unique meal identifier |
+| `strArea` | `str` | Meal area/region |
+| `strCategory` | `str` | Meal category |
 | `strCreativeCommonsConfirmed` | `str` |  |
 | `strDrinkAlternate` | `str` |  |
 | `strImageSource` | `str` |  |
@@ -1020,9 +1020,9 @@ Create an instance: `search = client.Search()`
 | `strIngredient7` | `str` |  |
 | `strIngredient8` | `str` |  |
 | `strIngredient9` | `str` |  |
-| `strInstructions` | `str` |  |
-| `strMeal` | `str` |  |
-| `strMealThumb` | `str` |  |
+| `strInstructions` | `str` | Cooking instructions |
+| `strMeal` | `str` | Meal name |
+| `strMealThumb` | `str` | URL to meal thumbnail image |
 | `strMeasure1` | `str` |  |
 | `strMeasure10` | `str` |  |
 | `strMeasure11` | `str` |  |
@@ -1044,8 +1044,8 @@ Create an instance: `search = client.Search()`
 | `strMeasure8` | `str` |  |
 | `strMeasure9` | `str` |  |
 | `strSource` | `str` |  |
-| `strTags` | `str` |  |
-| `strYoutube` | `str` |  |
+| `strTags` | `str` | Comma-separated tags |
+| `strYoutube` | `str` | YouTube video URL |
 
 #### Example: List
 

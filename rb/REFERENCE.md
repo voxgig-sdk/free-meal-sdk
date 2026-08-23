@@ -122,10 +122,10 @@ category = client.Category
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `idCategory` | `String` | No |  |
-| `strCategory` | `String` | No |  |
-| `strCategoryDescription` | `String` | No |  |
-| `strCategoryThumb` | `String` | No |  |
+| `idCategory` | `String` | No | Unique category identifier |
+| `strCategory` | `String` | No | Category name |
+| `strCategoryDescription` | `String` | No | Category description |
+| `strCategoryThumb` | `String` | No | URL to category thumbnail image |
 
 ### Operations
 
@@ -177,9 +177,9 @@ filter = client.Filter
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `idMeal` | `String` | No |  |
-| `strMeal` | `String` | No |  |
-| `strMealThumb` | `String` | No |  |
+| `idMeal` | `String` | No | Unique meal identifier |
+| `strMeal` | `String` | No | Meal name |
+| `strMealThumb` | `String` | No | URL to meal thumbnail image |
 
 ### Operations
 
@@ -232,9 +232,9 @@ latest = client.Latest
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `dateModified` | `String` | No |  |
-| `idMeal` | `String` | No |  |
-| `strArea` | `String` | No |  |
-| `strCategory` | `String` | No |  |
+| `idMeal` | `String` | No | Unique meal identifier |
+| `strArea` | `String` | No | Meal area/region |
+| `strCategory` | `String` | No | Meal category |
 | `strCreativeCommonsConfirmed` | `String` | No |  |
 | `strDrinkAlternate` | `String` | No |  |
 | `strImageSource` | `String` | No |  |
@@ -258,9 +258,9 @@ latest = client.Latest
 | `strIngredient7` | `String` | No |  |
 | `strIngredient8` | `String` | No |  |
 | `strIngredient9` | `String` | No |  |
-| `strInstructions` | `String` | No |  |
-| `strMeal` | `String` | No |  |
-| `strMealThumb` | `String` | No |  |
+| `strInstructions` | `String` | No | Cooking instructions |
+| `strMeal` | `String` | No | Meal name |
+| `strMealThumb` | `String` | No | URL to meal thumbnail image |
 | `strMeasure1` | `String` | No |  |
 | `strMeasure10` | `String` | No |  |
 | `strMeasure11` | `String` | No |  |
@@ -282,8 +282,8 @@ latest = client.Latest
 | `strMeasure8` | `String` | No |  |
 | `strMeasure9` | `String` | No |  |
 | `strSource` | `String` | No |  |
-| `strTags` | `String` | No |  |
-| `strYoutube` | `String` | No |  |
+| `strTags` | `String` | No | Comma-separated tags |
+| `strYoutube` | `String` | No | YouTube video URL |
 
 ### Operations
 
@@ -390,9 +390,9 @@ lookup = client.Lookup
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `dateModified` | `String` | No |  |
-| `idMeal` | `String` | No |  |
-| `strArea` | `String` | No |  |
-| `strCategory` | `String` | No |  |
+| `idMeal` | `String` | No | Unique meal identifier |
+| `strArea` | `String` | No | Meal area/region |
+| `strCategory` | `String` | No | Meal category |
 | `strCreativeCommonsConfirmed` | `String` | No |  |
 | `strDrinkAlternate` | `String` | No |  |
 | `strImageSource` | `String` | No |  |
@@ -416,9 +416,9 @@ lookup = client.Lookup
 | `strIngredient7` | `String` | No |  |
 | `strIngredient8` | `String` | No |  |
 | `strIngredient9` | `String` | No |  |
-| `strInstructions` | `String` | No |  |
-| `strMeal` | `String` | No |  |
-| `strMealThumb` | `String` | No |  |
+| `strInstructions` | `String` | No | Cooking instructions |
+| `strMeal` | `String` | No | Meal name |
+| `strMealThumb` | `String` | No | URL to meal thumbnail image |
 | `strMeasure1` | `String` | No |  |
 | `strMeasure10` | `String` | No |  |
 | `strMeasure11` | `String` | No |  |
@@ -440,8 +440,8 @@ lookup = client.Lookup
 | `strMeasure8` | `String` | No |  |
 | `strMeasure9` | `String` | No |  |
 | `strSource` | `String` | No |  |
-| `strTags` | `String` | No |  |
-| `strYoutube` | `String` | No |  |
+| `strTags` | `String` | No | Comma-separated tags |
+| `strYoutube` | `String` | No | YouTube video URL |
 
 ### Operations
 
@@ -494,9 +494,9 @@ random = client.Random
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `dateModified` | `String` | No |  |
-| `idMeal` | `String` | No |  |
-| `strArea` | `String` | No |  |
-| `strCategory` | `String` | No |  |
+| `idMeal` | `String` | No | Unique meal identifier |
+| `strArea` | `String` | No | Meal area/region |
+| `strCategory` | `String` | No | Meal category |
 | `strCreativeCommonsConfirmed` | `String` | No |  |
 | `strDrinkAlternate` | `String` | No |  |
 | `strImageSource` | `String` | No |  |
@@ -520,9 +520,9 @@ random = client.Random
 | `strIngredient7` | `String` | No |  |
 | `strIngredient8` | `String` | No |  |
 | `strIngredient9` | `String` | No |  |
-| `strInstructions` | `String` | No |  |
-| `strMeal` | `String` | No |  |
-| `strMealThumb` | `String` | No |  |
+| `strInstructions` | `String` | No | Cooking instructions |
+| `strMeal` | `String` | No | Meal name |
+| `strMealThumb` | `String` | No | URL to meal thumbnail image |
 | `strMeasure1` | `String` | No |  |
 | `strMeasure10` | `String` | No |  |
 | `strMeasure11` | `String` | No |  |
@@ -544,8 +544,8 @@ random = client.Random
 | `strMeasure8` | `String` | No |  |
 | `strMeasure9` | `String` | No |  |
 | `strSource` | `String` | No |  |
-| `strTags` | `String` | No |  |
-| `strYoutube` | `String` | No |  |
+| `strTags` | `String` | No | Comma-separated tags |
+| `strYoutube` | `String` | No | YouTube video URL |
 
 ### Operations
 
@@ -598,9 +598,9 @@ randomselection = client.Randomselection
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `dateModified` | `String` | No |  |
-| `idMeal` | `String` | No |  |
-| `strArea` | `String` | No |  |
-| `strCategory` | `String` | No |  |
+| `idMeal` | `String` | No | Unique meal identifier |
+| `strArea` | `String` | No | Meal area/region |
+| `strCategory` | `String` | No | Meal category |
 | `strCreativeCommonsConfirmed` | `String` | No |  |
 | `strDrinkAlternate` | `String` | No |  |
 | `strImageSource` | `String` | No |  |
@@ -624,9 +624,9 @@ randomselection = client.Randomselection
 | `strIngredient7` | `String` | No |  |
 | `strIngredient8` | `String` | No |  |
 | `strIngredient9` | `String` | No |  |
-| `strInstructions` | `String` | No |  |
-| `strMeal` | `String` | No |  |
-| `strMealThumb` | `String` | No |  |
+| `strInstructions` | `String` | No | Cooking instructions |
+| `strMeal` | `String` | No | Meal name |
+| `strMealThumb` | `String` | No | URL to meal thumbnail image |
 | `strMeasure1` | `String` | No |  |
 | `strMeasure10` | `String` | No |  |
 | `strMeasure11` | `String` | No |  |
@@ -648,8 +648,8 @@ randomselection = client.Randomselection
 | `strMeasure8` | `String` | No |  |
 | `strMeasure9` | `String` | No |  |
 | `strSource` | `String` | No |  |
-| `strTags` | `String` | No |  |
-| `strYoutube` | `String` | No |  |
+| `strTags` | `String` | No | Comma-separated tags |
+| `strYoutube` | `String` | No | YouTube video URL |
 
 ### Operations
 
@@ -702,9 +702,9 @@ search = client.Search
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `dateModified` | `String` | No |  |
-| `idMeal` | `String` | No |  |
-| `strArea` | `String` | No |  |
-| `strCategory` | `String` | No |  |
+| `idMeal` | `String` | No | Unique meal identifier |
+| `strArea` | `String` | No | Meal area/region |
+| `strCategory` | `String` | No | Meal category |
 | `strCreativeCommonsConfirmed` | `String` | No |  |
 | `strDrinkAlternate` | `String` | No |  |
 | `strImageSource` | `String` | No |  |
@@ -728,9 +728,9 @@ search = client.Search
 | `strIngredient7` | `String` | No |  |
 | `strIngredient8` | `String` | No |  |
 | `strIngredient9` | `String` | No |  |
-| `strInstructions` | `String` | No |  |
-| `strMeal` | `String` | No |  |
-| `strMealThumb` | `String` | No |  |
+| `strInstructions` | `String` | No | Cooking instructions |
+| `strMeal` | `String` | No | Meal name |
+| `strMealThumb` | `String` | No | URL to meal thumbnail image |
 | `strMeasure1` | `String` | No |  |
 | `strMeasure10` | `String` | No |  |
 | `strMeasure11` | `String` | No |  |
@@ -752,8 +752,8 @@ search = client.Search
 | `strMeasure8` | `String` | No |  |
 | `strMeasure9` | `String` | No |  |
 | `strSource` | `String` | No |  |
-| `strTags` | `String` | No |  |
-| `strYoutube` | `String` | No |  |
+| `strTags` | `String` | No | Comma-separated tags |
+| `strYoutube` | `String` | No | YouTube video URL |
 
 ### Operations
 

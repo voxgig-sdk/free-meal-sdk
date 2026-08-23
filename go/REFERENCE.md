@@ -127,10 +127,10 @@ fmt.Println(category.GetName()) // "category"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `idCategory` | `string` | No |  |
-| `strCategory` | `string` | No |  |
-| `strCategoryDescription` | `string` | No |  |
-| `strCategoryThumb` | `string` | No |  |
+| `idCategory` | `string` | No | Unique category identifier |
+| `strCategory` | `string` | No | Category name |
+| `strCategoryDescription` | `string` | No | Category description |
+| `strCategoryThumb` | `string` | No | URL to category thumbnail image |
 
 ### Operations
 
@@ -181,9 +181,9 @@ fmt.Println(filter.GetName()) // "filter"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `idMeal` | `string` | No |  |
-| `strMeal` | `string` | No |  |
-| `strMealThumb` | `string` | No |  |
+| `idMeal` | `string` | No | Unique meal identifier |
+| `strMeal` | `string` | No | Meal name |
+| `strMealThumb` | `string` | No | URL to meal thumbnail image |
 
 ### Operations
 
@@ -235,9 +235,9 @@ fmt.Println(latest.GetName()) // "latest"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `dateModified` | `string` | No |  |
-| `idMeal` | `string` | No |  |
-| `strArea` | `string` | No |  |
-| `strCategory` | `string` | No |  |
+| `idMeal` | `string` | No | Unique meal identifier |
+| `strArea` | `string` | No | Meal area/region |
+| `strCategory` | `string` | No | Meal category |
 | `strCreativeCommonsConfirmed` | `string` | No |  |
 | `strDrinkAlternate` | `string` | No |  |
 | `strImageSource` | `string` | No |  |
@@ -261,9 +261,9 @@ fmt.Println(latest.GetName()) // "latest"
 | `strIngredient7` | `string` | No |  |
 | `strIngredient8` | `string` | No |  |
 | `strIngredient9` | `string` | No |  |
-| `strInstructions` | `string` | No |  |
-| `strMeal` | `string` | No |  |
-| `strMealThumb` | `string` | No |  |
+| `strInstructions` | `string` | No | Cooking instructions |
+| `strMeal` | `string` | No | Meal name |
+| `strMealThumb` | `string` | No | URL to meal thumbnail image |
 | `strMeasure1` | `string` | No |  |
 | `strMeasure10` | `string` | No |  |
 | `strMeasure11` | `string` | No |  |
@@ -285,8 +285,8 @@ fmt.Println(latest.GetName()) // "latest"
 | `strMeasure8` | `string` | No |  |
 | `strMeasure9` | `string` | No |  |
 | `strSource` | `string` | No |  |
-| `strTags` | `string` | No |  |
-| `strYoutube` | `string` | No |  |
+| `strTags` | `string` | No | Comma-separated tags |
+| `strYoutube` | `string` | No | YouTube video URL |
 
 ### Operations
 
@@ -391,9 +391,9 @@ fmt.Println(lookup.GetName()) // "lookup"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `dateModified` | `string` | No |  |
-| `idMeal` | `string` | No |  |
-| `strArea` | `string` | No |  |
-| `strCategory` | `string` | No |  |
+| `idMeal` | `string` | No | Unique meal identifier |
+| `strArea` | `string` | No | Meal area/region |
+| `strCategory` | `string` | No | Meal category |
 | `strCreativeCommonsConfirmed` | `string` | No |  |
 | `strDrinkAlternate` | `string` | No |  |
 | `strImageSource` | `string` | No |  |
@@ -417,9 +417,9 @@ fmt.Println(lookup.GetName()) // "lookup"
 | `strIngredient7` | `string` | No |  |
 | `strIngredient8` | `string` | No |  |
 | `strIngredient9` | `string` | No |  |
-| `strInstructions` | `string` | No |  |
-| `strMeal` | `string` | No |  |
-| `strMealThumb` | `string` | No |  |
+| `strInstructions` | `string` | No | Cooking instructions |
+| `strMeal` | `string` | No | Meal name |
+| `strMealThumb` | `string` | No | URL to meal thumbnail image |
 | `strMeasure1` | `string` | No |  |
 | `strMeasure10` | `string` | No |  |
 | `strMeasure11` | `string` | No |  |
@@ -441,8 +441,8 @@ fmt.Println(lookup.GetName()) // "lookup"
 | `strMeasure8` | `string` | No |  |
 | `strMeasure9` | `string` | No |  |
 | `strSource` | `string` | No |  |
-| `strTags` | `string` | No |  |
-| `strYoutube` | `string` | No |  |
+| `strTags` | `string` | No | Comma-separated tags |
+| `strYoutube` | `string` | No | YouTube video URL |
 
 ### Operations
 
@@ -494,9 +494,9 @@ fmt.Println(random.GetName()) // "random"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `dateModified` | `string` | No |  |
-| `idMeal` | `string` | No |  |
-| `strArea` | `string` | No |  |
-| `strCategory` | `string` | No |  |
+| `idMeal` | `string` | No | Unique meal identifier |
+| `strArea` | `string` | No | Meal area/region |
+| `strCategory` | `string` | No | Meal category |
 | `strCreativeCommonsConfirmed` | `string` | No |  |
 | `strDrinkAlternate` | `string` | No |  |
 | `strImageSource` | `string` | No |  |
@@ -520,9 +520,9 @@ fmt.Println(random.GetName()) // "random"
 | `strIngredient7` | `string` | No |  |
 | `strIngredient8` | `string` | No |  |
 | `strIngredient9` | `string` | No |  |
-| `strInstructions` | `string` | No |  |
-| `strMeal` | `string` | No |  |
-| `strMealThumb` | `string` | No |  |
+| `strInstructions` | `string` | No | Cooking instructions |
+| `strMeal` | `string` | No | Meal name |
+| `strMealThumb` | `string` | No | URL to meal thumbnail image |
 | `strMeasure1` | `string` | No |  |
 | `strMeasure10` | `string` | No |  |
 | `strMeasure11` | `string` | No |  |
@@ -544,8 +544,8 @@ fmt.Println(random.GetName()) // "random"
 | `strMeasure8` | `string` | No |  |
 | `strMeasure9` | `string` | No |  |
 | `strSource` | `string` | No |  |
-| `strTags` | `string` | No |  |
-| `strYoutube` | `string` | No |  |
+| `strTags` | `string` | No | Comma-separated tags |
+| `strYoutube` | `string` | No | YouTube video URL |
 
 ### Operations
 
@@ -597,9 +597,9 @@ fmt.Println(randomselection.GetName()) // "randomselection"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `dateModified` | `string` | No |  |
-| `idMeal` | `string` | No |  |
-| `strArea` | `string` | No |  |
-| `strCategory` | `string` | No |  |
+| `idMeal` | `string` | No | Unique meal identifier |
+| `strArea` | `string` | No | Meal area/region |
+| `strCategory` | `string` | No | Meal category |
 | `strCreativeCommonsConfirmed` | `string` | No |  |
 | `strDrinkAlternate` | `string` | No |  |
 | `strImageSource` | `string` | No |  |
@@ -623,9 +623,9 @@ fmt.Println(randomselection.GetName()) // "randomselection"
 | `strIngredient7` | `string` | No |  |
 | `strIngredient8` | `string` | No |  |
 | `strIngredient9` | `string` | No |  |
-| `strInstructions` | `string` | No |  |
-| `strMeal` | `string` | No |  |
-| `strMealThumb` | `string` | No |  |
+| `strInstructions` | `string` | No | Cooking instructions |
+| `strMeal` | `string` | No | Meal name |
+| `strMealThumb` | `string` | No | URL to meal thumbnail image |
 | `strMeasure1` | `string` | No |  |
 | `strMeasure10` | `string` | No |  |
 | `strMeasure11` | `string` | No |  |
@@ -647,8 +647,8 @@ fmt.Println(randomselection.GetName()) // "randomselection"
 | `strMeasure8` | `string` | No |  |
 | `strMeasure9` | `string` | No |  |
 | `strSource` | `string` | No |  |
-| `strTags` | `string` | No |  |
-| `strYoutube` | `string` | No |  |
+| `strTags` | `string` | No | Comma-separated tags |
+| `strYoutube` | `string` | No | YouTube video URL |
 
 ### Operations
 
@@ -700,9 +700,9 @@ fmt.Println(search.GetName()) // "search"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `dateModified` | `string` | No |  |
-| `idMeal` | `string` | No |  |
-| `strArea` | `string` | No |  |
-| `strCategory` | `string` | No |  |
+| `idMeal` | `string` | No | Unique meal identifier |
+| `strArea` | `string` | No | Meal area/region |
+| `strCategory` | `string` | No | Meal category |
 | `strCreativeCommonsConfirmed` | `string` | No |  |
 | `strDrinkAlternate` | `string` | No |  |
 | `strImageSource` | `string` | No |  |
@@ -726,9 +726,9 @@ fmt.Println(search.GetName()) // "search"
 | `strIngredient7` | `string` | No |  |
 | `strIngredient8` | `string` | No |  |
 | `strIngredient9` | `string` | No |  |
-| `strInstructions` | `string` | No |  |
-| `strMeal` | `string` | No |  |
-| `strMealThumb` | `string` | No |  |
+| `strInstructions` | `string` | No | Cooking instructions |
+| `strMeal` | `string` | No | Meal name |
+| `strMealThumb` | `string` | No | URL to meal thumbnail image |
 | `strMeasure1` | `string` | No |  |
 | `strMeasure10` | `string` | No |  |
 | `strMeasure11` | `string` | No |  |
@@ -750,8 +750,8 @@ fmt.Println(search.GetName()) // "search"
 | `strMeasure8` | `string` | No |  |
 | `strMeasure9` | `string` | No |  |
 | `strSource` | `string` | No |  |
-| `strTags` | `string` | No |  |
-| `strYoutube` | `string` | No |  |
+| `strTags` | `string` | No | Comma-separated tags |
+| `strYoutube` | `string` | No | YouTube video URL |
 
 ### Operations
 

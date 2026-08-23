@@ -1,0 +1,56 @@
+# Entity: category
+
+main: kit: entity: category: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "idCategory"
+      req: false
+      short: "Unique category identifier"
+      type: "`$STRING`"
+    }
+    {
+      name: "strCategory"
+      req: false
+      short: "Category name"
+      type: "`$STRING`"
+    }
+    {
+      name: "strCategoryDescription"
+      req: false
+      short: "Category description"
+      type: "`$STRING`"
+    }
+    {
+      name: "strCategoryThumb"
+      req: false
+      short: "URL to category thumbnail image"
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "category"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          method: "GET"
+          orig: "/categories.php"
+          parts: [
+            "categories.php"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body.categories`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

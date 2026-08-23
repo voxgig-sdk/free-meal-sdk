@@ -201,10 +201,10 @@ const category = client.Category()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `idCategory` | `string` | No |  |
-| `strCategory` | `string` | No |  |
-| `strCategoryDescription` | `string` | No |  |
-| `strCategoryThumb` | `string` | No |  |
+| `idCategory` | `string` | No | Unique category identifier |
+| `strCategory` | `string` | No | Category name |
+| `strCategoryDescription` | `string` | No | Category description |
+| `strCategoryThumb` | `string` | No | URL to category thumbnail image |
 
 ### Operations
 
@@ -254,9 +254,9 @@ const filter = client.Filter()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `idMeal` | `string` | No |  |
-| `strMeal` | `string` | No |  |
-| `strMealThumb` | `string` | No |  |
+| `idMeal` | `string` | No | Unique meal identifier |
+| `strMeal` | `string` | No | Meal name |
+| `strMealThumb` | `string` | No | URL to meal thumbnail image |
 
 ### Operations
 
@@ -307,9 +307,9 @@ const latest = client.Latest()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `dateModified` | `string` | No |  |
-| `idMeal` | `string` | No |  |
-| `strArea` | `string` | No |  |
-| `strCategory` | `string` | No |  |
+| `idMeal` | `string` | No | Unique meal identifier |
+| `strArea` | `string` | No | Meal area/region |
+| `strCategory` | `string` | No | Meal category |
 | `strCreativeCommonsConfirmed` | `string` | No |  |
 | `strDrinkAlternate` | `string` | No |  |
 | `strImageSource` | `string` | No |  |
@@ -333,9 +333,9 @@ const latest = client.Latest()
 | `strIngredient7` | `string` | No |  |
 | `strIngredient8` | `string` | No |  |
 | `strIngredient9` | `string` | No |  |
-| `strInstructions` | `string` | No |  |
-| `strMeal` | `string` | No |  |
-| `strMealThumb` | `string` | No |  |
+| `strInstructions` | `string` | No | Cooking instructions |
+| `strMeal` | `string` | No | Meal name |
+| `strMealThumb` | `string` | No | URL to meal thumbnail image |
 | `strMeasure1` | `string` | No |  |
 | `strMeasure10` | `string` | No |  |
 | `strMeasure11` | `string` | No |  |
@@ -357,8 +357,8 @@ const latest = client.Latest()
 | `strMeasure8` | `string` | No |  |
 | `strMeasure9` | `string` | No |  |
 | `strSource` | `string` | No |  |
-| `strTags` | `string` | No |  |
-| `strYoutube` | `string` | No |  |
+| `strTags` | `string` | No | Comma-separated tags |
+| `strYoutube` | `string` | No | YouTube video URL |
 
 ### Operations
 
@@ -461,9 +461,9 @@ const lookup = client.Lookup()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `dateModified` | `string` | No |  |
-| `idMeal` | `string` | No |  |
-| `strArea` | `string` | No |  |
-| `strCategory` | `string` | No |  |
+| `idMeal` | `string` | No | Unique meal identifier |
+| `strArea` | `string` | No | Meal area/region |
+| `strCategory` | `string` | No | Meal category |
 | `strCreativeCommonsConfirmed` | `string` | No |  |
 | `strDrinkAlternate` | `string` | No |  |
 | `strImageSource` | `string` | No |  |
@@ -487,9 +487,9 @@ const lookup = client.Lookup()
 | `strIngredient7` | `string` | No |  |
 | `strIngredient8` | `string` | No |  |
 | `strIngredient9` | `string` | No |  |
-| `strInstructions` | `string` | No |  |
-| `strMeal` | `string` | No |  |
-| `strMealThumb` | `string` | No |  |
+| `strInstructions` | `string` | No | Cooking instructions |
+| `strMeal` | `string` | No | Meal name |
+| `strMealThumb` | `string` | No | URL to meal thumbnail image |
 | `strMeasure1` | `string` | No |  |
 | `strMeasure10` | `string` | No |  |
 | `strMeasure11` | `string` | No |  |
@@ -511,8 +511,8 @@ const lookup = client.Lookup()
 | `strMeasure8` | `string` | No |  |
 | `strMeasure9` | `string` | No |  |
 | `strSource` | `string` | No |  |
-| `strTags` | `string` | No |  |
-| `strYoutube` | `string` | No |  |
+| `strTags` | `string` | No | Comma-separated tags |
+| `strYoutube` | `string` | No | YouTube video URL |
 
 ### Operations
 
@@ -563,9 +563,9 @@ const random = client.Random()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `dateModified` | `string` | No |  |
-| `idMeal` | `string` | No |  |
-| `strArea` | `string` | No |  |
-| `strCategory` | `string` | No |  |
+| `idMeal` | `string` | No | Unique meal identifier |
+| `strArea` | `string` | No | Meal area/region |
+| `strCategory` | `string` | No | Meal category |
 | `strCreativeCommonsConfirmed` | `string` | No |  |
 | `strDrinkAlternate` | `string` | No |  |
 | `strImageSource` | `string` | No |  |
@@ -589,9 +589,9 @@ const random = client.Random()
 | `strIngredient7` | `string` | No |  |
 | `strIngredient8` | `string` | No |  |
 | `strIngredient9` | `string` | No |  |
-| `strInstructions` | `string` | No |  |
-| `strMeal` | `string` | No |  |
-| `strMealThumb` | `string` | No |  |
+| `strInstructions` | `string` | No | Cooking instructions |
+| `strMeal` | `string` | No | Meal name |
+| `strMealThumb` | `string` | No | URL to meal thumbnail image |
 | `strMeasure1` | `string` | No |  |
 | `strMeasure10` | `string` | No |  |
 | `strMeasure11` | `string` | No |  |
@@ -613,8 +613,8 @@ const random = client.Random()
 | `strMeasure8` | `string` | No |  |
 | `strMeasure9` | `string` | No |  |
 | `strSource` | `string` | No |  |
-| `strTags` | `string` | No |  |
-| `strYoutube` | `string` | No |  |
+| `strTags` | `string` | No | Comma-separated tags |
+| `strYoutube` | `string` | No | YouTube video URL |
 
 ### Operations
 
@@ -665,9 +665,9 @@ const randomselection = client.Randomselection()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `dateModified` | `string` | No |  |
-| `idMeal` | `string` | No |  |
-| `strArea` | `string` | No |  |
-| `strCategory` | `string` | No |  |
+| `idMeal` | `string` | No | Unique meal identifier |
+| `strArea` | `string` | No | Meal area/region |
+| `strCategory` | `string` | No | Meal category |
 | `strCreativeCommonsConfirmed` | `string` | No |  |
 | `strDrinkAlternate` | `string` | No |  |
 | `strImageSource` | `string` | No |  |
@@ -691,9 +691,9 @@ const randomselection = client.Randomselection()
 | `strIngredient7` | `string` | No |  |
 | `strIngredient8` | `string` | No |  |
 | `strIngredient9` | `string` | No |  |
-| `strInstructions` | `string` | No |  |
-| `strMeal` | `string` | No |  |
-| `strMealThumb` | `string` | No |  |
+| `strInstructions` | `string` | No | Cooking instructions |
+| `strMeal` | `string` | No | Meal name |
+| `strMealThumb` | `string` | No | URL to meal thumbnail image |
 | `strMeasure1` | `string` | No |  |
 | `strMeasure10` | `string` | No |  |
 | `strMeasure11` | `string` | No |  |
@@ -715,8 +715,8 @@ const randomselection = client.Randomselection()
 | `strMeasure8` | `string` | No |  |
 | `strMeasure9` | `string` | No |  |
 | `strSource` | `string` | No |  |
-| `strTags` | `string` | No |  |
-| `strYoutube` | `string` | No |  |
+| `strTags` | `string` | No | Comma-separated tags |
+| `strYoutube` | `string` | No | YouTube video URL |
 
 ### Operations
 
@@ -767,9 +767,9 @@ const search = client.Search()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `dateModified` | `string` | No |  |
-| `idMeal` | `string` | No |  |
-| `strArea` | `string` | No |  |
-| `strCategory` | `string` | No |  |
+| `idMeal` | `string` | No | Unique meal identifier |
+| `strArea` | `string` | No | Meal area/region |
+| `strCategory` | `string` | No | Meal category |
 | `strCreativeCommonsConfirmed` | `string` | No |  |
 | `strDrinkAlternate` | `string` | No |  |
 | `strImageSource` | `string` | No |  |
@@ -793,9 +793,9 @@ const search = client.Search()
 | `strIngredient7` | `string` | No |  |
 | `strIngredient8` | `string` | No |  |
 | `strIngredient9` | `string` | No |  |
-| `strInstructions` | `string` | No |  |
-| `strMeal` | `string` | No |  |
-| `strMealThumb` | `string` | No |  |
+| `strInstructions` | `string` | No | Cooking instructions |
+| `strMeal` | `string` | No | Meal name |
+| `strMealThumb` | `string` | No | URL to meal thumbnail image |
 | `strMeasure1` | `string` | No |  |
 | `strMeasure10` | `string` | No |  |
 | `strMeasure11` | `string` | No |  |
@@ -817,8 +817,8 @@ const search = client.Search()
 | `strMeasure8` | `string` | No |  |
 | `strMeasure9` | `string` | No |  |
 | `strSource` | `string` | No |  |
-| `strTags` | `string` | No |  |
-| `strYoutube` | `string` | No |  |
+| `strTags` | `string` | No | Comma-separated tags |
+| `strYoutube` | `string` | No | YouTube video URL |
 
 ### Operations
 

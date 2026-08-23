@@ -258,10 +258,10 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `idCategory` |  |
-| `strCategory` |  |
-| `strCategoryDescription` |  |
-| `strCategoryThumb` |  |
+| `idCategory` | Unique category identifier |
+| `strCategory` | Category name |
+| `strCategoryDescription` | Category description |
+| `strCategoryThumb` | URL to category thumbnail image |
 
 Operations: List.
 
@@ -271,9 +271,9 @@ API path: `/categories.php`
 
 | Field | Description |
 | --- | --- |
-| `idMeal` |  |
-| `strMeal` |  |
-| `strMealThumb` |  |
+| `idMeal` | Unique meal identifier |
+| `strMeal` | Meal name |
+| `strMealThumb` | URL to meal thumbnail image |
 
 Operations: List.
 
@@ -284,9 +284,9 @@ API path: `/filter.php`
 | Field | Description |
 | --- | --- |
 | `dateModified` |  |
-| `idMeal` |  |
-| `strArea` |  |
-| `strCategory` |  |
+| `idMeal` | Unique meal identifier |
+| `strArea` | Meal area/region |
+| `strCategory` | Meal category |
 | `strCreativeCommonsConfirmed` |  |
 | `strDrinkAlternate` |  |
 | `strImageSource` |  |
@@ -310,9 +310,9 @@ API path: `/filter.php`
 | `strIngredient7` |  |
 | `strIngredient8` |  |
 | `strIngredient9` |  |
-| `strInstructions` |  |
-| `strMeal` |  |
-| `strMealThumb` |  |
+| `strInstructions` | Cooking instructions |
+| `strMeal` | Meal name |
+| `strMealThumb` | URL to meal thumbnail image |
 | `strMeasure1` |  |
 | `strMeasure10` |  |
 | `strMeasure11` |  |
@@ -334,8 +334,8 @@ API path: `/filter.php`
 | `strMeasure8` |  |
 | `strMeasure9` |  |
 | `strSource` |  |
-| `strTags` |  |
-| `strYoutube` |  |
+| `strTags` | Comma-separated tags |
+| `strYoutube` | YouTube video URL |
 
 Operations: List.
 
@@ -358,9 +358,9 @@ API path: `/list.php`
 | Field | Description |
 | --- | --- |
 | `dateModified` |  |
-| `idMeal` |  |
-| `strArea` |  |
-| `strCategory` |  |
+| `idMeal` | Unique meal identifier |
+| `strArea` | Meal area/region |
+| `strCategory` | Meal category |
 | `strCreativeCommonsConfirmed` |  |
 | `strDrinkAlternate` |  |
 | `strImageSource` |  |
@@ -384,9 +384,9 @@ API path: `/list.php`
 | `strIngredient7` |  |
 | `strIngredient8` |  |
 | `strIngredient9` |  |
-| `strInstructions` |  |
-| `strMeal` |  |
-| `strMealThumb` |  |
+| `strInstructions` | Cooking instructions |
+| `strMeal` | Meal name |
+| `strMealThumb` | URL to meal thumbnail image |
 | `strMeasure1` |  |
 | `strMeasure10` |  |
 | `strMeasure11` |  |
@@ -408,8 +408,8 @@ API path: `/list.php`
 | `strMeasure8` |  |
 | `strMeasure9` |  |
 | `strSource` |  |
-| `strTags` |  |
-| `strYoutube` |  |
+| `strTags` | Comma-separated tags |
+| `strYoutube` | YouTube video URL |
 
 Operations: List.
 
@@ -420,9 +420,9 @@ API path: `/lookup.php`
 | Field | Description |
 | --- | --- |
 | `dateModified` |  |
-| `idMeal` |  |
-| `strArea` |  |
-| `strCategory` |  |
+| `idMeal` | Unique meal identifier |
+| `strArea` | Meal area/region |
+| `strCategory` | Meal category |
 | `strCreativeCommonsConfirmed` |  |
 | `strDrinkAlternate` |  |
 | `strImageSource` |  |
@@ -446,9 +446,9 @@ API path: `/lookup.php`
 | `strIngredient7` |  |
 | `strIngredient8` |  |
 | `strIngredient9` |  |
-| `strInstructions` |  |
-| `strMeal` |  |
-| `strMealThumb` |  |
+| `strInstructions` | Cooking instructions |
+| `strMeal` | Meal name |
+| `strMealThumb` | URL to meal thumbnail image |
 | `strMeasure1` |  |
 | `strMeasure10` |  |
 | `strMeasure11` |  |
@@ -470,8 +470,8 @@ API path: `/lookup.php`
 | `strMeasure8` |  |
 | `strMeasure9` |  |
 | `strSource` |  |
-| `strTags` |  |
-| `strYoutube` |  |
+| `strTags` | Comma-separated tags |
+| `strYoutube` | YouTube video URL |
 
 Operations: List.
 
@@ -482,9 +482,9 @@ API path: `/random.php`
 | Field | Description |
 | --- | --- |
 | `dateModified` |  |
-| `idMeal` |  |
-| `strArea` |  |
-| `strCategory` |  |
+| `idMeal` | Unique meal identifier |
+| `strArea` | Meal area/region |
+| `strCategory` | Meal category |
 | `strCreativeCommonsConfirmed` |  |
 | `strDrinkAlternate` |  |
 | `strImageSource` |  |
@@ -508,9 +508,9 @@ API path: `/random.php`
 | `strIngredient7` |  |
 | `strIngredient8` |  |
 | `strIngredient9` |  |
-| `strInstructions` |  |
-| `strMeal` |  |
-| `strMealThumb` |  |
+| `strInstructions` | Cooking instructions |
+| `strMeal` | Meal name |
+| `strMealThumb` | URL to meal thumbnail image |
 | `strMeasure1` |  |
 | `strMeasure10` |  |
 | `strMeasure11` |  |
@@ -532,8 +532,8 @@ API path: `/random.php`
 | `strMeasure8` |  |
 | `strMeasure9` |  |
 | `strSource` |  |
-| `strTags` |  |
-| `strYoutube` |  |
+| `strTags` | Comma-separated tags |
+| `strYoutube` | YouTube video URL |
 
 Operations: List.
 
@@ -544,9 +544,9 @@ API path: `/randomselection.php`
 | Field | Description |
 | --- | --- |
 | `dateModified` |  |
-| `idMeal` |  |
-| `strArea` |  |
-| `strCategory` |  |
+| `idMeal` | Unique meal identifier |
+| `strArea` | Meal area/region |
+| `strCategory` | Meal category |
 | `strCreativeCommonsConfirmed` |  |
 | `strDrinkAlternate` |  |
 | `strImageSource` |  |
@@ -570,9 +570,9 @@ API path: `/randomselection.php`
 | `strIngredient7` |  |
 | `strIngredient8` |  |
 | `strIngredient9` |  |
-| `strInstructions` |  |
-| `strMeal` |  |
-| `strMealThumb` |  |
+| `strInstructions` | Cooking instructions |
+| `strMeal` | Meal name |
+| `strMealThumb` | URL to meal thumbnail image |
 | `strMeasure1` |  |
 | `strMeasure10` |  |
 | `strMeasure11` |  |
@@ -594,8 +594,8 @@ API path: `/randomselection.php`
 | `strMeasure8` |  |
 | `strMeasure9` |  |
 | `strSource` |  |
-| `strTags` |  |
-| `strYoutube` |  |
+| `strTags` | Comma-separated tags |
+| `strYoutube` | YouTube video URL |
 
 Operations: List.
 
@@ -620,10 +620,10 @@ Create an instance: `$category = $client->Category();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `idCategory` | `string` |  |
-| `strCategory` | `string` |  |
-| `strCategoryDescription` | `string` |  |
-| `strCategoryThumb` | `string` |  |
+| `idCategory` | `string` | Unique category identifier |
+| `strCategory` | `string` | Category name |
+| `strCategoryDescription` | `string` | Category description |
+| `strCategoryThumb` | `string` | URL to category thumbnail image |
 
 #### Example: List
 
@@ -647,9 +647,9 @@ Create an instance: `$filter = $client->Filter();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `idMeal` | `string` |  |
-| `strMeal` | `string` |  |
-| `strMealThumb` | `string` |  |
+| `idMeal` | `string` | Unique meal identifier |
+| `strMeal` | `string` | Meal name |
+| `strMealThumb` | `string` | URL to meal thumbnail image |
 
 #### Example: List
 
@@ -674,9 +674,9 @@ Create an instance: `$latest = $client->Latest();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `dateModified` | `string` |  |
-| `idMeal` | `string` |  |
-| `strArea` | `string` |  |
-| `strCategory` | `string` |  |
+| `idMeal` | `string` | Unique meal identifier |
+| `strArea` | `string` | Meal area/region |
+| `strCategory` | `string` | Meal category |
 | `strCreativeCommonsConfirmed` | `string` |  |
 | `strDrinkAlternate` | `string` |  |
 | `strImageSource` | `string` |  |
@@ -700,9 +700,9 @@ Create an instance: `$latest = $client->Latest();`
 | `strIngredient7` | `string` |  |
 | `strIngredient8` | `string` |  |
 | `strIngredient9` | `string` |  |
-| `strInstructions` | `string` |  |
-| `strMeal` | `string` |  |
-| `strMealThumb` | `string` |  |
+| `strInstructions` | `string` | Cooking instructions |
+| `strMeal` | `string` | Meal name |
+| `strMealThumb` | `string` | URL to meal thumbnail image |
 | `strMeasure1` | `string` |  |
 | `strMeasure10` | `string` |  |
 | `strMeasure11` | `string` |  |
@@ -724,8 +724,8 @@ Create an instance: `$latest = $client->Latest();`
 | `strMeasure8` | `string` |  |
 | `strMeasure9` | `string` |  |
 | `strSource` | `string` |  |
-| `strTags` | `string` |  |
-| `strYoutube` | `string` |  |
+| `strTags` | `string` | Comma-separated tags |
+| `strYoutube` | `string` | YouTube video URL |
 
 #### Example: List
 
@@ -776,9 +776,9 @@ Create an instance: `$lookup = $client->Lookup();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `dateModified` | `string` |  |
-| `idMeal` | `string` |  |
-| `strArea` | `string` |  |
-| `strCategory` | `string` |  |
+| `idMeal` | `string` | Unique meal identifier |
+| `strArea` | `string` | Meal area/region |
+| `strCategory` | `string` | Meal category |
 | `strCreativeCommonsConfirmed` | `string` |  |
 | `strDrinkAlternate` | `string` |  |
 | `strImageSource` | `string` |  |
@@ -802,9 +802,9 @@ Create an instance: `$lookup = $client->Lookup();`
 | `strIngredient7` | `string` |  |
 | `strIngredient8` | `string` |  |
 | `strIngredient9` | `string` |  |
-| `strInstructions` | `string` |  |
-| `strMeal` | `string` |  |
-| `strMealThumb` | `string` |  |
+| `strInstructions` | `string` | Cooking instructions |
+| `strMeal` | `string` | Meal name |
+| `strMealThumb` | `string` | URL to meal thumbnail image |
 | `strMeasure1` | `string` |  |
 | `strMeasure10` | `string` |  |
 | `strMeasure11` | `string` |  |
@@ -826,8 +826,8 @@ Create an instance: `$lookup = $client->Lookup();`
 | `strMeasure8` | `string` |  |
 | `strMeasure9` | `string` |  |
 | `strSource` | `string` |  |
-| `strTags` | `string` |  |
-| `strYoutube` | `string` |  |
+| `strTags` | `string` | Comma-separated tags |
+| `strYoutube` | `string` | YouTube video URL |
 
 #### Example: List
 
@@ -852,9 +852,9 @@ Create an instance: `$random = $client->Random();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `dateModified` | `string` |  |
-| `idMeal` | `string` |  |
-| `strArea` | `string` |  |
-| `strCategory` | `string` |  |
+| `idMeal` | `string` | Unique meal identifier |
+| `strArea` | `string` | Meal area/region |
+| `strCategory` | `string` | Meal category |
 | `strCreativeCommonsConfirmed` | `string` |  |
 | `strDrinkAlternate` | `string` |  |
 | `strImageSource` | `string` |  |
@@ -878,9 +878,9 @@ Create an instance: `$random = $client->Random();`
 | `strIngredient7` | `string` |  |
 | `strIngredient8` | `string` |  |
 | `strIngredient9` | `string` |  |
-| `strInstructions` | `string` |  |
-| `strMeal` | `string` |  |
-| `strMealThumb` | `string` |  |
+| `strInstructions` | `string` | Cooking instructions |
+| `strMeal` | `string` | Meal name |
+| `strMealThumb` | `string` | URL to meal thumbnail image |
 | `strMeasure1` | `string` |  |
 | `strMeasure10` | `string` |  |
 | `strMeasure11` | `string` |  |
@@ -902,8 +902,8 @@ Create an instance: `$random = $client->Random();`
 | `strMeasure8` | `string` |  |
 | `strMeasure9` | `string` |  |
 | `strSource` | `string` |  |
-| `strTags` | `string` |  |
-| `strYoutube` | `string` |  |
+| `strTags` | `string` | Comma-separated tags |
+| `strYoutube` | `string` | YouTube video URL |
 
 #### Example: List
 
@@ -928,9 +928,9 @@ Create an instance: `$randomselection = $client->Randomselection();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `dateModified` | `string` |  |
-| `idMeal` | `string` |  |
-| `strArea` | `string` |  |
-| `strCategory` | `string` |  |
+| `idMeal` | `string` | Unique meal identifier |
+| `strArea` | `string` | Meal area/region |
+| `strCategory` | `string` | Meal category |
 | `strCreativeCommonsConfirmed` | `string` |  |
 | `strDrinkAlternate` | `string` |  |
 | `strImageSource` | `string` |  |
@@ -954,9 +954,9 @@ Create an instance: `$randomselection = $client->Randomselection();`
 | `strIngredient7` | `string` |  |
 | `strIngredient8` | `string` |  |
 | `strIngredient9` | `string` |  |
-| `strInstructions` | `string` |  |
-| `strMeal` | `string` |  |
-| `strMealThumb` | `string` |  |
+| `strInstructions` | `string` | Cooking instructions |
+| `strMeal` | `string` | Meal name |
+| `strMealThumb` | `string` | URL to meal thumbnail image |
 | `strMeasure1` | `string` |  |
 | `strMeasure10` | `string` |  |
 | `strMeasure11` | `string` |  |
@@ -978,8 +978,8 @@ Create an instance: `$randomselection = $client->Randomselection();`
 | `strMeasure8` | `string` |  |
 | `strMeasure9` | `string` |  |
 | `strSource` | `string` |  |
-| `strTags` | `string` |  |
-| `strYoutube` | `string` |  |
+| `strTags` | `string` | Comma-separated tags |
+| `strYoutube` | `string` | YouTube video URL |
 
 #### Example: List
 
@@ -1004,9 +1004,9 @@ Create an instance: `$search = $client->Search();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `dateModified` | `string` |  |
-| `idMeal` | `string` |  |
-| `strArea` | `string` |  |
-| `strCategory` | `string` |  |
+| `idMeal` | `string` | Unique meal identifier |
+| `strArea` | `string` | Meal area/region |
+| `strCategory` | `string` | Meal category |
 | `strCreativeCommonsConfirmed` | `string` |  |
 | `strDrinkAlternate` | `string` |  |
 | `strImageSource` | `string` |  |
@@ -1030,9 +1030,9 @@ Create an instance: `$search = $client->Search();`
 | `strIngredient7` | `string` |  |
 | `strIngredient8` | `string` |  |
 | `strIngredient9` | `string` |  |
-| `strInstructions` | `string` |  |
-| `strMeal` | `string` |  |
-| `strMealThumb` | `string` |  |
+| `strInstructions` | `string` | Cooking instructions |
+| `strMeal` | `string` | Meal name |
+| `strMealThumb` | `string` | URL to meal thumbnail image |
 | `strMeasure1` | `string` |  |
 | `strMeasure10` | `string` |  |
 | `strMeasure11` | `string` |  |
@@ -1054,8 +1054,8 @@ Create an instance: `$search = $client->Search();`
 | `strMeasure8` | `string` |  |
 | `strMeasure9` | `string` |  |
 | `strSource` | `string` |  |
-| `strTags` | `string` |  |
-| `strYoutube` | `string` |  |
+| `strTags` | `string` | Comma-separated tags |
+| `strYoutube` | `string` | YouTube video URL |
 
 #### Example: List
 
