@@ -28,6 +28,7 @@ module FreeMealConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
