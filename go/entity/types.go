@@ -37,9 +37,9 @@ type Filter struct {
 
 // FilterListMatch is the typed request payload for Filter.ListTyped.
 type FilterListMatch struct {
-	IdMeal *string `json:"idMeal,omitempty"`
-	StrMeal *string `json:"strMeal,omitempty"`
-	StrMealThumb *string `json:"strMealThumb,omitempty"`
+	A *string `json:"a,omitempty"`
+	C *string `json:"c,omitempty"`
+	I *string `json:"i,omitempty"`
 }
 
 // Latest is the typed data model for the latest entity.
@@ -165,9 +165,9 @@ type List struct {
 
 // ListListMatch is the typed request payload for List.ListTyped.
 type ListListMatch struct {
-	StrArea *string `json:"strArea,omitempty"`
-	StrCategory *string `json:"strCategory,omitempty"`
-	StrIngredient *string `json:"strIngredient,omitempty"`
+	A *string `json:"a,omitempty"`
+	C *string `json:"c,omitempty"`
+	I *string `json:"i,omitempty"`
 }
 
 // Lookup is the typed data model for the lookup entity.
@@ -229,59 +229,7 @@ type Lookup struct {
 
 // LookupListMatch is the typed request payload for Lookup.ListTyped.
 type LookupListMatch struct {
-	DateModified *string `json:"dateModified,omitempty"`
-	IdMeal *string `json:"idMeal,omitempty"`
-	StrArea *string `json:"strArea,omitempty"`
-	StrCategory *string `json:"strCategory,omitempty"`
-	StrCreativeCommonsConfirmed *string `json:"strCreativeCommonsConfirmed,omitempty"`
-	StrDrinkAlternate *string `json:"strDrinkAlternate,omitempty"`
-	StrImageSource *string `json:"strImageSource,omitempty"`
-	StrIngredient1 *string `json:"strIngredient1,omitempty"`
-	StrIngredient10 *string `json:"strIngredient10,omitempty"`
-	StrIngredient11 *string `json:"strIngredient11,omitempty"`
-	StrIngredient12 *string `json:"strIngredient12,omitempty"`
-	StrIngredient13 *string `json:"strIngredient13,omitempty"`
-	StrIngredient14 *string `json:"strIngredient14,omitempty"`
-	StrIngredient15 *string `json:"strIngredient15,omitempty"`
-	StrIngredient16 *string `json:"strIngredient16,omitempty"`
-	StrIngredient17 *string `json:"strIngredient17,omitempty"`
-	StrIngredient18 *string `json:"strIngredient18,omitempty"`
-	StrIngredient19 *string `json:"strIngredient19,omitempty"`
-	StrIngredient2 *string `json:"strIngredient2,omitempty"`
-	StrIngredient20 *string `json:"strIngredient20,omitempty"`
-	StrIngredient3 *string `json:"strIngredient3,omitempty"`
-	StrIngredient4 *string `json:"strIngredient4,omitempty"`
-	StrIngredient5 *string `json:"strIngredient5,omitempty"`
-	StrIngredient6 *string `json:"strIngredient6,omitempty"`
-	StrIngredient7 *string `json:"strIngredient7,omitempty"`
-	StrIngredient8 *string `json:"strIngredient8,omitempty"`
-	StrIngredient9 *string `json:"strIngredient9,omitempty"`
-	StrInstructions *string `json:"strInstructions,omitempty"`
-	StrMeal *string `json:"strMeal,omitempty"`
-	StrMealThumb *string `json:"strMealThumb,omitempty"`
-	StrMeasure1 *string `json:"strMeasure1,omitempty"`
-	StrMeasure10 *string `json:"strMeasure10,omitempty"`
-	StrMeasure11 *string `json:"strMeasure11,omitempty"`
-	StrMeasure12 *string `json:"strMeasure12,omitempty"`
-	StrMeasure13 *string `json:"strMeasure13,omitempty"`
-	StrMeasure14 *string `json:"strMeasure14,omitempty"`
-	StrMeasure15 *string `json:"strMeasure15,omitempty"`
-	StrMeasure16 *string `json:"strMeasure16,omitempty"`
-	StrMeasure17 *string `json:"strMeasure17,omitempty"`
-	StrMeasure18 *string `json:"strMeasure18,omitempty"`
-	StrMeasure19 *string `json:"strMeasure19,omitempty"`
-	StrMeasure2 *string `json:"strMeasure2,omitempty"`
-	StrMeasure20 *string `json:"strMeasure20,omitempty"`
-	StrMeasure3 *string `json:"strMeasure3,omitempty"`
-	StrMeasure4 *string `json:"strMeasure4,omitempty"`
-	StrMeasure5 *string `json:"strMeasure5,omitempty"`
-	StrMeasure6 *string `json:"strMeasure6,omitempty"`
-	StrMeasure7 *string `json:"strMeasure7,omitempty"`
-	StrMeasure8 *string `json:"strMeasure8,omitempty"`
-	StrMeasure9 *string `json:"strMeasure9,omitempty"`
-	StrSource *string `json:"strSource,omitempty"`
-	StrTags *string `json:"strTags,omitempty"`
-	StrYoutube *string `json:"strYoutube,omitempty"`
+	I string `json:"i"`
 }
 
 // Random is the typed data model for the random entity.
@@ -571,59 +519,8 @@ type Search struct {
 
 // SearchListMatch is the typed request payload for Search.ListTyped.
 type SearchListMatch struct {
-	DateModified *string `json:"dateModified,omitempty"`
-	IdMeal *string `json:"idMeal,omitempty"`
-	StrArea *string `json:"strArea,omitempty"`
-	StrCategory *string `json:"strCategory,omitempty"`
-	StrCreativeCommonsConfirmed *string `json:"strCreativeCommonsConfirmed,omitempty"`
-	StrDrinkAlternate *string `json:"strDrinkAlternate,omitempty"`
-	StrImageSource *string `json:"strImageSource,omitempty"`
-	StrIngredient1 *string `json:"strIngredient1,omitempty"`
-	StrIngredient10 *string `json:"strIngredient10,omitempty"`
-	StrIngredient11 *string `json:"strIngredient11,omitempty"`
-	StrIngredient12 *string `json:"strIngredient12,omitempty"`
-	StrIngredient13 *string `json:"strIngredient13,omitempty"`
-	StrIngredient14 *string `json:"strIngredient14,omitempty"`
-	StrIngredient15 *string `json:"strIngredient15,omitempty"`
-	StrIngredient16 *string `json:"strIngredient16,omitempty"`
-	StrIngredient17 *string `json:"strIngredient17,omitempty"`
-	StrIngredient18 *string `json:"strIngredient18,omitempty"`
-	StrIngredient19 *string `json:"strIngredient19,omitempty"`
-	StrIngredient2 *string `json:"strIngredient2,omitempty"`
-	StrIngredient20 *string `json:"strIngredient20,omitempty"`
-	StrIngredient3 *string `json:"strIngredient3,omitempty"`
-	StrIngredient4 *string `json:"strIngredient4,omitempty"`
-	StrIngredient5 *string `json:"strIngredient5,omitempty"`
-	StrIngredient6 *string `json:"strIngredient6,omitempty"`
-	StrIngredient7 *string `json:"strIngredient7,omitempty"`
-	StrIngredient8 *string `json:"strIngredient8,omitempty"`
-	StrIngredient9 *string `json:"strIngredient9,omitempty"`
-	StrInstructions *string `json:"strInstructions,omitempty"`
-	StrMeal *string `json:"strMeal,omitempty"`
-	StrMealThumb *string `json:"strMealThumb,omitempty"`
-	StrMeasure1 *string `json:"strMeasure1,omitempty"`
-	StrMeasure10 *string `json:"strMeasure10,omitempty"`
-	StrMeasure11 *string `json:"strMeasure11,omitempty"`
-	StrMeasure12 *string `json:"strMeasure12,omitempty"`
-	StrMeasure13 *string `json:"strMeasure13,omitempty"`
-	StrMeasure14 *string `json:"strMeasure14,omitempty"`
-	StrMeasure15 *string `json:"strMeasure15,omitempty"`
-	StrMeasure16 *string `json:"strMeasure16,omitempty"`
-	StrMeasure17 *string `json:"strMeasure17,omitempty"`
-	StrMeasure18 *string `json:"strMeasure18,omitempty"`
-	StrMeasure19 *string `json:"strMeasure19,omitempty"`
-	StrMeasure2 *string `json:"strMeasure2,omitempty"`
-	StrMeasure20 *string `json:"strMeasure20,omitempty"`
-	StrMeasure3 *string `json:"strMeasure3,omitempty"`
-	StrMeasure4 *string `json:"strMeasure4,omitempty"`
-	StrMeasure5 *string `json:"strMeasure5,omitempty"`
-	StrMeasure6 *string `json:"strMeasure6,omitempty"`
-	StrMeasure7 *string `json:"strMeasure7,omitempty"`
-	StrMeasure8 *string `json:"strMeasure8,omitempty"`
-	StrMeasure9 *string `json:"strMeasure9,omitempty"`
-	StrSource *string `json:"strSource,omitempty"`
-	StrTags *string `json:"strTags,omitempty"`
-	StrYoutube *string `json:"strYoutube,omitempty"`
+	F *string `json:"f,omitempty"`
+	S *string `json:"s,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the

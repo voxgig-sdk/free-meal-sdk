@@ -41,9 +41,9 @@ class Filter
 /** Request payload for Filter#list. */
 class FilterListMatch
 {
-    public ?string $idMeal = null;
-    public ?string $strMeal = null;
-    public ?string $strMealThumb = null;
+    public ?string $a = null;
+    public ?string $c = null;
+    public ?string $i = null;
 }
 
 /** Latest entity data model. */
@@ -173,9 +173,9 @@ class ListType
 /** Request payload for List#list. */
 class ListListMatch
 {
-    public ?string $strArea = null;
-    public ?string $strCategory = null;
-    public ?string $strIngredient = null;
+    public ?string $a = null;
+    public ?string $c = null;
+    public ?string $i = null;
 }
 
 /** Lookup entity data model. */
@@ -239,59 +239,7 @@ class Lookup
 /** Request payload for Lookup#list. */
 class LookupListMatch
 {
-    public ?string $dateModified = null;
-    public ?string $idMeal = null;
-    public ?string $strArea = null;
-    public ?string $strCategory = null;
-    public ?string $strCreativeCommonsConfirmed = null;
-    public ?string $strDrinkAlternate = null;
-    public ?string $strImageSource = null;
-    public ?string $strIngredient1 = null;
-    public ?string $strIngredient10 = null;
-    public ?string $strIngredient11 = null;
-    public ?string $strIngredient12 = null;
-    public ?string $strIngredient13 = null;
-    public ?string $strIngredient14 = null;
-    public ?string $strIngredient15 = null;
-    public ?string $strIngredient16 = null;
-    public ?string $strIngredient17 = null;
-    public ?string $strIngredient18 = null;
-    public ?string $strIngredient19 = null;
-    public ?string $strIngredient2 = null;
-    public ?string $strIngredient20 = null;
-    public ?string $strIngredient3 = null;
-    public ?string $strIngredient4 = null;
-    public ?string $strIngredient5 = null;
-    public ?string $strIngredient6 = null;
-    public ?string $strIngredient7 = null;
-    public ?string $strIngredient8 = null;
-    public ?string $strIngredient9 = null;
-    public ?string $strInstructions = null;
-    public ?string $strMeal = null;
-    public ?string $strMealThumb = null;
-    public ?string $strMeasure1 = null;
-    public ?string $strMeasure10 = null;
-    public ?string $strMeasure11 = null;
-    public ?string $strMeasure12 = null;
-    public ?string $strMeasure13 = null;
-    public ?string $strMeasure14 = null;
-    public ?string $strMeasure15 = null;
-    public ?string $strMeasure16 = null;
-    public ?string $strMeasure17 = null;
-    public ?string $strMeasure18 = null;
-    public ?string $strMeasure19 = null;
-    public ?string $strMeasure2 = null;
-    public ?string $strMeasure20 = null;
-    public ?string $strMeasure3 = null;
-    public ?string $strMeasure4 = null;
-    public ?string $strMeasure5 = null;
-    public ?string $strMeasure6 = null;
-    public ?string $strMeasure7 = null;
-    public ?string $strMeasure8 = null;
-    public ?string $strMeasure9 = null;
-    public ?string $strSource = null;
-    public ?string $strTags = null;
-    public ?string $strYoutube = null;
+    public string $i;
 }
 
 /** Random entity data model. */
@@ -587,58 +535,7 @@ class Search
 /** Request payload for Search#list. */
 class SearchListMatch
 {
-    public ?string $dateModified = null;
-    public ?string $idMeal = null;
-    public ?string $strArea = null;
-    public ?string $strCategory = null;
-    public ?string $strCreativeCommonsConfirmed = null;
-    public ?string $strDrinkAlternate = null;
-    public ?string $strImageSource = null;
-    public ?string $strIngredient1 = null;
-    public ?string $strIngredient10 = null;
-    public ?string $strIngredient11 = null;
-    public ?string $strIngredient12 = null;
-    public ?string $strIngredient13 = null;
-    public ?string $strIngredient14 = null;
-    public ?string $strIngredient15 = null;
-    public ?string $strIngredient16 = null;
-    public ?string $strIngredient17 = null;
-    public ?string $strIngredient18 = null;
-    public ?string $strIngredient19 = null;
-    public ?string $strIngredient2 = null;
-    public ?string $strIngredient20 = null;
-    public ?string $strIngredient3 = null;
-    public ?string $strIngredient4 = null;
-    public ?string $strIngredient5 = null;
-    public ?string $strIngredient6 = null;
-    public ?string $strIngredient7 = null;
-    public ?string $strIngredient8 = null;
-    public ?string $strIngredient9 = null;
-    public ?string $strInstructions = null;
-    public ?string $strMeal = null;
-    public ?string $strMealThumb = null;
-    public ?string $strMeasure1 = null;
-    public ?string $strMeasure10 = null;
-    public ?string $strMeasure11 = null;
-    public ?string $strMeasure12 = null;
-    public ?string $strMeasure13 = null;
-    public ?string $strMeasure14 = null;
-    public ?string $strMeasure15 = null;
-    public ?string $strMeasure16 = null;
-    public ?string $strMeasure17 = null;
-    public ?string $strMeasure18 = null;
-    public ?string $strMeasure19 = null;
-    public ?string $strMeasure2 = null;
-    public ?string $strMeasure20 = null;
-    public ?string $strMeasure3 = null;
-    public ?string $strMeasure4 = null;
-    public ?string $strMeasure5 = null;
-    public ?string $strMeasure6 = null;
-    public ?string $strMeasure7 = null;
-    public ?string $strMeasure8 = null;
-    public ?string $strMeasure9 = null;
-    public ?string $strSource = null;
-    public ?string $strTags = null;
-    public ?string $strYoutube = null;
+    public ?string $f = null;
+    public ?string $s = null;
 }
 

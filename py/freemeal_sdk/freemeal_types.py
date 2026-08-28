@@ -37,9 +37,9 @@ class Filter(TypedDict, total=False):
 
 
 class FilterListMatch(TypedDict, total=False):
-    idMeal: str
-    strMeal: str
-    strMealThumb: str
+    a: str
+    c: str
+    i: str
 
 
 class Latest(TypedDict, total=False):
@@ -161,9 +161,9 @@ class List(TypedDict, total=False):
 
 
 class ListListMatch(TypedDict, total=False):
-    strArea: str
-    strCategory: str
-    strIngredient: str
+    a: str
+    c: str
+    i: str
 
 
 class Lookup(TypedDict, total=False):
@@ -222,60 +222,8 @@ class Lookup(TypedDict, total=False):
     strYoutube: str
 
 
-class LookupListMatch(TypedDict, total=False):
-    dateModified: str
-    idMeal: str
-    strArea: str
-    strCategory: str
-    strCreativeCommonsConfirmed: str
-    strDrinkAlternate: str
-    strImageSource: str
-    strIngredient1: str
-    strIngredient10: str
-    strIngredient11: str
-    strIngredient12: str
-    strIngredient13: str
-    strIngredient14: str
-    strIngredient15: str
-    strIngredient16: str
-    strIngredient17: str
-    strIngredient18: str
-    strIngredient19: str
-    strIngredient2: str
-    strIngredient20: str
-    strIngredient3: str
-    strIngredient4: str
-    strIngredient5: str
-    strIngredient6: str
-    strIngredient7: str
-    strIngredient8: str
-    strIngredient9: str
-    strInstructions: str
-    strMeal: str
-    strMealThumb: str
-    strMeasure1: str
-    strMeasure10: str
-    strMeasure11: str
-    strMeasure12: str
-    strMeasure13: str
-    strMeasure14: str
-    strMeasure15: str
-    strMeasure16: str
-    strMeasure17: str
-    strMeasure18: str
-    strMeasure19: str
-    strMeasure2: str
-    strMeasure20: str
-    strMeasure3: str
-    strMeasure4: str
-    strMeasure5: str
-    strMeasure6: str
-    strMeasure7: str
-    strMeasure8: str
-    strMeasure9: str
-    strSource: str
-    strTags: str
-    strYoutube: str
+class LookupListMatch(TypedDict):
+    i: str
 
 
 class Random(TypedDict, total=False):
@@ -559,56 +507,5 @@ class Search(TypedDict, total=False):
 
 
 class SearchListMatch(TypedDict, total=False):
-    dateModified: str
-    idMeal: str
-    strArea: str
-    strCategory: str
-    strCreativeCommonsConfirmed: str
-    strDrinkAlternate: str
-    strImageSource: str
-    strIngredient1: str
-    strIngredient10: str
-    strIngredient11: str
-    strIngredient12: str
-    strIngredient13: str
-    strIngredient14: str
-    strIngredient15: str
-    strIngredient16: str
-    strIngredient17: str
-    strIngredient18: str
-    strIngredient19: str
-    strIngredient2: str
-    strIngredient20: str
-    strIngredient3: str
-    strIngredient4: str
-    strIngredient5: str
-    strIngredient6: str
-    strIngredient7: str
-    strIngredient8: str
-    strIngredient9: str
-    strInstructions: str
-    strMeal: str
-    strMealThumb: str
-    strMeasure1: str
-    strMeasure10: str
-    strMeasure11: str
-    strMeasure12: str
-    strMeasure13: str
-    strMeasure14: str
-    strMeasure15: str
-    strMeasure16: str
-    strMeasure17: str
-    strMeasure18: str
-    strMeasure19: str
-    strMeasure2: str
-    strMeasure20: str
-    strMeasure3: str
-    strMeasure4: str
-    strMeasure5: str
-    strMeasure6: str
-    strMeasure7: str
-    strMeasure8: str
-    strMeasure9: str
-    strSource: str
-    strTags: str
-    strYoutube: str
+    f: str
+    s: str

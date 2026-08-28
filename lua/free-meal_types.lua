@@ -24,9 +24,9 @@
 ---@field strMealThumb? string
 
 ---@class FilterListMatch
----@field idMeal? string
----@field strMeal? string
----@field strMealThumb? string
+---@field a? string
+---@field c? string
+---@field i? string
 
 ---@class Latest
 ---@field dateModified? string
@@ -144,9 +144,9 @@
 ---@field strIngredient? string
 
 ---@class ListListMatch
----@field strArea? string
----@field strCategory? string
----@field strIngredient? string
+---@field a? string
+---@field c? string
+---@field i? string
 
 ---@class Lookup
 ---@field dateModified? string
@@ -204,59 +204,7 @@
 ---@field strYoutube? string
 
 ---@class LookupListMatch
----@field dateModified? string
----@field idMeal? string
----@field strArea? string
----@field strCategory? string
----@field strCreativeCommonsConfirmed? string
----@field strDrinkAlternate? string
----@field strImageSource? string
----@field strIngredient1? string
----@field strIngredient10? string
----@field strIngredient11? string
----@field strIngredient12? string
----@field strIngredient13? string
----@field strIngredient14? string
----@field strIngredient15? string
----@field strIngredient16? string
----@field strIngredient17? string
----@field strIngredient18? string
----@field strIngredient19? string
----@field strIngredient2? string
----@field strIngredient20? string
----@field strIngredient3? string
----@field strIngredient4? string
----@field strIngredient5? string
----@field strIngredient6? string
----@field strIngredient7? string
----@field strIngredient8? string
----@field strIngredient9? string
----@field strInstructions? string
----@field strMeal? string
----@field strMealThumb? string
----@field strMeasure1? string
----@field strMeasure10? string
----@field strMeasure11? string
----@field strMeasure12? string
----@field strMeasure13? string
----@field strMeasure14? string
----@field strMeasure15? string
----@field strMeasure16? string
----@field strMeasure17? string
----@field strMeasure18? string
----@field strMeasure19? string
----@field strMeasure2? string
----@field strMeasure20? string
----@field strMeasure3? string
----@field strMeasure4? string
----@field strMeasure5? string
----@field strMeasure6? string
----@field strMeasure7? string
----@field strMeasure8? string
----@field strMeasure9? string
----@field strSource? string
----@field strTags? string
----@field strYoutube? string
+---@field i string
 
 ---@class Random
 ---@field dateModified? string
@@ -534,59 +482,8 @@
 ---@field strYoutube? string
 
 ---@class SearchListMatch
----@field dateModified? string
----@field idMeal? string
----@field strArea? string
----@field strCategory? string
----@field strCreativeCommonsConfirmed? string
----@field strDrinkAlternate? string
----@field strImageSource? string
----@field strIngredient1? string
----@field strIngredient10? string
----@field strIngredient11? string
----@field strIngredient12? string
----@field strIngredient13? string
----@field strIngredient14? string
----@field strIngredient15? string
----@field strIngredient16? string
----@field strIngredient17? string
----@field strIngredient18? string
----@field strIngredient19? string
----@field strIngredient2? string
----@field strIngredient20? string
----@field strIngredient3? string
----@field strIngredient4? string
----@field strIngredient5? string
----@field strIngredient6? string
----@field strIngredient7? string
----@field strIngredient8? string
----@field strIngredient9? string
----@field strInstructions? string
----@field strMeal? string
----@field strMealThumb? string
----@field strMeasure1? string
----@field strMeasure10? string
----@field strMeasure11? string
----@field strMeasure12? string
----@field strMeasure13? string
----@field strMeasure14? string
----@field strMeasure15? string
----@field strMeasure16? string
----@field strMeasure17? string
----@field strMeasure18? string
----@field strMeasure19? string
----@field strMeasure2? string
----@field strMeasure20? string
----@field strMeasure3? string
----@field strMeasure4? string
----@field strMeasure5? string
----@field strMeasure6? string
----@field strMeasure7? string
----@field strMeasure8? string
----@field strMeasure9? string
----@field strSource? string
----@field strTags? string
----@field strYoutube? string
+---@field f? string
+---@field s? string
 
 local M = {}
 

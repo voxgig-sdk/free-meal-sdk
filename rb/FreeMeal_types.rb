@@ -69,18 +69,18 @@ Filter = Struct.new(
 
 # Request payload for Filter#list.
 #
-# @!attribute [rw] idMeal
+# @!attribute [rw] a
 #   @return [String, nil]
 #
-# @!attribute [rw] strMeal
+# @!attribute [rw] c
 #   @return [String, nil]
 #
-# @!attribute [rw] strMealThumb
+# @!attribute [rw] i
 #   @return [String, nil]
 FilterListMatch = Struct.new(
-  :idMeal,
-  :strMeal,
-  :strMealThumb,
+  :a,
+  :c,
+  :i,
   keyword_init: true
 )
 
@@ -537,18 +537,18 @@ List = Struct.new(
 
 # Request payload for List#list.
 #
-# @!attribute [rw] strArea
+# @!attribute [rw] a
 #   @return [String, nil]
 #
-# @!attribute [rw] strCategory
+# @!attribute [rw] c
 #   @return [String, nil]
 #
-# @!attribute [rw] strIngredient
+# @!attribute [rw] i
 #   @return [String, nil]
 ListListMatch = Struct.new(
-  :strArea,
-  :strCategory,
-  :strIngredient,
+  :a,
+  :c,
+  :i,
   keyword_init: true
 )
 
@@ -771,218 +771,10 @@ Lookup = Struct.new(
 
 # Request payload for Lookup#list.
 #
-# @!attribute [rw] dateModified
-#   @return [String, nil]
-#
-# @!attribute [rw] idMeal
-#   @return [String, nil]
-#
-# @!attribute [rw] strArea
-#   @return [String, nil]
-#
-# @!attribute [rw] strCategory
-#   @return [String, nil]
-#
-# @!attribute [rw] strCreativeCommonsConfirmed
-#   @return [String, nil]
-#
-# @!attribute [rw] strDrinkAlternate
-#   @return [String, nil]
-#
-# @!attribute [rw] strImageSource
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient1
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient10
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient11
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient12
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient13
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient14
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient15
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient16
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient17
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient18
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient19
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient2
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient20
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient3
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient4
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient5
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient6
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient7
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient8
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient9
-#   @return [String, nil]
-#
-# @!attribute [rw] strInstructions
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeal
-#   @return [String, nil]
-#
-# @!attribute [rw] strMealThumb
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure1
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure10
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure11
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure12
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure13
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure14
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure15
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure16
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure17
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure18
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure19
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure2
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure20
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure3
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure4
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure5
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure6
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure7
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure8
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure9
-#   @return [String, nil]
-#
-# @!attribute [rw] strSource
-#   @return [String, nil]
-#
-# @!attribute [rw] strTags
-#   @return [String, nil]
-#
-# @!attribute [rw] strYoutube
-#   @return [String, nil]
+# @!attribute [rw] i
+#   @return [String]
 LookupListMatch = Struct.new(
-  :dateModified,
-  :idMeal,
-  :strArea,
-  :strCategory,
-  :strCreativeCommonsConfirmed,
-  :strDrinkAlternate,
-  :strImageSource,
-  :strIngredient1,
-  :strIngredient10,
-  :strIngredient11,
-  :strIngredient12,
-  :strIngredient13,
-  :strIngredient14,
-  :strIngredient15,
-  :strIngredient16,
-  :strIngredient17,
-  :strIngredient18,
-  :strIngredient19,
-  :strIngredient2,
-  :strIngredient20,
-  :strIngredient3,
-  :strIngredient4,
-  :strIngredient5,
-  :strIngredient6,
-  :strIngredient7,
-  :strIngredient8,
-  :strIngredient9,
-  :strInstructions,
-  :strMeal,
-  :strMealThumb,
-  :strMeasure1,
-  :strMeasure10,
-  :strMeasure11,
-  :strMeasure12,
-  :strMeasure13,
-  :strMeasure14,
-  :strMeasure15,
-  :strMeasure16,
-  :strMeasure17,
-  :strMeasure18,
-  :strMeasure19,
-  :strMeasure2,
-  :strMeasure20,
-  :strMeasure3,
-  :strMeasure4,
-  :strMeasure5,
-  :strMeasure6,
-  :strMeasure7,
-  :strMeasure8,
-  :strMeasure9,
-  :strSource,
-  :strTags,
-  :strYoutube,
+  :i,
   keyword_init: true
 )
 
@@ -2073,218 +1865,14 @@ Search = Struct.new(
 
 # Request payload for Search#list.
 #
-# @!attribute [rw] dateModified
+# @!attribute [rw] f
 #   @return [String, nil]
 #
-# @!attribute [rw] idMeal
-#   @return [String, nil]
-#
-# @!attribute [rw] strArea
-#   @return [String, nil]
-#
-# @!attribute [rw] strCategory
-#   @return [String, nil]
-#
-# @!attribute [rw] strCreativeCommonsConfirmed
-#   @return [String, nil]
-#
-# @!attribute [rw] strDrinkAlternate
-#   @return [String, nil]
-#
-# @!attribute [rw] strImageSource
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient1
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient10
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient11
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient12
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient13
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient14
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient15
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient16
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient17
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient18
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient19
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient2
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient20
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient3
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient4
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient5
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient6
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient7
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient8
-#   @return [String, nil]
-#
-# @!attribute [rw] strIngredient9
-#   @return [String, nil]
-#
-# @!attribute [rw] strInstructions
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeal
-#   @return [String, nil]
-#
-# @!attribute [rw] strMealThumb
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure1
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure10
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure11
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure12
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure13
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure14
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure15
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure16
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure17
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure18
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure19
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure2
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure20
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure3
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure4
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure5
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure6
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure7
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure8
-#   @return [String, nil]
-#
-# @!attribute [rw] strMeasure9
-#   @return [String, nil]
-#
-# @!attribute [rw] strSource
-#   @return [String, nil]
-#
-# @!attribute [rw] strTags
-#   @return [String, nil]
-#
-# @!attribute [rw] strYoutube
+# @!attribute [rw] s
 #   @return [String, nil]
 SearchListMatch = Struct.new(
-  :dateModified,
-  :idMeal,
-  :strArea,
-  :strCategory,
-  :strCreativeCommonsConfirmed,
-  :strDrinkAlternate,
-  :strImageSource,
-  :strIngredient1,
-  :strIngredient10,
-  :strIngredient11,
-  :strIngredient12,
-  :strIngredient13,
-  :strIngredient14,
-  :strIngredient15,
-  :strIngredient16,
-  :strIngredient17,
-  :strIngredient18,
-  :strIngredient19,
-  :strIngredient2,
-  :strIngredient20,
-  :strIngredient3,
-  :strIngredient4,
-  :strIngredient5,
-  :strIngredient6,
-  :strIngredient7,
-  :strIngredient8,
-  :strIngredient9,
-  :strInstructions,
-  :strMeal,
-  :strMealThumb,
-  :strMeasure1,
-  :strMeasure10,
-  :strMeasure11,
-  :strMeasure12,
-  :strMeasure13,
-  :strMeasure14,
-  :strMeasure15,
-  :strMeasure16,
-  :strMeasure17,
-  :strMeasure18,
-  :strMeasure19,
-  :strMeasure2,
-  :strMeasure20,
-  :strMeasure3,
-  :strMeasure4,
-  :strMeasure5,
-  :strMeasure6,
-  :strMeasure7,
-  :strMeasure8,
-  :strMeasure9,
-  :strSource,
-  :strTags,
-  :strYoutube,
+  :f,
+  :s,
   keyword_init: true
 )
 
