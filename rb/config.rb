@@ -85,14 +85,19 @@ module FreeMealConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/categories.php",
-                  "parts" => [
-                    "categories.php",
+                  "segments" => [
+                    {
+                      "lit" => "categories.php",
+                    },
                   ],
                   "select" => {},
                   "transform" => {
                     "req" => "`reqdata`",
                     "res" => "`body.categories`",
                   },
+                  "parts" => [
+                    "categories.php",
+                  ],
                 },
               ],
             },
@@ -154,8 +159,10 @@ module FreeMealConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/filter.php",
-                  "parts" => [
-                    "filter.php",
+                  "segments" => [
+                    {
+                      "lit" => "filter.php",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -168,6 +175,9 @@ module FreeMealConfig
                     "req" => "`reqdata`",
                     "res" => "`body.meals`",
                   },
+                  "parts" => [
+                    "filter.php",
+                  ],
                 },
               ],
             },
@@ -410,14 +420,19 @@ module FreeMealConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/latest.php",
-                  "parts" => [
-                    "latest.php",
+                  "segments" => [
+                    {
+                      "lit" => "latest.php",
+                    },
                   ],
                   "select" => {},
                   "transform" => {
                     "req" => "`reqdata`",
                     "res" => "`body.meals`",
                   },
+                  "parts" => [
+                    "latest.php",
+                  ],
                 },
               ],
             },
@@ -473,8 +488,10 @@ module FreeMealConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/list.php",
-                  "parts" => [
-                    "list.php",
+                  "segments" => [
+                    {
+                      "lit" => "list.php",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -487,6 +504,9 @@ module FreeMealConfig
                     "req" => "`reqdata`",
                     "res" => "`body.meals`",
                   },
+                  "parts" => [
+                    "list.php",
+                  ],
                 },
               ],
             },
@@ -740,8 +760,10 @@ module FreeMealConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/lookup.php",
-                  "parts" => [
-                    "lookup.php",
+                  "segments" => [
+                    {
+                      "lit" => "lookup.php",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -752,6 +774,9 @@ module FreeMealConfig
                     "req" => "`reqdata`",
                     "res" => "`body.meals`",
                   },
+                  "parts" => [
+                    "lookup.php",
+                  ],
                 },
               ],
             },
@@ -994,14 +1019,19 @@ module FreeMealConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/random.php",
-                  "parts" => [
-                    "random.php",
+                  "segments" => [
+                    {
+                      "lit" => "random.php",
+                    },
                   ],
                   "select" => {},
                   "transform" => {
                     "req" => "`reqdata`",
                     "res" => "`body.meals`",
                   },
+                  "parts" => [
+                    "random.php",
+                  ],
                 },
               ],
             },
@@ -1244,14 +1274,19 @@ module FreeMealConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/randomselection.php",
-                  "parts" => [
-                    "randomselection.php",
+                  "segments" => [
+                    {
+                      "lit" => "randomselection.php",
+                    },
                   ],
                   "select" => {},
                   "transform" => {
                     "req" => "`reqdata`",
                     "res" => "`body.meals`",
                   },
+                  "parts" => [
+                    "randomselection.php",
+                  ],
                 },
               ],
             },
@@ -1511,8 +1546,10 @@ module FreeMealConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/search.php",
-                  "parts" => [
-                    "search.php",
+                  "segments" => [
+                    {
+                      "lit" => "search.php",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -1524,6 +1561,9 @@ module FreeMealConfig
                     "req" => "`reqdata`",
                     "res" => "`body.meals`",
                   },
+                  "parts" => [
+                    "search.php",
+                  ],
                 },
               ],
             },

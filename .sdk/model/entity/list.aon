@@ -55,8 +55,10 @@ main: kit: entity: list: {
           }
           method: "GET"
           orig: "/list.php"
-          parts: [
-            "list.php"
+          segments: [
+            {
+              lit: "list.php"
+            }
           ]
           select: {
             exist: [

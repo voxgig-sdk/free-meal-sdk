@@ -288,8 +288,10 @@ main: kit: entity: randomselection: {
         {
           method: "GET"
           orig: "/randomselection.php"
-          parts: [
-            "randomselection.php"
+          segments: [
+            {
+              lit: "randomselection.php"
+            }
           ]
           transform: {
             req: "`reqdata`"

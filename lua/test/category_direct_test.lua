@@ -63,7 +63,7 @@ function category_direct_setup(mockres)
   local env = runner.env_override({
     ["FREE_MEAL_TEST_CATEGORY_ENTID"] = {},
     ["FREE_MEAL_TEST_LIVE"] = "FALSE",
-    ["FREE_MEAL_APIKEY"] = "NONE",
+    ["FREE_MEAL_APIKEY"] = "",
   })
 
   local live = env["FREE_MEAL_TEST_LIVE"] == "TRUE"
@@ -72,6 +72,13 @@ function category_direct_setup(mockres)
     local merged_opts = {
       apikey = env["FREE_MEAL_APIKEY"],
     }
+    -- sdk-test-control.json's test.client.options goes UNDER the generated
+    -- fields: it adds to the live client, it does not redirect it.
+    for _k, _v in pairs(runner.live_client_options()) do
+      if merged_opts[_k] == nil then
+        merged_opts[_k] = _v
+      end
+    end
     local client = sdk.new(merged_opts)
     return {
       client = client,

@@ -62,15 +62,17 @@ def list_direct_setup(mockres)
   env = Runner.env_override({
     "FREE_MEAL_TEST_LIST_ENTID" => {},
     "FREE_MEAL_TEST_LIVE" => "FALSE",
-    "FREE_MEAL_APIKEY" => "NONE",
+    "FREE_MEAL_APIKEY" => "",
   })
 
   live = env["FREE_MEAL_TEST_LIVE"] == "TRUE"
 
   if live
-    merged_opts = {
+    # Merged so the generated fields win: sdk-test-control.json's
+    # test.client.options adds to the live client, it does not redirect it.
+    merged_opts = Runner.live_client_options.merge({
       "apikey" => env["FREE_MEAL_APIKEY"],
-    }
+    })
     client = FreeMealSDK.new(merged_opts)
     return {
       client: client,

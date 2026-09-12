@@ -288,8 +288,10 @@ main: kit: entity: latest: {
         {
           method: "GET"
           orig: "/latest.php"
-          parts: [
-            "latest.php"
+          segments: [
+            {
+              lit: "latest.php"
+            }
           ]
           transform: {
             req: "`reqdata`"

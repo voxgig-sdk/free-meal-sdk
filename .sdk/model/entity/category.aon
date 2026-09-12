@@ -39,8 +39,10 @@ main: kit: entity: category: {
         {
           method: "GET"
           orig: "/categories.php"
-          parts: [
-            "categories.php"
+          segments: [
+            {
+              lit: "categories.php"
+            }
           ]
           transform: {
             req: "`reqdata`"

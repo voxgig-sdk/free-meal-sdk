@@ -60,15 +60,18 @@ def _search_direct_setup(mockres):
     env = runner.env_override({
         "FREE_MEAL_TEST_SEARCH_ENTID": {},
         "FREE_MEAL_TEST_LIVE": "FALSE",
-        "FREE_MEAL_APIKEY": "NONE",
+        "FREE_MEAL_APIKEY": "",
     })
 
     live = env.get("FREE_MEAL_TEST_LIVE") == "TRUE"
 
     if live:
-        merged_opts = {
+        # sdk-test-control.json's test.client.options seeds the live
+        # client; the generated fields below overwrite anything they name.
+        merged_opts = dict(runner.live_client_options())
+        merged_opts.update({
             "apikey": env.get("FREE_MEAL_APIKEY"),
-        }
+        })
         client = FreeMealSDK(merged_opts)
         return {
             "client": client,
