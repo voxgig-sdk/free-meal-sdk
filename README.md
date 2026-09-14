@@ -105,7 +105,7 @@ local results, err = client:Latest():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/free-meal` | publish pending — [install from git tag](https://github.com/voxgig-sdk/free-meal-sdk/releases) |
+| TypeScript | `@voxgig-sdk/free-meal-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/free-meal-sdk/releases) |
 | Python | `voxgig-sdk-free-meal` | publish pending — [install from git tag](https://github.com/voxgig-sdk/free-meal-sdk/releases) |
 | PHP | `voxgig-sdk/free-meal` | publish pending — [install from git tag](https://github.com/voxgig-sdk/free-meal-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/free-meal-sdk/go` | `go get github.com/voxgig-sdk/free-meal-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:Latest():list()
 ### TypeScript
 
 ```ts
-import { FreeMealSDK } from '@voxgig-sdk/free-meal'
+import { FreeMealSDK } from '@voxgig-sdk/free-meal-sdk'
 
 const client = new FreeMealSDK({
   apikey: process.env.FREE_MEAL_APIKEY,

@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { FreeMealSDK } from '@voxgig-sdk/free-meal'
+import { FreeMealSDK } from '@voxgig-sdk/free-meal-sdk'
 
 const client = new FreeMealSDK({
   apikey: process.env.FREE_MEAL_APIKEY,
@@ -1181,7 +1181,7 @@ free-meal/
 Import the SDK from the package root:
 
 ```ts
-import { FreeMealSDK } from '@voxgig-sdk/free-meal'
+import { FreeMealSDK } from '@voxgig-sdk/free-meal-sdk'
 ```
 
 ### Entity state
