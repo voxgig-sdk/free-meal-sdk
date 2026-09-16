@@ -30,5 +30,62 @@
         "strCategoryThumb": "sa3"
       }
     }
+  },
+  "requests": {
+    "GET /categories.php": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "listCategories",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "categories": {
+                      "items": {
+                        "properties": {
+                          "idCategory": {
+                            "description": "Unique category identifier",
+                            "type": "string"
+                          },
+                          "strCategory": {
+                            "description": "Category name",
+                            "type": "string"
+                          },
+                          "strCategoryDescription": {
+                            "description": "Category description",
+                            "type": "string"
+                          },
+                          "strCategoryThumb": {
+                            "description": "URL to category thumbnail image",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "securitySchemes": {
+          "ApiKeyAuth": {
+            "description": "API key embedded in the URL path. Use '1' for testing, or get a premium key for production.",
+            "in": "path",
+            "name": "api_key",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    }
   }
 }

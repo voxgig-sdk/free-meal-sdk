@@ -59,6 +59,12 @@ main: kit: entity: filter: {
               }
             ]
           }
+          contract: {
+            id: "GET /filter.php"
+            json: "{\"operationId\":\"filterMeals\",\"parameters\":[{\"description\":\"Filter by ingredient (comma-separated for multi-ingredient with Premium API)\",\"in\":\"query\",\"name\":\"i\",\"required\":false,\"schema\":{\"example\":\"chicken_breast\",\"type\":\"string\"}},{\"description\":\"Filter by category\",\"in\":\"query\",\"name\":\"c\",\"required\":false,\"schema\":{\"example\":\"Seafood\",\"type\":\"string\"}},{\"description\":\"Filter by area\",\"in\":\"query\",\"name\":\"a\",\"required\":false,\"schema\":{\"example\":\"Canadian\",\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"meals\":{\"items\":{\"properties\":{\"idMeal\":{\"description\":\"Unique meal identifier\",\"type\":\"string\"},\"strMeal\":{\"description\":\"Meal name\",\"type\":\"string\"},\"strMealThumb\":{\"description\":\"URL to meal thumbnail image\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Successful response\"}},\"securitySchemes\":{\"ApiKeyAuth\":{\"description\":\"API key embedded in the URL path. Use '1' for testing, or get a premium key for production.\",\"in\":\"path\",\"name\":\"api_key\",\"type\":\"apiKey\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/filter.php"
           segments: [

@@ -4,7 +4,10 @@ declare(strict_types=1);
 // FreeMeal SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class FreeMealFeatures
@@ -14,8 +17,14 @@ class FreeMealFeatures
         switch ($name) {
             case "base":
                 return new FreeMealBaseFeature();
+            case "ratelimit":
+                return new FreeMealRatelimitFeature();
+            case "retry":
+                return new FreeMealRetryFeature();
             case "test":
                 return new FreeMealTestFeature();
+            case "timeout":
+                return new FreeMealTimeoutFeature();
             default:
                 return new FreeMealBaseFeature();
         }
@@ -31,7 +40,10 @@ class FreeMealFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;
