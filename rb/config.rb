@@ -89,6 +89,8 @@ module FreeMealConfig
         "base" => "https://www.themealdb.com/api/json/v1/1",
         "auth" => {
           "prefix" => "",
+          "in" => "path",
+          "name" => "api_key",
         },
         "headers" => {
           "content-type" => "application/json",

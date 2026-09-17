@@ -1,10 +1,10 @@
 # Flows
 
-@"BasicCategoryFlow.aon"
-@"BasicFilterFlow.aon"
-@"BasicLatestFlow.aon"
-@"BasicListFlow.aon"
-@"BasicLookupFlow.aon"
-@"BasicRandomFlow.aon"
-@"BasicRandomselectionFlow.aon"
-@"BasicSearchFlow.aon"
+@"./BasicCategoryFlow.aon"
+@"./BasicFilterFlow.aon"
+@"./BasicLatestFlow.aon"
+@"./BasicListFlow.aon"
+@"./BasicLookupFlow.aon"
+@"./BasicRandomFlow.aon"
+@"./BasicRandomselectionFlow.aon"
+@"./BasicSearchFlow.aon"

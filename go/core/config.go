@@ -81,6 +81,8 @@ func MakeConfig() map[string]any {
 			"base": "https://www.themealdb.com/api/json/v1/1",
 			"auth": map[string]any{
 				"prefix": "",
+				"in": "path",
+				"name": "api_key",
 			},
 			"headers": map[string]any{
 				"content-type": "application/json",

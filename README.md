@@ -105,12 +105,12 @@ local results, err = client:Latest():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/free-meal-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/free-meal-sdk/releases) |
-| Python | `voxgig-sdk-free-meal` | publish pending — [install from git tag](https://github.com/voxgig-sdk/free-meal-sdk/releases) |
-| PHP | `voxgig-sdk/free-meal` | publish pending — [install from git tag](https://github.com/voxgig-sdk/free-meal-sdk/releases) |
+| TypeScript | `@voxgig-sdk/free-meal-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/free-meal-sdk/tags) |
+| Python | `voxgig-sdk-free-meal` | publish pending — [install from git tag](https://github.com/voxgig-sdk/free-meal-sdk/tags) |
+| PHP | `voxgig-sdk/free-meal` | publish pending — [install from git tag](https://github.com/voxgig-sdk/free-meal-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/free-meal-sdk/go` | `go get github.com/voxgig-sdk/free-meal-sdk/go@latest` |
-| Ruby | `voxgig-sdk-free-meal` | publish pending — [install from git tag](https://github.com/voxgig-sdk/free-meal-sdk/releases) |
-| Lua | `voxgig-sdk-free-meal` | publish pending — [install from git tag](https://github.com/voxgig-sdk/free-meal-sdk/releases) |
+| Ruby | `voxgig-sdk-free-meal` | publish pending — [install from git tag](https://github.com/voxgig-sdk/free-meal-sdk/tags) |
+| Lua | `voxgig-sdk-free-meal` | publish pending — [install from git tag](https://github.com/voxgig-sdk/free-meal-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/free-meal-sdk/go-cli` | `go install github.com/voxgig-sdk/free-meal-sdk/go-cli/cmd/free-meal@latest` |
 | Go MCP server | `github.com/voxgig-sdk/free-meal-sdk/go-mcp` | `go get github.com/voxgig-sdk/free-meal-sdk/go-mcp@latest` |
 
