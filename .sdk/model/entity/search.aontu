@@ -1,0 +1,391 @@
+# Entity: search
+
+main: kit: entity: search: {
+
+  alias: field: {}
+
+  fields: {
+    dateModified: {
+      h: "Date Modified"
+      n: "dateModified"
+      r: false
+      t: "`$STRING`"
+    }
+    idMeal: {
+      h: "Id Meal"
+      n: "idMeal"
+      r: false
+      sh: "Unique meal identifier"
+      t: "`$STRING`"
+    }
+    strArea: {
+      h: "Str Area"
+      n: "strArea"
+      r: false
+      sh: "Meal area/region"
+      t: "`$STRING`"
+    }
+    strCategory: {
+      h: "Str Category"
+      n: "strCategory"
+      r: false
+      sh: "Meal category"
+      t: "`$STRING`"
+    }
+    strCreativeCommonsConfirmed: {
+      h: "Str Creative Commons Confirmed"
+      n: "strCreativeCommonsConfirmed"
+      r: false
+      t: "`$STRING`"
+    }
+    strDrinkAlternate: {
+      h: "Str Drink Alternate"
+      n: "strDrinkAlternate"
+      r: false
+      t: "`$STRING`"
+    }
+    strImageSource: {
+      h: "Str Image Source"
+      n: "strImageSource"
+      r: false
+      t: "`$STRING`"
+    }
+    strIngredient1: {
+      h: "Str Ingredient1"
+      n: "strIngredient1"
+      r: false
+      t: "`$STRING`"
+    }
+    strIngredient10: {
+      h: "Str Ingredient10"
+      n: "strIngredient10"
+      r: false
+      t: "`$STRING`"
+    }
+    strIngredient11: {
+      h: "Str Ingredient11"
+      n: "strIngredient11"
+      r: false
+      t: "`$STRING`"
+    }
+    strIngredient12: {
+      h: "Str Ingredient12"
+      n: "strIngredient12"
+      r: false
+      t: "`$STRING`"
+    }
+    strIngredient13: {
+      h: "Str Ingredient13"
+      n: "strIngredient13"
+      r: false
+      t: "`$STRING`"
+    }
+    strIngredient14: {
+      h: "Str Ingredient14"
+      n: "strIngredient14"
+      r: false
+      t: "`$STRING`"
+    }
+    strIngredient15: {
+      h: "Str Ingredient15"
+      n: "strIngredient15"
+      r: false
+      t: "`$STRING`"
+    }
+    strIngredient16: {
+      h: "Str Ingredient16"
+      n: "strIngredient16"
+      r: false
+      t: "`$STRING`"
+    }
+    strIngredient17: {
+      h: "Str Ingredient17"
+      n: "strIngredient17"
+      r: false
+      t: "`$STRING`"
+    }
+    strIngredient18: {
+      h: "Str Ingredient18"
+      n: "strIngredient18"
+      r: false
+      t: "`$STRING`"
+    }
+    strIngredient19: {
+      h: "Str Ingredient19"
+      n: "strIngredient19"
+      r: false
+      t: "`$STRING`"
+    }
+    strIngredient2: {
+      h: "Str Ingredient2"
+      n: "strIngredient2"
+      r: false
+      t: "`$STRING`"
+    }
+    strIngredient20: {
+      h: "Str Ingredient20"
+      n: "strIngredient20"
+      r: false
+      t: "`$STRING`"
+    }
+    strIngredient3: {
+      h: "Str Ingredient3"
+      n: "strIngredient3"
+      r: false
+      t: "`$STRING`"
+    }
+    strIngredient4: {
+      h: "Str Ingredient4"
+      n: "strIngredient4"
+      r: false
+      t: "`$STRING`"
+    }
+    strIngredient5: {
+      h: "Str Ingredient5"
+      n: "strIngredient5"
+      r: false
+      t: "`$STRING`"
+    }
+    strIngredient6: {
+      h: "Str Ingredient6"
+      n: "strIngredient6"
+      r: false
+      t: "`$STRING`"
+    }
+    strIngredient7: {
+      h: "Str Ingredient7"
+      n: "strIngredient7"
+      r: false
+      t: "`$STRING`"
+    }
+    strIngredient8: {
+      h: "Str Ingredient8"
+      n: "strIngredient8"
+      r: false
+      t: "`$STRING`"
+    }
+    strIngredient9: {
+      h: "Str Ingredient9"
+      n: "strIngredient9"
+      r: false
+      t: "`$STRING`"
+    }
+    strInstructions: {
+      h: "Str Instructions"
+      n: "strInstructions"
+      r: false
+      sh: "Cooking instructions"
+      t: "`$STRING`"
+    }
+    strMeal: {
+      h: "Str Meal"
+      n: "strMeal"
+      r: false
+      sh: "Meal name"
+      t: "`$STRING`"
+    }
+    strMealThumb: {
+      h: "Str Meal Thumb"
+      n: "strMealThumb"
+      r: false
+      sh: "URL to meal thumbnail image"
+      t: "`$STRING`"
+    }
+    strMeasure1: {
+      h: "Str Measure1"
+      n: "strMeasure1"
+      r: false
+      t: "`$STRING`"
+    }
+    strMeasure10: {
+      h: "Str Measure10"
+      n: "strMeasure10"
+      r: false
+      t: "`$STRING`"
+    }
+    strMeasure11: {
+      h: "Str Measure11"
+      n: "strMeasure11"
+      r: false
+      t: "`$STRING`"
+    }
+    strMeasure12: {
+      h: "Str Measure12"
+      n: "strMeasure12"
+      r: false
+      t: "`$STRING`"
+    }
+    strMeasure13: {
+      h: "Str Measure13"
+      n: "strMeasure13"
+      r: false
+      t: "`$STRING`"
+    }
+    strMeasure14: {
+      h: "Str Measure14"
+      n: "strMeasure14"
+      r: false
+      t: "`$STRING`"
+    }
+    strMeasure15: {
+      h: "Str Measure15"
+      n: "strMeasure15"
+      r: false
+      t: "`$STRING`"
+    }
+    strMeasure16: {
+      h: "Str Measure16"
+      n: "strMeasure16"
+      r: false
+      t: "`$STRING`"
+    }
+    strMeasure17: {
+      h: "Str Measure17"
+      n: "strMeasure17"
+      r: false
+      t: "`$STRING`"
+    }
+    strMeasure18: {
+      h: "Str Measure18"
+      n: "strMeasure18"
+      r: false
+      t: "`$STRING`"
+    }
+    strMeasure19: {
+      h: "Str Measure19"
+      n: "strMeasure19"
+      r: false
+      t: "`$STRING`"
+    }
+    strMeasure2: {
+      h: "Str Measure2"
+      n: "strMeasure2"
+      r: false
+      t: "`$STRING`"
+    }
+    strMeasure20: {
+      h: "Str Measure20"
+      n: "strMeasure20"
+      r: false
+      t: "`$STRING`"
+    }
+    strMeasure3: {
+      h: "Str Measure3"
+      n: "strMeasure3"
+      r: false
+      t: "`$STRING`"
+    }
+    strMeasure4: {
+      h: "Str Measure4"
+      n: "strMeasure4"
+      r: false
+      t: "`$STRING`"
+    }
+    strMeasure5: {
+      h: "Str Measure5"
+      n: "strMeasure5"
+      r: false
+      t: "`$STRING`"
+    }
+    strMeasure6: {
+      h: "Str Measure6"
+      n: "strMeasure6"
+      r: false
+      t: "`$STRING`"
+    }
+    strMeasure7: {
+      h: "Str Measure7"
+      n: "strMeasure7"
+      r: false
+      t: "`$STRING`"
+    }
+    strMeasure8: {
+      h: "Str Measure8"
+      n: "strMeasure8"
+      r: false
+      t: "`$STRING`"
+    }
+    strMeasure9: {
+      h: "Str Measure9"
+      n: "strMeasure9"
+      r: false
+      t: "`$STRING`"
+    }
+    strSource: {
+      h: "Str Source"
+      n: "strSource"
+      r: false
+      t: "`$STRING`"
+    }
+    strTags: {
+      h: "Str Tags"
+      n: "strTags"
+      r: false
+      sh: "Comma-separated tags"
+      t: "`$STRING`"
+    }
+    strYoutube: {
+      h: "Str Youtube"
+      n: "strYoutube"
+      r: false
+      sh: "YouTube video URL"
+      t: "`$STRING`"
+    }
+  }
+
+  name: "search"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /search.php"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "a"
+                k: "query"
+                n: "f"
+                or: "f"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "Arrabiata"
+                k: "query"
+                n: "s"
+                or: "s"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/search.php"
+          q: {
+            exist: [
+              "f"
+              "s"
+            ]
+          }
+          s: [
+            {
+              lit: "search.php"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.meals`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

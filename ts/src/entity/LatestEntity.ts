@@ -19,7 +19,6 @@ import type {
   LatestListMatch,
 } from '../FreeMealTypes'
 
-// TODO: needs Entity superclass
 class LatestEntity extends FreeMealEntityBase<Latest> {
 
   constructor(client: FreeMealSDK, entopts: any) {

@@ -24,42 +24,112 @@
         "repr": "auto"
       },
       "contributor": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
       "entity": {
         "category": {
           "active": true,
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "idCategory",
-              "req": false,
-              "short": "Unique category identifier",
-              "type": "`$STRING`"
+          "fields": {
+            "idCategory": {
+              "a": true,
+              "h": "Id Category",
+              "n": "idCategory",
+              "r": false,
+              "sh": "Unique category identifier",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strCategory",
-              "req": false,
-              "short": "Category name",
-              "type": "`$STRING`"
+            "strCategory": {
+              "a": true,
+              "h": "Str Category",
+              "n": "strCategory",
+              "r": false,
+              "sh": "Category name",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strCategoryDescription",
-              "req": false,
-              "short": "Category description",
-              "type": "`$STRING`"
+            "strCategoryDescription": {
+              "a": true,
+              "h": "Str Category Description",
+              "n": "strCategoryDescription",
+              "r": false,
+              "sh": "Category description",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strCategoryThumb",
-              "req": false,
-              "short": "URL to category thumbnail image",
-              "type": "`$STRING`"
+            "strCategoryThumb": {
+              "a": true,
+              "h": "Str Category Thumb",
+              "n": "strCategoryThumb",
+              "r": false,
+              "sh": "URL to category thumbnail image",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "name": "category",
           "op": {
             "list": {
@@ -67,24 +137,24 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /categories.php",
-                    "json": "{\"operationId\":\"listCategories\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"categories\":{\"items\":{\"properties\":{\"idCategory\":{\"description\":\"Unique category identifier\",\"type\":\"string\"},\"strCategory\":{\"description\":\"Category name\",\"type\":\"string\"},\"strCategoryDescription\":{\"description\":\"Category description\",\"type\":\"string\"},\"strCategoryThumb\":{\"description\":\"URL to category thumbnail image\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Successful response\"}},\"securitySchemes\":{\"ApiKeyAuth\":{\"description\":\"API key embedded in the URL path. Use '1' for testing, or get a premium key for production.\",\"in\":\"path\",\"name\":\"api_key\",\"type\":\"apiKey\"}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/categories.php",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/categories.php",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "categories.php"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body.categories`"
                   }
@@ -101,29 +171,32 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "idMeal",
-              "req": false,
-              "short": "Unique meal identifier",
-              "type": "`$STRING`"
+          "fields": {
+            "idMeal": {
+              "a": true,
+              "h": "Id Meal",
+              "n": "idMeal",
+              "r": false,
+              "sh": "Unique meal identifier",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeal",
-              "req": false,
-              "short": "Meal name",
-              "type": "`$STRING`"
+            "strMeal": {
+              "a": true,
+              "h": "Str Meal",
+              "n": "strMeal",
+              "r": false,
+              "sh": "Meal name",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMealThumb",
-              "req": false,
-              "short": "URL to meal thumbnail image",
-              "type": "`$STRING`"
+            "strMealThumb": {
+              "a": true,
+              "h": "Str Meal Thumb",
+              "n": "strMealThumb",
+              "r": false,
+              "sh": "URL to meal thumbnail image",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "name": "filter",
           "op": {
             "list": {
@@ -131,60 +204,60 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /filter.php",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "example": "Canadian",
-                        "kind": "query",
-                        "name": "a",
-                        "orig": "a",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "ex": "Canadian",
+                        "k": "query",
+                        "n": "a",
+                        "or": "a",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "example": "Seafood",
-                        "kind": "query",
-                        "name": "c",
-                        "orig": "c",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "ex": "Seafood",
+                        "k": "query",
+                        "n": "c",
+                        "or": "c",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "example": "chicken_breast",
-                        "kind": "query",
-                        "name": "i",
-                        "orig": "i",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "ex": "chicken_breast",
+                        "k": "query",
+                        "n": "i",
+                        "or": "i",
+                        "r": false,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /filter.php",
-                    "json": "{\"operationId\":\"filterMeals\",\"parameters\":[{\"description\":\"Filter by ingredient (comma-separated for multi-ingredient with Premium API)\",\"in\":\"query\",\"name\":\"i\",\"required\":false,\"schema\":{\"example\":\"chicken_breast\",\"type\":\"string\"}},{\"description\":\"Filter by category\",\"in\":\"query\",\"name\":\"c\",\"required\":false,\"schema\":{\"example\":\"Seafood\",\"type\":\"string\"}},{\"description\":\"Filter by area\",\"in\":\"query\",\"name\":\"a\",\"required\":false,\"schema\":{\"example\":\"Canadian\",\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"meals\":{\"items\":{\"properties\":{\"idMeal\":{\"description\":\"Unique meal identifier\",\"type\":\"string\"},\"strMeal\":{\"description\":\"Meal name\",\"type\":\"string\"},\"strMealThumb\":{\"description\":\"URL to meal thumbnail image\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Successful response\"}},\"securitySchemes\":{\"ApiKeyAuth\":{\"description\":\"API key embedded in the URL path. Use '1' for testing, or get a premium key for production.\",\"in\":\"path\",\"name\":\"api_key\",\"type\":\"apiKey\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
-                  },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/filter.php",
-                  "segments": [
-                    {
-                      "lit": "filter.php"
-                    }
-                  ],
-                  "select": {
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/filter.php",
+                  "q": {
                     "exist": [
                       "a",
                       "c",
                       "i"
                     ]
                   },
-                  "transform": {
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "filter.php"
+                    }
+                  ],
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body.meals`"
                   }
@@ -201,334 +274,387 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "dateModified",
-              "req": false,
-              "type": "`$STRING`"
+          "fields": {
+            "dateModified": {
+              "a": true,
+              "h": "Date Modified",
+              "n": "dateModified",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "idMeal",
-              "req": false,
-              "short": "Unique meal identifier",
-              "type": "`$STRING`"
+            "idMeal": {
+              "a": true,
+              "h": "Id Meal",
+              "n": "idMeal",
+              "r": false,
+              "sh": "Unique meal identifier",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strArea",
-              "req": false,
-              "short": "Meal area/region",
-              "type": "`$STRING`"
+            "strArea": {
+              "a": true,
+              "h": "Str Area",
+              "n": "strArea",
+              "r": false,
+              "sh": "Meal area/region",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strCategory",
-              "req": false,
-              "short": "Meal category",
-              "type": "`$STRING`"
+            "strCategory": {
+              "a": true,
+              "h": "Str Category",
+              "n": "strCategory",
+              "r": false,
+              "sh": "Meal category",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strCreativeCommonsConfirmed",
-              "req": false,
-              "type": "`$STRING`"
+            "strCreativeCommonsConfirmed": {
+              "a": true,
+              "h": "Str Creative Commons Confirmed",
+              "n": "strCreativeCommonsConfirmed",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strDrinkAlternate",
-              "req": false,
-              "type": "`$STRING`"
+            "strDrinkAlternate": {
+              "a": true,
+              "h": "Str Drink Alternate",
+              "n": "strDrinkAlternate",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strImageSource",
-              "req": false,
-              "type": "`$STRING`"
+            "strImageSource": {
+              "a": true,
+              "h": "Str Image Source",
+              "n": "strImageSource",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient1",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient1": {
+              "a": true,
+              "h": "Str Ingredient1",
+              "n": "strIngredient1",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient10",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient10": {
+              "a": true,
+              "h": "Str Ingredient10",
+              "n": "strIngredient10",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient11",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient11": {
+              "a": true,
+              "h": "Str Ingredient11",
+              "n": "strIngredient11",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient12",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient12": {
+              "a": true,
+              "h": "Str Ingredient12",
+              "n": "strIngredient12",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient13",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient13": {
+              "a": true,
+              "h": "Str Ingredient13",
+              "n": "strIngredient13",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient14",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient14": {
+              "a": true,
+              "h": "Str Ingredient14",
+              "n": "strIngredient14",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient15",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient15": {
+              "a": true,
+              "h": "Str Ingredient15",
+              "n": "strIngredient15",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient16",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient16": {
+              "a": true,
+              "h": "Str Ingredient16",
+              "n": "strIngredient16",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient17",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient17": {
+              "a": true,
+              "h": "Str Ingredient17",
+              "n": "strIngredient17",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient18",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient18": {
+              "a": true,
+              "h": "Str Ingredient18",
+              "n": "strIngredient18",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient19",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient19": {
+              "a": true,
+              "h": "Str Ingredient19",
+              "n": "strIngredient19",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient2",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient2": {
+              "a": true,
+              "h": "Str Ingredient2",
+              "n": "strIngredient2",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient20",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient20": {
+              "a": true,
+              "h": "Str Ingredient20",
+              "n": "strIngredient20",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient3",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient3": {
+              "a": true,
+              "h": "Str Ingredient3",
+              "n": "strIngredient3",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient4",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient4": {
+              "a": true,
+              "h": "Str Ingredient4",
+              "n": "strIngredient4",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient5",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient5": {
+              "a": true,
+              "h": "Str Ingredient5",
+              "n": "strIngredient5",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient6",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient6": {
+              "a": true,
+              "h": "Str Ingredient6",
+              "n": "strIngredient6",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient7",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient7": {
+              "a": true,
+              "h": "Str Ingredient7",
+              "n": "strIngredient7",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient8",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient8": {
+              "a": true,
+              "h": "Str Ingredient8",
+              "n": "strIngredient8",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient9",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient9": {
+              "a": true,
+              "h": "Str Ingredient9",
+              "n": "strIngredient9",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strInstructions",
-              "req": false,
-              "short": "Cooking instructions",
-              "type": "`$STRING`"
+            "strInstructions": {
+              "a": true,
+              "h": "Str Instructions",
+              "n": "strInstructions",
+              "r": false,
+              "sh": "Cooking instructions",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeal",
-              "req": false,
-              "short": "Meal name",
-              "type": "`$STRING`"
+            "strMeal": {
+              "a": true,
+              "h": "Str Meal",
+              "n": "strMeal",
+              "r": false,
+              "sh": "Meal name",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMealThumb",
-              "req": false,
-              "short": "URL to meal thumbnail image",
-              "type": "`$STRING`"
+            "strMealThumb": {
+              "a": true,
+              "h": "Str Meal Thumb",
+              "n": "strMealThumb",
+              "r": false,
+              "sh": "URL to meal thumbnail image",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure1",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure1": {
+              "a": true,
+              "h": "Str Measure1",
+              "n": "strMeasure1",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure10",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure10": {
+              "a": true,
+              "h": "Str Measure10",
+              "n": "strMeasure10",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure11",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure11": {
+              "a": true,
+              "h": "Str Measure11",
+              "n": "strMeasure11",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure12",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure12": {
+              "a": true,
+              "h": "Str Measure12",
+              "n": "strMeasure12",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure13",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure13": {
+              "a": true,
+              "h": "Str Measure13",
+              "n": "strMeasure13",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure14",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure14": {
+              "a": true,
+              "h": "Str Measure14",
+              "n": "strMeasure14",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure15",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure15": {
+              "a": true,
+              "h": "Str Measure15",
+              "n": "strMeasure15",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure16",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure16": {
+              "a": true,
+              "h": "Str Measure16",
+              "n": "strMeasure16",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure17",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure17": {
+              "a": true,
+              "h": "Str Measure17",
+              "n": "strMeasure17",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure18",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure18": {
+              "a": true,
+              "h": "Str Measure18",
+              "n": "strMeasure18",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure19",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure19": {
+              "a": true,
+              "h": "Str Measure19",
+              "n": "strMeasure19",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure2",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure2": {
+              "a": true,
+              "h": "Str Measure2",
+              "n": "strMeasure2",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure20",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure20": {
+              "a": true,
+              "h": "Str Measure20",
+              "n": "strMeasure20",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure3",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure3": {
+              "a": true,
+              "h": "Str Measure3",
+              "n": "strMeasure3",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure4",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure4": {
+              "a": true,
+              "h": "Str Measure4",
+              "n": "strMeasure4",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure5",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure5": {
+              "a": true,
+              "h": "Str Measure5",
+              "n": "strMeasure5",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure6",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure6": {
+              "a": true,
+              "h": "Str Measure6",
+              "n": "strMeasure6",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure7",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure7": {
+              "a": true,
+              "h": "Str Measure7",
+              "n": "strMeasure7",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure8",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure8": {
+              "a": true,
+              "h": "Str Measure8",
+              "n": "strMeasure8",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure9",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure9": {
+              "a": true,
+              "h": "Str Measure9",
+              "n": "strMeasure9",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strSource",
-              "req": false,
-              "type": "`$STRING`"
+            "strSource": {
+              "a": true,
+              "h": "Str Source",
+              "n": "strSource",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strTags",
-              "req": false,
-              "short": "Comma-separated tags",
-              "type": "`$STRING`"
+            "strTags": {
+              "a": true,
+              "h": "Str Tags",
+              "n": "strTags",
+              "r": false,
+              "sh": "Comma-separated tags",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strYoutube",
-              "req": false,
-              "short": "YouTube video URL",
-              "type": "`$STRING`"
+            "strYoutube": {
+              "a": true,
+              "h": "Str Youtube",
+              "n": "strYoutube",
+              "r": false,
+              "sh": "YouTube video URL",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "name": "latest",
           "op": {
             "list": {
@@ -536,24 +662,24 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /latest.php",
-                    "json": "{\"operationId\":\"getLatestMeals\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"meals\":{\"items\":{\"properties\":{\"dateModified\":{\"nullable\":true,\"type\":\"string\"},\"idMeal\":{\"description\":\"Unique meal identifier\",\"type\":\"string\"},\"strArea\":{\"description\":\"Meal area/region\",\"type\":\"string\"},\"strCategory\":{\"description\":\"Meal category\",\"type\":\"string\"},\"strCreativeCommonsConfirmed\":{\"nullable\":true,\"type\":\"string\"},\"strDrinkAlternate\":{\"nullable\":true,\"type\":\"string\"},\"strImageSource\":{\"nullable\":true,\"type\":\"string\"},\"strIngredient1\":{\"type\":\"string\"},\"strIngredient10\":{\"type\":\"string\"},\"strIngredient11\":{\"type\":\"string\"},\"strIngredient12\":{\"type\":\"string\"},\"strIngredient13\":{\"type\":\"string\"},\"strIngredient14\":{\"type\":\"string\"},\"strIngredient15\":{\"type\":\"string\"},\"strIngredient16\":{\"type\":\"string\"},\"strIngredient17\":{\"type\":\"string\"},\"strIngredient18\":{\"type\":\"string\"},\"strIngredient19\":{\"type\":\"string\"},\"strIngredient2\":{\"type\":\"string\"},\"strIngredient20\":{\"type\":\"string\"},\"strIngredient3\":{\"type\":\"string\"},\"strIngredient4\":{\"type\":\"string\"},\"strIngredient5\":{\"type\":\"string\"},\"strIngredient6\":{\"type\":\"string\"},\"strIngredient7\":{\"type\":\"string\"},\"strIngredient8\":{\"type\":\"string\"},\"strIngredient9\":{\"type\":\"string\"},\"strInstructions\":{\"description\":\"Cooking instructions\",\"type\":\"string\"},\"strMeal\":{\"description\":\"Meal name\",\"type\":\"string\"},\"strMealThumb\":{\"description\":\"URL to meal thumbnail image\",\"type\":\"string\"},\"strMeasure1\":{\"type\":\"string\"},\"strMeasure10\":{\"type\":\"string\"},\"strMeasure11\":{\"type\":\"string\"},\"strMeasure12\":{\"type\":\"string\"},\"strMeasure13\":{\"type\":\"string\"},\"strMeasure14\":{\"type\":\"string\"},\"strMeasure15\":{\"type\":\"string\"},\"strMeasure16\":{\"type\":\"string\"},\"strMeasure17\":{\"type\":\"string\"},\"strMeasure18\":{\"type\":\"string\"},\"strMeasure19\":{\"type\":\"string\"},\"strMeasure2\":{\"type\":\"string\"},\"strMeasure20\":{\"type\":\"string\"},\"strMeasure3\":{\"type\":\"string\"},\"strMeasure4\":{\"type\":\"string\"},\"strMeasure5\":{\"type\":\"string\"},\"strMeasure6\":{\"type\":\"string\"},\"strMeasure7\":{\"type\":\"string\"},\"strMeasure8\":{\"type\":\"string\"},\"strMeasure9\":{\"type\":\"string\"},\"strSource\":{\"nullable\":true,\"type\":\"string\"},\"strTags\":{\"description\":\"Comma-separated tags\",\"nullable\":true,\"type\":\"string\"},\"strYoutube\":{\"description\":\"YouTube video URL\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Successful response\"},\"403\":{\"description\":\"Forbidden - Premium API key required\"}},\"security\":[{\"ApiKeyAuth\":[]}],\"securitySchemes\":{\"ApiKeyAuth\":{\"description\":\"API key embedded in the URL path. Use '1' for testing, or get a premium key for production.\",\"in\":\"path\",\"name\":\"api_key\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/latest.php",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/latest.php",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "latest.php"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body.meals`"
                   }
@@ -570,26 +696,29 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "strArea",
-              "req": false,
-              "type": "`$STRING`"
+          "fields": {
+            "strArea": {
+              "a": true,
+              "h": "Str Area",
+              "n": "strArea",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strCategory",
-              "req": false,
-              "type": "`$STRING`"
+            "strCategory": {
+              "a": true,
+              "h": "Str Category",
+              "n": "strCategory",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient": {
+              "a": true,
+              "h": "Str Ingredient",
+              "n": "strIngredient",
+              "r": false,
+              "t": "`$STRING`"
             }
-          ],
+          },
           "name": "list",
           "op": {
             "list": {
@@ -597,57 +726,57 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /list.php",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "a",
-                        "orig": "a",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "a",
+                        "or": "a",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "c",
-                        "orig": "c",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "c",
+                        "or": "c",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "i",
-                        "orig": "i",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "i",
+                        "or": "i",
+                        "r": false,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /list.php",
-                    "json": "{\"operationId\":\"listAttributes\",\"parameters\":[{\"description\":\"List all categories\",\"in\":\"query\",\"name\":\"c\",\"required\":false,\"schema\":{\"enum\":[\"list\"],\"type\":\"string\"}},{\"description\":\"List all areas\",\"in\":\"query\",\"name\":\"a\",\"required\":false,\"schema\":{\"enum\":[\"list\"],\"type\":\"string\"}},{\"description\":\"List all ingredients\",\"in\":\"query\",\"name\":\"i\",\"required\":false,\"schema\":{\"enum\":[\"list\"],\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"meals\":{\"items\":{\"properties\":{\"strArea\":{\"type\":\"string\"},\"strCategory\":{\"type\":\"string\"},\"strIngredient\":{\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Successful response\"}},\"securitySchemes\":{\"ApiKeyAuth\":{\"description\":\"API key embedded in the URL path. Use '1' for testing, or get a premium key for production.\",\"in\":\"path\",\"name\":\"api_key\",\"type\":\"apiKey\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
-                  },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/list.php",
-                  "segments": [
-                    {
-                      "lit": "list.php"
-                    }
-                  ],
-                  "select": {
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/list.php",
+                  "q": {
                     "exist": [
                       "a",
                       "c",
                       "i"
                     ]
                   },
-                  "transform": {
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "list.php"
+                    }
+                  ],
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body.meals`"
                   }
@@ -664,334 +793,387 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "dateModified",
-              "req": false,
-              "type": "`$STRING`"
+          "fields": {
+            "dateModified": {
+              "a": true,
+              "h": "Date Modified",
+              "n": "dateModified",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "idMeal",
-              "req": false,
-              "short": "Unique meal identifier",
-              "type": "`$STRING`"
+            "idMeal": {
+              "a": true,
+              "h": "Id Meal",
+              "n": "idMeal",
+              "r": false,
+              "sh": "Unique meal identifier",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strArea",
-              "req": false,
-              "short": "Meal area/region",
-              "type": "`$STRING`"
+            "strArea": {
+              "a": true,
+              "h": "Str Area",
+              "n": "strArea",
+              "r": false,
+              "sh": "Meal area/region",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strCategory",
-              "req": false,
-              "short": "Meal category",
-              "type": "`$STRING`"
+            "strCategory": {
+              "a": true,
+              "h": "Str Category",
+              "n": "strCategory",
+              "r": false,
+              "sh": "Meal category",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strCreativeCommonsConfirmed",
-              "req": false,
-              "type": "`$STRING`"
+            "strCreativeCommonsConfirmed": {
+              "a": true,
+              "h": "Str Creative Commons Confirmed",
+              "n": "strCreativeCommonsConfirmed",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strDrinkAlternate",
-              "req": false,
-              "type": "`$STRING`"
+            "strDrinkAlternate": {
+              "a": true,
+              "h": "Str Drink Alternate",
+              "n": "strDrinkAlternate",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strImageSource",
-              "req": false,
-              "type": "`$STRING`"
+            "strImageSource": {
+              "a": true,
+              "h": "Str Image Source",
+              "n": "strImageSource",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient1",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient1": {
+              "a": true,
+              "h": "Str Ingredient1",
+              "n": "strIngredient1",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient10",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient10": {
+              "a": true,
+              "h": "Str Ingredient10",
+              "n": "strIngredient10",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient11",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient11": {
+              "a": true,
+              "h": "Str Ingredient11",
+              "n": "strIngredient11",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient12",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient12": {
+              "a": true,
+              "h": "Str Ingredient12",
+              "n": "strIngredient12",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient13",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient13": {
+              "a": true,
+              "h": "Str Ingredient13",
+              "n": "strIngredient13",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient14",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient14": {
+              "a": true,
+              "h": "Str Ingredient14",
+              "n": "strIngredient14",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient15",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient15": {
+              "a": true,
+              "h": "Str Ingredient15",
+              "n": "strIngredient15",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient16",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient16": {
+              "a": true,
+              "h": "Str Ingredient16",
+              "n": "strIngredient16",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient17",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient17": {
+              "a": true,
+              "h": "Str Ingredient17",
+              "n": "strIngredient17",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient18",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient18": {
+              "a": true,
+              "h": "Str Ingredient18",
+              "n": "strIngredient18",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient19",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient19": {
+              "a": true,
+              "h": "Str Ingredient19",
+              "n": "strIngredient19",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient2",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient2": {
+              "a": true,
+              "h": "Str Ingredient2",
+              "n": "strIngredient2",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient20",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient20": {
+              "a": true,
+              "h": "Str Ingredient20",
+              "n": "strIngredient20",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient3",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient3": {
+              "a": true,
+              "h": "Str Ingredient3",
+              "n": "strIngredient3",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient4",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient4": {
+              "a": true,
+              "h": "Str Ingredient4",
+              "n": "strIngredient4",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient5",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient5": {
+              "a": true,
+              "h": "Str Ingredient5",
+              "n": "strIngredient5",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient6",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient6": {
+              "a": true,
+              "h": "Str Ingredient6",
+              "n": "strIngredient6",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient7",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient7": {
+              "a": true,
+              "h": "Str Ingredient7",
+              "n": "strIngredient7",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient8",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient8": {
+              "a": true,
+              "h": "Str Ingredient8",
+              "n": "strIngredient8",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient9",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient9": {
+              "a": true,
+              "h": "Str Ingredient9",
+              "n": "strIngredient9",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strInstructions",
-              "req": false,
-              "short": "Cooking instructions",
-              "type": "`$STRING`"
+            "strInstructions": {
+              "a": true,
+              "h": "Str Instructions",
+              "n": "strInstructions",
+              "r": false,
+              "sh": "Cooking instructions",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeal",
-              "req": false,
-              "short": "Meal name",
-              "type": "`$STRING`"
+            "strMeal": {
+              "a": true,
+              "h": "Str Meal",
+              "n": "strMeal",
+              "r": false,
+              "sh": "Meal name",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMealThumb",
-              "req": false,
-              "short": "URL to meal thumbnail image",
-              "type": "`$STRING`"
+            "strMealThumb": {
+              "a": true,
+              "h": "Str Meal Thumb",
+              "n": "strMealThumb",
+              "r": false,
+              "sh": "URL to meal thumbnail image",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure1",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure1": {
+              "a": true,
+              "h": "Str Measure1",
+              "n": "strMeasure1",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure10",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure10": {
+              "a": true,
+              "h": "Str Measure10",
+              "n": "strMeasure10",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure11",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure11": {
+              "a": true,
+              "h": "Str Measure11",
+              "n": "strMeasure11",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure12",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure12": {
+              "a": true,
+              "h": "Str Measure12",
+              "n": "strMeasure12",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure13",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure13": {
+              "a": true,
+              "h": "Str Measure13",
+              "n": "strMeasure13",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure14",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure14": {
+              "a": true,
+              "h": "Str Measure14",
+              "n": "strMeasure14",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure15",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure15": {
+              "a": true,
+              "h": "Str Measure15",
+              "n": "strMeasure15",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure16",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure16": {
+              "a": true,
+              "h": "Str Measure16",
+              "n": "strMeasure16",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure17",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure17": {
+              "a": true,
+              "h": "Str Measure17",
+              "n": "strMeasure17",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure18",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure18": {
+              "a": true,
+              "h": "Str Measure18",
+              "n": "strMeasure18",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure19",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure19": {
+              "a": true,
+              "h": "Str Measure19",
+              "n": "strMeasure19",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure2",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure2": {
+              "a": true,
+              "h": "Str Measure2",
+              "n": "strMeasure2",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure20",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure20": {
+              "a": true,
+              "h": "Str Measure20",
+              "n": "strMeasure20",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure3",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure3": {
+              "a": true,
+              "h": "Str Measure3",
+              "n": "strMeasure3",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure4",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure4": {
+              "a": true,
+              "h": "Str Measure4",
+              "n": "strMeasure4",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure5",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure5": {
+              "a": true,
+              "h": "Str Measure5",
+              "n": "strMeasure5",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure6",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure6": {
+              "a": true,
+              "h": "Str Measure6",
+              "n": "strMeasure6",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure7",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure7": {
+              "a": true,
+              "h": "Str Measure7",
+              "n": "strMeasure7",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure8",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure8": {
+              "a": true,
+              "h": "Str Measure8",
+              "n": "strMeasure8",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure9",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure9": {
+              "a": true,
+              "h": "Str Measure9",
+              "n": "strMeasure9",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strSource",
-              "req": false,
-              "type": "`$STRING`"
+            "strSource": {
+              "a": true,
+              "h": "Str Source",
+              "n": "strSource",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strTags",
-              "req": false,
-              "short": "Comma-separated tags",
-              "type": "`$STRING`"
+            "strTags": {
+              "a": true,
+              "h": "Str Tags",
+              "n": "strTags",
+              "r": false,
+              "sh": "Comma-separated tags",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strYoutube",
-              "req": false,
-              "short": "YouTube video URL",
-              "type": "`$STRING`"
+            "strYoutube": {
+              "a": true,
+              "h": "Str Youtube",
+              "n": "strYoutube",
+              "r": false,
+              "sh": "YouTube video URL",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "name": "lookup",
           "op": {
             "list": {
@@ -999,40 +1181,40 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /lookup.php",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "example": "52772",
-                        "kind": "query",
-                        "name": "i",
-                        "orig": "i",
-                        "reqd": true,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "ex": "52772",
+                        "k": "query",
+                        "n": "i",
+                        "or": "i",
+                        "r": true,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /lookup.php",
-                    "json": "{\"operationId\":\"lookupMealById\",\"parameters\":[{\"description\":\"Meal ID\",\"in\":\"query\",\"name\":\"i\",\"required\":true,\"schema\":{\"example\":\"52772\",\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"meals\":{\"items\":{\"properties\":{\"dateModified\":{\"nullable\":true,\"type\":\"string\"},\"idMeal\":{\"description\":\"Unique meal identifier\",\"type\":\"string\"},\"strArea\":{\"description\":\"Meal area/region\",\"type\":\"string\"},\"strCategory\":{\"description\":\"Meal category\",\"type\":\"string\"},\"strCreativeCommonsConfirmed\":{\"nullable\":true,\"type\":\"string\"},\"strDrinkAlternate\":{\"nullable\":true,\"type\":\"string\"},\"strImageSource\":{\"nullable\":true,\"type\":\"string\"},\"strIngredient1\":{\"type\":\"string\"},\"strIngredient10\":{\"type\":\"string\"},\"strIngredient11\":{\"type\":\"string\"},\"strIngredient12\":{\"type\":\"string\"},\"strIngredient13\":{\"type\":\"string\"},\"strIngredient14\":{\"type\":\"string\"},\"strIngredient15\":{\"type\":\"string\"},\"strIngredient16\":{\"type\":\"string\"},\"strIngredient17\":{\"type\":\"string\"},\"strIngredient18\":{\"type\":\"string\"},\"strIngredient19\":{\"type\":\"string\"},\"strIngredient2\":{\"type\":\"string\"},\"strIngredient20\":{\"type\":\"string\"},\"strIngredient3\":{\"type\":\"string\"},\"strIngredient4\":{\"type\":\"string\"},\"strIngredient5\":{\"type\":\"string\"},\"strIngredient6\":{\"type\":\"string\"},\"strIngredient7\":{\"type\":\"string\"},\"strIngredient8\":{\"type\":\"string\"},\"strIngredient9\":{\"type\":\"string\"},\"strInstructions\":{\"description\":\"Cooking instructions\",\"type\":\"string\"},\"strMeal\":{\"description\":\"Meal name\",\"type\":\"string\"},\"strMealThumb\":{\"description\":\"URL to meal thumbnail image\",\"type\":\"string\"},\"strMeasure1\":{\"type\":\"string\"},\"strMeasure10\":{\"type\":\"string\"},\"strMeasure11\":{\"type\":\"string\"},\"strMeasure12\":{\"type\":\"string\"},\"strMeasure13\":{\"type\":\"string\"},\"strMeasure14\":{\"type\":\"string\"},\"strMeasure15\":{\"type\":\"string\"},\"strMeasure16\":{\"type\":\"string\"},\"strMeasure17\":{\"type\":\"string\"},\"strMeasure18\":{\"type\":\"string\"},\"strMeasure19\":{\"type\":\"string\"},\"strMeasure2\":{\"type\":\"string\"},\"strMeasure20\":{\"type\":\"string\"},\"strMeasure3\":{\"type\":\"string\"},\"strMeasure4\":{\"type\":\"string\"},\"strMeasure5\":{\"type\":\"string\"},\"strMeasure6\":{\"type\":\"string\"},\"strMeasure7\":{\"type\":\"string\"},\"strMeasure8\":{\"type\":\"string\"},\"strMeasure9\":{\"type\":\"string\"},\"strSource\":{\"nullable\":true,\"type\":\"string\"},\"strTags\":{\"description\":\"Comma-separated tags\",\"nullable\":true,\"type\":\"string\"},\"strYoutube\":{\"description\":\"YouTube video URL\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Successful response\"}},\"securitySchemes\":{\"ApiKeyAuth\":{\"description\":\"API key embedded in the URL path. Use '1' for testing, or get a premium key for production.\",\"in\":\"path\",\"name\":\"api_key\",\"type\":\"apiKey\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
-                  },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/lookup.php",
-                  "segments": [
-                    {
-                      "lit": "lookup.php"
-                    }
-                  ],
-                  "select": {
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/lookup.php",
+                  "q": {
                     "exist": [
                       "i"
                     ]
                   },
-                  "transform": {
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "lookup.php"
+                    }
+                  ],
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body.meals`"
                   }
@@ -1049,334 +1231,387 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "dateModified",
-              "req": false,
-              "type": "`$STRING`"
+          "fields": {
+            "dateModified": {
+              "a": true,
+              "h": "Date Modified",
+              "n": "dateModified",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "idMeal",
-              "req": false,
-              "short": "Unique meal identifier",
-              "type": "`$STRING`"
+            "idMeal": {
+              "a": true,
+              "h": "Id Meal",
+              "n": "idMeal",
+              "r": false,
+              "sh": "Unique meal identifier",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strArea",
-              "req": false,
-              "short": "Meal area/region",
-              "type": "`$STRING`"
+            "strArea": {
+              "a": true,
+              "h": "Str Area",
+              "n": "strArea",
+              "r": false,
+              "sh": "Meal area/region",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strCategory",
-              "req": false,
-              "short": "Meal category",
-              "type": "`$STRING`"
+            "strCategory": {
+              "a": true,
+              "h": "Str Category",
+              "n": "strCategory",
+              "r": false,
+              "sh": "Meal category",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strCreativeCommonsConfirmed",
-              "req": false,
-              "type": "`$STRING`"
+            "strCreativeCommonsConfirmed": {
+              "a": true,
+              "h": "Str Creative Commons Confirmed",
+              "n": "strCreativeCommonsConfirmed",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strDrinkAlternate",
-              "req": false,
-              "type": "`$STRING`"
+            "strDrinkAlternate": {
+              "a": true,
+              "h": "Str Drink Alternate",
+              "n": "strDrinkAlternate",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strImageSource",
-              "req": false,
-              "type": "`$STRING`"
+            "strImageSource": {
+              "a": true,
+              "h": "Str Image Source",
+              "n": "strImageSource",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient1",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient1": {
+              "a": true,
+              "h": "Str Ingredient1",
+              "n": "strIngredient1",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient10",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient10": {
+              "a": true,
+              "h": "Str Ingredient10",
+              "n": "strIngredient10",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient11",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient11": {
+              "a": true,
+              "h": "Str Ingredient11",
+              "n": "strIngredient11",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient12",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient12": {
+              "a": true,
+              "h": "Str Ingredient12",
+              "n": "strIngredient12",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient13",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient13": {
+              "a": true,
+              "h": "Str Ingredient13",
+              "n": "strIngredient13",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient14",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient14": {
+              "a": true,
+              "h": "Str Ingredient14",
+              "n": "strIngredient14",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient15",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient15": {
+              "a": true,
+              "h": "Str Ingredient15",
+              "n": "strIngredient15",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient16",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient16": {
+              "a": true,
+              "h": "Str Ingredient16",
+              "n": "strIngredient16",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient17",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient17": {
+              "a": true,
+              "h": "Str Ingredient17",
+              "n": "strIngredient17",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient18",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient18": {
+              "a": true,
+              "h": "Str Ingredient18",
+              "n": "strIngredient18",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient19",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient19": {
+              "a": true,
+              "h": "Str Ingredient19",
+              "n": "strIngredient19",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient2",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient2": {
+              "a": true,
+              "h": "Str Ingredient2",
+              "n": "strIngredient2",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient20",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient20": {
+              "a": true,
+              "h": "Str Ingredient20",
+              "n": "strIngredient20",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient3",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient3": {
+              "a": true,
+              "h": "Str Ingredient3",
+              "n": "strIngredient3",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient4",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient4": {
+              "a": true,
+              "h": "Str Ingredient4",
+              "n": "strIngredient4",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient5",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient5": {
+              "a": true,
+              "h": "Str Ingredient5",
+              "n": "strIngredient5",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient6",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient6": {
+              "a": true,
+              "h": "Str Ingredient6",
+              "n": "strIngredient6",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient7",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient7": {
+              "a": true,
+              "h": "Str Ingredient7",
+              "n": "strIngredient7",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient8",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient8": {
+              "a": true,
+              "h": "Str Ingredient8",
+              "n": "strIngredient8",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient9",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient9": {
+              "a": true,
+              "h": "Str Ingredient9",
+              "n": "strIngredient9",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strInstructions",
-              "req": false,
-              "short": "Cooking instructions",
-              "type": "`$STRING`"
+            "strInstructions": {
+              "a": true,
+              "h": "Str Instructions",
+              "n": "strInstructions",
+              "r": false,
+              "sh": "Cooking instructions",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeal",
-              "req": false,
-              "short": "Meal name",
-              "type": "`$STRING`"
+            "strMeal": {
+              "a": true,
+              "h": "Str Meal",
+              "n": "strMeal",
+              "r": false,
+              "sh": "Meal name",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMealThumb",
-              "req": false,
-              "short": "URL to meal thumbnail image",
-              "type": "`$STRING`"
+            "strMealThumb": {
+              "a": true,
+              "h": "Str Meal Thumb",
+              "n": "strMealThumb",
+              "r": false,
+              "sh": "URL to meal thumbnail image",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure1",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure1": {
+              "a": true,
+              "h": "Str Measure1",
+              "n": "strMeasure1",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure10",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure10": {
+              "a": true,
+              "h": "Str Measure10",
+              "n": "strMeasure10",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure11",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure11": {
+              "a": true,
+              "h": "Str Measure11",
+              "n": "strMeasure11",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure12",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure12": {
+              "a": true,
+              "h": "Str Measure12",
+              "n": "strMeasure12",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure13",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure13": {
+              "a": true,
+              "h": "Str Measure13",
+              "n": "strMeasure13",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure14",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure14": {
+              "a": true,
+              "h": "Str Measure14",
+              "n": "strMeasure14",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure15",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure15": {
+              "a": true,
+              "h": "Str Measure15",
+              "n": "strMeasure15",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure16",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure16": {
+              "a": true,
+              "h": "Str Measure16",
+              "n": "strMeasure16",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure17",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure17": {
+              "a": true,
+              "h": "Str Measure17",
+              "n": "strMeasure17",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure18",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure18": {
+              "a": true,
+              "h": "Str Measure18",
+              "n": "strMeasure18",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure19",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure19": {
+              "a": true,
+              "h": "Str Measure19",
+              "n": "strMeasure19",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure2",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure2": {
+              "a": true,
+              "h": "Str Measure2",
+              "n": "strMeasure2",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure20",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure20": {
+              "a": true,
+              "h": "Str Measure20",
+              "n": "strMeasure20",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure3",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure3": {
+              "a": true,
+              "h": "Str Measure3",
+              "n": "strMeasure3",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure4",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure4": {
+              "a": true,
+              "h": "Str Measure4",
+              "n": "strMeasure4",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure5",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure5": {
+              "a": true,
+              "h": "Str Measure5",
+              "n": "strMeasure5",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure6",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure6": {
+              "a": true,
+              "h": "Str Measure6",
+              "n": "strMeasure6",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure7",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure7": {
+              "a": true,
+              "h": "Str Measure7",
+              "n": "strMeasure7",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure8",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure8": {
+              "a": true,
+              "h": "Str Measure8",
+              "n": "strMeasure8",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure9",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure9": {
+              "a": true,
+              "h": "Str Measure9",
+              "n": "strMeasure9",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strSource",
-              "req": false,
-              "type": "`$STRING`"
+            "strSource": {
+              "a": true,
+              "h": "Str Source",
+              "n": "strSource",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strTags",
-              "req": false,
-              "short": "Comma-separated tags",
-              "type": "`$STRING`"
+            "strTags": {
+              "a": true,
+              "h": "Str Tags",
+              "n": "strTags",
+              "r": false,
+              "sh": "Comma-separated tags",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strYoutube",
-              "req": false,
-              "short": "YouTube video URL",
-              "type": "`$STRING`"
+            "strYoutube": {
+              "a": true,
+              "h": "Str Youtube",
+              "n": "strYoutube",
+              "r": false,
+              "sh": "YouTube video URL",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "name": "random",
           "op": {
             "list": {
@@ -1384,24 +1619,24 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /random.php",
-                    "json": "{\"operationId\":\"getRandomMeal\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"meals\":{\"items\":{\"properties\":{\"dateModified\":{\"nullable\":true,\"type\":\"string\"},\"idMeal\":{\"description\":\"Unique meal identifier\",\"type\":\"string\"},\"strArea\":{\"description\":\"Meal area/region\",\"type\":\"string\"},\"strCategory\":{\"description\":\"Meal category\",\"type\":\"string\"},\"strCreativeCommonsConfirmed\":{\"nullable\":true,\"type\":\"string\"},\"strDrinkAlternate\":{\"nullable\":true,\"type\":\"string\"},\"strImageSource\":{\"nullable\":true,\"type\":\"string\"},\"strIngredient1\":{\"type\":\"string\"},\"strIngredient10\":{\"type\":\"string\"},\"strIngredient11\":{\"type\":\"string\"},\"strIngredient12\":{\"type\":\"string\"},\"strIngredient13\":{\"type\":\"string\"},\"strIngredient14\":{\"type\":\"string\"},\"strIngredient15\":{\"type\":\"string\"},\"strIngredient16\":{\"type\":\"string\"},\"strIngredient17\":{\"type\":\"string\"},\"strIngredient18\":{\"type\":\"string\"},\"strIngredient19\":{\"type\":\"string\"},\"strIngredient2\":{\"type\":\"string\"},\"strIngredient20\":{\"type\":\"string\"},\"strIngredient3\":{\"type\":\"string\"},\"strIngredient4\":{\"type\":\"string\"},\"strIngredient5\":{\"type\":\"string\"},\"strIngredient6\":{\"type\":\"string\"},\"strIngredient7\":{\"type\":\"string\"},\"strIngredient8\":{\"type\":\"string\"},\"strIngredient9\":{\"type\":\"string\"},\"strInstructions\":{\"description\":\"Cooking instructions\",\"type\":\"string\"},\"strMeal\":{\"description\":\"Meal name\",\"type\":\"string\"},\"strMealThumb\":{\"description\":\"URL to meal thumbnail image\",\"type\":\"string\"},\"strMeasure1\":{\"type\":\"string\"},\"strMeasure10\":{\"type\":\"string\"},\"strMeasure11\":{\"type\":\"string\"},\"strMeasure12\":{\"type\":\"string\"},\"strMeasure13\":{\"type\":\"string\"},\"strMeasure14\":{\"type\":\"string\"},\"strMeasure15\":{\"type\":\"string\"},\"strMeasure16\":{\"type\":\"string\"},\"strMeasure17\":{\"type\":\"string\"},\"strMeasure18\":{\"type\":\"string\"},\"strMeasure19\":{\"type\":\"string\"},\"strMeasure2\":{\"type\":\"string\"},\"strMeasure20\":{\"type\":\"string\"},\"strMeasure3\":{\"type\":\"string\"},\"strMeasure4\":{\"type\":\"string\"},\"strMeasure5\":{\"type\":\"string\"},\"strMeasure6\":{\"type\":\"string\"},\"strMeasure7\":{\"type\":\"string\"},\"strMeasure8\":{\"type\":\"string\"},\"strMeasure9\":{\"type\":\"string\"},\"strSource\":{\"nullable\":true,\"type\":\"string\"},\"strTags\":{\"description\":\"Comma-separated tags\",\"nullable\":true,\"type\":\"string\"},\"strYoutube\":{\"description\":\"YouTube video URL\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Successful response\"}},\"securitySchemes\":{\"ApiKeyAuth\":{\"description\":\"API key embedded in the URL path. Use '1' for testing, or get a premium key for production.\",\"in\":\"path\",\"name\":\"api_key\",\"type\":\"apiKey\"}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/random.php",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/random.php",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "random.php"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body.meals`"
                   }
@@ -1418,334 +1653,387 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "dateModified",
-              "req": false,
-              "type": "`$STRING`"
+          "fields": {
+            "dateModified": {
+              "a": true,
+              "h": "Date Modified",
+              "n": "dateModified",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "idMeal",
-              "req": false,
-              "short": "Unique meal identifier",
-              "type": "`$STRING`"
+            "idMeal": {
+              "a": true,
+              "h": "Id Meal",
+              "n": "idMeal",
+              "r": false,
+              "sh": "Unique meal identifier",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strArea",
-              "req": false,
-              "short": "Meal area/region",
-              "type": "`$STRING`"
+            "strArea": {
+              "a": true,
+              "h": "Str Area",
+              "n": "strArea",
+              "r": false,
+              "sh": "Meal area/region",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strCategory",
-              "req": false,
-              "short": "Meal category",
-              "type": "`$STRING`"
+            "strCategory": {
+              "a": true,
+              "h": "Str Category",
+              "n": "strCategory",
+              "r": false,
+              "sh": "Meal category",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strCreativeCommonsConfirmed",
-              "req": false,
-              "type": "`$STRING`"
+            "strCreativeCommonsConfirmed": {
+              "a": true,
+              "h": "Str Creative Commons Confirmed",
+              "n": "strCreativeCommonsConfirmed",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strDrinkAlternate",
-              "req": false,
-              "type": "`$STRING`"
+            "strDrinkAlternate": {
+              "a": true,
+              "h": "Str Drink Alternate",
+              "n": "strDrinkAlternate",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strImageSource",
-              "req": false,
-              "type": "`$STRING`"
+            "strImageSource": {
+              "a": true,
+              "h": "Str Image Source",
+              "n": "strImageSource",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient1",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient1": {
+              "a": true,
+              "h": "Str Ingredient1",
+              "n": "strIngredient1",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient10",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient10": {
+              "a": true,
+              "h": "Str Ingredient10",
+              "n": "strIngredient10",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient11",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient11": {
+              "a": true,
+              "h": "Str Ingredient11",
+              "n": "strIngredient11",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient12",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient12": {
+              "a": true,
+              "h": "Str Ingredient12",
+              "n": "strIngredient12",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient13",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient13": {
+              "a": true,
+              "h": "Str Ingredient13",
+              "n": "strIngredient13",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient14",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient14": {
+              "a": true,
+              "h": "Str Ingredient14",
+              "n": "strIngredient14",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient15",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient15": {
+              "a": true,
+              "h": "Str Ingredient15",
+              "n": "strIngredient15",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient16",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient16": {
+              "a": true,
+              "h": "Str Ingredient16",
+              "n": "strIngredient16",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient17",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient17": {
+              "a": true,
+              "h": "Str Ingredient17",
+              "n": "strIngredient17",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient18",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient18": {
+              "a": true,
+              "h": "Str Ingredient18",
+              "n": "strIngredient18",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient19",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient19": {
+              "a": true,
+              "h": "Str Ingredient19",
+              "n": "strIngredient19",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient2",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient2": {
+              "a": true,
+              "h": "Str Ingredient2",
+              "n": "strIngredient2",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient20",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient20": {
+              "a": true,
+              "h": "Str Ingredient20",
+              "n": "strIngredient20",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient3",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient3": {
+              "a": true,
+              "h": "Str Ingredient3",
+              "n": "strIngredient3",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient4",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient4": {
+              "a": true,
+              "h": "Str Ingredient4",
+              "n": "strIngredient4",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient5",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient5": {
+              "a": true,
+              "h": "Str Ingredient5",
+              "n": "strIngredient5",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient6",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient6": {
+              "a": true,
+              "h": "Str Ingredient6",
+              "n": "strIngredient6",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient7",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient7": {
+              "a": true,
+              "h": "Str Ingredient7",
+              "n": "strIngredient7",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient8",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient8": {
+              "a": true,
+              "h": "Str Ingredient8",
+              "n": "strIngredient8",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient9",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient9": {
+              "a": true,
+              "h": "Str Ingredient9",
+              "n": "strIngredient9",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strInstructions",
-              "req": false,
-              "short": "Cooking instructions",
-              "type": "`$STRING`"
+            "strInstructions": {
+              "a": true,
+              "h": "Str Instructions",
+              "n": "strInstructions",
+              "r": false,
+              "sh": "Cooking instructions",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeal",
-              "req": false,
-              "short": "Meal name",
-              "type": "`$STRING`"
+            "strMeal": {
+              "a": true,
+              "h": "Str Meal",
+              "n": "strMeal",
+              "r": false,
+              "sh": "Meal name",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMealThumb",
-              "req": false,
-              "short": "URL to meal thumbnail image",
-              "type": "`$STRING`"
+            "strMealThumb": {
+              "a": true,
+              "h": "Str Meal Thumb",
+              "n": "strMealThumb",
+              "r": false,
+              "sh": "URL to meal thumbnail image",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure1",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure1": {
+              "a": true,
+              "h": "Str Measure1",
+              "n": "strMeasure1",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure10",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure10": {
+              "a": true,
+              "h": "Str Measure10",
+              "n": "strMeasure10",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure11",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure11": {
+              "a": true,
+              "h": "Str Measure11",
+              "n": "strMeasure11",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure12",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure12": {
+              "a": true,
+              "h": "Str Measure12",
+              "n": "strMeasure12",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure13",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure13": {
+              "a": true,
+              "h": "Str Measure13",
+              "n": "strMeasure13",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure14",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure14": {
+              "a": true,
+              "h": "Str Measure14",
+              "n": "strMeasure14",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure15",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure15": {
+              "a": true,
+              "h": "Str Measure15",
+              "n": "strMeasure15",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure16",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure16": {
+              "a": true,
+              "h": "Str Measure16",
+              "n": "strMeasure16",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure17",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure17": {
+              "a": true,
+              "h": "Str Measure17",
+              "n": "strMeasure17",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure18",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure18": {
+              "a": true,
+              "h": "Str Measure18",
+              "n": "strMeasure18",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure19",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure19": {
+              "a": true,
+              "h": "Str Measure19",
+              "n": "strMeasure19",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure2",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure2": {
+              "a": true,
+              "h": "Str Measure2",
+              "n": "strMeasure2",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure20",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure20": {
+              "a": true,
+              "h": "Str Measure20",
+              "n": "strMeasure20",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure3",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure3": {
+              "a": true,
+              "h": "Str Measure3",
+              "n": "strMeasure3",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure4",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure4": {
+              "a": true,
+              "h": "Str Measure4",
+              "n": "strMeasure4",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure5",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure5": {
+              "a": true,
+              "h": "Str Measure5",
+              "n": "strMeasure5",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure6",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure6": {
+              "a": true,
+              "h": "Str Measure6",
+              "n": "strMeasure6",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure7",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure7": {
+              "a": true,
+              "h": "Str Measure7",
+              "n": "strMeasure7",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure8",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure8": {
+              "a": true,
+              "h": "Str Measure8",
+              "n": "strMeasure8",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure9",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure9": {
+              "a": true,
+              "h": "Str Measure9",
+              "n": "strMeasure9",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strSource",
-              "req": false,
-              "type": "`$STRING`"
+            "strSource": {
+              "a": true,
+              "h": "Str Source",
+              "n": "strSource",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strTags",
-              "req": false,
-              "short": "Comma-separated tags",
-              "type": "`$STRING`"
+            "strTags": {
+              "a": true,
+              "h": "Str Tags",
+              "n": "strTags",
+              "r": false,
+              "sh": "Comma-separated tags",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strYoutube",
-              "req": false,
-              "short": "YouTube video URL",
-              "type": "`$STRING`"
+            "strYoutube": {
+              "a": true,
+              "h": "Str Youtube",
+              "n": "strYoutube",
+              "r": false,
+              "sh": "YouTube video URL",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "name": "randomselection",
           "op": {
             "list": {
@@ -1753,24 +2041,24 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /randomselection.php",
-                    "json": "{\"operationId\":\"getRandomSelection\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"meals\":{\"items\":{\"properties\":{\"dateModified\":{\"nullable\":true,\"type\":\"string\"},\"idMeal\":{\"description\":\"Unique meal identifier\",\"type\":\"string\"},\"strArea\":{\"description\":\"Meal area/region\",\"type\":\"string\"},\"strCategory\":{\"description\":\"Meal category\",\"type\":\"string\"},\"strCreativeCommonsConfirmed\":{\"nullable\":true,\"type\":\"string\"},\"strDrinkAlternate\":{\"nullable\":true,\"type\":\"string\"},\"strImageSource\":{\"nullable\":true,\"type\":\"string\"},\"strIngredient1\":{\"type\":\"string\"},\"strIngredient10\":{\"type\":\"string\"},\"strIngredient11\":{\"type\":\"string\"},\"strIngredient12\":{\"type\":\"string\"},\"strIngredient13\":{\"type\":\"string\"},\"strIngredient14\":{\"type\":\"string\"},\"strIngredient15\":{\"type\":\"string\"},\"strIngredient16\":{\"type\":\"string\"},\"strIngredient17\":{\"type\":\"string\"},\"strIngredient18\":{\"type\":\"string\"},\"strIngredient19\":{\"type\":\"string\"},\"strIngredient2\":{\"type\":\"string\"},\"strIngredient20\":{\"type\":\"string\"},\"strIngredient3\":{\"type\":\"string\"},\"strIngredient4\":{\"type\":\"string\"},\"strIngredient5\":{\"type\":\"string\"},\"strIngredient6\":{\"type\":\"string\"},\"strIngredient7\":{\"type\":\"string\"},\"strIngredient8\":{\"type\":\"string\"},\"strIngredient9\":{\"type\":\"string\"},\"strInstructions\":{\"description\":\"Cooking instructions\",\"type\":\"string\"},\"strMeal\":{\"description\":\"Meal name\",\"type\":\"string\"},\"strMealThumb\":{\"description\":\"URL to meal thumbnail image\",\"type\":\"string\"},\"strMeasure1\":{\"type\":\"string\"},\"strMeasure10\":{\"type\":\"string\"},\"strMeasure11\":{\"type\":\"string\"},\"strMeasure12\":{\"type\":\"string\"},\"strMeasure13\":{\"type\":\"string\"},\"strMeasure14\":{\"type\":\"string\"},\"strMeasure15\":{\"type\":\"string\"},\"strMeasure16\":{\"type\":\"string\"},\"strMeasure17\":{\"type\":\"string\"},\"strMeasure18\":{\"type\":\"string\"},\"strMeasure19\":{\"type\":\"string\"},\"strMeasure2\":{\"type\":\"string\"},\"strMeasure20\":{\"type\":\"string\"},\"strMeasure3\":{\"type\":\"string\"},\"strMeasure4\":{\"type\":\"string\"},\"strMeasure5\":{\"type\":\"string\"},\"strMeasure6\":{\"type\":\"string\"},\"strMeasure7\":{\"type\":\"string\"},\"strMeasure8\":{\"type\":\"string\"},\"strMeasure9\":{\"type\":\"string\"},\"strSource\":{\"nullable\":true,\"type\":\"string\"},\"strTags\":{\"description\":\"Comma-separated tags\",\"nullable\":true,\"type\":\"string\"},\"strYoutube\":{\"description\":\"YouTube video URL\",\"type\":\"string\"}},\"type\":\"object\"},\"maxItems\":10,\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Successful response\"},\"403\":{\"description\":\"Forbidden - Premium API key required\"}},\"security\":[{\"ApiKeyAuth\":[]}],\"securitySchemes\":{\"ApiKeyAuth\":{\"description\":\"API key embedded in the URL path. Use '1' for testing, or get a premium key for production.\",\"in\":\"path\",\"name\":\"api_key\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/randomselection.php",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/randomselection.php",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "randomselection.php"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body.meals`"
                   }
@@ -1787,334 +2075,387 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "dateModified",
-              "req": false,
-              "type": "`$STRING`"
+          "fields": {
+            "dateModified": {
+              "a": true,
+              "h": "Date Modified",
+              "n": "dateModified",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "idMeal",
-              "req": false,
-              "short": "Unique meal identifier",
-              "type": "`$STRING`"
+            "idMeal": {
+              "a": true,
+              "h": "Id Meal",
+              "n": "idMeal",
+              "r": false,
+              "sh": "Unique meal identifier",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strArea",
-              "req": false,
-              "short": "Meal area/region",
-              "type": "`$STRING`"
+            "strArea": {
+              "a": true,
+              "h": "Str Area",
+              "n": "strArea",
+              "r": false,
+              "sh": "Meal area/region",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strCategory",
-              "req": false,
-              "short": "Meal category",
-              "type": "`$STRING`"
+            "strCategory": {
+              "a": true,
+              "h": "Str Category",
+              "n": "strCategory",
+              "r": false,
+              "sh": "Meal category",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strCreativeCommonsConfirmed",
-              "req": false,
-              "type": "`$STRING`"
+            "strCreativeCommonsConfirmed": {
+              "a": true,
+              "h": "Str Creative Commons Confirmed",
+              "n": "strCreativeCommonsConfirmed",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strDrinkAlternate",
-              "req": false,
-              "type": "`$STRING`"
+            "strDrinkAlternate": {
+              "a": true,
+              "h": "Str Drink Alternate",
+              "n": "strDrinkAlternate",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strImageSource",
-              "req": false,
-              "type": "`$STRING`"
+            "strImageSource": {
+              "a": true,
+              "h": "Str Image Source",
+              "n": "strImageSource",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient1",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient1": {
+              "a": true,
+              "h": "Str Ingredient1",
+              "n": "strIngredient1",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient10",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient10": {
+              "a": true,
+              "h": "Str Ingredient10",
+              "n": "strIngredient10",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient11",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient11": {
+              "a": true,
+              "h": "Str Ingredient11",
+              "n": "strIngredient11",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient12",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient12": {
+              "a": true,
+              "h": "Str Ingredient12",
+              "n": "strIngredient12",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient13",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient13": {
+              "a": true,
+              "h": "Str Ingredient13",
+              "n": "strIngredient13",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient14",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient14": {
+              "a": true,
+              "h": "Str Ingredient14",
+              "n": "strIngredient14",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient15",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient15": {
+              "a": true,
+              "h": "Str Ingredient15",
+              "n": "strIngredient15",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient16",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient16": {
+              "a": true,
+              "h": "Str Ingredient16",
+              "n": "strIngredient16",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient17",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient17": {
+              "a": true,
+              "h": "Str Ingredient17",
+              "n": "strIngredient17",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient18",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient18": {
+              "a": true,
+              "h": "Str Ingredient18",
+              "n": "strIngredient18",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient19",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient19": {
+              "a": true,
+              "h": "Str Ingredient19",
+              "n": "strIngredient19",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient2",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient2": {
+              "a": true,
+              "h": "Str Ingredient2",
+              "n": "strIngredient2",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient20",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient20": {
+              "a": true,
+              "h": "Str Ingredient20",
+              "n": "strIngredient20",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient3",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient3": {
+              "a": true,
+              "h": "Str Ingredient3",
+              "n": "strIngredient3",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient4",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient4": {
+              "a": true,
+              "h": "Str Ingredient4",
+              "n": "strIngredient4",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient5",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient5": {
+              "a": true,
+              "h": "Str Ingredient5",
+              "n": "strIngredient5",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient6",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient6": {
+              "a": true,
+              "h": "Str Ingredient6",
+              "n": "strIngredient6",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient7",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient7": {
+              "a": true,
+              "h": "Str Ingredient7",
+              "n": "strIngredient7",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient8",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient8": {
+              "a": true,
+              "h": "Str Ingredient8",
+              "n": "strIngredient8",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strIngredient9",
-              "req": false,
-              "type": "`$STRING`"
+            "strIngredient9": {
+              "a": true,
+              "h": "Str Ingredient9",
+              "n": "strIngredient9",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strInstructions",
-              "req": false,
-              "short": "Cooking instructions",
-              "type": "`$STRING`"
+            "strInstructions": {
+              "a": true,
+              "h": "Str Instructions",
+              "n": "strInstructions",
+              "r": false,
+              "sh": "Cooking instructions",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeal",
-              "req": false,
-              "short": "Meal name",
-              "type": "`$STRING`"
+            "strMeal": {
+              "a": true,
+              "h": "Str Meal",
+              "n": "strMeal",
+              "r": false,
+              "sh": "Meal name",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMealThumb",
-              "req": false,
-              "short": "URL to meal thumbnail image",
-              "type": "`$STRING`"
+            "strMealThumb": {
+              "a": true,
+              "h": "Str Meal Thumb",
+              "n": "strMealThumb",
+              "r": false,
+              "sh": "URL to meal thumbnail image",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure1",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure1": {
+              "a": true,
+              "h": "Str Measure1",
+              "n": "strMeasure1",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure10",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure10": {
+              "a": true,
+              "h": "Str Measure10",
+              "n": "strMeasure10",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure11",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure11": {
+              "a": true,
+              "h": "Str Measure11",
+              "n": "strMeasure11",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure12",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure12": {
+              "a": true,
+              "h": "Str Measure12",
+              "n": "strMeasure12",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure13",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure13": {
+              "a": true,
+              "h": "Str Measure13",
+              "n": "strMeasure13",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure14",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure14": {
+              "a": true,
+              "h": "Str Measure14",
+              "n": "strMeasure14",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure15",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure15": {
+              "a": true,
+              "h": "Str Measure15",
+              "n": "strMeasure15",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure16",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure16": {
+              "a": true,
+              "h": "Str Measure16",
+              "n": "strMeasure16",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure17",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure17": {
+              "a": true,
+              "h": "Str Measure17",
+              "n": "strMeasure17",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure18",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure18": {
+              "a": true,
+              "h": "Str Measure18",
+              "n": "strMeasure18",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure19",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure19": {
+              "a": true,
+              "h": "Str Measure19",
+              "n": "strMeasure19",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure2",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure2": {
+              "a": true,
+              "h": "Str Measure2",
+              "n": "strMeasure2",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure20",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure20": {
+              "a": true,
+              "h": "Str Measure20",
+              "n": "strMeasure20",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure3",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure3": {
+              "a": true,
+              "h": "Str Measure3",
+              "n": "strMeasure3",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure4",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure4": {
+              "a": true,
+              "h": "Str Measure4",
+              "n": "strMeasure4",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure5",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure5": {
+              "a": true,
+              "h": "Str Measure5",
+              "n": "strMeasure5",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure6",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure6": {
+              "a": true,
+              "h": "Str Measure6",
+              "n": "strMeasure6",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure7",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure7": {
+              "a": true,
+              "h": "Str Measure7",
+              "n": "strMeasure7",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure8",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure8": {
+              "a": true,
+              "h": "Str Measure8",
+              "n": "strMeasure8",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strMeasure9",
-              "req": false,
-              "type": "`$STRING`"
+            "strMeasure9": {
+              "a": true,
+              "h": "Str Measure9",
+              "n": "strMeasure9",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strSource",
-              "req": false,
-              "type": "`$STRING`"
+            "strSource": {
+              "a": true,
+              "h": "Str Source",
+              "n": "strSource",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strTags",
-              "req": false,
-              "short": "Comma-separated tags",
-              "type": "`$STRING`"
+            "strTags": {
+              "a": true,
+              "h": "Str Tags",
+              "n": "strTags",
+              "r": false,
+              "sh": "Comma-separated tags",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "strYoutube",
-              "req": false,
-              "short": "YouTube video URL",
-              "type": "`$STRING`"
+            "strYoutube": {
+              "a": true,
+              "h": "Str Youtube",
+              "n": "strYoutube",
+              "r": false,
+              "sh": "YouTube video URL",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "name": "search",
           "op": {
             "list": {
@@ -2122,50 +2463,50 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /search.php",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "example": "a",
-                        "kind": "query",
-                        "name": "f",
-                        "orig": "f",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "ex": "a",
+                        "k": "query",
+                        "n": "f",
+                        "or": "f",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "example": "Arrabiata",
-                        "kind": "query",
-                        "name": "s",
-                        "orig": "s",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "ex": "Arrabiata",
+                        "k": "query",
+                        "n": "s",
+                        "or": "s",
+                        "r": false,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /search.php",
-                    "json": "{\"operationId\":\"searchMeals\",\"parameters\":[{\"description\":\"Search meals by name\",\"in\":\"query\",\"name\":\"s\",\"required\":false,\"schema\":{\"example\":\"Arrabiata\",\"type\":\"string\"}},{\"description\":\"List all meals by first letter\",\"in\":\"query\",\"name\":\"f\",\"required\":false,\"schema\":{\"example\":\"a\",\"maxLength\":1,\"minLength\":1,\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"meals\":{\"items\":{\"properties\":{\"dateModified\":{\"nullable\":true,\"type\":\"string\"},\"idMeal\":{\"description\":\"Unique meal identifier\",\"type\":\"string\"},\"strArea\":{\"description\":\"Meal area/region\",\"type\":\"string\"},\"strCategory\":{\"description\":\"Meal category\",\"type\":\"string\"},\"strCreativeCommonsConfirmed\":{\"nullable\":true,\"type\":\"string\"},\"strDrinkAlternate\":{\"nullable\":true,\"type\":\"string\"},\"strImageSource\":{\"nullable\":true,\"type\":\"string\"},\"strIngredient1\":{\"type\":\"string\"},\"strIngredient10\":{\"type\":\"string\"},\"strIngredient11\":{\"type\":\"string\"},\"strIngredient12\":{\"type\":\"string\"},\"strIngredient13\":{\"type\":\"string\"},\"strIngredient14\":{\"type\":\"string\"},\"strIngredient15\":{\"type\":\"string\"},\"strIngredient16\":{\"type\":\"string\"},\"strIngredient17\":{\"type\":\"string\"},\"strIngredient18\":{\"type\":\"string\"},\"strIngredient19\":{\"type\":\"string\"},\"strIngredient2\":{\"type\":\"string\"},\"strIngredient20\":{\"type\":\"string\"},\"strIngredient3\":{\"type\":\"string\"},\"strIngredient4\":{\"type\":\"string\"},\"strIngredient5\":{\"type\":\"string\"},\"strIngredient6\":{\"type\":\"string\"},\"strIngredient7\":{\"type\":\"string\"},\"strIngredient8\":{\"type\":\"string\"},\"strIngredient9\":{\"type\":\"string\"},\"strInstructions\":{\"description\":\"Cooking instructions\",\"type\":\"string\"},\"strMeal\":{\"description\":\"Meal name\",\"type\":\"string\"},\"strMealThumb\":{\"description\":\"URL to meal thumbnail image\",\"type\":\"string\"},\"strMeasure1\":{\"type\":\"string\"},\"strMeasure10\":{\"type\":\"string\"},\"strMeasure11\":{\"type\":\"string\"},\"strMeasure12\":{\"type\":\"string\"},\"strMeasure13\":{\"type\":\"string\"},\"strMeasure14\":{\"type\":\"string\"},\"strMeasure15\":{\"type\":\"string\"},\"strMeasure16\":{\"type\":\"string\"},\"strMeasure17\":{\"type\":\"string\"},\"strMeasure18\":{\"type\":\"string\"},\"strMeasure19\":{\"type\":\"string\"},\"strMeasure2\":{\"type\":\"string\"},\"strMeasure20\":{\"type\":\"string\"},\"strMeasure3\":{\"type\":\"string\"},\"strMeasure4\":{\"type\":\"string\"},\"strMeasure5\":{\"type\":\"string\"},\"strMeasure6\":{\"type\":\"string\"},\"strMeasure7\":{\"type\":\"string\"},\"strMeasure8\":{\"type\":\"string\"},\"strMeasure9\":{\"type\":\"string\"},\"strSource\":{\"nullable\":true,\"type\":\"string\"},\"strTags\":{\"description\":\"Comma-separated tags\",\"nullable\":true,\"type\":\"string\"},\"strYoutube\":{\"description\":\"YouTube video URL\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Successful response\"}},\"securitySchemes\":{\"ApiKeyAuth\":{\"description\":\"API key embedded in the URL path. Use '1' for testing, or get a premium key for production.\",\"in\":\"path\",\"name\":\"api_key\",\"type\":\"apiKey\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
-                  },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/search.php",
-                  "segments": [
-                    {
-                      "lit": "search.php"
-                    }
-                  ],
-                  "select": {
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/search.php",
+                  "q": {
                     "exist": [
                       "f",
                       "s"
                     ]
                   },
-                  "transform": {
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "search.php"
+                    }
+                  ],
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body.meals`"
                   }
@@ -2594,13 +2935,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {
@@ -2620,13 +2961,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {
@@ -2646,13 +2987,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {
@@ -2672,13 +3013,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {
@@ -2698,13 +3039,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {
@@ -2724,13 +3065,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {
@@ -2750,13 +3091,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {
@@ -2776,13 +3117,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {

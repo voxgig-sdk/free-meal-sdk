@@ -103,23 +103,27 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "idCategory",
-						"short": "Unique category identifier",
+						"title": "Id Category",
 						"type": "`$STRING`",
+						"short": "Unique category identifier",
 					},
 					map[string]any{
 						"name": "strCategory",
-						"short": "Category name",
+						"title": "Str Category",
 						"type": "`$STRING`",
+						"short": "Category name",
 					},
 					map[string]any{
 						"name": "strCategoryDescription",
-						"short": "Category description",
+						"title": "Str Category Description",
 						"type": "`$STRING`",
+						"short": "Category description",
 					},
 					map[string]any{
 						"name": "strCategoryThumb",
-						"short": "URL to category thumbnail image",
+						"title": "Str Category Thumb",
 						"type": "`$STRING`",
+						"short": "URL to category thumbnail image",
 					},
 				},
 				"name": "category",
@@ -129,7 +133,6 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/categories.php",
@@ -138,14 +141,16 @@ func MakeConfig() map[string]any {
 										"lit": "categories.php",
 									},
 								},
-								"select": map[string]any{},
+								"parts": []any{
+									"categories.php",
+								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body.categories`",
 								},
-								"parts": []any{
-									"categories.php",
-								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -158,18 +163,21 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "idMeal",
-						"short": "Unique meal identifier",
+						"title": "Id Meal",
 						"type": "`$STRING`",
+						"short": "Unique meal identifier",
 					},
 					map[string]any{
 						"name": "strMeal",
-						"short": "Meal name",
+						"title": "Str Meal",
 						"type": "`$STRING`",
+						"short": "Meal name",
 					},
 					map[string]any{
 						"name": "strMealThumb",
-						"short": "URL to meal thumbnail image",
+						"title": "Str Meal Thumb",
 						"type": "`$STRING`",
+						"short": "URL to meal thumbnail image",
 					},
 				},
 				"name": "filter",
@@ -179,31 +187,6 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"example": "Canadian",
-											"kind": "query",
-											"name": "a",
-											"orig": "a",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": "Seafood",
-											"kind": "query",
-											"name": "c",
-											"orig": "c",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": "chicken_breast",
-											"kind": "query",
-											"name": "i",
-											"orig": "i",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/filter.php",
@@ -212,19 +195,45 @@ func MakeConfig() map[string]any {
 										"lit": "filter.php",
 									},
 								},
+								"parts": []any{
+									"filter.php",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body.meals`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "a",
+											"orig": "a",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "Canadian",
+										},
+										map[string]any{
+											"name": "c",
+											"orig": "c",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "Seafood",
+										},
+										map[string]any{
+											"name": "i",
+											"orig": "i",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "chicken_breast",
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"a",
 										"c",
 										"i",
 									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body.meals`",
-								},
-								"parts": []any{
-									"filter.php",
 								},
 							},
 						},
@@ -238,223 +247,276 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "dateModified",
+						"title": "Date Modified",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "idMeal",
-						"short": "Unique meal identifier",
+						"title": "Id Meal",
 						"type": "`$STRING`",
+						"short": "Unique meal identifier",
 					},
 					map[string]any{
 						"name": "strArea",
-						"short": "Meal area/region",
+						"title": "Str Area",
 						"type": "`$STRING`",
+						"short": "Meal area/region",
 					},
 					map[string]any{
 						"name": "strCategory",
-						"short": "Meal category",
+						"title": "Str Category",
 						"type": "`$STRING`",
+						"short": "Meal category",
 					},
 					map[string]any{
 						"name": "strCreativeCommonsConfirmed",
+						"title": "Str Creative Commons Confirmed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strDrinkAlternate",
+						"title": "Str Drink Alternate",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strImageSource",
+						"title": "Str Image Source",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient1",
+						"title": "Str Ingredient1",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient10",
+						"title": "Str Ingredient10",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient11",
+						"title": "Str Ingredient11",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient12",
+						"title": "Str Ingredient12",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient13",
+						"title": "Str Ingredient13",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient14",
+						"title": "Str Ingredient14",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient15",
+						"title": "Str Ingredient15",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient16",
+						"title": "Str Ingredient16",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient17",
+						"title": "Str Ingredient17",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient18",
+						"title": "Str Ingredient18",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient19",
+						"title": "Str Ingredient19",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient2",
+						"title": "Str Ingredient2",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient20",
+						"title": "Str Ingredient20",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient3",
+						"title": "Str Ingredient3",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient4",
+						"title": "Str Ingredient4",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient5",
+						"title": "Str Ingredient5",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient6",
+						"title": "Str Ingredient6",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient7",
+						"title": "Str Ingredient7",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient8",
+						"title": "Str Ingredient8",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient9",
+						"title": "Str Ingredient9",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strInstructions",
-						"short": "Cooking instructions",
+						"title": "Str Instructions",
 						"type": "`$STRING`",
+						"short": "Cooking instructions",
 					},
 					map[string]any{
 						"name": "strMeal",
-						"short": "Meal name",
+						"title": "Str Meal",
 						"type": "`$STRING`",
+						"short": "Meal name",
 					},
 					map[string]any{
 						"name": "strMealThumb",
-						"short": "URL to meal thumbnail image",
+						"title": "Str Meal Thumb",
 						"type": "`$STRING`",
+						"short": "URL to meal thumbnail image",
 					},
 					map[string]any{
 						"name": "strMeasure1",
+						"title": "Str Measure1",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure10",
+						"title": "Str Measure10",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure11",
+						"title": "Str Measure11",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure12",
+						"title": "Str Measure12",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure13",
+						"title": "Str Measure13",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure14",
+						"title": "Str Measure14",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure15",
+						"title": "Str Measure15",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure16",
+						"title": "Str Measure16",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure17",
+						"title": "Str Measure17",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure18",
+						"title": "Str Measure18",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure19",
+						"title": "Str Measure19",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure2",
+						"title": "Str Measure2",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure20",
+						"title": "Str Measure20",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure3",
+						"title": "Str Measure3",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure4",
+						"title": "Str Measure4",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure5",
+						"title": "Str Measure5",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure6",
+						"title": "Str Measure6",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure7",
+						"title": "Str Measure7",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure8",
+						"title": "Str Measure8",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure9",
+						"title": "Str Measure9",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strSource",
+						"title": "Str Source",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strTags",
-						"short": "Comma-separated tags",
+						"title": "Str Tags",
 						"type": "`$STRING`",
+						"short": "Comma-separated tags",
 					},
 					map[string]any{
 						"name": "strYoutube",
-						"short": "YouTube video URL",
+						"title": "Str Youtube",
 						"type": "`$STRING`",
+						"short": "YouTube video URL",
 					},
 				},
 				"name": "latest",
@@ -464,7 +526,6 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/latest.php",
@@ -473,14 +534,16 @@ func MakeConfig() map[string]any {
 										"lit": "latest.php",
 									},
 								},
-								"select": map[string]any{},
+								"parts": []any{
+									"latest.php",
+								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body.meals`",
 								},
-								"parts": []any{
-									"latest.php",
-								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -493,14 +556,17 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "strArea",
+						"title": "Str Area",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strCategory",
+						"title": "Str Category",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient",
+						"title": "Str Ingredient",
 						"type": "`$STRING`",
 					},
 				},
@@ -511,28 +577,6 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"kind": "query",
-											"name": "a",
-											"orig": "a",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "c",
-											"orig": "c",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "i",
-											"orig": "i",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/list.php",
@@ -541,19 +585,42 @@ func MakeConfig() map[string]any {
 										"lit": "list.php",
 									},
 								},
+								"parts": []any{
+									"list.php",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body.meals`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "a",
+											"orig": "a",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "c",
+											"orig": "c",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "i",
+											"orig": "i",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"a",
 										"c",
 										"i",
 									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body.meals`",
-								},
-								"parts": []any{
-									"list.php",
 								},
 							},
 						},
@@ -567,223 +634,276 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "dateModified",
+						"title": "Date Modified",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "idMeal",
-						"short": "Unique meal identifier",
+						"title": "Id Meal",
 						"type": "`$STRING`",
+						"short": "Unique meal identifier",
 					},
 					map[string]any{
 						"name": "strArea",
-						"short": "Meal area/region",
+						"title": "Str Area",
 						"type": "`$STRING`",
+						"short": "Meal area/region",
 					},
 					map[string]any{
 						"name": "strCategory",
-						"short": "Meal category",
+						"title": "Str Category",
 						"type": "`$STRING`",
+						"short": "Meal category",
 					},
 					map[string]any{
 						"name": "strCreativeCommonsConfirmed",
+						"title": "Str Creative Commons Confirmed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strDrinkAlternate",
+						"title": "Str Drink Alternate",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strImageSource",
+						"title": "Str Image Source",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient1",
+						"title": "Str Ingredient1",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient10",
+						"title": "Str Ingredient10",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient11",
+						"title": "Str Ingredient11",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient12",
+						"title": "Str Ingredient12",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient13",
+						"title": "Str Ingredient13",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient14",
+						"title": "Str Ingredient14",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient15",
+						"title": "Str Ingredient15",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient16",
+						"title": "Str Ingredient16",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient17",
+						"title": "Str Ingredient17",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient18",
+						"title": "Str Ingredient18",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient19",
+						"title": "Str Ingredient19",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient2",
+						"title": "Str Ingredient2",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient20",
+						"title": "Str Ingredient20",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient3",
+						"title": "Str Ingredient3",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient4",
+						"title": "Str Ingredient4",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient5",
+						"title": "Str Ingredient5",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient6",
+						"title": "Str Ingredient6",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient7",
+						"title": "Str Ingredient7",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient8",
+						"title": "Str Ingredient8",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient9",
+						"title": "Str Ingredient9",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strInstructions",
-						"short": "Cooking instructions",
+						"title": "Str Instructions",
 						"type": "`$STRING`",
+						"short": "Cooking instructions",
 					},
 					map[string]any{
 						"name": "strMeal",
-						"short": "Meal name",
+						"title": "Str Meal",
 						"type": "`$STRING`",
+						"short": "Meal name",
 					},
 					map[string]any{
 						"name": "strMealThumb",
-						"short": "URL to meal thumbnail image",
+						"title": "Str Meal Thumb",
 						"type": "`$STRING`",
+						"short": "URL to meal thumbnail image",
 					},
 					map[string]any{
 						"name": "strMeasure1",
+						"title": "Str Measure1",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure10",
+						"title": "Str Measure10",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure11",
+						"title": "Str Measure11",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure12",
+						"title": "Str Measure12",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure13",
+						"title": "Str Measure13",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure14",
+						"title": "Str Measure14",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure15",
+						"title": "Str Measure15",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure16",
+						"title": "Str Measure16",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure17",
+						"title": "Str Measure17",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure18",
+						"title": "Str Measure18",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure19",
+						"title": "Str Measure19",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure2",
+						"title": "Str Measure2",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure20",
+						"title": "Str Measure20",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure3",
+						"title": "Str Measure3",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure4",
+						"title": "Str Measure4",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure5",
+						"title": "Str Measure5",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure6",
+						"title": "Str Measure6",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure7",
+						"title": "Str Measure7",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure8",
+						"title": "Str Measure8",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure9",
+						"title": "Str Measure9",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strSource",
+						"title": "Str Source",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strTags",
-						"short": "Comma-separated tags",
+						"title": "Str Tags",
 						"type": "`$STRING`",
+						"short": "Comma-separated tags",
 					},
 					map[string]any{
 						"name": "strYoutube",
-						"short": "YouTube video URL",
+						"title": "Str Youtube",
 						"type": "`$STRING`",
+						"short": "YouTube video URL",
 					},
 				},
 				"name": "lookup",
@@ -793,18 +913,6 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"example": "52772",
-											"kind": "query",
-											"name": "i",
-											"orig": "i",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/lookup.php",
@@ -813,17 +921,30 @@ func MakeConfig() map[string]any {
 										"lit": "lookup.php",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"i",
-									},
+								"parts": []any{
+									"lookup.php",
 								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body.meals`",
 								},
-								"parts": []any{
-									"lookup.php",
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "i",
+											"orig": "i",
+											"type": "`$STRING`",
+											"kind": "query",
+											"reqd": true,
+											"example": "52772",
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"i",
+									},
 								},
 							},
 						},
@@ -837,223 +958,276 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "dateModified",
+						"title": "Date Modified",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "idMeal",
-						"short": "Unique meal identifier",
+						"title": "Id Meal",
 						"type": "`$STRING`",
+						"short": "Unique meal identifier",
 					},
 					map[string]any{
 						"name": "strArea",
-						"short": "Meal area/region",
+						"title": "Str Area",
 						"type": "`$STRING`",
+						"short": "Meal area/region",
 					},
 					map[string]any{
 						"name": "strCategory",
-						"short": "Meal category",
+						"title": "Str Category",
 						"type": "`$STRING`",
+						"short": "Meal category",
 					},
 					map[string]any{
 						"name": "strCreativeCommonsConfirmed",
+						"title": "Str Creative Commons Confirmed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strDrinkAlternate",
+						"title": "Str Drink Alternate",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strImageSource",
+						"title": "Str Image Source",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient1",
+						"title": "Str Ingredient1",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient10",
+						"title": "Str Ingredient10",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient11",
+						"title": "Str Ingredient11",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient12",
+						"title": "Str Ingredient12",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient13",
+						"title": "Str Ingredient13",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient14",
+						"title": "Str Ingredient14",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient15",
+						"title": "Str Ingredient15",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient16",
+						"title": "Str Ingredient16",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient17",
+						"title": "Str Ingredient17",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient18",
+						"title": "Str Ingredient18",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient19",
+						"title": "Str Ingredient19",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient2",
+						"title": "Str Ingredient2",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient20",
+						"title": "Str Ingredient20",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient3",
+						"title": "Str Ingredient3",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient4",
+						"title": "Str Ingredient4",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient5",
+						"title": "Str Ingredient5",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient6",
+						"title": "Str Ingredient6",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient7",
+						"title": "Str Ingredient7",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient8",
+						"title": "Str Ingredient8",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient9",
+						"title": "Str Ingredient9",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strInstructions",
-						"short": "Cooking instructions",
+						"title": "Str Instructions",
 						"type": "`$STRING`",
+						"short": "Cooking instructions",
 					},
 					map[string]any{
 						"name": "strMeal",
-						"short": "Meal name",
+						"title": "Str Meal",
 						"type": "`$STRING`",
+						"short": "Meal name",
 					},
 					map[string]any{
 						"name": "strMealThumb",
-						"short": "URL to meal thumbnail image",
+						"title": "Str Meal Thumb",
 						"type": "`$STRING`",
+						"short": "URL to meal thumbnail image",
 					},
 					map[string]any{
 						"name": "strMeasure1",
+						"title": "Str Measure1",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure10",
+						"title": "Str Measure10",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure11",
+						"title": "Str Measure11",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure12",
+						"title": "Str Measure12",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure13",
+						"title": "Str Measure13",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure14",
+						"title": "Str Measure14",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure15",
+						"title": "Str Measure15",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure16",
+						"title": "Str Measure16",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure17",
+						"title": "Str Measure17",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure18",
+						"title": "Str Measure18",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure19",
+						"title": "Str Measure19",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure2",
+						"title": "Str Measure2",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure20",
+						"title": "Str Measure20",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure3",
+						"title": "Str Measure3",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure4",
+						"title": "Str Measure4",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure5",
+						"title": "Str Measure5",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure6",
+						"title": "Str Measure6",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure7",
+						"title": "Str Measure7",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure8",
+						"title": "Str Measure8",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure9",
+						"title": "Str Measure9",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strSource",
+						"title": "Str Source",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strTags",
-						"short": "Comma-separated tags",
+						"title": "Str Tags",
 						"type": "`$STRING`",
+						"short": "Comma-separated tags",
 					},
 					map[string]any{
 						"name": "strYoutube",
-						"short": "YouTube video URL",
+						"title": "Str Youtube",
 						"type": "`$STRING`",
+						"short": "YouTube video URL",
 					},
 				},
 				"name": "random",
@@ -1063,7 +1237,6 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/random.php",
@@ -1072,14 +1245,16 @@ func MakeConfig() map[string]any {
 										"lit": "random.php",
 									},
 								},
-								"select": map[string]any{},
+								"parts": []any{
+									"random.php",
+								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body.meals`",
 								},
-								"parts": []any{
-									"random.php",
-								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -1092,223 +1267,276 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "dateModified",
+						"title": "Date Modified",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "idMeal",
-						"short": "Unique meal identifier",
+						"title": "Id Meal",
 						"type": "`$STRING`",
+						"short": "Unique meal identifier",
 					},
 					map[string]any{
 						"name": "strArea",
-						"short": "Meal area/region",
+						"title": "Str Area",
 						"type": "`$STRING`",
+						"short": "Meal area/region",
 					},
 					map[string]any{
 						"name": "strCategory",
-						"short": "Meal category",
+						"title": "Str Category",
 						"type": "`$STRING`",
+						"short": "Meal category",
 					},
 					map[string]any{
 						"name": "strCreativeCommonsConfirmed",
+						"title": "Str Creative Commons Confirmed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strDrinkAlternate",
+						"title": "Str Drink Alternate",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strImageSource",
+						"title": "Str Image Source",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient1",
+						"title": "Str Ingredient1",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient10",
+						"title": "Str Ingredient10",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient11",
+						"title": "Str Ingredient11",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient12",
+						"title": "Str Ingredient12",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient13",
+						"title": "Str Ingredient13",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient14",
+						"title": "Str Ingredient14",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient15",
+						"title": "Str Ingredient15",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient16",
+						"title": "Str Ingredient16",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient17",
+						"title": "Str Ingredient17",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient18",
+						"title": "Str Ingredient18",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient19",
+						"title": "Str Ingredient19",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient2",
+						"title": "Str Ingredient2",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient20",
+						"title": "Str Ingredient20",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient3",
+						"title": "Str Ingredient3",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient4",
+						"title": "Str Ingredient4",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient5",
+						"title": "Str Ingredient5",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient6",
+						"title": "Str Ingredient6",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient7",
+						"title": "Str Ingredient7",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient8",
+						"title": "Str Ingredient8",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient9",
+						"title": "Str Ingredient9",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strInstructions",
-						"short": "Cooking instructions",
+						"title": "Str Instructions",
 						"type": "`$STRING`",
+						"short": "Cooking instructions",
 					},
 					map[string]any{
 						"name": "strMeal",
-						"short": "Meal name",
+						"title": "Str Meal",
 						"type": "`$STRING`",
+						"short": "Meal name",
 					},
 					map[string]any{
 						"name": "strMealThumb",
-						"short": "URL to meal thumbnail image",
+						"title": "Str Meal Thumb",
 						"type": "`$STRING`",
+						"short": "URL to meal thumbnail image",
 					},
 					map[string]any{
 						"name": "strMeasure1",
+						"title": "Str Measure1",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure10",
+						"title": "Str Measure10",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure11",
+						"title": "Str Measure11",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure12",
+						"title": "Str Measure12",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure13",
+						"title": "Str Measure13",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure14",
+						"title": "Str Measure14",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure15",
+						"title": "Str Measure15",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure16",
+						"title": "Str Measure16",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure17",
+						"title": "Str Measure17",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure18",
+						"title": "Str Measure18",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure19",
+						"title": "Str Measure19",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure2",
+						"title": "Str Measure2",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure20",
+						"title": "Str Measure20",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure3",
+						"title": "Str Measure3",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure4",
+						"title": "Str Measure4",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure5",
+						"title": "Str Measure5",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure6",
+						"title": "Str Measure6",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure7",
+						"title": "Str Measure7",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure8",
+						"title": "Str Measure8",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure9",
+						"title": "Str Measure9",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strSource",
+						"title": "Str Source",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strTags",
-						"short": "Comma-separated tags",
+						"title": "Str Tags",
 						"type": "`$STRING`",
+						"short": "Comma-separated tags",
 					},
 					map[string]any{
 						"name": "strYoutube",
-						"short": "YouTube video URL",
+						"title": "Str Youtube",
 						"type": "`$STRING`",
+						"short": "YouTube video URL",
 					},
 				},
 				"name": "randomselection",
@@ -1318,7 +1546,6 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/randomselection.php",
@@ -1327,14 +1554,16 @@ func MakeConfig() map[string]any {
 										"lit": "randomselection.php",
 									},
 								},
-								"select": map[string]any{},
+								"parts": []any{
+									"randomselection.php",
+								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body.meals`",
 								},
-								"parts": []any{
-									"randomselection.php",
-								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -1347,223 +1576,276 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "dateModified",
+						"title": "Date Modified",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "idMeal",
-						"short": "Unique meal identifier",
+						"title": "Id Meal",
 						"type": "`$STRING`",
+						"short": "Unique meal identifier",
 					},
 					map[string]any{
 						"name": "strArea",
-						"short": "Meal area/region",
+						"title": "Str Area",
 						"type": "`$STRING`",
+						"short": "Meal area/region",
 					},
 					map[string]any{
 						"name": "strCategory",
-						"short": "Meal category",
+						"title": "Str Category",
 						"type": "`$STRING`",
+						"short": "Meal category",
 					},
 					map[string]any{
 						"name": "strCreativeCommonsConfirmed",
+						"title": "Str Creative Commons Confirmed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strDrinkAlternate",
+						"title": "Str Drink Alternate",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strImageSource",
+						"title": "Str Image Source",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient1",
+						"title": "Str Ingredient1",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient10",
+						"title": "Str Ingredient10",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient11",
+						"title": "Str Ingredient11",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient12",
+						"title": "Str Ingredient12",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient13",
+						"title": "Str Ingredient13",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient14",
+						"title": "Str Ingredient14",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient15",
+						"title": "Str Ingredient15",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient16",
+						"title": "Str Ingredient16",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient17",
+						"title": "Str Ingredient17",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient18",
+						"title": "Str Ingredient18",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient19",
+						"title": "Str Ingredient19",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient2",
+						"title": "Str Ingredient2",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient20",
+						"title": "Str Ingredient20",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient3",
+						"title": "Str Ingredient3",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient4",
+						"title": "Str Ingredient4",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient5",
+						"title": "Str Ingredient5",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient6",
+						"title": "Str Ingredient6",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient7",
+						"title": "Str Ingredient7",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient8",
+						"title": "Str Ingredient8",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strIngredient9",
+						"title": "Str Ingredient9",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strInstructions",
-						"short": "Cooking instructions",
+						"title": "Str Instructions",
 						"type": "`$STRING`",
+						"short": "Cooking instructions",
 					},
 					map[string]any{
 						"name": "strMeal",
-						"short": "Meal name",
+						"title": "Str Meal",
 						"type": "`$STRING`",
+						"short": "Meal name",
 					},
 					map[string]any{
 						"name": "strMealThumb",
-						"short": "URL to meal thumbnail image",
+						"title": "Str Meal Thumb",
 						"type": "`$STRING`",
+						"short": "URL to meal thumbnail image",
 					},
 					map[string]any{
 						"name": "strMeasure1",
+						"title": "Str Measure1",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure10",
+						"title": "Str Measure10",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure11",
+						"title": "Str Measure11",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure12",
+						"title": "Str Measure12",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure13",
+						"title": "Str Measure13",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure14",
+						"title": "Str Measure14",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure15",
+						"title": "Str Measure15",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure16",
+						"title": "Str Measure16",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure17",
+						"title": "Str Measure17",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure18",
+						"title": "Str Measure18",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure19",
+						"title": "Str Measure19",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure2",
+						"title": "Str Measure2",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure20",
+						"title": "Str Measure20",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure3",
+						"title": "Str Measure3",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure4",
+						"title": "Str Measure4",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure5",
+						"title": "Str Measure5",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure6",
+						"title": "Str Measure6",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure7",
+						"title": "Str Measure7",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure8",
+						"title": "Str Measure8",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strMeasure9",
+						"title": "Str Measure9",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strSource",
+						"title": "Str Source",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "strTags",
-						"short": "Comma-separated tags",
+						"title": "Str Tags",
 						"type": "`$STRING`",
+						"short": "Comma-separated tags",
 					},
 					map[string]any{
 						"name": "strYoutube",
-						"short": "YouTube video URL",
+						"title": "Str Youtube",
 						"type": "`$STRING`",
+						"short": "YouTube video URL",
 					},
 				},
 				"name": "search",
@@ -1573,24 +1855,6 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"example": "a",
-											"kind": "query",
-											"name": "f",
-											"orig": "f",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": "Arrabiata",
-											"kind": "query",
-											"name": "s",
-											"orig": "s",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/search.php",
@@ -1599,18 +1863,37 @@ func MakeConfig() map[string]any {
 										"lit": "search.php",
 									},
 								},
+								"parts": []any{
+									"search.php",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body.meals`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "f",
+											"orig": "f",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "a",
+										},
+										map[string]any{
+											"name": "s",
+											"orig": "s",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "Arrabiata",
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"f",
 										"s",
 									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body.meals`",
-								},
-								"parts": []any{
-									"search.php",
 								},
 							},
 						},

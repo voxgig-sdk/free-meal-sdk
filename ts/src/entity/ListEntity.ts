@@ -19,7 +19,6 @@ import type {
   ListListMatch,
 } from '../FreeMealTypes'
 
-// TODO: needs Entity superclass
 class ListEntity extends FreeMealEntityBase<List> {
 
   constructor(client: FreeMealSDK, entopts: any) {

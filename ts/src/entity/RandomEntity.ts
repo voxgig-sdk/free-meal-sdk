@@ -19,7 +19,6 @@ import type {
   RandomListMatch,
 } from '../FreeMealTypes'
 
-// TODO: needs Entity superclass
 class RandomEntity extends FreeMealEntityBase<Random> {
 
   constructor(client: FreeMealSDK, entopts: any) {

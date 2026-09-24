@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RandomselectionEntity = void 0;
 const FreeMealEntityBase_1 = require("../FreeMealEntityBase");
-// TODO: needs Entity superclass
 class RandomselectionEntity extends FreeMealEntityBase_1.FreeMealEntityBase {
     constructor(client, entopts) {
         super(client, entopts);

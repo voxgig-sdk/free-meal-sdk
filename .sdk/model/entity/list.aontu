@@ -1,0 +1,89 @@
+# Entity: list
+
+main: kit: entity: list: {
+
+  alias: field: {}
+
+  fields: {
+    strArea: {
+      h: "Str Area"
+      n: "strArea"
+      r: false
+      t: "`$STRING`"
+    }
+    strCategory: {
+      h: "Str Category"
+      n: "strCategory"
+      r: false
+      t: "`$STRING`"
+    }
+    strIngredient: {
+      h: "Str Ingredient"
+      n: "strIngredient"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  name: "list"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /list.php"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "a"
+                or: "a"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "c"
+                or: "c"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "i"
+                or: "i"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/list.php"
+          q: {
+            exist: [
+              "a"
+              "c"
+              "i"
+            ]
+          }
+          s: [
+            {
+              lit: "list.php"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.meals`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

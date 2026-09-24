@@ -1,0 +1,67 @@
+# Entity: category
+
+main: kit: entity: category: {
+
+  alias: field: {}
+
+  fields: {
+    idCategory: {
+      h: "Id Category"
+      n: "idCategory"
+      r: false
+      sh: "Unique category identifier"
+      t: "`$STRING`"
+    }
+    strCategory: {
+      h: "Str Category"
+      n: "strCategory"
+      r: false
+      sh: "Category name"
+      t: "`$STRING`"
+    }
+    strCategoryDescription: {
+      h: "Str Category Description"
+      n: "strCategoryDescription"
+      r: false
+      sh: "Category description"
+      t: "`$STRING`"
+    }
+    strCategoryThumb: {
+      h: "Str Category Thumb"
+      n: "strCategoryThumb"
+      r: false
+      sh: "URL to category thumbnail image"
+      t: "`$STRING`"
+    }
+  }
+
+  name: "category"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /categories.php"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/categories.php"
+          s: [
+            {
+              lit: "categories.php"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.categories`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

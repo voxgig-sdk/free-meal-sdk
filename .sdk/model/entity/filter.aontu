@@ -1,0 +1,95 @@
+# Entity: filter
+
+main: kit: entity: filter: {
+
+  alias: field: {}
+
+  fields: {
+    idMeal: {
+      h: "Id Meal"
+      n: "idMeal"
+      r: false
+      sh: "Unique meal identifier"
+      t: "`$STRING`"
+    }
+    strMeal: {
+      h: "Str Meal"
+      n: "strMeal"
+      r: false
+      sh: "Meal name"
+      t: "`$STRING`"
+    }
+    strMealThumb: {
+      h: "Str Meal Thumb"
+      n: "strMealThumb"
+      r: false
+      sh: "URL to meal thumbnail image"
+      t: "`$STRING`"
+    }
+  }
+
+  name: "filter"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /filter.php"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "Canadian"
+                k: "query"
+                n: "a"
+                or: "a"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "Seafood"
+                k: "query"
+                n: "c"
+                or: "c"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "chicken_breast"
+                k: "query"
+                n: "i"
+                or: "i"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/filter.php"
+          q: {
+            exist: [
+              "a"
+              "c"
+              "i"
+            ]
+          }
+          s: [
+            {
+              lit: "filter.php"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.meals`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

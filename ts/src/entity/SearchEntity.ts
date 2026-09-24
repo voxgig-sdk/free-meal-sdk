@@ -19,7 +19,6 @@ import type {
   SearchListMatch,
 } from '../FreeMealTypes'
 
-// TODO: needs Entity superclass
 class SearchEntity extends FreeMealEntityBase<Search> {
 
   constructor(client: FreeMealSDK, entopts: any) {

@@ -11,19 +11,12 @@ const FEATURE_CLASS = {
     test: TestFeature_1.TestFeature,
     timeout: TimeoutFeature_1.TimeoutFeature,
 };
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS = {};
 exports.FEATURE_PLUGINS = FEATURE_PLUGINS;
 class Config {
     makeFeature(fn) {
         const fc = FEATURE_CLASS[fn];
         const fi = new fc();
-        // TODO: errors etc
         return fi;
     }
     // False for a feature added at runtime via options.extend (station's
@@ -126,23 +119,27 @@ class Config {
             "fields": [
                 {
                     "name": "idCategory",
-                    "short": "Unique category identifier",
-                    "type": "`$STRING`"
+                    "title": "Id Category",
+                    "type": "`$STRING`",
+                    "short": "Unique category identifier"
                 },
                 {
                     "name": "strCategory",
-                    "short": "Category name",
-                    "type": "`$STRING`"
+                    "title": "Str Category",
+                    "type": "`$STRING`",
+                    "short": "Category name"
                 },
                 {
                     "name": "strCategoryDescription",
-                    "short": "Category description",
-                    "type": "`$STRING`"
+                    "title": "Str Category Description",
+                    "type": "`$STRING`",
+                    "short": "Category description"
                 },
                 {
                     "name": "strCategoryThumb",
-                    "short": "URL to category thumbnail image",
-                    "type": "`$STRING`"
+                    "title": "Str Category Thumb",
+                    "type": "`$STRING`",
+                    "short": "URL to category thumbnail image"
                 }
             ],
             "name": "category",
@@ -152,7 +149,6 @@ class Config {
                     "name": "list",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "GET",
                             "orig": "/categories.php",
@@ -161,14 +157,16 @@ class Config {
                                     "lit": "categories.php"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "categories.php"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body.categories`"
                             },
-                            "parts": [
-                                "categories.php"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -181,18 +179,21 @@ class Config {
             "fields": [
                 {
                     "name": "idMeal",
-                    "short": "Unique meal identifier",
-                    "type": "`$STRING`"
+                    "title": "Id Meal",
+                    "type": "`$STRING`",
+                    "short": "Unique meal identifier"
                 },
                 {
                     "name": "strMeal",
-                    "short": "Meal name",
-                    "type": "`$STRING`"
+                    "title": "Str Meal",
+                    "type": "`$STRING`",
+                    "short": "Meal name"
                 },
                 {
                     "name": "strMealThumb",
-                    "short": "URL to meal thumbnail image",
-                    "type": "`$STRING`"
+                    "title": "Str Meal Thumb",
+                    "type": "`$STRING`",
+                    "short": "URL to meal thumbnail image"
                 }
             ],
             "name": "filter",
@@ -202,31 +203,6 @@ class Config {
                     "name": "list",
                     "points": [
                         {
-                            "args": {
-                                "query": [
-                                    {
-                                        "example": "Canadian",
-                                        "kind": "query",
-                                        "name": "a",
-                                        "orig": "a",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "example": "Seafood",
-                                        "kind": "query",
-                                        "name": "c",
-                                        "orig": "c",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "example": "chicken_breast",
-                                        "kind": "query",
-                                        "name": "i",
-                                        "orig": "i",
-                                        "type": "`$STRING`"
-                                    }
-                                ]
-                            },
                             "kind": "http",
                             "method": "GET",
                             "orig": "/filter.php",
@@ -235,20 +211,46 @@ class Config {
                                     "lit": "filter.php"
                                 }
                             ],
+                            "parts": [
+                                "filter.php"
+                            ],
+                            "rename": {},
+                            "transform": {
+                                "req": "`reqdata`",
+                                "res": "`body.meals`"
+                            },
+                            "args": {
+                                "query": [
+                                    {
+                                        "name": "a",
+                                        "orig": "a",
+                                        "type": "`$STRING`",
+                                        "kind": "query",
+                                        "example": "Canadian"
+                                    },
+                                    {
+                                        "name": "c",
+                                        "orig": "c",
+                                        "type": "`$STRING`",
+                                        "kind": "query",
+                                        "example": "Seafood"
+                                    },
+                                    {
+                                        "name": "i",
+                                        "orig": "i",
+                                        "type": "`$STRING`",
+                                        "kind": "query",
+                                        "example": "chicken_breast"
+                                    }
+                                ]
+                            },
                             "select": {
                                 "exist": [
                                     "a",
                                     "c",
                                     "i"
                                 ]
-                            },
-                            "transform": {
-                                "req": "`reqdata`",
-                                "res": "`body.meals`"
-                            },
-                            "parts": [
-                                "filter.php"
-                            ]
+                            }
                         }
                     ]
                 }
@@ -261,223 +263,276 @@ class Config {
             "fields": [
                 {
                     "name": "dateModified",
+                    "title": "Date Modified",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "idMeal",
-                    "short": "Unique meal identifier",
-                    "type": "`$STRING`"
+                    "title": "Id Meal",
+                    "type": "`$STRING`",
+                    "short": "Unique meal identifier"
                 },
                 {
                     "name": "strArea",
-                    "short": "Meal area/region",
-                    "type": "`$STRING`"
+                    "title": "Str Area",
+                    "type": "`$STRING`",
+                    "short": "Meal area/region"
                 },
                 {
                     "name": "strCategory",
-                    "short": "Meal category",
-                    "type": "`$STRING`"
+                    "title": "Str Category",
+                    "type": "`$STRING`",
+                    "short": "Meal category"
                 },
                 {
                     "name": "strCreativeCommonsConfirmed",
+                    "title": "Str Creative Commons Confirmed",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strDrinkAlternate",
+                    "title": "Str Drink Alternate",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strImageSource",
+                    "title": "Str Image Source",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient1",
+                    "title": "Str Ingredient1",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient10",
+                    "title": "Str Ingredient10",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient11",
+                    "title": "Str Ingredient11",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient12",
+                    "title": "Str Ingredient12",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient13",
+                    "title": "Str Ingredient13",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient14",
+                    "title": "Str Ingredient14",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient15",
+                    "title": "Str Ingredient15",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient16",
+                    "title": "Str Ingredient16",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient17",
+                    "title": "Str Ingredient17",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient18",
+                    "title": "Str Ingredient18",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient19",
+                    "title": "Str Ingredient19",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient2",
+                    "title": "Str Ingredient2",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient20",
+                    "title": "Str Ingredient20",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient3",
+                    "title": "Str Ingredient3",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient4",
+                    "title": "Str Ingredient4",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient5",
+                    "title": "Str Ingredient5",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient6",
+                    "title": "Str Ingredient6",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient7",
+                    "title": "Str Ingredient7",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient8",
+                    "title": "Str Ingredient8",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient9",
+                    "title": "Str Ingredient9",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strInstructions",
-                    "short": "Cooking instructions",
-                    "type": "`$STRING`"
+                    "title": "Str Instructions",
+                    "type": "`$STRING`",
+                    "short": "Cooking instructions"
                 },
                 {
                     "name": "strMeal",
-                    "short": "Meal name",
-                    "type": "`$STRING`"
+                    "title": "Str Meal",
+                    "type": "`$STRING`",
+                    "short": "Meal name"
                 },
                 {
                     "name": "strMealThumb",
-                    "short": "URL to meal thumbnail image",
-                    "type": "`$STRING`"
+                    "title": "Str Meal Thumb",
+                    "type": "`$STRING`",
+                    "short": "URL to meal thumbnail image"
                 },
                 {
                     "name": "strMeasure1",
+                    "title": "Str Measure1",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure10",
+                    "title": "Str Measure10",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure11",
+                    "title": "Str Measure11",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure12",
+                    "title": "Str Measure12",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure13",
+                    "title": "Str Measure13",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure14",
+                    "title": "Str Measure14",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure15",
+                    "title": "Str Measure15",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure16",
+                    "title": "Str Measure16",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure17",
+                    "title": "Str Measure17",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure18",
+                    "title": "Str Measure18",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure19",
+                    "title": "Str Measure19",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure2",
+                    "title": "Str Measure2",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure20",
+                    "title": "Str Measure20",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure3",
+                    "title": "Str Measure3",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure4",
+                    "title": "Str Measure4",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure5",
+                    "title": "Str Measure5",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure6",
+                    "title": "Str Measure6",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure7",
+                    "title": "Str Measure7",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure8",
+                    "title": "Str Measure8",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure9",
+                    "title": "Str Measure9",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strSource",
+                    "title": "Str Source",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strTags",
-                    "short": "Comma-separated tags",
-                    "type": "`$STRING`"
+                    "title": "Str Tags",
+                    "type": "`$STRING`",
+                    "short": "Comma-separated tags"
                 },
                 {
                     "name": "strYoutube",
-                    "short": "YouTube video URL",
-                    "type": "`$STRING`"
+                    "title": "Str Youtube",
+                    "type": "`$STRING`",
+                    "short": "YouTube video URL"
                 }
             ],
             "name": "latest",
@@ -487,7 +542,6 @@ class Config {
                     "name": "list",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "GET",
                             "orig": "/latest.php",
@@ -496,14 +550,16 @@ class Config {
                                     "lit": "latest.php"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "latest.php"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body.meals`"
                             },
-                            "parts": [
-                                "latest.php"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -516,14 +572,17 @@ class Config {
             "fields": [
                 {
                     "name": "strArea",
+                    "title": "Str Area",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strCategory",
+                    "title": "Str Category",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient",
+                    "title": "Str Ingredient",
                     "type": "`$STRING`"
                 }
             ],
@@ -534,28 +593,6 @@ class Config {
                     "name": "list",
                     "points": [
                         {
-                            "args": {
-                                "query": [
-                                    {
-                                        "kind": "query",
-                                        "name": "a",
-                                        "orig": "a",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "c",
-                                        "orig": "c",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "i",
-                                        "orig": "i",
-                                        "type": "`$STRING`"
-                                    }
-                                ]
-                            },
                             "kind": "http",
                             "method": "GET",
                             "orig": "/list.php",
@@ -564,20 +601,43 @@ class Config {
                                     "lit": "list.php"
                                 }
                             ],
+                            "parts": [
+                                "list.php"
+                            ],
+                            "rename": {},
+                            "transform": {
+                                "req": "`reqdata`",
+                                "res": "`body.meals`"
+                            },
+                            "args": {
+                                "query": [
+                                    {
+                                        "name": "a",
+                                        "orig": "a",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "c",
+                                        "orig": "c",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "i",
+                                        "orig": "i",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    }
+                                ]
+                            },
                             "select": {
                                 "exist": [
                                     "a",
                                     "c",
                                     "i"
                                 ]
-                            },
-                            "transform": {
-                                "req": "`reqdata`",
-                                "res": "`body.meals`"
-                            },
-                            "parts": [
-                                "list.php"
-                            ]
+                            }
                         }
                     ]
                 }
@@ -590,223 +650,276 @@ class Config {
             "fields": [
                 {
                     "name": "dateModified",
+                    "title": "Date Modified",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "idMeal",
-                    "short": "Unique meal identifier",
-                    "type": "`$STRING`"
+                    "title": "Id Meal",
+                    "type": "`$STRING`",
+                    "short": "Unique meal identifier"
                 },
                 {
                     "name": "strArea",
-                    "short": "Meal area/region",
-                    "type": "`$STRING`"
+                    "title": "Str Area",
+                    "type": "`$STRING`",
+                    "short": "Meal area/region"
                 },
                 {
                     "name": "strCategory",
-                    "short": "Meal category",
-                    "type": "`$STRING`"
+                    "title": "Str Category",
+                    "type": "`$STRING`",
+                    "short": "Meal category"
                 },
                 {
                     "name": "strCreativeCommonsConfirmed",
+                    "title": "Str Creative Commons Confirmed",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strDrinkAlternate",
+                    "title": "Str Drink Alternate",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strImageSource",
+                    "title": "Str Image Source",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient1",
+                    "title": "Str Ingredient1",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient10",
+                    "title": "Str Ingredient10",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient11",
+                    "title": "Str Ingredient11",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient12",
+                    "title": "Str Ingredient12",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient13",
+                    "title": "Str Ingredient13",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient14",
+                    "title": "Str Ingredient14",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient15",
+                    "title": "Str Ingredient15",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient16",
+                    "title": "Str Ingredient16",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient17",
+                    "title": "Str Ingredient17",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient18",
+                    "title": "Str Ingredient18",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient19",
+                    "title": "Str Ingredient19",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient2",
+                    "title": "Str Ingredient2",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient20",
+                    "title": "Str Ingredient20",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient3",
+                    "title": "Str Ingredient3",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient4",
+                    "title": "Str Ingredient4",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient5",
+                    "title": "Str Ingredient5",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient6",
+                    "title": "Str Ingredient6",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient7",
+                    "title": "Str Ingredient7",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient8",
+                    "title": "Str Ingredient8",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient9",
+                    "title": "Str Ingredient9",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strInstructions",
-                    "short": "Cooking instructions",
-                    "type": "`$STRING`"
+                    "title": "Str Instructions",
+                    "type": "`$STRING`",
+                    "short": "Cooking instructions"
                 },
                 {
                     "name": "strMeal",
-                    "short": "Meal name",
-                    "type": "`$STRING`"
+                    "title": "Str Meal",
+                    "type": "`$STRING`",
+                    "short": "Meal name"
                 },
                 {
                     "name": "strMealThumb",
-                    "short": "URL to meal thumbnail image",
-                    "type": "`$STRING`"
+                    "title": "Str Meal Thumb",
+                    "type": "`$STRING`",
+                    "short": "URL to meal thumbnail image"
                 },
                 {
                     "name": "strMeasure1",
+                    "title": "Str Measure1",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure10",
+                    "title": "Str Measure10",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure11",
+                    "title": "Str Measure11",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure12",
+                    "title": "Str Measure12",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure13",
+                    "title": "Str Measure13",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure14",
+                    "title": "Str Measure14",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure15",
+                    "title": "Str Measure15",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure16",
+                    "title": "Str Measure16",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure17",
+                    "title": "Str Measure17",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure18",
+                    "title": "Str Measure18",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure19",
+                    "title": "Str Measure19",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure2",
+                    "title": "Str Measure2",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure20",
+                    "title": "Str Measure20",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure3",
+                    "title": "Str Measure3",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure4",
+                    "title": "Str Measure4",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure5",
+                    "title": "Str Measure5",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure6",
+                    "title": "Str Measure6",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure7",
+                    "title": "Str Measure7",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure8",
+                    "title": "Str Measure8",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure9",
+                    "title": "Str Measure9",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strSource",
+                    "title": "Str Source",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strTags",
-                    "short": "Comma-separated tags",
-                    "type": "`$STRING`"
+                    "title": "Str Tags",
+                    "type": "`$STRING`",
+                    "short": "Comma-separated tags"
                 },
                 {
                     "name": "strYoutube",
-                    "short": "YouTube video URL",
-                    "type": "`$STRING`"
+                    "title": "Str Youtube",
+                    "type": "`$STRING`",
+                    "short": "YouTube video URL"
                 }
             ],
             "name": "lookup",
@@ -816,18 +929,6 @@ class Config {
                     "name": "list",
                     "points": [
                         {
-                            "args": {
-                                "query": [
-                                    {
-                                        "example": "52772",
-                                        "kind": "query",
-                                        "name": "i",
-                                        "orig": "i",
-                                        "reqd": true,
-                                        "type": "`$STRING`"
-                                    }
-                                ]
-                            },
                             "kind": "http",
                             "method": "GET",
                             "orig": "/lookup.php",
@@ -836,18 +937,31 @@ class Config {
                                     "lit": "lookup.php"
                                 }
                             ],
-                            "select": {
-                                "exist": [
-                                    "i"
-                                ]
-                            },
+                            "parts": [
+                                "lookup.php"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body.meals`"
                             },
-                            "parts": [
-                                "lookup.php"
-                            ]
+                            "args": {
+                                "query": [
+                                    {
+                                        "name": "i",
+                                        "orig": "i",
+                                        "type": "`$STRING`",
+                                        "kind": "query",
+                                        "reqd": true,
+                                        "example": "52772"
+                                    }
+                                ]
+                            },
+                            "select": {
+                                "exist": [
+                                    "i"
+                                ]
+                            }
                         }
                     ]
                 }
@@ -860,223 +974,276 @@ class Config {
             "fields": [
                 {
                     "name": "dateModified",
+                    "title": "Date Modified",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "idMeal",
-                    "short": "Unique meal identifier",
-                    "type": "`$STRING`"
+                    "title": "Id Meal",
+                    "type": "`$STRING`",
+                    "short": "Unique meal identifier"
                 },
                 {
                     "name": "strArea",
-                    "short": "Meal area/region",
-                    "type": "`$STRING`"
+                    "title": "Str Area",
+                    "type": "`$STRING`",
+                    "short": "Meal area/region"
                 },
                 {
                     "name": "strCategory",
-                    "short": "Meal category",
-                    "type": "`$STRING`"
+                    "title": "Str Category",
+                    "type": "`$STRING`",
+                    "short": "Meal category"
                 },
                 {
                     "name": "strCreativeCommonsConfirmed",
+                    "title": "Str Creative Commons Confirmed",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strDrinkAlternate",
+                    "title": "Str Drink Alternate",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strImageSource",
+                    "title": "Str Image Source",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient1",
+                    "title": "Str Ingredient1",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient10",
+                    "title": "Str Ingredient10",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient11",
+                    "title": "Str Ingredient11",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient12",
+                    "title": "Str Ingredient12",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient13",
+                    "title": "Str Ingredient13",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient14",
+                    "title": "Str Ingredient14",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient15",
+                    "title": "Str Ingredient15",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient16",
+                    "title": "Str Ingredient16",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient17",
+                    "title": "Str Ingredient17",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient18",
+                    "title": "Str Ingredient18",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient19",
+                    "title": "Str Ingredient19",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient2",
+                    "title": "Str Ingredient2",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient20",
+                    "title": "Str Ingredient20",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient3",
+                    "title": "Str Ingredient3",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient4",
+                    "title": "Str Ingredient4",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient5",
+                    "title": "Str Ingredient5",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient6",
+                    "title": "Str Ingredient6",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient7",
+                    "title": "Str Ingredient7",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient8",
+                    "title": "Str Ingredient8",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient9",
+                    "title": "Str Ingredient9",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strInstructions",
-                    "short": "Cooking instructions",
-                    "type": "`$STRING`"
+                    "title": "Str Instructions",
+                    "type": "`$STRING`",
+                    "short": "Cooking instructions"
                 },
                 {
                     "name": "strMeal",
-                    "short": "Meal name",
-                    "type": "`$STRING`"
+                    "title": "Str Meal",
+                    "type": "`$STRING`",
+                    "short": "Meal name"
                 },
                 {
                     "name": "strMealThumb",
-                    "short": "URL to meal thumbnail image",
-                    "type": "`$STRING`"
+                    "title": "Str Meal Thumb",
+                    "type": "`$STRING`",
+                    "short": "URL to meal thumbnail image"
                 },
                 {
                     "name": "strMeasure1",
+                    "title": "Str Measure1",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure10",
+                    "title": "Str Measure10",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure11",
+                    "title": "Str Measure11",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure12",
+                    "title": "Str Measure12",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure13",
+                    "title": "Str Measure13",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure14",
+                    "title": "Str Measure14",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure15",
+                    "title": "Str Measure15",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure16",
+                    "title": "Str Measure16",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure17",
+                    "title": "Str Measure17",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure18",
+                    "title": "Str Measure18",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure19",
+                    "title": "Str Measure19",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure2",
+                    "title": "Str Measure2",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure20",
+                    "title": "Str Measure20",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure3",
+                    "title": "Str Measure3",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure4",
+                    "title": "Str Measure4",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure5",
+                    "title": "Str Measure5",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure6",
+                    "title": "Str Measure6",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure7",
+                    "title": "Str Measure7",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure8",
+                    "title": "Str Measure8",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure9",
+                    "title": "Str Measure9",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strSource",
+                    "title": "Str Source",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strTags",
-                    "short": "Comma-separated tags",
-                    "type": "`$STRING`"
+                    "title": "Str Tags",
+                    "type": "`$STRING`",
+                    "short": "Comma-separated tags"
                 },
                 {
                     "name": "strYoutube",
-                    "short": "YouTube video URL",
-                    "type": "`$STRING`"
+                    "title": "Str Youtube",
+                    "type": "`$STRING`",
+                    "short": "YouTube video URL"
                 }
             ],
             "name": "random",
@@ -1086,7 +1253,6 @@ class Config {
                     "name": "list",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "GET",
                             "orig": "/random.php",
@@ -1095,14 +1261,16 @@ class Config {
                                     "lit": "random.php"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "random.php"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body.meals`"
                             },
-                            "parts": [
-                                "random.php"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -1115,223 +1283,276 @@ class Config {
             "fields": [
                 {
                     "name": "dateModified",
+                    "title": "Date Modified",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "idMeal",
-                    "short": "Unique meal identifier",
-                    "type": "`$STRING`"
+                    "title": "Id Meal",
+                    "type": "`$STRING`",
+                    "short": "Unique meal identifier"
                 },
                 {
                     "name": "strArea",
-                    "short": "Meal area/region",
-                    "type": "`$STRING`"
+                    "title": "Str Area",
+                    "type": "`$STRING`",
+                    "short": "Meal area/region"
                 },
                 {
                     "name": "strCategory",
-                    "short": "Meal category",
-                    "type": "`$STRING`"
+                    "title": "Str Category",
+                    "type": "`$STRING`",
+                    "short": "Meal category"
                 },
                 {
                     "name": "strCreativeCommonsConfirmed",
+                    "title": "Str Creative Commons Confirmed",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strDrinkAlternate",
+                    "title": "Str Drink Alternate",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strImageSource",
+                    "title": "Str Image Source",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient1",
+                    "title": "Str Ingredient1",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient10",
+                    "title": "Str Ingredient10",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient11",
+                    "title": "Str Ingredient11",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient12",
+                    "title": "Str Ingredient12",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient13",
+                    "title": "Str Ingredient13",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient14",
+                    "title": "Str Ingredient14",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient15",
+                    "title": "Str Ingredient15",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient16",
+                    "title": "Str Ingredient16",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient17",
+                    "title": "Str Ingredient17",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient18",
+                    "title": "Str Ingredient18",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient19",
+                    "title": "Str Ingredient19",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient2",
+                    "title": "Str Ingredient2",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient20",
+                    "title": "Str Ingredient20",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient3",
+                    "title": "Str Ingredient3",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient4",
+                    "title": "Str Ingredient4",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient5",
+                    "title": "Str Ingredient5",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient6",
+                    "title": "Str Ingredient6",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient7",
+                    "title": "Str Ingredient7",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient8",
+                    "title": "Str Ingredient8",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient9",
+                    "title": "Str Ingredient9",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strInstructions",
-                    "short": "Cooking instructions",
-                    "type": "`$STRING`"
+                    "title": "Str Instructions",
+                    "type": "`$STRING`",
+                    "short": "Cooking instructions"
                 },
                 {
                     "name": "strMeal",
-                    "short": "Meal name",
-                    "type": "`$STRING`"
+                    "title": "Str Meal",
+                    "type": "`$STRING`",
+                    "short": "Meal name"
                 },
                 {
                     "name": "strMealThumb",
-                    "short": "URL to meal thumbnail image",
-                    "type": "`$STRING`"
+                    "title": "Str Meal Thumb",
+                    "type": "`$STRING`",
+                    "short": "URL to meal thumbnail image"
                 },
                 {
                     "name": "strMeasure1",
+                    "title": "Str Measure1",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure10",
+                    "title": "Str Measure10",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure11",
+                    "title": "Str Measure11",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure12",
+                    "title": "Str Measure12",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure13",
+                    "title": "Str Measure13",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure14",
+                    "title": "Str Measure14",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure15",
+                    "title": "Str Measure15",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure16",
+                    "title": "Str Measure16",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure17",
+                    "title": "Str Measure17",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure18",
+                    "title": "Str Measure18",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure19",
+                    "title": "Str Measure19",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure2",
+                    "title": "Str Measure2",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure20",
+                    "title": "Str Measure20",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure3",
+                    "title": "Str Measure3",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure4",
+                    "title": "Str Measure4",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure5",
+                    "title": "Str Measure5",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure6",
+                    "title": "Str Measure6",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure7",
+                    "title": "Str Measure7",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure8",
+                    "title": "Str Measure8",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure9",
+                    "title": "Str Measure9",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strSource",
+                    "title": "Str Source",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strTags",
-                    "short": "Comma-separated tags",
-                    "type": "`$STRING`"
+                    "title": "Str Tags",
+                    "type": "`$STRING`",
+                    "short": "Comma-separated tags"
                 },
                 {
                     "name": "strYoutube",
-                    "short": "YouTube video URL",
-                    "type": "`$STRING`"
+                    "title": "Str Youtube",
+                    "type": "`$STRING`",
+                    "short": "YouTube video URL"
                 }
             ],
             "name": "randomselection",
@@ -1341,7 +1562,6 @@ class Config {
                     "name": "list",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "GET",
                             "orig": "/randomselection.php",
@@ -1350,14 +1570,16 @@ class Config {
                                     "lit": "randomselection.php"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "randomselection.php"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body.meals`"
                             },
-                            "parts": [
-                                "randomselection.php"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -1370,223 +1592,276 @@ class Config {
             "fields": [
                 {
                     "name": "dateModified",
+                    "title": "Date Modified",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "idMeal",
-                    "short": "Unique meal identifier",
-                    "type": "`$STRING`"
+                    "title": "Id Meal",
+                    "type": "`$STRING`",
+                    "short": "Unique meal identifier"
                 },
                 {
                     "name": "strArea",
-                    "short": "Meal area/region",
-                    "type": "`$STRING`"
+                    "title": "Str Area",
+                    "type": "`$STRING`",
+                    "short": "Meal area/region"
                 },
                 {
                     "name": "strCategory",
-                    "short": "Meal category",
-                    "type": "`$STRING`"
+                    "title": "Str Category",
+                    "type": "`$STRING`",
+                    "short": "Meal category"
                 },
                 {
                     "name": "strCreativeCommonsConfirmed",
+                    "title": "Str Creative Commons Confirmed",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strDrinkAlternate",
+                    "title": "Str Drink Alternate",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strImageSource",
+                    "title": "Str Image Source",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient1",
+                    "title": "Str Ingredient1",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient10",
+                    "title": "Str Ingredient10",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient11",
+                    "title": "Str Ingredient11",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient12",
+                    "title": "Str Ingredient12",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient13",
+                    "title": "Str Ingredient13",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient14",
+                    "title": "Str Ingredient14",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient15",
+                    "title": "Str Ingredient15",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient16",
+                    "title": "Str Ingredient16",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient17",
+                    "title": "Str Ingredient17",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient18",
+                    "title": "Str Ingredient18",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient19",
+                    "title": "Str Ingredient19",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient2",
+                    "title": "Str Ingredient2",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient20",
+                    "title": "Str Ingredient20",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient3",
+                    "title": "Str Ingredient3",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient4",
+                    "title": "Str Ingredient4",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient5",
+                    "title": "Str Ingredient5",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient6",
+                    "title": "Str Ingredient6",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient7",
+                    "title": "Str Ingredient7",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient8",
+                    "title": "Str Ingredient8",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strIngredient9",
+                    "title": "Str Ingredient9",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strInstructions",
-                    "short": "Cooking instructions",
-                    "type": "`$STRING`"
+                    "title": "Str Instructions",
+                    "type": "`$STRING`",
+                    "short": "Cooking instructions"
                 },
                 {
                     "name": "strMeal",
-                    "short": "Meal name",
-                    "type": "`$STRING`"
+                    "title": "Str Meal",
+                    "type": "`$STRING`",
+                    "short": "Meal name"
                 },
                 {
                     "name": "strMealThumb",
-                    "short": "URL to meal thumbnail image",
-                    "type": "`$STRING`"
+                    "title": "Str Meal Thumb",
+                    "type": "`$STRING`",
+                    "short": "URL to meal thumbnail image"
                 },
                 {
                     "name": "strMeasure1",
+                    "title": "Str Measure1",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure10",
+                    "title": "Str Measure10",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure11",
+                    "title": "Str Measure11",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure12",
+                    "title": "Str Measure12",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure13",
+                    "title": "Str Measure13",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure14",
+                    "title": "Str Measure14",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure15",
+                    "title": "Str Measure15",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure16",
+                    "title": "Str Measure16",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure17",
+                    "title": "Str Measure17",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure18",
+                    "title": "Str Measure18",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure19",
+                    "title": "Str Measure19",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure2",
+                    "title": "Str Measure2",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure20",
+                    "title": "Str Measure20",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure3",
+                    "title": "Str Measure3",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure4",
+                    "title": "Str Measure4",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure5",
+                    "title": "Str Measure5",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure6",
+                    "title": "Str Measure6",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure7",
+                    "title": "Str Measure7",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure8",
+                    "title": "Str Measure8",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strMeasure9",
+                    "title": "Str Measure9",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strSource",
+                    "title": "Str Source",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "strTags",
-                    "short": "Comma-separated tags",
-                    "type": "`$STRING`"
+                    "title": "Str Tags",
+                    "type": "`$STRING`",
+                    "short": "Comma-separated tags"
                 },
                 {
                     "name": "strYoutube",
-                    "short": "YouTube video URL",
-                    "type": "`$STRING`"
+                    "title": "Str Youtube",
+                    "type": "`$STRING`",
+                    "short": "YouTube video URL"
                 }
             ],
             "name": "search",
@@ -1596,24 +1871,6 @@ class Config {
                     "name": "list",
                     "points": [
                         {
-                            "args": {
-                                "query": [
-                                    {
-                                        "example": "a",
-                                        "kind": "query",
-                                        "name": "f",
-                                        "orig": "f",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "example": "Arrabiata",
-                                        "kind": "query",
-                                        "name": "s",
-                                        "orig": "s",
-                                        "type": "`$STRING`"
-                                    }
-                                ]
-                            },
                             "kind": "http",
                             "method": "GET",
                             "orig": "/search.php",
@@ -1622,19 +1879,38 @@ class Config {
                                     "lit": "search.php"
                                 }
                             ],
+                            "parts": [
+                                "search.php"
+                            ],
+                            "rename": {},
+                            "transform": {
+                                "req": "`reqdata`",
+                                "res": "`body.meals`"
+                            },
+                            "args": {
+                                "query": [
+                                    {
+                                        "name": "f",
+                                        "orig": "f",
+                                        "type": "`$STRING`",
+                                        "kind": "query",
+                                        "example": "a"
+                                    },
+                                    {
+                                        "name": "s",
+                                        "orig": "s",
+                                        "type": "`$STRING`",
+                                        "kind": "query",
+                                        "example": "Arrabiata"
+                                    }
+                                ]
+                            },
                             "select": {
                                 "exist": [
                                     "f",
                                     "s"
                                 ]
-                            },
-                            "transform": {
-                                "req": "`reqdata`",
-                                "res": "`body.meals`"
-                            },
-                            "parts": [
-                                "search.php"
-                            ]
+                            }
                         }
                     ]
                 }

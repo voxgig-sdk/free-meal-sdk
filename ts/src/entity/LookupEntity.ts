@@ -19,7 +19,6 @@ import type {
   LookupListMatch,
 } from '../FreeMealTypes'
 
-// TODO: needs Entity superclass
 class LookupEntity extends FreeMealEntityBase<Lookup> {
 
   constructor(client: FreeMealSDK, entopts: any) {
