@@ -37,6 +37,8 @@ require_once __DIR__ . '/TransformResponse.php';
 
 FreeMealUtility::setRegistrar(function (FreeMealUtility $u): void {
     $u->clean = [FreeMealClean::class, 'call'];
+    $u->clean_add = [FreeMealClean::class, 'add'];
+    $u->clean_explain = [FreeMealDone::class, 'clean_explain'];
     $u->done = [FreeMealDone::class, 'call'];
     $u->make_error = [FreeMealMakeError::class, 'call'];
     $u->feature_add = [FreeMealFeatureAdd::class, 'call'];

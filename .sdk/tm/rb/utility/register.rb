@@ -33,6 +33,8 @@ require_relative 'transform_response'
 
 FreeMealUtility.registrar = ->(u) {
   u.clean = FreeMealUtilities::Clean
+  u.clean_add = FreeMealUtilities::CleanAdd
+  u.clean_explain = FreeMealUtilities::CleanExplain
   u.done = FreeMealUtilities::Done
   u.make_error = FreeMealUtilities::MakeError
   u.feature_add = FreeMealUtilities::FeatureAdd
