@@ -79,6 +79,7 @@ module FreeMealConfig
           },
           "optspec" => {
             "clearTimer" => "`$FUNCTION`",
+            "now" => "`$FUNCTION`",
             "setTimer" => "`$FUNCTION`",
           },
           "strict" => false,
@@ -159,6 +160,10 @@ module FreeMealConfig
                   },
                   "args" => {},
                   "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
+                  },
                 },
               ],
             },
@@ -236,12 +241,10 @@ module FreeMealConfig
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "a",
-                      "c",
-                      "i",
-                    ],
+                  "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],
@@ -552,6 +555,10 @@ module FreeMealConfig
                   },
                   "args" => {},
                   "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
+                  },
                 },
               ],
             },
@@ -623,12 +630,10 @@ module FreeMealConfig
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "a",
-                      "c",
-                      "i",
-                    ],
+                  "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],
@@ -954,6 +959,10 @@ module FreeMealConfig
                       "i",
                     ],
                   },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
+                  },
                 },
               ],
             },
@@ -1263,6 +1272,10 @@ module FreeMealConfig
                   },
                   "args" => {},
                   "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
+                  },
                 },
               ],
             },
@@ -1572,6 +1585,10 @@ module FreeMealConfig
                   },
                   "args" => {},
                   "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
+                  },
                 },
               ],
             },
@@ -1897,11 +1914,10 @@ module FreeMealConfig
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "f",
-                      "s",
-                    ],
+                  "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],

@@ -48,6 +48,10 @@ main: kit: entity: category: {
           }
           m: "GET"
           o: "/categories.php"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
           s: [
             {
               lit: "categories.php"

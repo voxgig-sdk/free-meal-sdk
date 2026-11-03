@@ -12,7 +12,7 @@ The SDK exposes the API as capitalised, semantic **Entities** — for example `c
 
 ## Install
 This package is not yet published to RubyGems. Install it from the
-GitHub release tag (`rb/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/free-meal-sdk/releases)), or
+GitHub release tag (`rb/vX.Y.Z`, see [Tags](https://github.com/voxgig-sdk/free-meal-sdk/tags)), or
 from a clone:
 
 ```bash
@@ -29,7 +29,7 @@ gem "voxgig-sdk-free-meal-sdk", path: "./free-meal-sdk/rb"
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
-loading a specific record.
+loading a specific record. The client sends the API key in the `api_key` header.
 
 ### 1. Create a client
 
@@ -45,10 +45,11 @@ client = FreeMealSDK.new({
 
 ```ruby
 begin
-  # list returns an Array of Category records — iterate directly.
+  # list returns an Array of Category entities, one per record; data_get reads the record.
   categorys = client.Category.list
   categorys.each do |item|
-    puts "#{item["idCategory"]}"
+    record = item.data_get
+    puts "#{record["idCategory"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -130,10 +131,10 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = FreeMealSDK.test
 
-# Entity ops return the ENTITY (raises on error);
-# call data_get for the mock record.
-latest = client.Latest.list()
-puts latest
+# list returns an Array of Latest entities, one per mock record (raises on
+# error); data_get reads each record.
+latests = client.Latest.list()
+latests.each { |item| puts item.data_get }
 ```
 
 ### Use a custom fetch function
@@ -226,7 +227,7 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `list` | `(reqmatch = nil, ctrl) -> Array` | List entities matching the criteria (call with no argument to list all). Raises on error. |
+| `list` | `(reqmatch = nil, ctrl) -> Array` | List entities matching the criteria (call with no argument to list all), one per record. Raises on error. |
 | `data_get` | `() -> Hash` | Get entity data. |
 | `data_set` | `(data)` | Set entity data. |
 | `match_get` | `() -> Hash` | Get entity match criteria. |
@@ -236,9 +237,10 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the result data directly. On failure they
-raise a `FreeMealError` (a `StandardError` subclass), so wrap
-calls in `begin`/`rescue` where you need to handle errors.
+Entity operations return the entity, and `list` an `Array` of entities, one
+per record; an entity's `data_get` reads its record. On failure they raise a
+`FreeMealError` (a `StandardError` subclass), so wrap calls in
+`begin`/`rescue` where you need to handle errors.
 
 The `direct` escape hatch is the exception: it never raises and instead
 returns a result `Hash` with these keys:
@@ -627,8 +629,9 @@ Create an instance: `category = client.Category`
 #### Example: List
 
 ```ruby
-# list returns an Array of Category records (raises on error).
+# list returns an Array of Category entities, one per record (raises on error).
 categorys = client.Category.list
+categorys.each { |item| puts item.data_get }
 ```
 
 
@@ -653,8 +656,9 @@ Create an instance: `filter = client.Filter`
 #### Example: List
 
 ```ruby
-# list returns an Array of Filter records (raises on error).
+# list returns an Array of Filter entities, one per record (raises on error).
 filters = client.Filter.list
+filters.each { |item| puts item.data_get }
 ```
 
 
@@ -729,8 +733,9 @@ Create an instance: `latest = client.Latest`
 #### Example: List
 
 ```ruby
-# list returns an Array of Latest records (raises on error).
+# list returns an Array of Latest entities, one per record (raises on error).
 latests = client.Latest.list
+latests.each { |item| puts item.data_get }
 ```
 
 
@@ -755,8 +760,9 @@ Create an instance: `list = client.List`
 #### Example: List
 
 ```ruby
-# list returns an Array of List records (raises on error).
+# list returns an Array of List entities, one per record (raises on error).
 lists = client.List.list
+lists.each { |item| puts item.data_get }
 ```
 
 
@@ -831,8 +837,9 @@ Create an instance: `lookup = client.Lookup`
 #### Example: List
 
 ```ruby
-# list returns an Array of Lookup records (raises on error).
-lookups = client.Lookup.list
+# list returns an Array of Lookup entities, one per record (raises on error).
+lookups = client.Lookup.list({ "i" => "example" })
+lookups.each { |item| puts item.data_get }
 ```
 
 
@@ -907,8 +914,9 @@ Create an instance: `random = client.Random`
 #### Example: List
 
 ```ruby
-# list returns an Array of Random records (raises on error).
+# list returns an Array of Random entities, one per record (raises on error).
 randoms = client.Random.list
+randoms.each { |item| puts item.data_get }
 ```
 
 
@@ -983,8 +991,9 @@ Create an instance: `randomselection = client.Randomselection`
 #### Example: List
 
 ```ruby
-# list returns an Array of Randomselection records (raises on error).
+# list returns an Array of Randomselection entities, one per record (raises on error).
 randomselections = client.Randomselection.list
+randomselections.each { |item| puts item.data_get }
 ```
 
 
@@ -1059,8 +1068,9 @@ Create an instance: `search = client.Search`
 #### Example: List
 
 ```ruby
-# list returns an Array of Search records (raises on error).
+# list returns an Array of Search entities, one per record (raises on error).
 searchs = client.Search.list
+searchs.each { |item| puts item.data_get }
 ```
 
 ## Features

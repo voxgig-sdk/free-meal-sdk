@@ -13,7 +13,12 @@ type Context = core.Context
 type Utility = core.Utility
 type Feature = core.Feature
 type Entity = core.Entity
-type FreeMealEntity = core.FreeMealEntity
+type FreeMealEntityBase = core.FreeMealEntityBase
+
+// Deprecated: use FreeMealEntityBase.
+type FreeMealEntity = core.FreeMealEntityBase
+
+type StreamItem = core.StreamItem
 type FetcherFunc = core.FetcherFunc
 type Spec = core.Spec
 type Result = core.Result
@@ -41,28 +46,28 @@ func init() {
 	core.NewTimeoutFeatureFunc = func() core.Feature {
 		return feature.NewTimeoutFeature()
 	}
-	core.NewCategoryEntityFunc = func(client *core.FreeMealSDK, entopts map[string]any) core.FreeMealEntity {
+	core.NewCategoryEntityFunc = func(client *core.FreeMealSDK, entopts map[string]any) core.FreeMealEntityBase {
 		return entity.NewCategoryEntity(client, entopts)
 	}
-	core.NewFilterEntityFunc = func(client *core.FreeMealSDK, entopts map[string]any) core.FreeMealEntity {
+	core.NewFilterEntityFunc = func(client *core.FreeMealSDK, entopts map[string]any) core.FreeMealEntityBase {
 		return entity.NewFilterEntity(client, entopts)
 	}
-	core.NewLatestEntityFunc = func(client *core.FreeMealSDK, entopts map[string]any) core.FreeMealEntity {
+	core.NewLatestEntityFunc = func(client *core.FreeMealSDK, entopts map[string]any) core.FreeMealEntityBase {
 		return entity.NewLatestEntity(client, entopts)
 	}
-	core.NewListEntityFunc = func(client *core.FreeMealSDK, entopts map[string]any) core.FreeMealEntity {
+	core.NewListEntityFunc = func(client *core.FreeMealSDK, entopts map[string]any) core.FreeMealEntityBase {
 		return entity.NewListEntity(client, entopts)
 	}
-	core.NewLookupEntityFunc = func(client *core.FreeMealSDK, entopts map[string]any) core.FreeMealEntity {
+	core.NewLookupEntityFunc = func(client *core.FreeMealSDK, entopts map[string]any) core.FreeMealEntityBase {
 		return entity.NewLookupEntity(client, entopts)
 	}
-	core.NewRandomEntityFunc = func(client *core.FreeMealSDK, entopts map[string]any) core.FreeMealEntity {
+	core.NewRandomEntityFunc = func(client *core.FreeMealSDK, entopts map[string]any) core.FreeMealEntityBase {
 		return entity.NewRandomEntity(client, entopts)
 	}
-	core.NewRandomselectionEntityFunc = func(client *core.FreeMealSDK, entopts map[string]any) core.FreeMealEntity {
+	core.NewRandomselectionEntityFunc = func(client *core.FreeMealSDK, entopts map[string]any) core.FreeMealEntityBase {
 		return entity.NewRandomselectionEntity(client, entopts)
 	}
-	core.NewSearchEntityFunc = func(client *core.FreeMealSDK, entopts map[string]any) core.FreeMealEntity {
+	core.NewSearchEntityFunc = func(client *core.FreeMealSDK, entopts map[string]any) core.FreeMealEntityBase {
 		return entity.NewSearchEntity(client, entopts)
 	}
 }

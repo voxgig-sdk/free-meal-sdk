@@ -12,19 +12,19 @@ var NewTestFeatureFunc func() Feature
 
 var NewTimeoutFeatureFunc func() Feature
 
-var NewCategoryEntityFunc func(client *FreeMealSDK, entopts map[string]any) FreeMealEntity
+var NewCategoryEntityFunc func(client *FreeMealSDK, entopts map[string]any) FreeMealEntityBase
 
-var NewFilterEntityFunc func(client *FreeMealSDK, entopts map[string]any) FreeMealEntity
+var NewFilterEntityFunc func(client *FreeMealSDK, entopts map[string]any) FreeMealEntityBase
 
-var NewLatestEntityFunc func(client *FreeMealSDK, entopts map[string]any) FreeMealEntity
+var NewLatestEntityFunc func(client *FreeMealSDK, entopts map[string]any) FreeMealEntityBase
 
-var NewListEntityFunc func(client *FreeMealSDK, entopts map[string]any) FreeMealEntity
+var NewListEntityFunc func(client *FreeMealSDK, entopts map[string]any) FreeMealEntityBase
 
-var NewLookupEntityFunc func(client *FreeMealSDK, entopts map[string]any) FreeMealEntity
+var NewLookupEntityFunc func(client *FreeMealSDK, entopts map[string]any) FreeMealEntityBase
 
-var NewRandomEntityFunc func(client *FreeMealSDK, entopts map[string]any) FreeMealEntity
+var NewRandomEntityFunc func(client *FreeMealSDK, entopts map[string]any) FreeMealEntityBase
 
-var NewRandomselectionEntityFunc func(client *FreeMealSDK, entopts map[string]any) FreeMealEntity
+var NewRandomselectionEntityFunc func(client *FreeMealSDK, entopts map[string]any) FreeMealEntityBase
 
-var NewSearchEntityFunc func(client *FreeMealSDK, entopts map[string]any) FreeMealEntity
+var NewSearchEntityFunc func(client *FreeMealSDK, entopts map[string]any) FreeMealEntityBase
 

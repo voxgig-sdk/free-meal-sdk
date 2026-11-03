@@ -75,7 +75,7 @@ func runOp(client *sdk.FreeMealSDK, op string, query *eng.Value, entityAtom eng.
 
 // entityFor dispatches on the lowercase entity name. The generator
 // emits one `case "<name>":` per entity defined in the SDK model.
-func entityFor(client *sdk.FreeMealSDK, name string) (sdk.FreeMealEntity, error) {
+func entityFor(client *sdk.FreeMealSDK, name string) (sdk.FreeMealEntityBase, error) {
 	switch strings.ToLower(name) {
 	case "category":
 		return client.Category(nil), nil

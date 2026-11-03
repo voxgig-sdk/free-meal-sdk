@@ -9,7 +9,7 @@ import { createLiveTransport } from '../../live-runner'
 import { runLiveEntity } from '../../live-entity'
 
 
-import { FreeMealSDK, BaseFeature, stdutil } from '../../..'
+import { FreeMealSDK, BaseFeature, config, stdutil } from '../../..'
 
 import {
   envOverride,
@@ -41,6 +41,64 @@ describe('CategoryEntity', async () => {
   })
 
 
+  class FailHook extends BaseFeature {
+    name = 'failhook'
+    version = '0.0.1'
+    active = true
+    unexpected = 0
+    init() { }
+    PreSpec() { throw new Error('category hook failed') }
+    PreUnexpected() { this.unexpected++ }
+  }
+
+  test('stream-error', async () => {
+    const offline = { net: { offline: true } }
+    await assert.rejects(async () => {
+      for await (const _item of FreeMealSDK.test(offline).Category().stream('list')) { }
+    }, /offline/)
+
+    for await (const _item of FreeMealSDK.test(offline).Category()
+      .stream('list', undefined, { ctrl: { throw: false } })) { }
+
+    if (null != (config as any).feature?.rbac) {
+      const denied = FreeMealSDK.test(undefined, { feature: { rbac: { active: true, deny: true } } })
+      await assert.rejects(async () => {
+        for await (const _item of denied.Category().stream('list')) { }
+      }, (err: any) => 'rbac_denied' === err.code)
+    }
+  })
+
+  test('stream-ctrl', async () => {
+    const explain: any = {}
+    const ctrl: any = { explain }
+    for await (const _item of FreeMealSDK.test().Category().stream('list', undefined, { ctrl })) { }
+    assert.deepStrictEqual(Object.keys(ctrl), ['explain'])
+    assert(explain === ctrl.explain && 0 < Object.keys(explain).length)
+  })
+
+  test('unexpected', async () => {
+    const hook = new FailHook()
+    const client = new FreeMealSDK({ feature: { test: { active: true } }, extend: [hook] })
+    await assert.rejects(client.Category().list(), /hook failed/)
+    assert(0 < hook.unexpected)
+
+    const fired = hook.unexpected
+    assert.strictEqual(await client.Category().list(undefined, { throw: false }), undefined)
+    assert(fired < hook.unexpected)
+  })
+
+  test('validate', async (t) => {
+    if (null == (config as any).feature?.validate) {
+      t.skip('feature not present in this SDK: validate')
+      return
+    }
+    const client = FreeMealSDK.test(undefined, { feature: { validate: { active: true } } })
+    await assert.rejects(client.Category().list({"idCategory":1} as any),
+      (err: any) => 'validate_failed' === err.code)
+  })
+
+
+
   test('basic', async (t) => {
 
     const live = 'TRUE' === process.env.FREE_MEAL_TEST_LIVE
@@ -51,7 +109,7 @@ describe('CategoryEntity', async () => {
     
     const setup = basicSetup()
     if (setup.live) {
-      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"idCategory":{"a":true,"h":"Id Category","n":"idCategory","r":false,"sh":"Unique category identifier","t":"`$STRING`","key$":"idCategory","index$":0},"strCategory":{"a":true,"h":"Str Category","n":"strCategory","r":false,"sh":"Category name","t":"`$STRING`","key$":"strCategory","index$":1},"strCategoryDescription":{"a":true,"h":"Str Category Description","n":"strCategoryDescription","r":false,"sh":"Category description","t":"`$STRING`","key$":"strCategoryDescription","index$":2},"strCategoryThumb":{"a":true,"h":"Str Category Thumb","n":"strCategoryThumb","r":false,"sh":"URL to category thumbnail image","t":"`$STRING`","key$":"strCategoryThumb","index$":3}},"name":"category","op":{"list":{"input":"data","name":"list","points":[{"a":true,"co":{"id":"GET /categories.php","source":"openapi3","version":2},"g":{},"k":"http","m":"GET","o":"/categories.php","q":{},"r":{},"s":[{"lit":"categories.php"}],"t":{"req":"`reqdata`","res":"`body.categories`"},"index$":0}],"key$":"list"}},"relations":{"ancestors":[]},"key$":"category","name__orig":"category","Name":"Category","name_":"category","name-":"category","NAME":"CATEGORY","index$":0}, {"active":true,"entity":"category","key$":"BasicCategoryFlow","kind":"basic","name":"BasicCategoryFlow","param":{},"step":[{"a":true,"d":{},"i":{},"m":{},"o":"list","s":[],"v":[{"apply":"ItemExists","def":{"ref":"category_ref01"}}],"index$":0}]}, 'Category', {"GET /categories.php":{"protocol":"http","parameters":[]}})
+      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"idCategory":{"a":true,"h":"Id Category","n":"idCategory","r":false,"sh":"Unique category identifier","t":"`$STRING`","key$":"idCategory","index$":0},"strCategory":{"a":true,"h":"Str Category","n":"strCategory","r":false,"sh":"Category name","t":"`$STRING`","key$":"strCategory","index$":1},"strCategoryDescription":{"a":true,"h":"Str Category Description","n":"strCategoryDescription","r":false,"sh":"Category description","t":"`$STRING`","key$":"strCategoryDescription","index$":2},"strCategoryThumb":{"a":true,"h":"Str Category Thumb","n":"strCategoryThumb","r":false,"sh":"URL to category thumbnail image","t":"`$STRING`","key$":"strCategoryThumb","index$":3}},"name":"category","op":{"list":{"input":"data","name":"list","points":[{"a":true,"co":{"id":"GET /categories.php","source":"openapi3","version":2},"g":{},"k":"http","m":"GET","o":"/categories.php","q":{},"r":{},"rs":{"kind":"json","media":"application/json"},"s":[{"lit":"categories.php"}],"t":{"req":"`reqdata`","res":"`body.categories`"},"index$":0}],"key$":"list"}},"relations":{"ancestors":[]},"key$":"category","name__orig":"category","Name":"Category","name_":"category","name-":"category","NAME":"CATEGORY","index$":0}, {"active":true,"entity":"category","key$":"BasicCategoryFlow","kind":"basic","name":"BasicCategoryFlow","param":{},"step":[{"a":true,"d":{},"i":{},"m":{},"o":"list","s":[],"v":[{"apply":"ItemExists","def":{"ref":"category_ref01"}}],"index$":0}]}, 'Category', {"GET /categories.php":{"protocol":"http","parameters":[]}}, { strict: LIVE_STRICT, t })
     }
     const client = setup.client
     const struct = setup.struct
@@ -72,6 +130,12 @@ describe('CategoryEntity', async () => {
 })
 
 
+
+// main.kit.test.live.strict is true (the default is true): a live
+// request that fails, or a live test missing an input it needs,
+// fails the test.
+// An account with no record for a test to read skips it either way.
+const LIVE_STRICT = true
 
 function basicSetup(extra?: any) {
   // TODO: fix test def options

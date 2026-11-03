@@ -346,6 +346,10 @@ main: kit: entity: latest: {
           }
           m: "GET"
           o: "/latest.php"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
           s: [
             {
               lit: "latest.php"

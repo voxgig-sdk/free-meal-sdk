@@ -346,6 +346,10 @@ main: kit: entity: randomselection: {
           }
           m: "GET"
           o: "/randomselection.php"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
           s: [
             {
               lit: "randomselection.php"

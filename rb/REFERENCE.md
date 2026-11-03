@@ -131,10 +131,11 @@ category = client.Category
 
 #### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array of entities, one per record; `data_get` reads each record. Raises on error.
 
 ```ruby
 results = client.Category.list
+results.each { |item| puts item.data_get }
 ```
 
 ### Common Methods
@@ -185,10 +186,11 @@ filter = client.Filter
 
 #### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array of entities, one per record; `data_get` reads each record. Raises on error.
 
 ```ruby
 results = client.Filter.list
+results.each { |item| puts item.data_get }
 ```
 
 ### Common Methods
@@ -289,10 +291,11 @@ latest = client.Latest
 
 #### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array of entities, one per record; `data_get` reads each record. Raises on error.
 
 ```ruby
 results = client.Latest.list
+results.each { |item| puts item.data_get }
 ```
 
 ### Common Methods
@@ -343,10 +346,11 @@ list = client.List
 
 #### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array of entities, one per record; `data_get` reads each record. Raises on error.
 
 ```ruby
 results = client.List.list
+results.each { |item| puts item.data_get }
 ```
 
 ### Common Methods
@@ -447,10 +451,11 @@ lookup = client.Lookup
 
 #### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array of entities, one per record; `data_get` reads each record. Raises on error.
 
 ```ruby
-results = client.Lookup.list
+results = client.Lookup.list({ "i" => "example" })
+results.each { |item| puts item.data_get }
 ```
 
 ### Common Methods
@@ -551,10 +556,11 @@ random = client.Random
 
 #### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array of entities, one per record; `data_get` reads each record. Raises on error.
 
 ```ruby
 results = client.Random.list
+results.each { |item| puts item.data_get }
 ```
 
 ### Common Methods
@@ -655,10 +661,11 @@ randomselection = client.Randomselection
 
 #### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array of entities, one per record; `data_get` reads each record. Raises on error.
 
 ```ruby
 results = client.Randomselection.list
+results.each { |item| puts item.data_get }
 ```
 
 ### Common Methods
@@ -759,10 +766,11 @@ search = client.Search
 
 #### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array of entities, one per record; `data_get` reads each record. Raises on error.
 
 ```ruby
 results = client.Search.list
+results.each { |item| puts item.data_get }
 ```
 
 ### Common Methods
@@ -952,6 +960,7 @@ Timeout.
 | Option | Type |
 |---|---|
 | `clearTimer` | function |
+| `now` | function |
 | `setTimer` | function |
 
 These take no default: the feature behaves one way when you supply them and

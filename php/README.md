@@ -12,7 +12,7 @@ The SDK exposes the API as capitalised, semantic **Entities** — for example `$
 
 ## Install
 This package is not yet published to Packagist. Install it from the
-GitHub release tag (`php/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/free-meal-sdk/releases)), or
+GitHub release tag (`php/vX.Y.Z`, see [Tags](https://github.com/voxgig-sdk/free-meal-sdk/tags)), or
 from a clone as a Composer path repository:
 
 ```bash
@@ -25,7 +25,7 @@ composer require voxgig-sdk/free-meal-sdk:@dev
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
-loading a specific record.
+loading a specific record. The client sends the API key in the `api_key` header.
 
 ### 1. Create a client
 
@@ -232,7 +232,7 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `list` | `(?array $reqmatch = null, $ctrl): array` | List entities matching the criteria (call with no argument to list all). |
+| `list` | `(?array $reqmatch = null, $ctrl): mixed` | List entities matching the criteria (call with no argument to list all), one per record. |
 | `data_get` | `(): array` | Get entity data. |
 | `data_set` | `($data): void` | Set entity data. |
 | `match_get` | `(): array` | Get entity match criteria. |
@@ -242,9 +242,9 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
-ops, a `list` for `list`) and throw on error. Wrap calls in
-`try`/`catch` to handle failures.
+Entity operations return the entity, and `list` an `array` of entities, one
+per record; an entity's `data_get()` reads its record (an `array`). They
+throw on error, so wrap calls in `try`/`catch` to handle failures.
 
 The `direct()` escape hatch never throws — it returns a result `array`
 you branch on via `$result["ok"]`:
@@ -634,7 +634,7 @@ Create an instance: `$category = $client->Category();`
 #### Example: List
 
 ```php
-// list() returns an array of Category records (throws on error).
+// list() returns an array of Category entities, one per record (throws on error).
 $categorys = $client->Category()->list();
 ```
 
@@ -660,7 +660,7 @@ Create an instance: `$filter = $client->Filter();`
 #### Example: List
 
 ```php
-// list() returns an array of Filter records (throws on error).
+// list() returns an array of Filter entities, one per record (throws on error).
 $filters = $client->Filter()->list();
 ```
 
@@ -736,7 +736,7 @@ Create an instance: `$latest = $client->Latest();`
 #### Example: List
 
 ```php
-// list() returns an array of Latest records (throws on error).
+// list() returns an array of Latest entities, one per record (throws on error).
 $latests = $client->Latest()->list();
 ```
 
@@ -762,7 +762,7 @@ Create an instance: `$list = $client->List();`
 #### Example: List
 
 ```php
-// list() returns an array of List records (throws on error).
+// list() returns an array of List entities, one per record (throws on error).
 $lists = $client->List()->list();
 ```
 
@@ -838,8 +838,8 @@ Create an instance: `$lookup = $client->Lookup();`
 #### Example: List
 
 ```php
-// list() returns an array of Lookup records (throws on error).
-$lookups = $client->Lookup()->list();
+// list() returns an array of Lookup entities, one per record (throws on error).
+$lookups = $client->Lookup()->list(["i" => "example"]);
 ```
 
 
@@ -914,7 +914,7 @@ Create an instance: `$random = $client->Random();`
 #### Example: List
 
 ```php
-// list() returns an array of Random records (throws on error).
+// list() returns an array of Random entities, one per record (throws on error).
 $randoms = $client->Random()->list();
 ```
 
@@ -990,7 +990,7 @@ Create an instance: `$randomselection = $client->Randomselection();`
 #### Example: List
 
 ```php
-// list() returns an array of Randomselection records (throws on error).
+// list() returns an array of Randomselection entities, one per record (throws on error).
 $randomselections = $client->Randomselection()->list();
 ```
 
@@ -1066,7 +1066,7 @@ Create an instance: `$search = $client->Search();`
 #### Example: List
 
 ```php
-// list() returns an array of Search records (throws on error).
+// list() returns an array of Search entities, one per record (throws on error).
 $searchs = $client->Search()->list();
 ```
 

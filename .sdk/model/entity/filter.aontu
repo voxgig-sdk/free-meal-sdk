@@ -69,12 +69,9 @@ main: kit: entity: filter: {
           }
           m: "GET"
           o: "/filter.php"
-          q: {
-            exist: [
-              "a"
-              "c"
-              "i"
-            ]
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {

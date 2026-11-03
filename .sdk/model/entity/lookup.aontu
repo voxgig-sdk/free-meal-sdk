@@ -363,6 +363,10 @@ main: kit: entity: lookup: {
               "i"
             ]
           }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
           s: [
             {
               lit: "lookup.php"

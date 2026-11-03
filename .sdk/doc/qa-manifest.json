@@ -3,5 +3,23 @@
     "SUMMARY.md"
   ],
   "config": ".sdk/doc/qa/vale.ini",
-  "routes": {}
+  "routes": {},
+  "quoted": {
+    "SUMMARY.md": [
+      "API key embedded in the URL path. Use &#39;1&#39; for testing, or get a premium key for production.",
+      "Category description",
+      "Category name",
+      "Cooking instructions",
+      "Meal area/region",
+      "Meal category",
+      "Meal name",
+      "Production server (test API key: 1)",
+      "Provides access to a free recipe API with features like searching meals by name, listing meals by first letter, looking up meal details by ID, and more. Supports JSON format data retrieval.",
+      "Successful response",
+      "URL to category thumbnail image",
+      "URL to meal thumbnail image",
+      "Unique category identifier",
+      "Unique meal identifier"
+    ]
+  }
 }

@@ -63,12 +63,9 @@ main: kit: entity: list: {
           }
           m: "GET"
           o: "/list.php"
-          q: {
-            exist: [
-              "a"
-              "c"
-              "i"
-            ]
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {

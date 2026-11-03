@@ -366,11 +366,9 @@ main: kit: entity: search: {
           }
           m: "GET"
           o: "/search.php"
-          q: {
-            exist: [
-              "f"
-              "s"
-            ]
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {

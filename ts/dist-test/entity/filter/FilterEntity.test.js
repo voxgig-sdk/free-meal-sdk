@@ -54,6 +54,53 @@ const utility_1 = require("../../utility");
         const ent = testsdk.Filter();
         (0, node_assert_1.default)(null != ent);
     });
+    class FailHook extends __1.BaseFeature {
+        name = 'failhook';
+        version = '0.0.1';
+        active = true;
+        unexpected = 0;
+        init() { }
+        PreSpec() { throw new Error('filter hook failed'); }
+        PreUnexpected() { this.unexpected++; }
+    }
+    (0, node_test_1.test)('stream-error', async () => {
+        const offline = { net: { offline: true } };
+        await node_assert_1.default.rejects(async () => {
+            for await (const _item of __1.FreeMealSDK.test(offline).Filter().stream('list')) { }
+        }, /offline/);
+        for await (const _item of __1.FreeMealSDK.test(offline).Filter()
+            .stream('list', undefined, { ctrl: { throw: false } })) { }
+        if (null != __1.config.feature?.rbac) {
+            const denied = __1.FreeMealSDK.test(undefined, { feature: { rbac: { active: true, deny: true } } });
+            await node_assert_1.default.rejects(async () => {
+                for await (const _item of denied.Filter().stream('list')) { }
+            }, (err) => 'rbac_denied' === err.code);
+        }
+    });
+    (0, node_test_1.test)('stream-ctrl', async () => {
+        const explain = {};
+        const ctrl = { explain };
+        for await (const _item of __1.FreeMealSDK.test().Filter().stream('list', undefined, { ctrl })) { }
+        node_assert_1.default.deepStrictEqual(Object.keys(ctrl), ['explain']);
+        (0, node_assert_1.default)(explain === ctrl.explain && 0 < Object.keys(explain).length);
+    });
+    (0, node_test_1.test)('unexpected', async () => {
+        const hook = new FailHook();
+        const client = new __1.FreeMealSDK({ feature: { test: { active: true } }, extend: [hook] });
+        await node_assert_1.default.rejects(client.Filter().list(), /hook failed/);
+        (0, node_assert_1.default)(0 < hook.unexpected);
+        const fired = hook.unexpected;
+        node_assert_1.default.strictEqual(await client.Filter().list(undefined, { throw: false }), undefined);
+        (0, node_assert_1.default)(fired < hook.unexpected);
+    });
+    (0, node_test_1.test)('validate', async (t) => {
+        if (null == __1.config.feature?.validate) {
+            t.skip('feature not present in this SDK: validate');
+            return;
+        }
+        const client = __1.FreeMealSDK.test(undefined, { feature: { validate: { active: true } } });
+        await node_assert_1.default.rejects(client.Filter().list({ "a": 1 }), (err) => 'validate_failed' === err.code);
+    });
     (0, node_test_1.test)('basic', async (t) => {
         const live = 'TRUE' === process.env.FREE_MEAL_TEST_LIVE;
         for (const op of ['list']) {
@@ -62,7 +109,7 @@ const utility_1 = require("../../utility");
         }
         const setup = basicSetup();
         if (setup.live) {
-            return (0, live_entity_1.runLiveEntity)(setup, { "active": true, "alias": { "field": {} }, "fields": { "idMeal": { "a": true, "h": "Id Meal", "n": "idMeal", "r": false, "sh": "Unique meal identifier", "t": "`$STRING`", "key$": "idMeal", "index$": 0 }, "strMeal": { "a": true, "h": "Str Meal", "n": "strMeal", "r": false, "sh": "Meal name", "t": "`$STRING`", "key$": "strMeal", "index$": 1 }, "strMealThumb": { "a": true, "h": "Str Meal Thumb", "n": "strMealThumb", "r": false, "sh": "URL to meal thumbnail image", "t": "`$STRING`", "key$": "strMealThumb", "index$": 2 } }, "name": "filter", "op": { "list": { "input": "data", "name": "list", "points": [{ "a": true, "co": { "id": "GET /filter.php", "source": "openapi3", "version": 2 }, "g": { "query": [{ "a": true, "ex": "Canadian", "k": "query", "n": "a", "or": "a", "r": false, "t": "`$STRING`", "index$": 0 }, { "a": true, "ex": "Seafood", "k": "query", "n": "c", "or": "c", "r": false, "t": "`$STRING`", "index$": 1 }, { "a": true, "ex": "chicken_breast", "k": "query", "n": "i", "or": "i", "r": false, "t": "`$STRING`", "index$": 2 }] }, "k": "http", "m": "GET", "o": "/filter.php", "q": { "exist": ["a", "c", "i"] }, "r": {}, "s": [{ "lit": "filter.php" }], "t": { "req": "`reqdata`", "res": "`body.meals`" }, "index$": 0 }], "key$": "list" } }, "relations": { "ancestors": [] }, "key$": "filter", "name__orig": "filter", "Name": "Filter", "name_": "filter", "name-": "filter", "NAME": "FILTER", "index$": 1 }, { "active": true, "entity": "filter", "key$": "BasicFilterFlow", "kind": "basic", "name": "BasicFilterFlow", "param": {}, "step": [{ "a": true, "d": {}, "i": {}, "m": {}, "o": "list", "s": [], "v": [{ "apply": "ItemExists", "def": { "ref": "filter_ref01" } }], "index$": 0 }] }, 'Filter', { "GET /filter.php": { "protocol": "http", "parameters": [{ "name": "i", "in": "query", "description": "Filter by ingredient (comma-separated for multi-ingredient with Premium API)", "required": false, "schema": { "type": "string", "example": "chicken_breast" }, "index$": 0 }, { "name": "c", "in": "query", "description": "Filter by category", "required": false, "schema": { "type": "string", "example": "Seafood" }, "index$": 1 }, { "name": "a", "in": "query", "description": "Filter by area", "required": false, "schema": { "type": "string", "example": "Canadian" }, "index$": 2 }] } });
+            return (0, live_entity_1.runLiveEntity)(setup, { "active": true, "alias": { "field": {} }, "fields": { "idMeal": { "a": true, "h": "Id Meal", "n": "idMeal", "r": false, "sh": "Unique meal identifier", "t": "`$STRING`", "key$": "idMeal", "index$": 0 }, "strMeal": { "a": true, "h": "Str Meal", "n": "strMeal", "r": false, "sh": "Meal name", "t": "`$STRING`", "key$": "strMeal", "index$": 1 }, "strMealThumb": { "a": true, "h": "Str Meal Thumb", "n": "strMealThumb", "r": false, "sh": "URL to meal thumbnail image", "t": "`$STRING`", "key$": "strMealThumb", "index$": 2 } }, "name": "filter", "op": { "list": { "input": "data", "name": "list", "points": [{ "a": true, "co": { "id": "GET /filter.php", "source": "openapi3", "version": 2 }, "g": { "query": [{ "a": true, "ex": "Canadian", "k": "query", "n": "a", "or": "a", "r": false, "t": "`$STRING`", "index$": 0 }, { "a": true, "ex": "Seafood", "k": "query", "n": "c", "or": "c", "r": false, "t": "`$STRING`", "index$": 1 }, { "a": true, "ex": "chicken_breast", "k": "query", "n": "i", "or": "i", "r": false, "t": "`$STRING`", "index$": 2 }] }, "k": "http", "m": "GET", "o": "/filter.php", "q": {}, "r": {}, "rs": { "kind": "json", "media": "application/json" }, "s": [{ "lit": "filter.php" }], "t": { "req": "`reqdata`", "res": "`body.meals`" }, "index$": 0 }], "key$": "list" } }, "relations": { "ancestors": [] }, "key$": "filter", "name__orig": "filter", "Name": "Filter", "name_": "filter", "name-": "filter", "NAME": "FILTER", "index$": 1 }, { "active": true, "entity": "filter", "key$": "BasicFilterFlow", "kind": "basic", "name": "BasicFilterFlow", "param": {}, "step": [{ "a": true, "d": {}, "i": {}, "m": {}, "o": "list", "s": [], "v": [{ "apply": "ItemExists", "def": { "ref": "filter_ref01" } }], "index$": 0 }] }, 'Filter', { "GET /filter.php": { "protocol": "http", "parameters": [{ "name": "i", "in": "query", "description": "Filter by ingredient (comma-separated for multi-ingredient with Premium API)", "required": false, "schema": { "type": "string", "example": "chicken_breast" }, "index$": 0 }, { "name": "c", "in": "query", "description": "Filter by category", "required": false, "schema": { "type": "string", "example": "Seafood" }, "index$": 1 }, { "name": "a", "in": "query", "description": "Filter by area", "required": false, "schema": { "type": "string", "example": "Canadian" }, "index$": 2 }] } }, { strict: LIVE_STRICT, t });
         }
         const client = setup.client;
         const struct = setup.struct;
@@ -75,6 +122,11 @@ const utility_1 = require("../../utility");
         const filter_ref01_list = (await filter_ref01_ent.list(filter_ref01_match)).map((e) => e.data());
     });
 });
+// main.kit.test.live.strict is true (the default is true): a live
+// request that fails, or a live test missing an input it needs,
+// fails the test.
+// An account with no record for a test to read skips it either way.
+const LIVE_STRICT = true;
 function basicSetup(extra) {
     // TODO: fix test def options
     const options = {}; // null

@@ -102,6 +102,7 @@ class Config {
       },
       "optspec": {
         "clearTimer": "`$FUNCTION`",
+        "now": "`$FUNCTION`",
         "setTimer": "`$FUNCTION`"
       },
       "strict": false,
@@ -206,7 +207,11 @@ class Config {
                 "res": "`body.categories`"
               },
               "args": {},
-              "select": {}
+              "select": {},
+              "response": {
+                "kind": "json",
+                "media": "application/json"
+              }
             }
           ]
         }
@@ -284,12 +289,10 @@ class Config {
                   }
                 ]
               },
-              "select": {
-                "exist": [
-                  "a",
-                  "c",
-                  "i"
-                ]
+              "select": {},
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             }
           ]
@@ -599,7 +602,11 @@ class Config {
                 "res": "`body.meals`"
               },
               "args": {},
-              "select": {}
+              "select": {},
+              "response": {
+                "kind": "json",
+                "media": "application/json"
+              }
             }
           ]
         }
@@ -671,12 +678,10 @@ class Config {
                   }
                 ]
               },
-              "select": {
-                "exist": [
-                  "a",
-                  "c",
-                  "i"
-                ]
+              "select": {},
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             }
           ]
@@ -1001,6 +1006,10 @@ class Config {
                 "exist": [
                   "i"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             }
           ]
@@ -1310,7 +1319,11 @@ class Config {
                 "res": "`body.meals`"
               },
               "args": {},
-              "select": {}
+              "select": {},
+              "response": {
+                "kind": "json",
+                "media": "application/json"
+              }
             }
           ]
         }
@@ -1619,7 +1632,11 @@ class Config {
                 "res": "`body.meals`"
               },
               "args": {},
-              "select": {}
+              "select": {},
+              "response": {
+                "kind": "json",
+                "media": "application/json"
+              }
             }
           ]
         }
@@ -1945,11 +1962,10 @@ class Config {
                   }
                 ]
               },
-              "select": {
-                "exist": [
-                  "f",
-                  "s"
-                ]
+              "select": {},
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             }
           ]

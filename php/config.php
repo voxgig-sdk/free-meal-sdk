@@ -93,6 +93,7 @@ class FreeMealConfig
           ],
           'optspec' => [
             'clearTimer' => '`$FUNCTION`',
+            'now' => '`$FUNCTION`',
             'setTimer' => '`$FUNCTION`',
           ],
           'strict' => false,
@@ -173,6 +174,10 @@ class FreeMealConfig
                   ],
                   'args' => [],
                   'select' => [],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
+                  ],
                 ],
               ],
             ],
@@ -250,12 +255,10 @@ class FreeMealConfig
                       ],
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'a',
-                      'c',
-                      'i',
-                    ],
+                  'select' => [],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
               ],
@@ -566,6 +569,10 @@ class FreeMealConfig
                   ],
                   'args' => [],
                   'select' => [],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
+                  ],
                 ],
               ],
             ],
@@ -637,12 +644,10 @@ class FreeMealConfig
                       ],
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'a',
-                      'c',
-                      'i',
-                    ],
+                  'select' => [],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
               ],
@@ -968,6 +973,10 @@ class FreeMealConfig
                       'i',
                     ],
                   ],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
+                  ],
                 ],
               ],
             ],
@@ -1277,6 +1286,10 @@ class FreeMealConfig
                   ],
                   'args' => [],
                   'select' => [],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
+                  ],
                 ],
               ],
             ],
@@ -1586,6 +1599,10 @@ class FreeMealConfig
                   ],
                   'args' => [],
                   'select' => [],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
+                  ],
                 ],
               ],
             ],
@@ -1911,11 +1928,10 @@ class FreeMealConfig
                       ],
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'f',
-                      's',
-                    ],
+                  'select' => [],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
               ],

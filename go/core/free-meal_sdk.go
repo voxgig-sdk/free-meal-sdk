@@ -146,6 +146,14 @@ func (sdk *FreeMealSDK) Prepare(fetchargs map[string]any) (map[string]any, error
 	if method == "" {
 		method = "GET"
 	}
+	method = strings.ToUpper(method)
+
+	allowMethodVal := vs.GetPath(options, []any{"allow", "method"})
+	if !Allowed(allowMethodVal, method) {
+		allowMethod, _ := allowMethodVal.(string)
+		return nil, ctx.MakeError("spec_method_allow",
+			"Method \""+method+"\" not allowed by SDK option allow.method value: \""+allowMethod+"\"")
+	}
 
 	params := ToMapAny(vs.GetProp(fetchargs, "params"))
 	if params == nil {
@@ -205,8 +213,7 @@ func (sdk *FreeMealSDK) Direct(fetchargs map[string]any) (map[string]any, error)
 
 // Is this raw-access op permitted by the SDK's allow.op option?
 func (sdk *FreeMealSDK) opAllowed(op string) bool {
-	allowOp, _ := vs.GetPath(sdk.options, []any{"allow", "op"}).(string)
-	return strings.Contains(allowOp, op)
+	return Allowed(vs.GetPath(sdk.options, []any{"allow", "op"}), op)
 }
 
 func (sdk *FreeMealSDK) opDenied(op string) map[string]any {
@@ -278,20 +285,34 @@ func (sdk *FreeMealSDK) rawRequest(fetchargs map[string]any) (map[string]any, er
 		noBody := status == 204 || status == 304 || contentLength == "0"
 
 		var jsonData any
+		var bodyErr error
 		if !noBody {
 			if jf := vs.GetProp(fm, "json"); jf != nil {
 				if f, ok := jf.(func() any); ok {
 					jsonData = f()
 				}
 			}
+			if unreadable, _ := vs.GetProp(fm, "unreadable").(bool); unreadable {
+				var failed error
+				if status < 200 || status >= 300 {
+					failed = ctx.MakeError("request_status",
+						fmt.Sprintf("request: %d: %v", status, vs.GetProp(fm, "statusText")))
+				}
+				bodyErr = UnreadableBody(ctx, status, headers, vs.GetProp(fm, "body"),
+					fetchdef["headers"], failed)
+			}
 		}
 
-		return map[string]any{
-			"ok":      status >= 200 && status < 300,
+		out := map[string]any{
+			"ok":      bodyErr == nil && status >= 200 && status < 300,
 			"status":  status,
 			"headers": headers,
 			"data":    jsonData,
-		}, nil
+		}
+		if bodyErr != nil {
+			out["err"] = sdk.cleanErr(ctx, bodyErr)
+		}
+		return out, nil
 	}
 
 	return map[string]any{"ok": false, "err": ctx.MakeError("direct_invalid", "invalid response type")}, nil
@@ -354,7 +375,7 @@ func (sdk *FreeMealSDK) Graphql(
 // Category returns a Category entity bound to this client.
 // Idiomatic usage: client.Category(nil).List(nil, nil) or
 // client.Category(nil).Load(map[string]any{"id": ...}, nil).
-func (sdk *FreeMealSDK) Category(data map[string]any) FreeMealEntity {
+func (sdk *FreeMealSDK) Category(data map[string]any) FreeMealEntityBase {
 	return NewCategoryEntityFunc(sdk, data)
 }
 
@@ -362,7 +383,7 @@ func (sdk *FreeMealSDK) Category(data map[string]any) FreeMealEntity {
 // Filter returns a Filter entity bound to this client.
 // Idiomatic usage: client.Filter(nil).List(nil, nil) or
 // client.Filter(nil).Load(map[string]any{"id": ...}, nil).
-func (sdk *FreeMealSDK) Filter(data map[string]any) FreeMealEntity {
+func (sdk *FreeMealSDK) Filter(data map[string]any) FreeMealEntityBase {
 	return NewFilterEntityFunc(sdk, data)
 }
 
@@ -370,7 +391,7 @@ func (sdk *FreeMealSDK) Filter(data map[string]any) FreeMealEntity {
 // Latest returns a Latest entity bound to this client.
 // Idiomatic usage: client.Latest(nil).List(nil, nil) or
 // client.Latest(nil).Load(map[string]any{"id": ...}, nil).
-func (sdk *FreeMealSDK) Latest(data map[string]any) FreeMealEntity {
+func (sdk *FreeMealSDK) Latest(data map[string]any) FreeMealEntityBase {
 	return NewLatestEntityFunc(sdk, data)
 }
 
@@ -378,7 +399,7 @@ func (sdk *FreeMealSDK) Latest(data map[string]any) FreeMealEntity {
 // List returns a List entity bound to this client.
 // Idiomatic usage: client.List(nil).List(nil, nil) or
 // client.List(nil).Load(map[string]any{"id": ...}, nil).
-func (sdk *FreeMealSDK) List(data map[string]any) FreeMealEntity {
+func (sdk *FreeMealSDK) List(data map[string]any) FreeMealEntityBase {
 	return NewListEntityFunc(sdk, data)
 }
 
@@ -386,7 +407,7 @@ func (sdk *FreeMealSDK) List(data map[string]any) FreeMealEntity {
 // Lookup returns a Lookup entity bound to this client.
 // Idiomatic usage: client.Lookup(nil).List(nil, nil) or
 // client.Lookup(nil).Load(map[string]any{"id": ...}, nil).
-func (sdk *FreeMealSDK) Lookup(data map[string]any) FreeMealEntity {
+func (sdk *FreeMealSDK) Lookup(data map[string]any) FreeMealEntityBase {
 	return NewLookupEntityFunc(sdk, data)
 }
 
@@ -394,7 +415,7 @@ func (sdk *FreeMealSDK) Lookup(data map[string]any) FreeMealEntity {
 // Random returns a Random entity bound to this client.
 // Idiomatic usage: client.Random(nil).List(nil, nil) or
 // client.Random(nil).Load(map[string]any{"id": ...}, nil).
-func (sdk *FreeMealSDK) Random(data map[string]any) FreeMealEntity {
+func (sdk *FreeMealSDK) Random(data map[string]any) FreeMealEntityBase {
 	return NewRandomEntityFunc(sdk, data)
 }
 
@@ -402,7 +423,7 @@ func (sdk *FreeMealSDK) Random(data map[string]any) FreeMealEntity {
 // Randomselection returns a Randomselection entity bound to this client.
 // Idiomatic usage: client.Randomselection(nil).List(nil, nil) or
 // client.Randomselection(nil).Load(map[string]any{"id": ...}, nil).
-func (sdk *FreeMealSDK) Randomselection(data map[string]any) FreeMealEntity {
+func (sdk *FreeMealSDK) Randomselection(data map[string]any) FreeMealEntityBase {
 	return NewRandomselectionEntityFunc(sdk, data)
 }
 
@@ -410,7 +431,7 @@ func (sdk *FreeMealSDK) Randomselection(data map[string]any) FreeMealEntity {
 // Search returns a Search entity bound to this client.
 // Idiomatic usage: client.Search(nil).List(nil, nil) or
 // client.Search(nil).Load(map[string]any{"id": ...}, nil).
-func (sdk *FreeMealSDK) Search(data map[string]any) FreeMealEntity {
+func (sdk *FreeMealSDK) Search(data map[string]any) FreeMealEntityBase {
 	return NewSearchEntityFunc(sdk, data)
 }
 
